@@ -1,1 +1,46 @@
-local v0=2543 + 13621 + ((((4741 -(282 + 595)) + 364101) -(201208 + 73188)) -(165969 -98369)) + ((192589 -(1523 + 114)) -(81369 + 29269)) ;v0=v0 + ((102 + 11) -((36 -10) + (1132 -(68 + 997)))) + ((2489 -(226 + 1044)) -((215 -96) + (4341 -3344))) ;local v1=1203573 -(32 + 85) ;local v2=1230471;local v3=8023481;if (v2>v1) then print("true");end if ((1 + 0 + v3)>v2) then print("obfuscate the conditions!");end print("Clicking [Strings] will completely hide this string!");do function sieve_of_eratosthenes(v5) local v6=0 + 0 ;local v7;while true do if (v6==(958 -(892 + 65))) then for v10=4 -2 ,math.floor(math.sqrt(v5)) do if v7[v10] then for v13=v10 * v10 ,v5,v10 do v7[v13]=false;end end end return v7;end if (v6==0) then v7={};for v11=1 -0 ,v5 do v7[v11]=(1 -0)~=v11 ;end v6=2 -1 ;end end end local v4=sieve_of_eratosthenes(420);for v8,v9 in pairs(v4) do if v9 then print("Prime found: "   .. v8 );end end end print("How to obfuscate best?");
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+local a = 16164 + (((3864 + 364101) - 274396) - 67600) + (190952 - 110638);
+a = a + (113 - (26 + 67)) + (1219 - (119 + 997));
+local b = 1203456;
+local c = 1230471;
+local d = 8023481;
+if (c > b) then
+	print("true");
+end
+if ((1 + d) > c) then
+	print("obfuscate the conditions!");
+end
+print("Clicking [Strings] will completely hide this string!");
+do
+	function sieve_of_eratosthenes(n)
+		local is_prime = {};
+		for i = 1, n do
+			is_prime[i] = 1 ~= i;
+		end
+		for i = 2, math.floor(math.sqrt(n)) do
+			if is_prime[i] then
+				for j = i * i, n, i do
+					is_prime[j] = false;
+				end
+			end
+		end
+		return is_prime;
+	end
+	local primes = sieve_of_eratosthenes(420);
+	for key, value in pairs(primes) do
+		if value then
+			print("Prime found: " .. key);
+		end
+	end
+end
+print("How to obfuscate best?");
