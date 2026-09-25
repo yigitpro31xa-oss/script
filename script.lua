@@ -4,7 +4,7 @@
 -- HWID lock YOK — sadece key kontrolü
 
 -- ─── AYARLAR ──────────────────────────────────────────────────────────────────
-local SCRIPT_URL  = "https://raw.githubusercontent.com/alex541-juju/juju-enchantments/refs/heads/main/loader.lua"
+local SCRIPT_URL  = "https://raw.githubusercontent.com/yigitpro31xa-oss/sss/refs/heads/main/ss"
 local VERIFY_URL  = "https://sahtemesaj.com/api/verify?key="
 local KICK_MSG    = "❌ Key Yanlış! sahtemesaj.com'dan geçerli bir key alın."
 
