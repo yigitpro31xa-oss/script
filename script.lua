@@ -1,15 +1,1475 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+shared.Cider = {
 
-]]--
+	['Globals'] = {
+		['Key'] = "CIDER",
+		['Config Mode'] = "File", --.// Ignore this
+	},
 
-shared.Cider={Globals={Key="CIDER",["Config Mode"]="File"},Main={["Silent Aim"]={Selection="Target"},Triggerbot={Selection="Target"},Brand={Enabled=true,Feature=Color3.fromRGB(41 + 214 ,255,255),Accent=Color3.fromRGB(403 -148 ,200,0),Position="Low Center"},Checks={Targeting={Knocked=true,Grabbed=true,Vehicle=true,Visible=false,Tool=false,["Self Knocked"]=false,Crew=true},Aimbot={Knocked=true,Grabbed=true,Vehicle=true,Visible=false,Tool=false,["Self Knocked"]=false,Crew=true},["Silent Aim"]={Knocked=true,Grabbed=true,Vehicle=true,Visible=true,Tool=false,["Self Knocked"]=false,Crew=true},Triggerbot={Knocked=true,Grabbed=true,Vehicle=true,Visible=true,Tool=false,["Self Knocked"]=false,Crew=true}},Binds={Target="C",Aimbot="C",CamLock="Q",ESP="B",["Walk Speed"]="V",["Jump Power"]="Z",["Double Tap"]="Y",Sorter="U",["Anti Future"]="N",["Panic Ground"]="X"},["Gun Whitelist"]={Silent={"[Double-Barrel SG]","[Revolver]","[TacticalShotgun]"},Aimbot={"[Double-Barrel SG]","[Revolver]","[TacticalShotgun]"},Triggerbot={"[Double-Barrel SG]","[Revolver]","[TacticalShotgun]"}},FOV={Silent={Options="2D",Width={2 -1 ,1 + 0 },Height={320 -(27 + 292) ,1},["3D"]={Width=7 -1 ,Height=25 -19 ,Depth=10},Visualize={Enabled=false,Color=Color3.fromRGB(255,255,502 -247 )}},Aimbot={Options="2D",Width={140 -(43 + 96) ,1 -0 },Height={1 + 0 ,1 -0 },["3D"]={Width=3 + 3 ,Height=10 -4 ,Depth=4 + 6 },Visualize={Enabled=false,Color=Color3.fromRGB(19 + 236 ,255,2006 -(1414 + 337) )}},Triggerbot={Options="2D",Width={1941 -(1642 + 298) ,2 -1 },Height={2 -1 ,1 + 0 },["3D"]={Width=6,Height=5 + 1 ,Depth=10},Visualize={Enabled=false,Color=Color3.fromRGB(255,1227 -(357 + 615) ,255)}}}},["Silent Aim"]={Enabled=true,["Max Range"]=math.huge,["Closest Point"]={Enabled=true,Mode="Scaled",Scale=3 + 0 },["Target Tracer"]={Enabled=false,Color=Color3.fromRGB(625 -370 ,85,73 + 12 ),Thickness=0.5},["Target Part"]={Part="Head"},Prediction={Enabled=false,Values={X=0,Y=0 -0 ,Z=0 + 0 }},["Auto Shoot"]={Enabled=true,["Wall Check"]=true,["Limit To Weapon Range"]=true},["Offscreen Targeting"]={Enabled=true},Future={Enabled=false,Lure=true,Pistols={Values={X=0 + 0 ,Y=0 + 0 ,Z=1301 -(384 + 917) }},Shotguns={Values={X=697 -(128 + 569) ,Y=0,Z=0}},Others={Values={X=0,Y=1543 -(1407 + 136) ,Z=1887 -(687 + 1200) }}}},Aimbot={Enabled=true,Mode="Toggle",["Max Range"]=math.huge,["Target Part"]={Part="Head"},["Closest Point"]={Enabled=true,Mode="Scaled",Scale=1713 -(556 + 1154) },Smoothing={Enabled=true,X=3514 -2515 ,Y=1094 -(9 + 86) ,Z=1420 -(275 + 146) ,DistanceAdaptive=true,MinAlpha=0.09,MaxAlpha=0.28 + 0 ,Easing={In="Sine",Out="Out"}},Prediction={Enabled=false,Values={X=64 -(29 + 35) ,Y=0 -0 ,Z=0 -0 }}},Triggerbot={Enabled=false,["Max Range"]=math.huge,["Limit To Weapon Range"]=true,Delay=0 -0 ,Bind={Key="MouseButton2",Mode="Mouse",Type="Hold"},["Trigger Mode"]="Raycast",Prediction={Enabled=false,Values={X=0 + 0 ,Y=0,Z=1012 -(53 + 959) }},["Offscreen Targeting"]={Enabled=false}},CamLock={Enabled=true,Bind="Q",Mode="Toggle",["Target Part"]="Head",Tracer={Enabled=true,Color=Color3.fromRGB(663 -(312 + 96) ,138 -58 ,80),Thickness=286 -(147 + 138) ,From="Center"},Smoothing={Enabled=true,Speed=899.18 -(813 + 86) ,MinSpeed=0.08,MaxSpeed=0.28 + 0 ,DistanceScale=true},Prediction={Enabled=false,Values={X=0 -0 ,Y=492 -(18 + 474) ,Z=0}},Checks={Knocked=true,Grabbed=true,Vehicle=true,Crew=true,["Self Knocked"]=false}},["Name ESP"]={Enabled=true,Color=Color3.fromRGB(255,87 + 168 ,832 -577 ),["Target Color"]=Color3.fromRGB(255,1286 -(860 + 226) ,303 -(121 + 182) ),["Text Size"]=2 + 11 ,Font="SourceSansBold"},["Health Bar"]={Enabled=true,Position="Bottom",["Show Armor"]=true,["Health Color"]=Color3.fromRGB(90,1495 -(988 + 252) ,11 + 79 ),["Armor Color"]=Color3.fromRGB(115,37 + 78 ,2225 -(49 + 1921) )},Modifications={["Double Tap"]={Enabled=false,Mode="Toggle",["Weapon Configs"]={Enabled=true,Shotguns={Enabled=true},Pistols={Enabled=true},Others={Enabled=false}}},["Spread Modifications"]={Enabled=false,Value=890.2 -(223 + 667) ,Randomizer={Enabled=false,Min=52.3 -(51 + 1) ,Max=0.5 -0 },["Spread Angles"]={Enabled=false,Game="zee"}},["Misc Gun Modifications"]={["No Recoil"]=false,["Range Enhancer"]={Enabled=true,Value=34 -18 ,["Use Hooks"]=true}},["Das Hood"]={["Inf Range"]={Enabled=false},Wallbang={Enabled=false},["Damage Modifier"]={Enabled=false,Weapons={Shotguns={Enabled=true,Mode="full"},Pistols={Enabled=true,Mode="full"},Others={Enabled=true,Mode="full"}}}},["Delay Changer"]={Enabled=false,Delay=1125 -(146 + 979) ,["Weapon Configs"]={Enabled=false,Shotguns={Delay=0.05},Pistols={Delay=0.01 + 0 },Others={Delay=0.02}}}},Movement={["Anti Trip"]=true,["No Jump Cooldown"]=true,["Speed Modifications"]={Enabled=false,Mode="Number",Values={Number=1205 -(311 + 294) ,Multiplier=16.2 -10 },Conditions={Normal={Enabled=true,Multiplier=1},Knife={Enabled=true,Multiplier=1 + 0 },Reload={Enabled=true,Multiplier=1444 -(496 + 947) },Shooting={Enabled=true,Multiplier=1},["Low Health"]={Enabled=true,Multiplier=1}}},["Jump Modifications"]={Enabled=false,["Spiderman Mode"]=false,Mode="Number",Values={Number=1658 -(1233 + 125) ,Multiplier=2 + 2 },Conditions={Normal={Enabled=true,Multiplier=1 + 0 },Knife={Enabled=true,Multiplier=1},Reload={Enabled=true,Multiplier=1 + 0 },Shooting={Enabled=true,Multiplier=1646 -(963 + 682) },["Low Health"]={Enabled=true,Multiplier=1 + 0 }}}},Utilities={["Inventory Sorter"]={Enabled=true,Order={[1]="[Knife]",[1506 -(504 + 1000) ]="[Revolver]",[3 + 0 ]="[Double-Barrel SG]",[4 + 0 ]="[Tactical-Shotgun]"}},["Skin Changer"]={Enabled=true,Skins={["[Double-Barrel SG]"]="Galaxy",["[Revolver]"]="Galaxy",["[TacticalShotgun]"]="Galaxy",["[Knife]"]="GPO-Knife",["[AUG]"]="GPOII"}},["Animation Changer"]={Enabled=true,Animations={Idle="Zombie",Run="Zombie",Walk="Zombie",Jump="Ninja",Fall="Ninja",Climb="Ninja",Swim="Default",SwimIdle="Default"}},["Hitbox Expander"]={Enabled=true,Size=15,["Target Only"]=true,Visualize=false}},["Anti Stomp"]={Enabled=false},["Panic Ground"]={Enabled=true,Auto={Enabled=false,["Health Amount"]=3 + 22 }},["Anti Future"]={Enabled=true,Options={Strength=110 -35 ,Randomness=3 + 0 ,["Spoof Chance"]=59 + 41 ,["Air Only"]=true,Vertical=true},["Visualize Server"]=true,Direction="Kinematic",["Adjust Dynamically"]={Enabled=true,Multiplier=3}},Char={Enabled=false,Target="richoffluau",["Override Animation"]=false,Accessories={Enabled=true,Headless=true,Korblox=false,["Frigid Horns"]=true},["Body Size"]={Enabled=false,Mode="Skinny"}}};if getgenv().cidercc_cleanup then getgenv().cidercc_cleanup();getgenv().cidercc_cleanup=nil;end local v1=game:GetService("Players");local v2=game:GetService("Workspace");local v3=game:GetService("RunService");local v4=game:GetService("ReplicatedStorage");local v5=game:GetService("UserInputService");local v6=game:GetService("TweenService");local v7=game:GetService("HttpService");local v8=game:GetService("CoreGui");local v9=game:GetService("GuiService");local v10=v1.LocalPlayer;local v11=v10:GetMouse();local v12=v2.CurrentCamera;local v13=v9:GetGuiInset().Y;local function v14() return shared.Cider;end local v15=v14();local v16={};local v17=nil;local v18=nil;local v19=nil;local v20=nil;local function v21(v142) local v143=182 -(156 + 26) ;while true do if (v143==(0 + 0)) then shared.Cider=v142;v15=v142;v143=1;end if (v143==(1 -0)) then if v18 then v18();end break;end end end _Conns={};_Draws={};function TrackConn(v144) local v145=0;while true do if (v145==(164 -(149 + 15))) then _Conns[ #_Conns + 1 ]=v144;return v144;end end end MathRandom,MathFloor,MathCeil,MathClamp,MathAbs,MathSqrt,MathAtan2=math.random,math.floor,math.ceil,math.clamp,math.abs,math.sqrt,math.atan2;MathHuge,MathMin,MathMax,MathRad,MathDeg,MathPi,MathNoise=math.huge,math.min,math.max,math.rad,math.deg,math.pi,math.noise;Vector2New,Vector3New,Vector3Zero=Vector2.new,Vector3.new,Vector3.zero;CFrameNew,CFrameAngles,CFrameIdentity=CFrame.new,CFrame.Angles,CFrame.identity;Color3RGB,Color3HSV,UDim2New=Color3.fromRGB,Color3.fromHSV,UDim2.new;RayNew,RaycastParamsNew=Ray.new,RaycastParams.new;Spawn,Defer,Delay,Wait,Cancel=task.spawn,task.defer,task.delay,task.wait,task.cancel;Tick,Clock,Typeof,Unpack,Select=tick,os.clock,typeof,unpack,select;Tonumber,Tostring,Pcall,Xpcall=tonumber,tostring,pcall,xpcall;function ErrHandler(v146) local v147=960 -(890 + 70) ;while true do if (v147==0) then warn("nigger heres an error:",tostring(v146));return v146;end end end local v53=shared.__cider_state;State={Connections={},Targets={Silent=(v53 and v53.Targets and v53.Targets.Silent) or nil ,Aimbot=(v53 and v53.Targets and v53.Targets.Aimbot) or nil ,Triggerbot=(v53 and v53.Targets and v53.Targets.Triggerbot) or nil },Toggles={SilentAim=(v53 and v53.Toggles and (v53.Toggles.SilentAim~=nil) and v53.Toggles.SilentAim) or true ,Aimbot=(v53 and v53.Toggles and (v53.Toggles.Aimbot~=nil) and v53.Toggles.Aimbot) or true ,Triggerbot=(v53 and v53.Toggles and (v53.Toggles.Triggerbot~=nil) and v53.Toggles.Triggerbot) or true },Cache={Previous={},Tracked={}},Ticks={Triggerbot=117 -(39 + 78) ,Rage={}},AutoShootStatus="Idle",TriggerState=false,CanTriggerbotShoot=true,LastTriggerShot=0,SpeedModificationsActive=false,SpeedModificationHumanoid=nil,OriginalWalkSpeed=nil,JumpModificationsActive=false,IsShooting=false,SorterActive=false,DoubleTapActive=false,Future={LastNetworkSample=0,Ping=482 -(14 + 468) ,Jitter=0,LastTarget=nil,LastWeaponClass=nil,CurrentValues=nil},AntiFuture={Active=false,Connection=nil,LastSpoofedVelocity=nil,LastServerPosition=nil,LastSpoofTime=nil,BoostPending=false},PanicGround={AutoTriggered=false},CamLock={Active=false,Target=nil}};shared.__cider_state=State;local function v55(v148) if  not v148 then return;end local v149=v148.SpeedModificationHumanoid;local v150=v148.OriginalWalkSpeed;if (v149 and v149.Parent and (v150~=nil)) then Pcall(function() v149.WalkSpeed=v150;end);end v148.SpeedModificationHumanoid=nil;v148.OriginalWalkSpeed=nil;end CachedIgnored=v2:FindFirstChild("Ignored");CachedBush=v2:FindFirstChild("Bush");CachedSkinAssets=v4:FindFirstChild("SkinAssets");CachedAnimations=v4:FindFirstChild("Animations") or v4:FindFirstChild("ClientAnimations") ;ShootFilter={};RageFilter={};EnumExclude=Enum.RaycastFilterType.Exclude;EnumJumping=Enum.HumanoidStateType.Jumping;EnumFreefall=Enum.HumanoidStateType.Freefall;EnumLanded=Enum.HumanoidStateType.Landed;EnumAir=Enum.Material.Air;EnumDead=Enum.HumanoidStateType.Dead;EnumFallingDown=Enum.HumanoidStateType.FallingDown;EnumRagdoll=Enum.HumanoidStateType.Ragdoll;EnumGettingUp=Enum.HumanoidStateType.GettingUp;function BuildFilter(v153,v154) local v155=0 -0 ;local v156;while true do if (v155==(2 -1)) then if CachedIgnored then local v2835=0 + 0 ;while true do if (v2835==0) then v156=v156 + 1 + 0 ;v153[v156]=CachedIgnored;break;end end end if CachedBush then local v2836=0 + 0 ;while true do if (v2836==0) then v156=v156 + 1 ;v153[v156]=CachedBush;break;end end end v155=1 + 1 ;end if (v155==(1 + 1)) then for v2578=v156 + (1 -0) , #v153 do v153[v2578]=nil;end return v153;end if (v155==0) then v156=0 + 0 ;if v154 then v156=v156 + 1 ;v153[v156]=v154;end v155=1;end end end function ResolveBodyEffect(v157,v158) local v159=v157 and v157.Character ;local v160=v159 and v159:FindFirstChild("BodyEffects") ;return (v160 and v160:FindFirstChild(v158) and v160[v158].Value) or false ;end function ResolveConstraint(v161,v162) local v163=0;local v164;while true do if (v163==(0 -0)) then v164=v161 and v161.Character ;return (v164 and (v164:FindFirstChild(v162)~=nil)) or false ;end end end function ResolveRemote(v165) return function() return v4:FindFirstChild(v165);end;end function Stub() return false;end Games={[25454424 + 982996642 ]={Name="Da Hood",Updater="UpdateMousePosI2",Knocked=function(v166) return ResolveBodyEffect(v166,"K.O");end,Grabbed=function(v167) return ResolveConstraint(v167,"GRABBING_CONSTRAINT");end,Remote=ResolveRemote("MainEvent"),Args={"Handle","MuzzlePos","HitPosition","HitInstance","HitNormal"},Method="Emulate",Hooks=nil},sixseveeen={Name="Das Hood",Updater="UpdateMousePos",Knocked=function(v168) return ResolveBodyEffect(v168,"K.O");end,Grabbed=function(v169) return ResolveConstraint(v169,"GRABBING_CONSTRAINT");end,Remote=ResolveRemote("MainEvent"),Args={"Handle","MuzzlePos","HitInstance","MuzzlePos","HitPosition"},Method="Mouse.Hit",Hooks=nil},Universal={Name="Universal",Updater=nil,Knocked=function(v170) return ResolveBodyEffect(v170,"K.O");end,Grabbed=function(v171) return ResolveConstraint(v171,"GRABBING_CONSTRAINT");end,Remote=ResolveRemote("MainEvent"),Args=nil,Method="Hooks",Hooks="Raycast"}};Fallback={Name="Universal",Updater="UpdateMousePos",Knocked=Stub,Grabbed=Stub,Remote=ResolveRemote("MainEvent")};CurrentGame=Games[game.GameId] or Games['Universal'] or Fallback ;function CleanScripts(v172) if  not v172 then return;end for v905,v906 in next,v172:GetDescendants() do if v906:IsA("LocalScript") then v906:Destroy();end end TrackConn(v172.DescendantAdded:Connect(function(v907) if v907:IsA("LocalScript") then v907:Destroy();end end));end if (CurrentGame.Name=="Da Hood") then function v17(v1841,v1842) if  not v1841 then return;end local v1843=v14();local v1844=v1843['Utilities']["Skin Changer"];if ( not v1844 or  not v1844['Enabled']) then return;end local v1845=v1844['Skins'] and v1844['Skins'][v1841.Name] ;if ( not v1842 and (v16[v1841]==v1845)) then return;end v16[v1841]=v1845;local v1847=CachedSkinAssets;if  not v1847 then return;end local v1848;if (v1841.Name=="[Knife]") then v1848=v1847:FindFirstChild("KnifeSkins") and v1847.KnifeSkins:FindFirstChild(v1845) ;else v1848=v1847:FindFirstChild("GunSkins") and v1847.GunSkins:FindFirstChild(v1845) ;end local v1849=v1841:FindFirstChild("Default");if  not v1849 then return;end local v1850=v1849:FindFirstChild("Mesh");if v1850 then v1850:Destroy();end if v1848 then local v2580=0;local v2581;while true do if (v2580==(0 -0)) then v2581=v1848:FindFirstChildWhichIsA("BasePart") or v1848:FindFirstChild("Mesh") ;if v2581 then local v3919=v2581:Clone();v3919.Parent=v1849;v3919.Name="Mesh";end break;end end end local v1851=v1841:FindFirstChild("Handle");if v1851 then v1851:SetAttribute("SkinName",v1845 or "" );end end function v18() local v1852=0 + 0 ;local v1853;local v1854;while true do if (v1852==(4 -3)) then v1854=v10:FindFirstChild("Backpack");if v1854 then for v3727,v3728 in next,v1854:GetChildren() do if v3728:IsA("Tool") then v17(v3728);end end end break;end if (0==v1852) then v1853=v10.Character;if v1853 then for v3729,v3730 in next,v1853:GetChildren() do if v3730:IsA("Tool") then v17(v3730);end end end v1852=1711 -(1596 + 114) ;end end end function v19(v1855) local v1856=0;while true do if (1==v1856) then TrackConn(v1855.ChildAdded:Connect(function(v3179) if v3179:IsA("Tool") then local v3731=0;while true do if (v3731==0) then CleanScripts(v3179);Defer(CleanScripts,v3179);v3731=2 -1 ;end if (v3731==(714 -(164 + 549))) then Defer(v17,v3179);break;end end end end));break;end if (v1856==(1438 -(1059 + 379))) then if  not v1855 then return;end for v3180,v3181 in next,v1855:GetChildren() do if v3181:IsA("Tool") then CleanScripts(v3181);v17(v3181);end end v1856=1 -0 ;end end end function v20(v1857) if  not v1857 then return;end for v2243,v2244 in next,v1857:GetChildren() do if v2244:IsA("Tool") then v17(v2244);end end TrackConn(v1857.ChildAdded:Connect(function(v2245) if v2245:IsA("Tool") then Defer(v17,v2245);end end));end if v10.Character then v19(v10.Character);end if v10:FindFirstChild("Backpack") then v20(v10.Backpack);end TrackConn(v10.CharacterAdded:Connect(v19));TrackConn(v10.ChildAdded:Connect(function(v1858) if v1858:IsA("Backpack") then v20(v1858);end end));end PositionCache={};PositionHistorySize=5 + 3 ;PositionSampleInterval=0.03;LastPositionCacheUpdate=0;PositionEntryPool={};PositionPoolSize=0 + 0 ;function AcquireEntry(v173,v174) local v175;if (PositionPoolSize>0) then v175=PositionEntryPool[PositionPoolSize];PositionEntryPool[PositionPoolSize]=nil;PositionPoolSize=PositionPoolSize-(393 -(145 + 247)) ;v175.Position=v173;v175.Time=v174;else v175={Position=v173,Time=v174};end return v175;end function ReleaseEntry(v176) PositionPoolSize=PositionPoolSize + 1 + 0 ;PositionEntryPool[PositionPoolSize]=v176;end function UpdatePositionCache() local v178=0;local v179;while true do if (v178==(0 + 0)) then v179=Clock();if ((v179-LastPositionCacheUpdate)<PositionSampleInterval) then return;end v178=2 -1 ;end if (v178==(1 + 0)) then LastPositionCacheUpdate=v179;for v2582,v2583 in next,v1:GetPlayers() do if ((v2583~=v10) and v2583.Character) then local v3182=0 + 0 ;local v3183;while true do if (v3182==0) then v3183=v2583.Character:FindFirstChild("HumanoidRootPart");if v3183 then if  not PositionCache[v2583] then PositionCache[v2583]={};end local v4186=PositionCache[v2583];local v4187=v4186[1 -0 ];if ( not v4187 or ((v179-v4187.Time)>=PositionSampleInterval)) then local v4395=720 -(254 + 466) ;while true do if (v4395==(560 -(544 + 16))) then table.insert(v4186,2 -1 ,AcquireEntry(v3183.Position,v179));if ( #v4186>PositionHistorySize) then ReleaseEntry(v4186[ #v4186]);v4186[ #v4186]=nil;end break;end end end end break;end end end end v178=630 -(294 + 334) ;end if (v178==(255 -(236 + 17))) then for v2584 in next,PositionCache do if  not v2584.Parent then PositionCache[v2584]=nil;end end break;end end end function GetDeltaVelocity(v180) local v181=GetSmoothedTargetMotion(v180);return v181;end function GetSmoothedTargetMotion(v182) local v183=PositionCache[v182];if ( not v183 or ( #v183<(1 + 1))) then return Vector3Zero,Vector3Zero;end local v184=v183[1];local v185=MathMin( #v183,4 + 0 );local v186=v183[v185];local v187=v184.Time-v186.Time ;if (v187<=(0.001 -0)) then return Vector3Zero,Vector3Zero;end local v188=(v184.Position-v186.Position)/v187 ;local v189=Vector3Zero;if ( #v183>=(18 -14)) then local v1862=0;local v1863;local v1864;local v1865;while true do if (v1862==(1 + 0)) then v1865=((v183[1 + 0 ].Time + v183[796 -(413 + 381) ].Time) -(v183[3].Time + v183[1 + 3 ].Time)) * 0.5 ;if ((v1863>(0.001 -0)) and (v1864>(0.001 -0)) and (v1865>(1970.001 -(582 + 1388)))) then local v3559=0 -0 ;local v3560;local v3561;while true do if (v3559==(1 + 0)) then v189=(v3560-v3561)/v1865 ;break;end if (v3559==0) then v3560=(v183[365 -(326 + 38) ].Position-v183[2].Position)/v1863 ;v3561=(v183[3].Position-v183[11 -7 ].Position)/v1864 ;v3559=1 -0 ;end end end break;end if (v1862==(620 -(47 + 573))) then v1863=v183[1 + 0 ].Time-v183[2].Time ;v1864=v183[12 -9 ].Time-v183[4].Time ;v1862=1 -0 ;end end end if (v188.Magnitude>350) then v188=Vector3Zero;end if (v189.Magnitude>1500) then v189=Vector3Zero;end return v188,v189;end LureFutureBaselines={Shotguns=1664.018 -(1269 + 395) ,Pistols=0.023,Others=492.013 -(76 + 416) };function UpdateFutureNetwork() local v190=State.Future;local v191=Clock();if ((v191-(v190.LastNetworkSample or (443 -(319 + 124))))<(0.1 -0)) then return;end v190.LastNetworkSample=v191;local v193;local v194,v195=Pcall(function() return v10:GetNetworkPing();end);if (v194 and (type(v195)=="number") and (v195>=(1007 -(564 + 443)))) then v193=((v195>(2 -1)) and (v195/(1458 -(337 + 121)))) or v195 ;end if  not v193 then return;end local v196=0.15 -0 ;if (v190.Ping<=(0 -0)) then local v1866=1911 -(1261 + 650) ;while true do if (v1866==0) then v190.Ping=v193;v190.Jitter=0 + 0 ;break;end end else v190.Jitter=v190.Jitter + ((MathAbs(v193-v190.Ping ) -v190.Jitter) * v196) ;v190.Ping=v190.Ping + ((v193-v190.Ping) * v196) ;end end function GetLureFutureValues(v197,v198,v199) UpdateFutureNetwork();local v200=State.Future;local v201=GetWeaponClass(v198 or "" );if ((v200.LastTarget~=v197) or (v200.LastWeaponClass~=v201)) then local v1869=0 -0 ;while true do if (1==v1869) then v200.CurrentValues=nil;break;end if (v1869==(1817 -(772 + 1045))) then v200.LastTarget=v197;v200.LastWeaponClass=v201;v1869=1 + 0 ;end end end local v202=(v199 and v199['Values']) or nil ;local v203=(v202 and tonumber(v202['X'])) or LureFutureBaselines[v201] or LureFutureBaselines.Others ;local v204=(v202 and tonumber(v202['Y'])) or v203 ;local v205=(v202 and tonumber(v202['Z'])) or v203 ;local v206=((v200.Ping or (144 -(102 + 42))) * 0.5) + (1844.01 -(1524 + 320)) + ((v200.Jitter or (1270 -(1049 + 221))) * (156.5 -(18 + 138))) ;local v207=0.01 -0 ;local v208=0.2;local v209=1102.15 -(67 + 1035) ;local v210=v200.CurrentValues;local v211=Vector3New(MathClamp(v203 + v206 ,v207,v208),MathClamp(v204 + v206 ,v207,v208),MathClamp(v205 + v206 ,v207,v208));if v210 then v210=v210 + ((v211-v210) * v209) ;else v210=v211;end v200.CurrentValues=v210;local v213,v214=GetSmoothedTargetMotion(v197);if (v213.Magnitude<(350 -(136 + 212))) then v213=Vector3Zero;v214=Vector3Zero;end return v210,v213,v214;end function ApplyPrediction(v215,v216,v217) local v218=v216.Character;if  not v218 then return v215;end local v219=v218:FindFirstChild("HumanoidRootPart");if  not v219 then return v215;end local v220=v217['Prediction'];if ( not v220 or (v220['Enabled']~=true)) then return v215;end local v221=GetDeltaVelocity(v216);local v222=v220['Values'] or {} ;local v223=v222['X'] or (0.13 -0) ;local v224=v222['Y'] or (0.13 + 0) ;local v225=v222['Z'] or (0.13 + 0) ;return v215 + (v221 * Vector3New(v223,v224,v225)) ;end function ApplyFuture(v226,v227,v228,v229) local v230=v227 and v227.Character ;if  not v230 then return v226;end local v231=v230:FindFirstChild("HumanoidRootPart");if  not v231 then return v226;end if  not v229 then return v226;end if (v229['Enabled']==false) then return v226;end local v232=GetWeaponClass(v228 or "" );local v233=v229[v232] or v229['Others'] ;local v234=v229['Lure']==true ;if  not v234 then local v1870=0;local v1871;local v1872;while true do if ((1605 -(240 + 1364))==v1870) then return v226 + (v1872 * Vector3New(v1871['X'] or 0.02301 ,v1871['Y'] or 0.08002 ,v1871['Z'] or 0.013005 )) ;end if (v1870==(1082 -(1050 + 32))) then v1871=(v233 and v233['Values']) or {} ;v1872=GetDeltaVelocity(v227);v1870=3 -2 ;end end end local v235,v236,v237=GetLureFutureValues(v227,v228,v233);local v238=v226 + (v236 * v235) ;local v239=Vector3New(v235.X * v235.X ,v235.Y * v235.Y ,v235.Z * v235.Z ) * 0.5 ;v238=v238 + Vector3New(v237.X * v239.X ,v237.Y * v239.Y ,v237.Z * v239.Z ) ;return v238;end VisibilityParams=RaycastParamsNew();VisibilityParams.FilterType=EnumExclude;VisibilityParams.IgnoreWater=true;function IsTyping() return v5:GetFocusedTextBox()~=nil ;end function IsCrew(v240) local v241=0;local v242;local v243;while true do if (v241==(1 + 0)) then return (v242 and v243 and (v242==v243)) or false ;end if (v241==(1055 -(331 + 724))) then v242=v240 and v240:GetAttribute("CrewID") ;v243=v10:GetAttribute("CrewID");v241=1 + 0 ;end end end VisibilityFilter={};VisibilityCache={};VisibilityCacheFrame=0;function IsVisible(v244,v245) local v246=MathFloor((Clock() * (704 -(269 + 375))) + 0.5 );if (v246~=VisibilityCacheFrame) then local v1873=0;while true do if (v1873==(725 -(267 + 458))) then VisibilityCacheFrame=v246;table.clear(VisibilityCache);break;end end end if (v245 and (VisibilityCache[v245]~=nil)) then return VisibilityCache[v245];end local v247=v12.CFrame.Position;local v248=v244-v247 ;local v249=v10.Character;local v250=0;if v249 then local v1874=0 + 0 ;while true do if (v1874==(0 -0)) then v250=v250 + (819 -(667 + 151)) ;VisibilityFilter[v250]=v249;break;end end end if CachedIgnored then local v1875=1497 -(1410 + 87) ;while true do if ((1897 -(1504 + 393))==v1875) then v250=v250 + (2 -1) ;VisibilityFilter[v250]=CachedIgnored;break;end end end if CachedBush then local v1876=0;while true do if ((0 -0)==v1876) then v250=v250 + 1 ;VisibilityFilter[v250]=CachedBush;break;end end end for v908=v250 + (797 -(461 + 335)) , #VisibilityFilter do VisibilityFilter[v908]=nil;end VisibilityParams.FilterDescendantsInstances=VisibilityFilter;local v252=v2:Raycast(v247,v248,VisibilityParams);local v253=true;if v252 then local v1877=v252.Instance;if v1877 then local v2585=v1877:FindFirstAncestorOfClass("Model");if ( not v2585 or  not v2585:FindFirstChildOfClass("Humanoid")) then v253=false;end else v253=false;end end if v245 then VisibilityCache[v245]=v253;end return v253;end function GetGroundPosition(v254,v255) local v256=RaycastParams.new();v256.FilterType=EnumExclude;v256.FilterDescendantsInstances=v255 or {} ;local v259=v2:Raycast(v254,Vector3New(0 + 0 , -2000,1761 -(1730 + 31) ),v256);return (v259 and v259.Position) or nil ;end function RunPanicGround() local v260=1667 -(728 + 939) ;local v261;local v262;local v263;local v264;while true do if (v260==(6 -4)) then v264=GetGroundPosition(v262.Position,{v261});if  not v264 then return;end v260=6 -3 ;end if (v260==0) then v261=v10.Character;v262=v261 and v261:FindFirstChild("HumanoidRootPart") ;v260=1;end if (v260==(1069 -(138 + 930))) then v263=v261 and v261:FindFirstChildOfClass("Humanoid") ;if  not v262 then return;end v260=2 + 0 ;end if (v260==3) then v262.CFrame=CFrameNew(v264.X,v264.Y + 3 + 0 ,v264.Z) * (v262.CFrame-v262.CFrame.Position) ;v262.AssemblyLinearVelocity=Vector3Zero;v260=4 + 0 ;end if (v260==(16 -12)) then v262.AssemblyAngularVelocity=Vector3Zero;if v263 then local v2847=0;while true do if (v2847==0) then v263.Jump=false;v263:ChangeState(EnumLanded);break;end end end break;end end end function GetAntiFutureBoostMultiplier(v265) local v266=v265["Adjust Dynamically"];if ( not v266 or  not v266['Enabled'] or  not State.AntiFuture.BoostPending) then return 1767 -(459 + 1307) ;end State.AntiFuture.BoostPending=false;return v266['Multiplier'] or (1873 -(474 + 1396)) ;end function TriggerAntiFutureBoost() local v268=0 -0 ;local v269;local v270;while true do if (v268==(1 + 0)) then if ( not v269['Enabled'] or  not State.AntiFuture.Active or  not v270 or  not v270['Enabled']) then return;end State.AntiFuture.BoostPending=true;break;end if (v268==(0 + 0)) then v269=v14()["Anti Future"];v270=v269["Adjust Dynamically"];v268=1;end end end function DistancePointToSegment(v271,v272,v273) local v274=v273-v272 ;local v275=v274:Dot(v274);if (v275<=(0.000001 -0)) then return (v271-v272).Magnitude;end local v276=MathClamp((v271-v272):Dot(v274)/v275 ,0 + 0 ,3 -2 );local v277=v272 + (v274 * v276) ;return (v271-v277).Magnitude;end function RunAntiFutureToggle() local v278=v14()["Anti Future"];if  not v278['Enabled'] then return;end if State.AntiFuture.Active then local v1879=0 -0 ;while true do if (v1879==(594 -(562 + 29))) then return;end if (v1879==2) then State.AntiFuture.BoostPending=false;if State.AntiFuture.Connection then State.AntiFuture.Connection:Disconnect();State.AntiFuture.Connection=nil;end v1879=3 + 0 ;end if (v1879==(1419 -(374 + 1045))) then State.AntiFuture.Active=false;State.AntiFuture.LastSpoofedVelocity=nil;v1879=1;end if (v1879==(1 + 0)) then State.AntiFuture.LastServerPosition=nil;State.AntiFuture.LastSpoofTime=nil;v1879=5 -3 ;end end end State.AntiFuture.Active=true;State.AntiFuture.BoostPending=false;local function v281(v910,v911) local v912=0;local v913;while true do if ((638 -(448 + 190))==v912) then v913=MathRandom(v910,v911);if (MathRandom(0 + 0 ,1)==0) then v913= -v913;end v912=1 + 0 ;end if (v912==(1 + 0)) then return v913;end end end State.AntiFuture.Connection=TrackConn(v3.Heartbeat:Connect(function() local v914=v14()["Anti Future"];local v915=v914['Options'] or {} ;local v916=v10.Character;local v917=v916 and v916:FindFirstChild("HumanoidRootPart") ;local v918=v916 and v916:FindFirstChildOfClass("Humanoid") ;if  not State.AntiFuture.Active then local v2253=0 -0 ;while true do if (v2253==(5 -3)) then if State.AntiFuture.Connection then local v3733=0;while true do if (v3733==(1494 -(1307 + 187))) then State.AntiFuture.Connection:Disconnect();State.AntiFuture.Connection=nil;break;end end end return;end if (v2253==1) then State.AntiFuture.LastSpoofTime=nil;State.AntiFuture.BoostPending=false;v2253=7 -5 ;end if (0==v2253) then State.AntiFuture.LastSpoofedVelocity=nil;State.AntiFuture.LastServerPosition=nil;v2253=1;end end end if  not v917 then return;end if (v915["Air Only"] and v918) then local v2254=v918:GetState();if ((v2254~=EnumJumping) and (v2254~=EnumFreefall)) then State.AntiFuture.LastServerPosition=v917.Position;State.AntiFuture.LastSpoofedVelocity=nil;State.AntiFuture.LastSpoofTime=nil;return;end end local v919=v915["Spoof Chance"] or 100 ;if ((v919<(234 -134)) and (MathRandom(2 -1 ,100)>v919)) then State.AntiFuture.LastServerPosition=v917.Position;State.AntiFuture.LastSpoofedVelocity=nil;State.AntiFuture.LastSpoofTime=nil;return;end local v920=(v915['Strength'] or (1083 -(232 + 451))) * GetAntiFutureBoostMultiplier(v914) ;local v921=v915['Randomness'] or (3 + 0) ;if (v921<(1 + 0)) then v921=565 -(510 + 54) ;end local v922=v915['Vertical']~=false ;local v923=v917.AssemblyLinearVelocity;local v924;if (v914['Direction']=="Vertical") then v924=Vector3New(0 -0 ,(v922 and v281(v920,v920 * v921 )) or 0 ,36 -(13 + 23) );elseif (v914['Direction']=="Behind") then local v2857=Vector3New(v923.X,0 -0 ,v923.Z);local v2858=((v2857.Magnitude>1) and  -v2857.Unit) or  -v917.CFrame.LookVector ;local v2859=MathRandom(v920,v920 * v921 );local v2860=(v922 and v281(v920,v920 * v921 )) or (0 -0) ;v924=Vector3New(v2858.X * v2859 ,v2860,v2858.Z * v2859 );elseif (v914['Direction']=="Kinematic") then local v3563=v2.Gravity or (355.2 -159) ;local v3564=v920/MathMax(v923.Magnitude,1104 -(830 + 258) ) ;local v3565= -v923 * v3564 ;local v3566=(v922 and (v3565.Y-((v3563 * MathRandom(v920,v920 * v921 ))/(352 -252)))) or (0 + 0) ;v924=Vector3New(v3565.X,v3566,v3565.Z);else v924=Vector3New(v281(v920,v920 * v921 ),(v922 and v281(v920,v920 * v921 )) or (0 + 0) ,v281(v920,v920 * v921 ));end State.AntiFuture.LastSpoofedVelocity=v924;State.AntiFuture.LastServerPosition=v917.Position;State.AntiFuture.LastSpoofTime=Clock();v917.AssemblyLinearVelocity=v924;v3.RenderStepped:Wait();v917.AssemblyLinearVelocity=v923;end));end function PassesConditions(v283,v284) local v285=v14()['Main']['Checks'];local v286=(v284 and v285[v284]) or {} ;local v287=v283 and v283.Character ;if  not v287 then return false;end local v288=v287:FindFirstChildOfClass("Humanoid");if v286['Knocked'] then local v1880=1441 -(860 + 581) ;while true do if (v1880==(0 -0)) then if ( not v288 or (v288.Health<=0) or (v288:GetState()==EnumDead)) then return false;end if CurrentGame.Knocked(v283) then return false;end break;end end end if v286['Grabbed'] then if CurrentGame.Grabbed(v283) then return false;end end if v286['Vehicle'] then if (v288 and v288.Sit) then return false;end end if v286['Visible'] then local v1881=0 + 0 ;local v1882;while true do if (v1881==0) then v1882=v287:FindFirstChild("HumanoidRootPart");if (v1882 and  not IsVisible(v1882.Position,v283)) then return false;end break;end end end if v286['Tool'] then local v1883=v10.Character;if (v1883 and  not v1883:FindFirstChildOfClass("Tool")) then return false;end end if v286["Self Knocked"] then if CurrentGame.Knocked(v10) then return false;end end if v286['Crew'] then if IsCrew(v283) then return false;end end return true;end MuzzleOffsets={["[Deagle]"]=CFrameNew(241 -(237 + 4) ,0.382, -1.568),["[Revolver]"]=CFrameNew( -(0.1 -0),0.4 -0 ,1.8 -0 ),["[Double-Barrel SG]"]=CFrameNew(0 + 0 ,0.25, -(2.5 + 0)),["[TacticalShotgun]"]=CFrameNew(0 -0 ,0.7, -(2.8 + 1)),["[Silencer]"]=CFrameNew(0 + 0 ,1426.4 -(85 + 1341) ,1.3 -0 ),["[SMG]"]=CFrameNew(5.5 -3 ,372.35 -(45 + 327) ,0),["[Rifle]"]=CFrameNew(0 -0 ,502.2 -(444 + 58) , -(1.7 + 0)),["[Shotgun]"]=CFrameNew(0 + 0 ,0.4 + 0 ,5.4 -3 ),["[Flintlock]"]=CFrameNew(0,1732.25 -(64 + 1668) ,1975.5 -(1227 + 746) ),["[AK47]"]=CFrameNew(0.6,0.25,0 -0 ),["[Glock]"]=CFrameNew(0,0.4,1.5 -0 ),["[AR]"]=CFrameNew(494 -(415 + 79) ,0.3 + 0 , -(493 -(142 + 349))),["[AUG]"]=CFrameNew(0,0.3 + 0 , -(2.5 -0)),["[Drum-Shotgun]"]=CFrameNew(0 + 0 ,0.4 + 0 , -(5 -3)),["[DrumGun]"]=CFrameNew(1864 -(1710 + 154) ,318.3 -(200 + 118) , -(1.5 + 0)),["[LMG]"]=CFrameNew(0,0.3 -0 , -2.5),["[P90]"]=CFrameNew(0 -0 ,0.3 + 0 , -(1.8 + 0)),["[SilencerAR]"]=CFrameNew(0 + 0 ,0.3 + 0 , -(4 -2))};ShotgunWeapons={["[Double-Barrel SG]"]=true,["[TacticalShotgun]"]=true,["[Tactical Shotgun]"]=true,["[Tactical-Shotgun]"]=true,["[Shotgun]"]=true,["[Drum-Shotgun]"]=true};PistolWeapons={["[Revolver]"]=true,["[Silencer]"]=true,["[Glock]"]=true,["[Deagle]"]=true};local v67=function(v289) local v290=1250 -(363 + 887) ;while true do if (v290==(0 -0)) then if ShotgunWeapons[v289] then return "Shotguns";end if PistolWeapons[v289] then return "Pistols";end v290=4 -3 ;end if (v290==1) then return "Others";end end end;local v68=function(v291) local v292=0 + 0 ;local v293;local v294;local v295;local v296;local v297;while true do if ((2 -1)==v292) then if v294 then v293=v294.Value;end v295=v14()['Modifications']["Delay Changer"];v292=2;end if ((3 + 0)==v292) then v297=v295["Weapon Configs"];if (v297 and v297['Enabled'] and v291) then local v2862=v67(v291.Name);v296=v297[v2862]['Delay'] or v296 ;end v292=1668 -(674 + 990) ;end if (v292==4) then return v296;end if (0==v292) then v293=0.3 + 0 ;v294=v291 and v291:FindFirstChild("ShootingCooldown") ;v292=1 + 0 ;end if (v292==2) then if  not v295['Enabled'] then return v293;end v296=v295['Delay'];v292=3;end end end;local v69=nil;local v70=false;local v71=[=[
+	['Main'] = {
+		['Silent Aim'] = {
+			['Selection'] = 'Target', --// Automatic / Target
+		},
+		['Triggerbot'] = {
+			['Selection'] = 'Target',
+		},
+
+		['Brand'] = { --// AKA 'Show Hotkeys'
+			['Enabled'] = true, 
+			['Feature'] = Color3.fromRGB(255, 255, 255),
+			['Accent'] = Color3.fromRGB(255, 200, 0),
+			['Position'] = 'Low Center',
+		},
+
+		['Checks'] = {
+			['Targeting'] = {
+				['Knocked'] = true, --// Used for target selection for "Target" Mode
+				['Grabbed'] = true,
+				['Vehicle'] = true,
+				['Visible'] = false,
+				['Tool'] = false,
+				['Self Knocked'] = false,
+				['Crew'] = true,
+			},
+			['Aimbot'] = {
+				['Knocked'] = true,
+				['Grabbed'] = true,
+				['Vehicle'] = true,
+				['Visible'] = false,
+				['Tool'] = false,
+				['Self Knocked'] = false,
+				['Crew'] = true,
+			},
+			['Silent Aim'] = {
+				['Knocked'] = true,
+				['Grabbed'] = true,
+				['Vehicle'] = true,
+				['Visible'] = true,
+				['Tool'] = false,
+				['Self Knocked'] = false,
+				['Crew'] = true,
+			},
+			['Triggerbot'] = {
+				['Knocked'] = true,
+				['Grabbed'] = true,
+				['Vehicle'] = true,
+				['Visible'] = true,
+				['Tool'] = false,
+				['Self Knocked'] = false,
+				['Crew'] = true,
+			},
+		},
+
+		['Binds'] = {
+			['Target'] = 'C',
+			['Aimbot'] = 'C',
+			['CamLock'] = 'Q',
+			['ESP'] = 'B',
+			['Walk Speed'] = 'V',
+			['Jump Power'] = 'Z',
+			['Double Tap'] = 'Y',
+			['Sorter'] = 'U',
+			['Anti Future'] = 'N',
+			['Panic Ground'] = 'X',
+		},
+
+		['Gun Whitelist'] = {
+			['Silent'] = {'[Double-Barrel SG]', '[Revolver]', '[TacticalShotgun]'},
+			['Aimbot'] = {'[Double-Barrel SG]', '[Revolver]', '[TacticalShotgun]'},
+			['Triggerbot'] = {'[Double-Barrel SG]', '[Revolver]', '[TacticalShotgun]'},
+		},
+
+		['FOV'] = {
+			['Silent'] = {
+				['Options'] = '2D',
+				['Width'] = {1, 1},
+				['Height'] = {1, 1},
+				['3D'] = {
+					['Width'] = 6,
+					['Height'] = 6,
+					['Depth'] = 10,
+				},
+				['Visualize'] = {
+					['Enabled'] = false,
+					['Color'] = Color3.fromRGB(255, 255, 255),
+				},
+			},
+			['Aimbot'] = {
+				['Options'] = '2D',
+				['Width'] = {1, 1},
+				['Height'] = {1, 1},
+				['3D'] = {
+					['Width'] = 6,
+					['Height'] = 6,
+					['Depth'] = 10,
+				},
+				['Visualize'] = {
+					['Enabled'] = false,
+					['Color'] = Color3.fromRGB(255, 255, 255),
+				},
+			},
+			['Triggerbot'] = {
+				['Options'] = '2D',
+				['Width'] = {1, 1},
+				['Height'] = {1, 1},
+				['3D'] = {
+					['Width'] = 6,
+					['Height'] = 6,
+					['Depth'] = 10,
+				},
+				['Visualize'] = {
+					['Enabled'] = false,
+					['Color'] = Color3.fromRGB(255, 255, 255),
+				},
+			},
+		},
+	},
+
+	['Silent Aim'] = {
+		['Enabled'] = true,
+		['Max Range'] = math.huge,
+
+		['Closest Point'] = {
+			['Enabled'] = true,
+			['Mode'] = 'Scaled',
+			['Scale'] = 3,
+		},
+
+		['Target Tracer'] = {
+			['Enabled'] = false,
+			['Color'] = Color3.fromRGB(255, 85, 85),
+			['Thickness'] = 0.5,
+		},
+
+		['Target Part'] = {
+			['Part'] = 'Head',
+		},
+
+		['Prediction'] = {
+			['Enabled'] = false,
+			['Values'] = {
+				['X'] = 0,
+				['Y'] = 0,
+				['Z'] = 0,
+			},
+		},
+
+		['Auto Shoot'] = {
+			['Enabled'] = true,
+			['Wall Check'] = true,
+			['Limit To Weapon Range'] = true,
+		},
+
+		['Offscreen Targeting'] = {
+			['Enabled'] = true,
+		},
+
+		['Future'] = {
+			['Enabled'] = false,
+			['Lure'] = true,
+
+			['Pistols'] = {
+				['Values'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0,
+				},
+			},
+
+			['Shotguns'] = {
+				['Values'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0,
+				},
+			},
+
+			['Others'] = {
+				['Values'] = {
+					['X'] = 0,
+					['Y'] = 0,
+					['Z'] = 0,
+				},
+			},
+		},
+	},
+
+	['Aimbot'] = {
+		['Enabled'] = true,
+		['Mode'] = 'Toggle',
+		['Max Range'] = math.huge,
+
+		['Target Part'] = {
+			['Part'] = 'Head',
+		},
+
+		['Closest Point'] = {
+			['Enabled'] = true,
+			['Mode'] = 'Scaled',
+			['Scale'] = 3,
+		},
+
+		['Smoothing'] = {
+			['Enabled'] = true,
+			['X'] = 999,
+			['Y'] = 999,
+			['Z'] = 999,
+			['DistanceAdaptive'] = true, --// closer = faster snap, farther = smoother
+			['MinAlpha'] = 0.09,          --// alpha floor at max distance
+			['MaxAlpha'] = 0.28,          --// alpha ceiling at close range
+			['Easing'] = {
+				['In'] = 'Sine',           --// Sine feels more natural than Linear
+				['Out'] = 'Out',
+			},
+		},
+
+		['Prediction'] = {
+			['Enabled'] = false,
+			['Values'] = {
+				['X'] = 0,
+				['Y'] = 0,
+				['Z'] = 0,
+			},
+		},
+	},
+
+	['Triggerbot'] = {
+		['Enabled'] = false,
+		['Max Range'] = math.huge,
+		['Limit To Weapon Range'] = true,
+		['Delay'] = 0,
+
+		['Bind'] = {
+			['Key'] = 'MouseButton2',
+			['Mode'] = 'Mouse',
+			['Type'] = 'Hold',
+		},
+
+		['Trigger Mode'] = 'Raycast',
+
+		['Prediction'] = {
+			['Enabled'] = false,
+			['Values'] = {
+				['X'] = 0,
+				['Y'] = 0,
+				['Z'] = 0,
+			},
+		},
+
+		['Offscreen Targeting'] = {
+			['Enabled'] = false,
+		},
+	},
+
+	['CamLock'] = {
+		['Enabled'] = true,
+		['Bind'] = 'Q',
+		['Mode'] = 'Toggle', -- Q'ya basınca kilit aç/kapa
+		['Target Part'] = 'Head',
+
+		['Tracer'] = {
+			['Enabled'] = true,
+			['Color'] = Color3.fromRGB(255, 80, 80),
+			['Thickness'] = 1,
+			['From'] = 'Center', -- 'Center' veya 'Bottom'
+		},
+
+		['Smoothing'] = {
+			['Enabled'] = true,
+			['Speed'] = 0.18,
+			['MinSpeed'] = 0.08,
+			['MaxSpeed'] = 0.28,
+			['DistanceScale'] = true,
+		},
+
+		['Prediction'] = {
+			['Enabled'] = false,
+			['Values'] = {
+				['X'] = 0,
+				['Y'] = 0,
+				['Z'] = 0,
+			},
+		},
+
+		['Checks'] = {
+			['Knocked'] = true,
+			['Grabbed'] = true,
+			['Vehicle'] = true,
+			['Crew'] = true,
+			['Self Knocked'] = false,
+		},
+	},
+
+	['Name ESP'] = {
+		['Enabled'] = true,
+
+		['Color'] = Color3.fromRGB(255, 255, 255),
+		['Target Color'] = Color3.fromRGB(255, 200, 0),
+		['Text Size'] = 13,
+		['Font'] = 'SourceSansBold',
+	},
+
+	['Health Bar'] = {
+		['Enabled'] = true,
+		['Position'] = 'Bottom', --// 'Bottom' or 'Top'
+		['Show Armor'] = true, 
+		['Health Color'] = Color3.fromRGB(90, 255, 90),
+		['Armor Color'] = Color3.fromRGB(115, 115, 255),
+	},
+
+	['Modifications'] = {
+
+		['Double Tap'] = {
+			['Enabled'] = false,
+			['Mode'] = 'Toggle', --// 'Toggle' or 'Always'
+
+			['Weapon Configs'] = {
+				['Enabled'] = true,
+				['Shotguns'] = {
+					['Enabled'] = true,
+				},
+				['Pistols'] = {
+					['Enabled'] = true,
+				},
+				['Others'] = {
+					['Enabled'] = false,
+				},
+			},
+		},
+
+		['Spread Modifications'] = {
+			['Enabled'] = false,
+			['Value'] = 0.2,
+
+			['Randomizer'] = {
+				['Enabled'] = false,
+				['Min'] = 0.3,
+				['Max'] = 0.5,
+			},
+
+			['Spread Angles'] = {
+				['Enabled'] = false,
+				['Game'] = 'zee',
+			},
+		},
+
+		['Misc Gun Modifications'] = {
+			['No Recoil'] = false,
+
+			['Range Enhancer'] = {
+				['Enabled'] = true,
+				['Value'] = 16,
+				['Use Hooks'] = true,
+			},
+		},
+
+		['Das Hood'] = {
+			['Inf Range'] = {
+				['Enabled'] = false,
+			},
+
+			['Wallbang'] = {
+				['Enabled'] = false,
+			},
+
+			['Damage Modifier'] = {
+				['Enabled'] = false,
+				['Weapons'] = {
+					['Shotguns'] = {
+						['Enabled'] = true,
+						['Mode'] = 'full', --// "full", "half", "min".
+					},
+					['Pistols'] = {
+						['Enabled'] = true,
+						['Mode'] = 'full',
+					},
+					['Others'] = {
+						['Enabled'] = true,
+						['Mode'] = 'full',
+					},
+				},
+			},
+		},
+
+		['Delay Changer'] = {
+			['Enabled'] = false,
+			['Delay'] = 0,
+
+			['Weapon Configs'] = {
+				['Enabled'] = false,
+				['Shotguns'] = {
+					['Delay'] = 0.05,
+				},
+				['Pistols'] = {
+					['Delay'] = 0.01,
+				},
+				['Others'] = {
+					['Delay'] = 0.02,
+				},
+			},
+		},
+	},
+
+	['Movement'] = {
+		['Anti Trip'] = true,
+		['No Jump Cooldown'] = true,
+
+		['Speed Modifications'] = {
+			['Enabled'] = false,
+			['Mode'] = 'Number',
+
+			['Values'] = {
+				['Number'] = 600,
+				['Multiplier'] = 6.2,
+			},
+
+			['Conditions'] = {
+				['Normal'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Knife'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Reload'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Shooting'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Low Health'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+			},
+		},
+
+		['Jump Modifications'] = {
+			['Enabled'] = false,
+			['Spiderman Mode'] = false,
+			['Mode'] = 'Number',
+
+			['Values'] = {
+				['Number'] = 300,
+				['Multiplier'] = 4,
+			},
+
+			['Conditions'] = {
+				['Normal'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Knife'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Reload'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Shooting'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+				['Low Health'] = {
+					['Enabled'] = true,
+					['Multiplier'] = 1,
+				},
+			},
+		},
+	},
+
+	['Utilities'] = {
+
+		['Inventory Sorter'] = {
+			['Enabled'] = true,
+
+			['Order'] = {
+				[1] = '[Knife]',
+				[2] = '[Revolver]',
+				[3] = '[Double-Barrel SG]',
+				[4] = '[Tactical-Shotgun]',
+			},
+		},
+
+		['Skin Changer'] = {
+			['Enabled'] = true,
+
+			['Skins'] = {
+				['[Double-Barrel SG]'] = 'Galaxy',
+				['[Revolver]'] = 'Galaxy',
+				['[TacticalShotgun]'] = 'Galaxy',
+				['[Knife]'] = 'GPO-Knife',
+                ['[AUG]'] = 'GPOII',
+			},
+		},
+
+		['Animation Changer'] = {
+			['Enabled'] = true,
+
+			['Animations'] = {
+				['Idle'] = 'Zombie',
+				['Run'] = 'Zombie',
+				['Walk'] = 'Zombie',
+				['Jump'] = 'Ninja',
+				['Fall'] = 'Ninja',
+				['Climb'] = 'Ninja',
+				['Swim'] = 'Default',
+				['SwimIdle'] = 'Default',
+			},
+		},
+
+		['Hitbox Expander'] = {
+			['Enabled'] = true,
+			['Size'] = 15,
+			['Target Only'] = true,
+			['Visualize'] = false,
+		},
+	},
+
+	['Anti Stomp'] = {
+		['Enabled'] = false,
+	},
+
+	['Panic Ground'] = {
+		['Enabled'] = true,
+		['Auto'] = {
+			['Enabled'] = false,
+			['Health Amount'] = 25, --// Amount to automatically panic ground
+		},
+	},
+
+	['Anti Future'] = {
+		['Enabled'] = true, --// going way too high WILL get you banned, i reccomend around 10-150, 500+ for full rage.
+        --// I reccomend you increase the strength higher the ping.
+		['Options'] = {
+			['Strength'] = 75, --// Going too high makes the jitter way too visible to the server
+			['Randomness'] = 3,
+			['Spoof Chance'] = 100,
+			['Air Only'] = true,
+			['Vertical'] = true,
+		},
+		['Visualize Server'] = true,
+		['Direction'] = 'Kinematic', --// 'Random', 'Vertical', 'Behind' or 'Kinematic'.
+		['Adjust Dynamically'] = { --// Boosts the next spoof when an incoming shot's ray passes near you.
+			['Enabled'] = true,
+			['Multiplier'] = 3,
+		},
+	},
+
+	['Char'] = {
+		['Enabled'] = false,
+		['Target'] = 'richoffluau',
+		['Override Animation'] = false,
+
+		['Accessories'] = {
+			['Enabled'] = true,
+			['Headless'] = true,
+			['Korblox'] = false,
+                        ['Frigid Horns'] = true,
+		},
+
+		['Body Size'] = {
+			['Enabled'] = false,
+			['Mode'] = 'Skinny', --// 'Skinny', 'Normal' or 'Fat'.
+		},
+	},
+}
+
+--[[ 
+rolled cant code shit, indeded cant code shit, "xaii" is a alt of either indeded or rolled.
+i had to do nothing with the ai dogshit inside this  scirpt indeded used claude for this dogshit
+proof:
+https://cdn.discordapp.com/attachments/1529081577710026773/1530238731771052192/image.png?ex=6a64d960&is=6a6387e0&hm=7802d535dfbd8daaf488e2f49c31d89a52681093ffb7e7371bbcef9d42f9db7d&0uZ107WE
+proof of me coding (somewhat):
+https://youtu.be/8OvU-0vxiEs
+
+i never got paid for this, yes the skin changer and couple other stuff is pasted or poorly made but dont complain at me its indededs src
+everything is a result of indeded being too poor to not pay me (rdk) and beefing with random people, i never got paid a single dollar
+]]
+
+if getgenv().cidercc_cleanup then
+	getgenv().cidercc_cleanup();
+	getgenv().cidercc_cleanup = nil;
+end;
+
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
+local CoreGui = game:GetService("CoreGui")
+local GuiService = game:GetService("GuiService")
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local Camera = Workspace.CurrentCamera
+local Inset = GuiService:GetGuiInset().Y
+
+
+local function GetConfig()
+	return shared.Cider;
+end
+local Config = GetConfig();
+
+local LastAppliedSkins = {};
+local ApplySkinToTool = nil;
+local ReapplyAllSkins = nil;
+local WatchCharacter = nil;
+local WatchBackpack = nil;
+
+local function UpdateConfig(newConfig)
+	shared.Cider = newConfig;
+	Config = newConfig;
+	if ReapplyAllSkins then
+		ReapplyAllSkins();
+	end
+end
+_Conns = {};
+_Draws = {};
+
+function TrackConn(c) _Conns[#_Conns + 1] = c; return c; end;
+
+MathRandom, MathFloor, MathCeil, MathClamp, MathAbs, MathSqrt, MathAtan2 = math.random, math.floor, math.ceil, math.clamp, math.abs, math.sqrt, math.atan2;
+MathHuge, MathMin, MathMax, MathRad, MathDeg, MathPi, MathNoise = math.huge, math.min, math.max, math.rad, math.deg, math.pi, math.noise;
+
+Vector2New, Vector3New, Vector3Zero = Vector2.new, Vector3.new, Vector3.zero;
+CFrameNew, CFrameAngles, CFrameIdentity = CFrame.new, CFrame.Angles, CFrame.identity;
+Color3RGB, Color3HSV, UDim2New = Color3.fromRGB, Color3.fromHSV, UDim2.new;
+RayNew, RaycastParamsNew = Ray.new, RaycastParams.new;
+
+Spawn, Defer, Delay, Wait, Cancel = task.spawn, task.defer, task.delay, task.wait, task.cancel;
+
+Tick, Clock, Typeof, Unpack, Select = tick, os.clock, typeof, unpack, select;
+Tonumber, Tostring, Pcall, Xpcall = tonumber, tostring, pcall, xpcall;
+
+function ErrHandler(err)
+	warn('nigger heres an error:', tostring(err));
+	return err;
+end;
+
+local PreviousState = shared.__cider_state;
+
+State = {
+	Connections = {},
+	Targets = {
+		Silent = PreviousState and PreviousState.Targets and PreviousState.Targets.Silent or nil,
+		Aimbot = PreviousState and PreviousState.Targets and PreviousState.Targets.Aimbot or nil,
+		Triggerbot = PreviousState and PreviousState.Targets and PreviousState.Targets.Triggerbot or nil,
+	},
+	Toggles = {
+		SilentAim = PreviousState and PreviousState.Toggles and PreviousState.Toggles.SilentAim ~= nil and PreviousState.Toggles.SilentAim or true,
+		Aimbot = PreviousState and PreviousState.Toggles and PreviousState.Toggles.Aimbot ~= nil and PreviousState.Toggles.Aimbot or true,
+		Triggerbot = PreviousState and PreviousState.Toggles and PreviousState.Toggles.Triggerbot ~= nil and PreviousState.Toggles.Triggerbot or true,
+	},
+	Cache = {
+		Previous = {},
+		Tracked = {},
+	},
+	Ticks = {
+		Triggerbot = 0,
+		Rage = {},
+	},
+	AutoShootStatus = 'Idle',
+	TriggerState = false,
+	CanTriggerbotShoot = true,
+	LastTriggerShot = 0,
+	SpeedModificationsActive = false,
+	SpeedModificationHumanoid = nil,
+	OriginalWalkSpeed = nil,
+	JumpModificationsActive = false,
+	IsShooting = false,
+	SorterActive = false,
+	DoubleTapActive = false,
+	Future = {
+		LastNetworkSample = 0,
+		Ping = 0,
+		Jitter = 0,
+		LastTarget = nil,
+		LastWeaponClass = nil,
+		CurrentValues = nil,
+	},
+	AntiFuture = {
+		Active = false,
+		Connection = nil,
+		LastSpoofedVelocity = nil,
+		LastServerPosition = nil,
+		LastSpoofTime = nil,
+		BoostPending = false,
+	},
+	PanicGround = {
+		AutoTriggered = false,
+	},
+
+	CamLock = {
+		Active = false,
+		Target = nil,
+	},
+
+};
+shared.__cider_state = State;
+
+local function RestoreWalkSpeedState(TargetState)
+	if not TargetState then return end;
+	local Humanoid = TargetState.SpeedModificationHumanoid;
+	local OriginalWalkSpeed = TargetState.OriginalWalkSpeed;
+	if Humanoid and Humanoid.Parent and OriginalWalkSpeed ~= nil then
+		Pcall(function()
+			Humanoid.WalkSpeed = OriginalWalkSpeed;
+		end);
+	end;
+	TargetState.SpeedModificationHumanoid = nil;
+	TargetState.OriginalWalkSpeed = nil;
+end;
+
+CachedIgnored = Workspace:FindFirstChild('Ignored');
+CachedBush = Workspace:FindFirstChild('Bush');
+CachedSkinAssets = ReplicatedStorage:FindFirstChild('SkinAssets');
+CachedAnimations = ReplicatedStorage:FindFirstChild('Animations') or ReplicatedStorage:FindFirstChild('ClientAnimations');
+
+ShootFilter = {};
+RageFilter = {};
+
+EnumExclude = Enum.RaycastFilterType.Exclude;
+EnumJumping = Enum.HumanoidStateType.Jumping;
+EnumFreefall = Enum.HumanoidStateType.Freefall;
+EnumLanded = Enum.HumanoidStateType.Landed;
+EnumAir = Enum.Material.Air;
+EnumDead = Enum.HumanoidStateType.Dead;
+EnumFallingDown = Enum.HumanoidStateType.FallingDown;
+EnumRagdoll = Enum.HumanoidStateType.Ragdoll;
+EnumGettingUp = Enum.HumanoidStateType.GettingUp;
+
+function BuildFilter(Tbl, Character)
+	local Idx = 0;
+	if Character then Idx = Idx + 1; Tbl[Idx] = Character end;
+	if CachedIgnored then Idx = Idx + 1; Tbl[Idx] = CachedIgnored end;
+	if CachedBush then Idx = Idx + 1; Tbl[Idx] = CachedBush end;
+	for i = Idx + 1, #Tbl do Tbl[i] = nil end;
+	return Tbl;
+end;
+
+function ResolveBodyEffect(Player, Effect)
+	local Object = Player and Player.Character;
+	local Body = Object and Object:FindFirstChild('BodyEffects');
+	return Body and Body:FindFirstChild(Effect) and Body[Effect].Value or false;
+end;
+
+function ResolveConstraint(Player, Tag)
+	local Object = Player and Player.Character;
+	return Object and Object:FindFirstChild(Tag) ~= nil or false;
+end;
+
+function ResolveRemote(Name)
+	return function() return ReplicatedStorage:FindFirstChild(Name) end;
+end;
+
+Stub = function() return false end;
+
+Games = {
+	[1008451066] = {
+		Name = 'Da Hood',
+		Updater = 'UpdateMousePosI2',
+		Knocked = function(P)
+			return ResolveBodyEffect(P, 'K.O') end,
+		Grabbed = function(P)
+			return ResolveConstraint(P, 'GRABBING_CONSTRAINT') end,
+		Remote = ResolveRemote('MainEvent'),
+		Args = {"Handle", "MuzzlePos", "HitPosition", "HitInstance", "HitNormal"},
+		Method = "Emulate",
+		Hooks = nil,
+	},
+	['sixseveeen'] = {
+		Name = 'Das Hood',
+		Updater = "UpdateMousePos",
+		Knocked = function(P)
+			return ResolveBodyEffect(P, 'K.O') end,
+		Grabbed = function(P)
+			return ResolveConstraint(P, 'GRABBING_CONSTRAINT') end,
+		Remote = ResolveRemote('MainEvent'),
+		Args = {"Handle", "MuzzlePos", "HitInstance", "MuzzlePos", "HitPosition"},
+		Method = "Mouse.Hit",
+		Hooks = nil,
+	},
+	['Universal'] = {
+		Name = 'Universal',
+		Updater = nil,
+		Knocked = function(P)
+			return ResolveBodyEffect(P, 'K.O') end,
+		Grabbed = function(P)
+			return ResolveConstraint(P, 'GRABBING_CONSTRAINT') end,
+		Remote = ResolveRemote('MainEvent'),
+		Args = nil,
+		Method = "Hooks",
+		Hooks = "Raycast",
+	},
+};
+
+Fallback = { Name = 'Universal', Updater = 'UpdateMousePos', Knocked = Stub, Grabbed = Stub, Remote = ResolveRemote('MainEvent') };
+CurrentGame = Games[game.GameId] or Games['Universal'] or Fallback;
+
+function CleanScripts(Tool)
+	if not Tool then return end;
+	for _, Descendant in next, Tool:GetDescendants() do
+		if Descendant:IsA('LocalScript') then
+			Descendant:Destroy();
+		end;
+	end;
+	TrackConn(Tool.DescendantAdded:Connect(function(Desc)
+		if Desc:IsA('LocalScript') then
+			Desc:Destroy();
+		end;
+	end));
+end;
+
+if CurrentGame.Name == 'Da Hood' then
+	function ApplySkinToTool(Tool, Force)
+		if not Tool then return end;
+		local Config = GetConfig();
+		local SkinChangerCfg = Config['Utilities']['Skin Changer'];
+		if not SkinChangerCfg or not SkinChangerCfg['Enabled'] then return end;
+		local DesiredSkin = SkinChangerCfg['Skins'] and SkinChangerCfg['Skins'][Tool.Name];
+
+
+
+		if not Force and LastAppliedSkins[Tool] == DesiredSkin then return end;
+		LastAppliedSkins[Tool] = DesiredSkin;
+
+		local SkinAssets = CachedSkinAssets;
+		if not SkinAssets then return end;
+		
+		local SkinFolder;
+		if Tool.Name == '[Knife]' then
+			SkinFolder = SkinAssets:FindFirstChild('KnifeSkins') and SkinAssets.KnifeSkins:FindFirstChild(DesiredSkin);
+		else
+			SkinFolder = SkinAssets:FindFirstChild('GunSkins') and SkinAssets.GunSkins:FindFirstChild(DesiredSkin);
+		end
+		
+		local Default = Tool:FindFirstChild('Default');
+		if not Default then return end;
+		
+
+		local ExistingMesh = Default:FindFirstChild('Mesh');
+		if ExistingMesh then ExistingMesh:Destroy() end;
+		
+
+		if SkinFolder then
+			local SkinMesh = SkinFolder:FindFirstChildWhichIsA('BasePart') or SkinFolder:FindFirstChild('Mesh');
+			if SkinMesh then
+				local ClonedMesh = SkinMesh:Clone();
+				ClonedMesh.Parent = Default;
+				ClonedMesh.Name = 'Mesh';
+			end
+		end
+		
+
+		local Handle = Tool:FindFirstChild('Handle');
+		if Handle then
+			Handle:SetAttribute('SkinName', DesiredSkin or '');
+		end
+	end;
+
+	function ReapplyAllSkins()
+		local Character = LocalPlayer.Character;
+		if Character then
+			for _, Child in next, Character:GetChildren() do
+				if Child:IsA('Tool') then
+					ApplySkinToTool(Child);
+				end
+			end
+		end
+		local Backpack = LocalPlayer:FindFirstChild('Backpack');
+		if Backpack then
+			for _, Child in next, Backpack:GetChildren() do
+				if Child:IsA('Tool') then
+					ApplySkinToTool(Child);
+				end
+			end
+		end
+	end
+
+	function WatchCharacter(Character)
+		if not Character then return end;
+		for _, Child in next, Character:GetChildren() do
+			if Child:IsA('Tool') then 
+				CleanScripts(Child);
+				ApplySkinToTool(Child);
+			end;
+		end;
+		TrackConn(Character.ChildAdded:Connect(function(Child)
+			if Child:IsA('Tool') then
+				CleanScripts(Child);
+				Defer(CleanScripts, Child);
+				Defer(ApplySkinToTool, Child);
+			end;
+		end));
+	end;
+	
+	function WatchBackpack(Backpack)
+		if not Backpack then return end;
+		for _, Child in next, Backpack:GetChildren() do
+			if Child:IsA('Tool') then
+				ApplySkinToTool(Child);
+			end;
+		end;
+		TrackConn(Backpack.ChildAdded:Connect(function(Child)
+			if Child:IsA('Tool') then
+				Defer(ApplySkinToTool, Child);
+			end;
+		end));
+	end;
+	
+	if LocalPlayer.Character then WatchCharacter(LocalPlayer.Character) end;
+	if LocalPlayer:FindFirstChild('Backpack') then WatchBackpack(LocalPlayer.Backpack) end;
+	TrackConn(LocalPlayer.CharacterAdded:Connect(WatchCharacter));
+	TrackConn(LocalPlayer.ChildAdded:Connect(function(Child)
+		if Child:IsA('Backpack') then
+			WatchBackpack(Child);
+		end
+	end));
+end;
+
+PositionCache = {};
+PositionHistorySize = 8;
+PositionSampleInterval = 0.03;
+LastPositionCacheUpdate = 0;
+
+PositionEntryPool = {};
+PositionPoolSize = 0;
+
+function AcquireEntry(Pos, Time)
+	local E;
+	if PositionPoolSize > 0 then
+		E = PositionEntryPool[PositionPoolSize];
+		PositionEntryPool[PositionPoolSize] = nil;
+		PositionPoolSize = PositionPoolSize - 1;
+		E.Position = Pos;
+		E.Time = Time;
+	else
+		E = { Position = Pos, Time = Time };
+	end;
+	return E;
+end;
+
+function ReleaseEntry(E)
+	PositionPoolSize = PositionPoolSize + 1;
+	PositionEntryPool[PositionPoolSize] = E;
+end;
+
+UpdatePositionCache = function()
+	local Now = Clock();
+	if (Now - LastPositionCacheUpdate) < PositionSampleInterval then return end;
+	LastPositionCacheUpdate = Now;
+	for _, Player in next, Players:GetPlayers() do
+		if Player ~= LocalPlayer and Player.Character then
+			local RootPart = Player.Character:FindFirstChild('HumanoidRootPart');
+			if RootPart then
+				if not PositionCache[Player] then
+					PositionCache[Player] = {};
+				end;
+				local Cache = PositionCache[Player];
+				local LastEntry = Cache[1];
+				if not LastEntry or (Now - LastEntry.Time) >= PositionSampleInterval then
+					table.insert(Cache, 1, AcquireEntry(RootPart.Position, Now));
+					if #Cache > PositionHistorySize then
+						ReleaseEntry(Cache[#Cache]);
+						Cache[#Cache] = nil;
+					end;
+				end;
+			end;
+		end;
+	end;
+	for Player in next, PositionCache do
+		if not Player.Parent then
+			PositionCache[Player] = nil;
+		end;
+	end;
+end;
+
+GetDeltaVelocity = function(Player)
+	local Velocity = GetSmoothedTargetMotion(Player);
+	return Velocity;
+end;
+
+GetSmoothedTargetMotion = function(Player)
+	local Cache = PositionCache[Player];
+	if not Cache or #Cache < 2 then return Vector3Zero, Vector3Zero end;
+	local Newest = Cache[1];
+	local SampleIdx = MathMin(#Cache, 4);
+	local Oldest = Cache[SampleIdx];
+	local DeltaTime = Newest.Time - Oldest.Time;
+	if DeltaTime <= 0.001 then return Vector3Zero, Vector3Zero end;
+
+	local Velocity = (Newest.Position - Oldest.Position) / DeltaTime;
+	local Acceleration = Vector3Zero;
+	if #Cache >= 4 then
+		local RecentTime = Cache[1].Time - Cache[2].Time;
+		local OlderTime = Cache[3].Time - Cache[4].Time;
+		local BetweenTime = ((Cache[1].Time + Cache[2].Time) - (Cache[3].Time + Cache[4].Time)) * 0.5;
+		if RecentTime > 0.001 and OlderTime > 0.001 and BetweenTime > 0.001 then
+			local RecentVelocity = (Cache[1].Position - Cache[2].Position) / RecentTime;
+			local OlderVelocity = (Cache[3].Position - Cache[4].Position) / OlderTime;
+			Acceleration = (RecentVelocity - OlderVelocity) / BetweenTime;
+		end;
+	end;
+
+	if Velocity.Magnitude > 350 then Velocity = Vector3Zero end;
+	if Acceleration.Magnitude > 1500 then Acceleration = Vector3Zero end;
+	return Velocity, Acceleration;
+end;
+
+LureFutureBaselines = {
+	Shotguns = 0.018,
+	Pistols = 0.023,
+	Others = 0.013,
+};
+
+UpdateFutureNetwork = function()
+	local FutureState = State.Future;
+	local Now = Clock();
+	if (Now - (FutureState.LastNetworkSample or 0)) < 0.10 then return end;
+	FutureState.LastNetworkSample = Now;
+
+	local Ping;
+	local Ok, Result = Pcall(function()
+		return LocalPlayer:GetNetworkPing();
+	end);
+	if Ok and type(Result) == 'number' and Result >= 0 then
+		Ping = Result > 1 and Result / 1000 or Result;
+	end;
+	if not Ping then return end;
+
+	local Alpha = 0.15;
+	if FutureState.Ping <= 0 then
+		FutureState.Ping = Ping;
+		FutureState.Jitter = 0;
+	else
+		FutureState.Jitter = FutureState.Jitter + (MathAbs(Ping - FutureState.Ping) - FutureState.Jitter) * Alpha;
+		FutureState.Ping = FutureState.Ping + (Ping - FutureState.Ping) * Alpha;
+	end;
+end;
+
+GetLureFutureValues = function(Target, ToolName, ClassCfg)
+	UpdateFutureNetwork();
+	local FutureState = State.Future;
+	local WeaponClass = GetWeaponClass(ToolName or '');
+	if FutureState.LastTarget ~= Target or FutureState.LastWeaponClass ~= WeaponClass then
+		FutureState.LastTarget = Target;
+		FutureState.LastWeaponClass = WeaponClass;
+		FutureState.CurrentValues = nil;
+	end;
+
+	local ConfigValues = ClassCfg and ClassCfg['Values'] or nil;
+	local BaseX = ConfigValues and tonumber(ConfigValues['X']) or LureFutureBaselines[WeaponClass] or LureFutureBaselines.Others;
+	local BaseY = ConfigValues and tonumber(ConfigValues['Y']) or BaseX;
+	local BaseZ = ConfigValues and tonumber(ConfigValues['Z']) or BaseX;
+	local NetworkOffset = (FutureState.Ping or 0) * 0.5 + 0.01 + (FutureState.Jitter or 0) * 0.5;
+	local Minimum = 0.01;
+	local Maximum = 0.20;
+	local Alpha = 0.15;
+	local Current = FutureState.CurrentValues;
+	local Desired = Vector3New(
+		MathClamp(BaseX + NetworkOffset, Minimum, Maximum),
+		MathClamp(BaseY + NetworkOffset, Minimum, Maximum),
+		MathClamp(BaseZ + NetworkOffset, Minimum, Maximum)
+	);
+	if Current then
+		Current = Current + (Desired - Current) * Alpha;
+	else
+		Current = Desired;
+	end;
+	FutureState.CurrentValues = Current;
+
+	local Velocity, Acceleration = GetSmoothedTargetMotion(Target);
+	if Velocity.Magnitude < 2 then
+		Velocity = Vector3Zero;
+		Acceleration = Vector3Zero;
+	end;
+	return Current, Velocity, Acceleration;
+end;
+
+ApplyPrediction = function(Position, Target, FeatureCfg)
+	local Character = Target.Character;
+	if not Character then return Position end;
+	local RootPart = Character:FindFirstChild('HumanoidRootPart');
+	if not RootPart then return Position end;
+
+	local PredCfg = FeatureCfg['Prediction'];
+	if not PredCfg or PredCfg['Enabled'] ~= true then return Position end;
+
+	local Vel = GetDeltaVelocity(Target);
+	local Values = PredCfg['Values'] or {};
+	local PredX = Values['X'] or 0.13;
+	local PredY = Values['Y'] or 0.13;
+	local PredZ = Values['Z'] or 0.13;
+
+	return Position + Vel * Vector3New(PredX, PredY, PredZ);
+end;
+
+ApplyFuture = function(Position, Target, ToolName, FutureCfg)
+	local Character = Target and Target.Character;
+	if not Character then return Position end;
+	local RootPart = Character:FindFirstChild('HumanoidRootPart');
+	if not RootPart then return Position end;
+	if not FutureCfg then return Position end;
+	if FutureCfg['Enabled'] == false then return Position end;
+
+	local WeaponClass = GetWeaponClass(ToolName or '');
+	local ClassCfg = FutureCfg[WeaponClass] or FutureCfg['Others'];
+	local UseLure = FutureCfg['Lure'] == true;
+
+	if not UseLure then
+		local ManualValues = ClassCfg and ClassCfg['Values'] or {};
+		local Velocity = GetDeltaVelocity(Target);
+		return Position + Velocity * Vector3New(
+			ManualValues['X'] or 0.02301,
+			ManualValues['Y'] or 0.08002,
+			ManualValues['Z'] or 0.013005
+		);
+	end;
+
+	local Values, Velocity, Acceleration = GetLureFutureValues(Target, ToolName, ClassCfg);
+
+	local Predicted = Position + Velocity * Values;
+	local AccelerationScale = Vector3New(Values.X * Values.X, Values.Y * Values.Y, Values.Z * Values.Z) * 0.5;
+	Predicted = Predicted + Vector3New(
+		Acceleration.X * AccelerationScale.X,
+		Acceleration.Y * AccelerationScale.Y,
+		Acceleration.Z * AccelerationScale.Z
+	);
+	return Predicted;
+end;
+
+VisibilityParams = RaycastParamsNew();
+VisibilityParams.FilterType = EnumExclude;
+VisibilityParams.IgnoreWater = true;
+
+function IsTyping()
+	return UserInputService:GetFocusedTextBox() ~= nil;
+end;
+
+function IsCrew(Player)
+	local PlayerCrew = Player and Player:GetAttribute('CrewID');
+	local ClientCrew = LocalPlayer:GetAttribute('CrewID');
+	return PlayerCrew and ClientCrew and PlayerCrew == ClientCrew or false;
+end;
+
+VisibilityFilter = {};
+VisibilityCache = {};
+VisibilityCacheFrame = 0;
+
+IsVisible = function(TargetPos, Player)
+	local FrameNow = MathFloor(Clock() * 60 + 0.5);
+	if FrameNow ~= VisibilityCacheFrame then
+		VisibilityCacheFrame = FrameNow;
+		table.clear(VisibilityCache);
+	end;
+	if Player and VisibilityCache[Player] ~= nil then
+		return VisibilityCache[Player];
+	end;
+	local Origin = Camera.CFrame.Position;
+	local Direction = TargetPos - Origin;
+	local Character = LocalPlayer.Character;
+	local Idx = 0;
+	if Character then Idx = Idx + 1; VisibilityFilter[Idx] = Character end;
+	if CachedIgnored then Idx = Idx + 1; VisibilityFilter[Idx] = CachedIgnored end;
+	if CachedBush then Idx = Idx + 1; VisibilityFilter[Idx] = CachedBush end;
+	for i = Idx + 1, #VisibilityFilter do VisibilityFilter[i] = nil end;
+	VisibilityParams.FilterDescendantsInstances = VisibilityFilter;
+	local Result = Workspace:Raycast(Origin, Direction, VisibilityParams);
+	local Visible = true;
+	if Result then
+		local Hit = Result.Instance;
+		if Hit then
+			local Model = Hit:FindFirstAncestorOfClass('Model');
+			if not Model or not Model:FindFirstChildOfClass('Humanoid') then Visible = false end;
+		else
+			Visible = false;
+		end;
+	end;
+	if Player then VisibilityCache[Player] = Visible end;
+	return Visible;
+end;
+
+function GetGroundPosition(Position, ExcludeInstances)
+	local Params = RaycastParams.new();
+	Params.FilterType = EnumExclude;
+	Params.FilterDescendantsInstances = ExcludeInstances or {};
+	local Result = Workspace:Raycast(Position, Vector3New(0, -2000, 0), Params);
+	return Result and Result.Position or nil;
+end;
+
+function RunPanicGround()
+	local Character = LocalPlayer.Character;
+	local HRP = Character and Character:FindFirstChild('HumanoidRootPart');
+	local Humanoid = Character and Character:FindFirstChildOfClass('Humanoid');
+	if not HRP then return end;
+
+	local GroundPos = GetGroundPosition(HRP.Position, {Character});
+	if not GroundPos then return end;
+
+	HRP.CFrame = CFrameNew(GroundPos.X, GroundPos.Y + 3, GroundPos.Z) * (HRP.CFrame - HRP.CFrame.Position);
+	HRP.AssemblyLinearVelocity = Vector3Zero;
+	HRP.AssemblyAngularVelocity = Vector3Zero;
+
+	if Humanoid then
+		Humanoid.Jump = false;
+		Humanoid:ChangeState(EnumLanded);
+	end;
+end;
+
+function GetAntiFutureBoostMultiplier(cfg)
+	local AdjustCfg = cfg['Adjust Dynamically'];
+	if not AdjustCfg or not AdjustCfg['Enabled'] or not State.AntiFuture.BoostPending then
+		return 1;
+	end;
+
+	State.AntiFuture.BoostPending = false;
+	return AdjustCfg['Multiplier'] or 3;
+end;
+
+function TriggerAntiFutureBoost()
+	local cfg = GetConfig()['Anti Future'];
+	local AdjustCfg = cfg['Adjust Dynamically'];
+	if not cfg['Enabled'] or not State.AntiFuture.Active or not AdjustCfg or not AdjustCfg['Enabled'] then return end;
+	State.AntiFuture.BoostPending = true;
+end;
+
+function DistancePointToSegment(Point, SegStart, SegEnd)
+	local SegVector = SegEnd - SegStart;
+	local Len2 = SegVector:Dot(SegVector);
+	if Len2 <= 1e-6 then
+		return (Point - SegStart).Magnitude;
+	end;
+	local t = MathClamp((Point - SegStart):Dot(SegVector) / Len2, 0, 1);
+	local Closest = SegStart + SegVector * t;
+	return (Point - Closest).Magnitude;
+end;
+
+function RunAntiFutureToggle()
+	local cfg = GetConfig()['Anti Future'];
+	if not cfg['Enabled'] then return end;
+
+	if State.AntiFuture.Active then
+		State.AntiFuture.Active = false;
+		State.AntiFuture.LastSpoofedVelocity = nil;
+		State.AntiFuture.LastServerPosition = nil;
+		State.AntiFuture.LastSpoofTime = nil;
+		State.AntiFuture.BoostPending = false;
+		if State.AntiFuture.Connection then
+			State.AntiFuture.Connection:Disconnect();
+			State.AntiFuture.Connection = nil;
+		end;
+		return;
+	end;
+
+	State.AntiFuture.Active = true;
+	State.AntiFuture.BoostPending = false;
+
+	local function RandSigned(minV, maxV)
+		local v = MathRandom(minV, maxV);
+		if MathRandom(0, 1) == 0 then v = -v end;
+		return v;
+	end;
+
+	State.AntiFuture.Connection = TrackConn(RunService.Heartbeat:Connect(function()
+		local live_cfg = GetConfig()['Anti Future'];
+		local options = live_cfg['Options'] or {};
+		local live_character = LocalPlayer.Character;
+		local live_hrp = live_character and live_character:FindFirstChild('HumanoidRootPart');
+		local live_hum = live_character and live_character:FindFirstChildOfClass('Humanoid');
+
+		if not State.AntiFuture.Active then
+			State.AntiFuture.LastSpoofedVelocity = nil;
+			State.AntiFuture.LastServerPosition = nil;
+			State.AntiFuture.LastSpoofTime = nil;
+			State.AntiFuture.BoostPending = false;
+			if State.AntiFuture.Connection then
+				State.AntiFuture.Connection:Disconnect();
+				State.AntiFuture.Connection = nil;
+			end;
+			return;
+		end;
+
+		if not live_hrp then return end;
+
+		if options['Air Only'] and live_hum then
+			local st = live_hum:GetState();
+			if st ~= EnumJumping and st ~= EnumFreefall then
+				State.AntiFuture.LastServerPosition = live_hrp.Position;
+				State.AntiFuture.LastSpoofedVelocity = nil;
+				State.AntiFuture.LastSpoofTime = nil;
+				return;
+			end;
+		end;
+
+		local chance = options['Spoof Chance'] or 100;
+		if chance < 100 and MathRandom(1, 100) > chance then
+			State.AntiFuture.LastServerPosition = live_hrp.Position;
+			State.AntiFuture.LastSpoofedVelocity = nil;
+			State.AntiFuture.LastSpoofTime = nil;
+			return;
+		end;
+
+		local strength = (options['Strength'] or 400) * GetAntiFutureBoostMultiplier(live_cfg);
+		local randomness = options['Randomness'] or 3;
+		if randomness < 1 then randomness = 1 end;
+		local vertical = options['Vertical'] ~= false;
+		local real_velocity = live_hrp.AssemblyLinearVelocity;
+
+		local spoofed;
+		if live_cfg['Direction'] == 'Vertical' then
+			spoofed = Vector3New(0, vertical and RandSigned(strength, strength * randomness) or 0, 0);
+		elseif live_cfg['Direction'] == 'Behind' then
+			local HorizontalReal = Vector3New(real_velocity.X, 0, real_velocity.Z);
+			local BehindDir = (HorizontalReal.Magnitude > 1) and -HorizontalReal.Unit or -live_hrp.CFrame.LookVector;
+			local Mag = MathRandom(strength, strength * randomness);
+			local SpoofY = vertical and RandSigned(strength, strength * randomness) or 0;
+			spoofed = Vector3New(BehindDir.X * Mag, SpoofY, BehindDir.Z * Mag);
+		elseif live_cfg['Direction'] == 'Kinematic' then
+			local Gravity = Workspace.Gravity or 196.2;
+			local Scale = strength / MathMax(real_velocity.Magnitude, 16);
+			local KinematicVel = -real_velocity * Scale;
+			local SpoofY = vertical and (KinematicVel.Y - Gravity * MathRandom(strength, strength * randomness) / 100) or 0;
+			spoofed = Vector3New(KinematicVel.X, SpoofY, KinematicVel.Z);
+		else
+			spoofed = Vector3New(
+				RandSigned(strength, strength * randomness),
+				vertical and RandSigned(strength, strength * randomness) or 0,
+				RandSigned(strength, strength * randomness)
+			);
+		end;
+		State.AntiFuture.LastSpoofedVelocity = spoofed;
+		State.AntiFuture.LastServerPosition = live_hrp.Position;
+		State.AntiFuture.LastSpoofTime = Clock();
+
+		live_hrp.AssemblyLinearVelocity = spoofed;
+		RunService.RenderStepped:Wait();
+		live_hrp.AssemblyLinearVelocity = real_velocity;
+	end));
+end;
+
+PassesConditions = function(Player, ChecksKey)
+	local AllChecks = GetConfig()['Main']['Checks'];
+	local Conds = (ChecksKey and AllChecks[ChecksKey]) or {};
+	local Character = Player and Player.Character;
+	if not Character then return false end;
+	local Humanoid = Character:FindFirstChildOfClass('Humanoid');
+
+	if Conds['Knocked'] then
+		if not Humanoid or Humanoid.Health <= 0 or Humanoid:GetState() == EnumDead then
+			return false;
+		end;
+		if CurrentGame.Knocked(Player) then
+			return false;
+		end;
+	end;
+
+	if Conds['Grabbed'] then
+		if CurrentGame.Grabbed(Player) then
+			return false;
+		end;
+	end;
+
+	if Conds['Vehicle'] then
+		if Humanoid and Humanoid.Sit then
+			return false;
+		end;
+	end;
+
+	if Conds['Visible'] then
+		local HumanoidRootPart = Character:FindFirstChild('HumanoidRootPart');
+		if HumanoidRootPart and not IsVisible(HumanoidRootPart.Position, Player) then
+			return false;
+		end;
+	end;
+
+	if Conds['Tool'] then
+		local MyChar = LocalPlayer.Character;
+		if MyChar and not MyChar:FindFirstChildOfClass('Tool') then
+			return false;
+		end;
+	end;
+
+	if Conds['Self Knocked'] then
+		if CurrentGame.Knocked(LocalPlayer) then
+			return false;
+		end;
+	end;
+
+	if Conds['Crew'] then
+		if IsCrew(Player) then
+			return false;
+		end;
+	end;
+
+	return true;
+end;
+
+MuzzleOffsets = { 
+	['[Deagle]'] = CFrameNew(0, 0.382, -1.568),
+	['[Revolver]'] = CFrameNew(-0.1, 0.4, 1.8),
+	['[Double-Barrel SG]'] = CFrameNew(0, 0.25, -2.5),
+	['[TacticalShotgun]'] = CFrameNew(0, 0.7, -3.8),
+	['[Silencer]'] = CFrameNew(0, 0.4, 1.3),
+	['[SMG]'] = CFrameNew(2.5, 0.35, 0),
+	['[Rifle]'] = CFrameNew(0, 0.2, -1.7),
+	['[Shotgun]'] = CFrameNew(0, 0.4, 2.4),
+	['[Flintlock]'] = CFrameNew(0, 0.25, 2.5),
+	['[AK47]'] = CFrameNew(0.6, 0.25, 0),
+	['[Glock]'] = CFrameNew(0, 0.4, 1.5),
+	['[AR]'] = CFrameNew(0, 0.3, -2.0),
+	['[AUG]'] = CFrameNew(0, 0.3, -2.5),
+	['[Drum-Shotgun]'] = CFrameNew(0, 0.4, -2.0),
+	['[DrumGun]'] = CFrameNew(0, 0.3, -1.5),
+	['[LMG]'] = CFrameNew(0, 0.3, -2.5),
+	['[P90]'] = CFrameNew(0, 0.3, -1.8),
+	['[SilencerAR]'] = CFrameNew(0, 0.3, -2.0),
+};
+
+ShotgunWeapons = {
+	['[Double-Barrel SG]'] = true,
+	['[TacticalShotgun]'] = true,
+	['[Tactical Shotgun]'] = true,
+	['[Tactical-Shotgun]'] = true,
+	['[Shotgun]'] = true,
+	['[Drum-Shotgun]'] = true,
+};
+
+PistolWeapons = {
+	['[Revolver]'] = true,
+	['[Silencer]'] = true,
+	['[Glock]'] = true,
+	['[Deagle]'] = true,
+};
+
+local GetWeaponClass = function(name)
+	if ShotgunWeapons[name] then return 'Shotguns' end;
+	if PistolWeapons[name] then return 'Pistols' end;
+	return 'Others';
+end;
+
+local GetToolFireDelay = function(Tool)
+	local DefaultCooldown = 0.3;
+	local CD = Tool and Tool:FindFirstChild('ShootingCooldown');
+	if CD then DefaultCooldown = CD.Value end;
+	local DelayCfg = GetConfig()['Modifications']['Delay Changer'];
+	if not DelayCfg['Enabled'] then return DefaultCooldown end;
+	local WeaponDelay = DelayCfg['Delay'];
+	local WCfg = DelayCfg['Weapon Configs'];
+	if WCfg and WCfg['Enabled'] and Tool then
+		local WClass = GetWeaponClass(Tool.Name);
+		WeaponDelay = WCfg[WClass]['Delay'] or WeaponDelay;
+	end;
+	return WeaponDelay;
+end;
+
+local EmulatedGunHandler = nil;
+local EmulatedGunHandlerAttempted = false;
+local GunhandlerSource = [=[
 
 local t = {
 	"[Shotgun]",
@@ -503,4 +1963,9041 @@ function t3.shoot(p1)
 end
 
 return t3
-]=];local function v72() local v298=0 -0 ;local v299;local v300;local v301;local v302;local v303;local v304;while true do if (v298==0) then if v70 then return v69;end v70=true;if (type(loadstring)~="function") then return nil;end if ((type(v71)~="string") or (v71=="")) then return nil;end v298=1056 -(507 + 548) ;end if (v298==3) then shared.__cider_emulated_gunhandler=true;return v69;end if (v298==(839 -(289 + 548))) then setfenv(v299,v302);v303,v304=pcall(v299);if ( not v303 or (type(v304)~="table") or (type(v304.shoot)~="function") or (type(v304.getAim)~="function")) then warn("cider error: gunhandler emulation failed;",v304);return nil;end v69=v304;v298=1821 -(821 + 997) ;end if (v298==(256 -(195 + 60))) then v299,v300=loadstring(v71,"@embedded dumped gunhandler.lua");if  not v299 then warn("cider error: gunhandler emulation failed;",v300);return nil;end v301={CanShoot=function() return CanShoot;end};v302=setmetatable({script=v301,require=function(v2586) if (v2586==v301.CanShoot) then return CanShoot;end return require(v2586);end},{__index=function(v2587,v2588) return getfenv()[v2588];end,__newindex=function(v2589,v2590,v2591) getfenv()[v2590]=v2591;end});v298=1 + 1 ;end end end do local v305=1501 -(251 + 1250) ;local v306;while true do if (v305==0) then v306=hookfunction or (getgenv and getgenv().hookfunction) ;if (v306 and  not shared.__cider_require_gunhandler_hooked) then local v2863=0 -0 ;local v2864;while true do if (v2863==(0 + 0)) then v2864=nil;v2864=v306(require,function(v3922) local v3923=v4:FindFirstChild("Modules");local v3924=v3923 and v3923:FindFirstChild("GunHandler") ;if (v3924 and (v3922==v3924)) then local v4189=v72();if v4189 then local v4396=1032 -(809 + 223) ;while true do if (v4396==(0 -0)) then shared.__cider_require_gunhandler_source="emulated";return v4189;end end end end return v2864(v3922);end);v2863=2 -1 ;end if (v2863==1) then shared.__cider_require_gunhandler_hooked=true;break;end end end break;end end end AutoWeapons={["[SMG]"]=true,["[Rifle]"]=true,["[Shotgun]"]=true,["[AK47]"]=true,["[AR]"]=true,["[Drum-Shotgun]"]=true,["[DrumGun]"]=true,["[LMG]"]=true,["[P90]"]=true,["[SilencerAR]"]=true};BurstWeapons={["[AUG]"]=true};ShootRayParams=RaycastParamsNew();ShootRayParams.FilterType=EnumExclude;ShootRayParams.IgnoreWater=true;function CanShootCheck(v307,v308) if  not v307 then return false;end local v309=v307:FindFirstChild("Humanoid");if ( not v309 or (v309.Health<=(0 -0)) or (v309:GetState()==EnumDead)) then return false;end local v310=v307:FindFirstChild("BodyEffects");if  not v310 then return false;end local v311=v307:FindFirstChildOfClass("Tool");if ( not v311 or  not v311:FindFirstChild("Handle") or  not v311:FindFirstChild("Ammo")) then return false;end if (v311.Ammo.Value<=(0 + 0)) then return false;end if (v307:FindFirstChild("FULLY_LOADED_CHAR")==nil) then return false;end if v307:FindFirstChild("FORCEFIELD") then return false;end if v307:FindFirstChild("GRABBING_CONSTRAINT") then return false;end if v307:FindFirstChild("Christmas_Sock") then return false;end if (v310:FindFirstChild("Cuff") and v310.Cuff.Value) then return false;end if (v310:FindFirstChild("Attacking") and v310.Attacking.Value) then return false;end if (v310:FindFirstChild("K.O") and v310["K.O"].Value) then return false;end if (v310:FindFirstChild("Grabbed") and v310.Grabbed.Value) then return false;end if (v310:FindFirstChild("Reload") and v310.Reload.Value) then return false;end if (v310:FindFirstChild("Dead") and v310.Dead.Value) then return false;end if v310:FindFirstChild("Block") then return false;end if ( not v308 and v311:GetAttribute("Cooldown")) then return false;end local v312=v307:GetAttribute("LastGunShot");local v313=(v311.Name=="[Shotgun]") or (v311.Name=="[Double-Barrel SG]") or (v311.Name=="TacticalShotgun") or (v311.Name=="Drum-Shotgun") ;if ((v312~=v311.Name) and v307:GetAttribute("ShotgunDebounce")) then return false;end return true;end function CanShoot(v314) if  not CanShootCheck(v314) then return false;end local v315=v314:FindFirstChildOfClass("Tool");local v316=(v315.Name=="[Shotgun]") or (v315.Name=="[Double-Barrel SG]") or (v315.Name=="TacticalShotgun") or (v315.Name=="Drum-Shotgun") ;if (v316 and  not v314:GetAttribute("ShotgunDebounce")) then v314:SetAttribute("ShotgunDebounce",true);task.delay(0.65 + 0 ,function() v314:SetAttribute("ShotgunDebounce",nil);end);end v314:SetAttribute("LastGunShot",v315.Name);return true;end function GetMuzzlePosition(v317) local v318=617 -(14 + 603) ;local v319;local v320;local v321;local v322;local v323;while true do if (v318==(130 -(118 + 11))) then v320=MuzzleOffsets[v317.Name] or CFrameNew(0,0.4 + 0 ,1.8) ;v321=(v319.CFrame * v320).Position;v318=2;end if (v318==2) then v322=v317:FindFirstChild("Default");if v322 then local v2865=0 + 0 ;local v2866;while true do if (v2865==0) then v2866=v322:FindFirstChild("Mesh");if v2866 then local v4083=0 -0 ;local v4084;while true do if (v4083==(949 -(551 + 398))) then v4084=v2866:FindFirstChild("Muzzle");if v4084 then return v4084.WorldPosition;end break;end end end break;end end end v318=2 + 1 ;end if (v318==(0 + 0)) then v319=v317:FindFirstChild("Handle");if  not v319 then return nil;end v318=1 + 0 ;end if (v318==(11 -8)) then v323=v319:FindFirstChild("Muzzle");if v323 then return v323.WorldPosition;end v318=9 -5 ;end if ((2 + 2)==v318) then return v321;end end end local v75=function() local v324=0 -0 ;local v325;while true do if (0==v324) then v325=v9:GetGuiInset();return v5:GetMouseLocation() -v325 ;end end end;function GetClosestPointOnPart(v326,v327,v328) local v329=v2.CurrentCamera;v328=v328 or v75() ;local v330=v329:ViewportPointToRay(v328.X,v328.Y);local v331=v330.Direction:Dot(v330.Direction);local v332=((v331>(0 + 0)) and (v330.Direction:Dot(v326.Position-v330.Origin )/v331)) or (89 -(40 + 49)) ;local v333=v330.Origin + (v330.Direction * MathMax(v332,0 -0 )) ;local v334=v326.CFrame:PointToObjectSpace(v333);local v335=(v326.Size * (v327 or 1))/2 ;return v326.CFrame * Vector3New(MathClamp(v334.X, -v335.X,v335.X),MathClamp(v334.Y, -v335.Y,v335.Y),MathClamp(v334.Z, -v335.Z,v335.Z)) ;end function GetClosestPartToCursor(v336,v337,v338) local v339=v2.CurrentCamera;local v340=v75();local v341=nil;local v342=nil;local v343=MathHuge;for v930,v931 in next,v336:GetChildren() do if  not v931:IsA("BasePart") then continue;end local v932=(v337 and GetClosestPointOnPart(v931,v338,v340)) or v931.Position ;local v933,v934=v339:WorldToViewportPoint(v932);if ( not v934 or (v933.Z<=(490 -(99 + 391)))) then continue;end local v935=(v340-Vector2New(v933.X,v933.Y)).Magnitude;if (v935<v343) then v343=v935;v341=v931;v342=v932;end end return v341,v342;end local v76=function(v344,v345) local v346=v345["Target Part"];local v347=((type(v346)=="table") and v346['Part']) or v346 or "HumanoidRootPart" ;local v348=((type(v346)=="table") and v346["Closest Point"]) or v345["Closest Point"] ;local v349=(type(v348)=="table") and (v348['Enabled']==true) ;local v350=nil;local v351=string.lower(tostring(v347));if ((type(v348)=="table") and (string.lower(tostring(v348['Mode']))=="scaled")) then v350=(1 + 0) -(MathClamp(v348['Scale'] or (0 -0) ,0,100)/100) ;end if (v351=="closest point") then local v1884=0 -0 ;while true do if (v1884==0) then v349=true;v347="Head";break;end end elseif (v351=="closest part") then v349=false;v347="Closest";end local v352;local v353;if (v347=="Closest") then v352,v353=GetClosestPartToCursor(v344,v349,v350);else v352=v344:FindFirstChild(v347);end if v352 then v353=v353 or (v349 and GetClosestPointOnPart(v352,v350)) or v352.Position ;return v353,v352;end local v354=v344:FindFirstChild("HumanoidRootPart");if v354 then local v1885=(v349 and GetClosestPointOnPart(v354,v350)) or v354.Position ;return v1885,v354;end return nil,nil;end;local v77=nil;local v78=function(v355,v356) local v357=v14()["Silent Aim"];if (v357['Enabled'] and State.Targets.Silent and PassesConditions(State.Targets.Silent,"Silent Aim")) then local v1886=0 + 0 ;local v1887;local v1888;while true do if (v1886==(2 -1)) then if v1888 then local v3567=v1888:FindFirstChild("HumanoidRootPart");if v3567 then local v3925=v2.CurrentCamera;local v3926=v357["Max Range"];if (v3926 and (v3926<MathHuge)) then local v4190=0;local v4191;while true do if (v4190==(1604 -(1032 + 572))) then v4191=(v3925.CFrame.Position-v3567.Position).Magnitude;if (v4191>v3926) then return v11.Hit.Position;end break;end end end local v3927=v357["Offscreen Targeting"];local v3928=v3927 and v3927['Enabled'] ;local v3929,v3930=v3925:WorldToViewportPoint(v3567.Position);local v3931=v3928 or (v3930 and (v3929.Z>(418 -(203 + 214)))) ;if (v77 and  not v77(v3567.Position,"Silent Aim")) then v3931=false;end if v3931 then local v4192=0;local v4193;while true do if (v4192==(1817 -(568 + 1249))) then v4193=v3928;if  not v3928 then local v4604=0 + 0 ;local v4605;while true do if ((0 -0)==v4604) then v4605=v14()['Main']['FOV']['Silent'];if (string.lower(tostring(v4605['Options'] or "2D" ))=="3d") then v4193=true;elseif  not v4605['Visualize']['Enabled'] then v4193=true;else local v4749=v5:GetMouseLocation();local v4750=v3925.ViewportSize.Y;local v4751=v3925.FieldOfView;local v4752=(((v3567.Size.Y * v4750)/(v3929.Z * (7 -5))) * (1386 -(913 + 393)))/v4751 ;local v4753=((v4605['Width'] and (v4605['Width'][1] or 150)) or (423 -273)) * v4752 ;local v4754=((v4605['Height'] and (v4605['Height'][1 -0 ] or (560 -(269 + 141)))) or (333 -183)) * v4752 ;local v4755=Vector2New(v3929.X,v3929.Y) -v4749 ;v4193=(MathAbs(v4755.X)<=(v4753/(1983 -(362 + 1619)))) and (MathAbs(v4755.Y)<=(v4754/(1627 -(950 + 675)))) ;end break;end end end v4192=1 + 0 ;end if (v4192==(1180 -(216 + 963))) then if v4193 then local v4606,v4607=v76(v1888,v357);if  not v4606 then v4606=v3567.Position;end local v4608=v10.Character and v10.Character:FindFirstChildOfClass("Tool") ;local v4609=v357['Future'];if (v4609 and (v4609['Enabled']~=false)) then v4606=ApplyFuture(v4606,v1887,v4608 and v4608.Name ,v4609);else v4606=ApplyPrediction(v4606,v1887,v357);end return v4606;end break;end end end end end break;end if (v1886==(1287 -(485 + 802))) then v1887=State.Targets.Silent;v1888=v1887.Character;v1886=560 -(432 + 127) ;end end end return v11.Hit.Position;end;local v79=Color3.new(1074 -(1065 + 8) ,0.545098 + 0 ,1601.14902 -(635 + 966) );local v80={};local v81=false;ScopedWeapons={"[Shotgun]","[Drum-Shotgun]","[Rifle]","[TacticalShotgun]","[AR]","[AUG]","[AK47]","[LMG]","[SilencerAR]"};CustomBulletHoleRotations={SoulII=Vector3New( -(38 + 52),0,0 -0 ),Sushi="Position",XMAS=Vector3New(85 + 95 ,0,0),Gift=Vector3New(374 -194 ,0,0 -0 ),Jellyfish=Vector3New(180,0 -0 ,0 -0 ),Halloween23=Vector3New(130 + 50 ,0,529 -(318 + 211) ),["Wild West"]=Vector3New(180,0 -0 ,1587 -(963 + 624) ),Cat=Vector3New(180,0 + 0 ,846 -(518 + 328) ),Ninja=Vector3New(419 -239 ,0,0 -0 ),Void=Vector3New(180,317 -(301 + 16) ,0 -0 ),Ice=Vector3New(505 -325 ,0 -0 ,0 + 0 ),Beary={CFrameNew(0 -0 ,0 + 0 , -(0.45 + 0)),Vector3New(180,0 -0 ,0 + 0 )},XMAS24=Vector3New( -(1109 -(829 + 190)),0 -0 ,0),Heartbreak="Position",Blaze="Position",["Short Cake"]="Position",Shrimp=Vector3New( -(113 -23),0 -0 ,0 -0 ),Arcane=Vector3New( -(22 + 68),0 + 0 ,0),PrestigeCandyCane="Position",Duck="Position",Flower=Vector3New(180,0 -0 ,0),Car=Vector3New(170 + 10 ,613 -(520 + 93) ,276 -(259 + 17) ),Music=Vector3New(180,0 + 0 ,0),Brainrot={CFrameNew(0,0, -0.25),Vector3New(0,0 + 0 ,0)}};UndeadBeamColors={Color3.fromRGB(839 -(396 + 195) ,147,739 -484 ),Color3.fromRGB(2084 -(1059 + 770) ,739 -579 ,609 -(424 + 121) ),Color3.fromRGB(14 + 62 ,255,82),Color3.fromRGB(110,60 + 89 ,255)};function DoMuzzleEmit(v358,v359) Spawn(function() Xpcall(function() if  not v359 then return;end local v1889=v359:FindFirstChildOfClass("Tool");if  not v1889 then return;end local v1890=v1889:FindFirstChild("Handle");if  not v1890 then return;end local v1891=(v1889:FindFirstChild("Default") and v1889.Default:FindFirstChild("Mesh") and v1889.Default.Mesh:FindFirstChild("Muzzle")) or v1890:FindFirstChild("Muzzle") ;if  not v1891 then return;end if v1890:GetAttribute("Emitted") then return;end v1890:SetAttribute("Emitted",true);Delay(440.05 -(249 + 191) ,function() if v1890 then v1890:SetAttribute("Emitted",nil);end end);for v2264,v2265 in next,v358:GetChildren() do if v2265:IsA("ParticleEmitter") then local v2869=v2265:Clone();v2869.Parent=v1891;v2869.Enabled=true;v2869:Emit(v2869:GetAttribute("EmitCount") or (4 -3) );v2869.Enabled=false;game.Debris:AddItem(v2869,2);end end end,ErrHandler);end);end CachedGunBeam=v4:FindFirstChild("GunBeam");CachedAnimChar=nil;CachedShootAnim=nil;CachedAimShootAnim=nil;function Animate(v360) local v361=0;local v362;local v363;local v364;while true do if (v361==0) then if  not v360 then return;end v362=v10.Character;if ( not v362 or  not v362:FindFirstChild("Humanoid") or  not v362.Humanoid:FindFirstChild("Animator")) then return;end if  not CachedAnimations then CachedAnimations=v4:FindFirstChild("Animations") or v4:FindFirstChild("ClientAnimations") ;end v361=1;end if (v361==(1 + 0)) then if  not CachedAnimations then return;end v363=CachedAnimations:FindFirstChild("GunCombat");if  not v363 then return;end v364=v362.Humanoid.Animator;v361=7 -5 ;end if (v361==2) then if (CachedAnimChar~=v362) then CachedAnimChar=v362;CachedShootAnim=v364:LoadAnimation(v363.Shoot);CachedAimShootAnim=v364:LoadAnimation(v363.AimShoot);end if CachedShootAnim then CachedShootAnim:Stop(427 -(183 + 244) );end if CachedAimShootAnim then CachedAimShootAnim:Stop(0 + 0 );end if (v81 or table.find(ScopedWeapons,v360.Name)) then CachedAimShootAnim:Play();else CachedShootAnim:Play();end break;end end end function ShowPellet(v365,v366,v367,v368,v369,v370,v371) v370=v370 or v79 ;local v372=(v368-v367).Unit;ShootRayParams.FilterDescendantsInstances=BuildFilter(ShootFilter,v365);local v374=v2:Raycast(v367,v372 * v369 ,ShootRayParams);local v375=(v374 and v374.Position) or (v367 + (v372 * v369)) ;local v376=(v374 and v374.Normal) or nil ;local v377=(v374 and v374.Instance) or nil ;if v371 then return v375,v377,v376;end local v378=(v366 and v366.Parent and v366.Parent.Name) or "" ;local v379=nil;Pcall(function() v379=v366:GetAttribute("SkinName");end);if ( not v379 or (v379=="")) then Pcall(function() local v2268=v7:JSONDecode(v10.DataFolder.Information.EquipSkins.Value);v379=(v2268 and v2268[v378]) or nil ;end);end if ( not v379 or (v379=="")) then v379="Default";end local v380=CachedSkinAssets;local v381=Instance.new("Part");v381.Name="BULLET_RAYS";v381.Anchored=true;v381.CanCollide=false;v381.CanTouch=false;v381.CanQuery=false;v381.Size=Vector3New(730 -(434 + 296) ,0 -0 ,512 -(169 + 343) );v381.Transparency=1 + 0 ;v381.CFrame=CFrameNew(v367,v375);v381.Parent=(CachedIgnored and CachedIgnored:FindFirstChild("Siren") and CachedIgnored.Siren:FindFirstChild("Radius") and CachedIgnored.Siren.Radius) or CachedIgnored or v2 ;local v391=CachedGunBeam;local v392=nil;local v393=nil;local v394=false;if (v380 and v380:FindFirstChild("GunBeam") and v380.GunBeam:FindFirstChild(v379)) then local v1892=0 -0 ;local v1893;while true do if (v1892==0) then v1893=v380.GunBeam[v379];if v1893:FindFirstChildOfClass("Beam") then local v3568=0 -0 ;while true do if (v3568==(0 + 0)) then if (v1893:FindFirstChild("GunBeam") and v1893:FindFirstChild("LeftGunBeam")) then v391=v1893:FindFirstChild("GunBeam");v392=v1893:FindFirstChild("LeftGunBeam");else v391=v1893:FindFirstChildOfClass("Beam");end if v1893:FindFirstChild("Impact") then v393=v1893.Impact;end break;end end elseif v1893:FindFirstChildWhichIsA("BasePart") then local v3932=0 -0 ;local v3933;while true do if (v3932==0) then v3933=v1893:FindFirstChildWhichIsA("BasePart");if v3933:FindFirstChild("Different_GunBeam") then local v4472=v3933.Different_GunBeam;if v4472:FindFirstChild(v378) then local v4610=v4472[v378];if v4610:FindFirstChildWhichIsA("BasePart") then v391=v4610:FindFirstChildWhichIsA("BasePart");if v391:FindFirstChild("Impact") then v393=v391.Impact;end elseif v4610:FindFirstChildOfClass("Beam") then v391=v4610:FindFirstChildOfClass("Beam");if v4610:FindFirstChild("Impact") then v393=v4610.Impact;end else v391=CachedGunBeam;v394=true;end end else local v4473=1123 -(651 + 472) ;while true do if ((0 + 0)==v4473) then v391=v3933;if v3933:FindFirstChild("Impact") then v393=v3933.Impact;end break;end end end break;end end else local v3934=0 + 0 ;while true do if (v3934==(0 -0)) then v391=CachedGunBeam;v394=true;break;end end end break;end end else local v1894=0;while true do if ((483 -(397 + 86))==v1894) then if ( not v391 and v380) then local v3569=876 -(423 + 453) ;local v3570;while true do if (0==v3569) then v3570=v380:FindFirstChild("GunBeam");if v3570 then local v4298=0 + 0 ;local v4299;while true do if (v4298==0) then v4299=v3570:FindFirstChild("Default");if v4299 then local v4638=0;local v4639;while true do if (v4638==0) then v4639=v4299:FindFirstChildOfClass("Beam");if v4639 then v391=v4639;end break;end end end break;end end end break;end end end v394=true;break;end end end local v395=(v391 and v391:Clone()) or nil ;local v396=(v375-v367).Magnitude;local v397=v396/(96 + 629) ;if  not v395 then game.Debris:AddItem(v381,0.5 + 0 );elseif v395:IsA("Beam") then game.Debris:AddItem(v381,0.5 + 0 );else game.Debris:AddItem(v381,v397 + 5 + 0 );end if v395 then local v1895=Instance.new("Attachment");v1895.Position=Vector3New(1190 -(50 + 1140) ,0 + 0 ,0 + 0 );v1895.Parent=v381;local v1898=Instance.new("Attachment");v1898.Position=Vector3New(0,0 + 0 , -v396);v1898.Parent=v381;if v395:IsA("Beam") then local v2593=0;while true do if (v2593==0) then if (v394 and v370) then v395.Color=ColorSequence.new(v370);end v395.Attachment0=v1895;v2593=1 -0 ;end if (v2593==(1 + 0)) then v395.Attachment1=v1898;v395.Parent=v381;break;end end elseif v395:IsA("BasePart") then local v3189=0;local v3190;while true do if (v3189==1) then v395.CanQuery=false;v395.CFrame=CFrameNew(v367,v375);v3189=2;end if (v3189==2) then v3190=v395.CFrame * CFrameNew(596 -(157 + 439) ,0, -v396) ;v395.Parent=v381.Parent;v3189=3;end if (v3189==(0 -0)) then v395.Anchored=true;v395.CanCollide=false;v3189=3 -2 ;end if (v3189==(11 -7)) then Spawn(function() local v4085=918 -(782 + 136) ;local v4086;local v4087;while true do if ((856 -(112 + 743))==v4085) then Wait(1171.05 -(1026 + 145) );if (v4086.PlaybackState~=Enum.PlaybackState.Completed) then v4086:Pause();end v4085=2;end if (v4085==(1 + 2)) then Wait(v397);if (v395:FindFirstChild("Impact") and v377 and v376 and  not v377.Parent:FindFirstChild("Humanoid")) then local v4542=718 -(493 + 225) ;while true do if (v4542==1) then for v4698,v4699 in next,v395.Impact:GetChildren() do if v4699:IsA("ParticleEmitter") then v4699:Emit(v4699:GetAttribute("EmitCount") or (3 -2) );end end break;end if (v4542==(0 + 0)) then if (v4087.PlaybackState~=Enum.PlaybackState.Completed) then Wait(0.05 -0 );end if  not v395:FindFirstChild("NoNormal") then v395.CFrame=CFrameNew(v375,v375-v376 );end v4542=1 + 0 ;end end else for v4611,v4612 in next,v395:GetChildren() do if v4612:IsA("BasePart") then v4612.Transparency=1;end end end v4085=11 -7 ;end if (v4085==(1 + 1)) then v4087=v6:Create(v395,TweenInfo.new(v397,Enum.EasingStyle.Linear),{CFrame=v3190});v4087:Play();v4085=3;end if (v4085==0) then v4086=v6:Create(v395,TweenInfo.new(0.05,Enum.EasingStyle.Linear),{CFrame=v395.CFrame * CFrameNew(0,0 -0 , -(1595.1 -(210 + 1385))) });v4086:Play();v4085=1;end if (v4085==4) then if v395 then for v4613,v4614 in next,v395:GetDescendants() do if v4614:IsA("ParticleEmitter") then v4614.Enabled=false;end end end break;end end end);break;end if (v3189==(1692 -(1201 + 488))) then if v395:GetAttribute("SpecialEffects") then for v4300,v4301 in next,v395:GetDescendants() do if (v4301:IsA("Trail") and v4301:GetAttribute("ColorRandom")) then local v4474=0;local v4475;while true do if (v4474==(0 + 0)) then v4475=v4301:GetAttribute("ColorRandom");v4301.Color=ColorSequence.new(Color3.new(v4475.X,v4475.Y,v4475.Z):Lerp(Color3.new(1 -0 ,1 -0 ,1),MathRandom()));break;end end end end end if ((v379=="Undead") and (v378=="[Revolver]")) then local v4194=UndeadBeamColors[MathRandom(1, #UndeadBeamColors)];local v4195=v395:FindFirstChildOfClass("Trail");if v4195 then v4195.Color=ColorSequence.new({ColorSequenceKeypoint.new(0 -0 ,v4194),ColorSequenceKeypoint.new(1,v4194)});end end v3189=4;end end end if v392 then local v2594=nil;local v2595=v366 and v366.Parent ;if v2595 then local v3191=0;local v3192;while true do if (v3191==(0 -0)) then v3192=v2595:FindFirstChild("Default");if v3192 then local v4196=574 -(489 + 85) ;local v4197;while true do if (v4196==(1501 -(277 + 1224))) then v4197=v3192:FindFirstChild("Mesh");if v4197 then for v4641,v4642 in next,v4197:GetChildren() do if (v4642:IsA("BasePart") and v4642:GetAttribute("SecondaryMesh")) then v2594=v4642;end end end break;end end end break;end end end if v2594 then local v3193=v2594:FindFirstChild("LeftMuzzle") or v2594:FindFirstChildOfClass("Attachment") ;if v3193 then local v3735=v3193.WorldPosition;local v3736=(v375-v3735).Magnitude;local v3737=v3736/725 ;local v3738=Instance.new("Part");v3738.Name="BULLET_RAYS";v3738.Size=Vector3New(0,0,1493 -(663 + 830) );v3738.Transparency=1;v3738.CanCollide=false;v3738.CanTouch=false;v3738.CanQuery=false;v3738.Anchored=true;v3738.CFrame=CFrameNew(v3735,v375);v3738.Parent=v381.Parent;local v3749=v392:Clone();if v3749:IsA("Beam") then local v4088=0 + 0 ;local v4089;local v4090;while true do if ((0 -0)==v4088) then v4089=Instance.new("Attachment");v4089.Position=Vector3New(875 -(461 + 414) ,0 + 0 ,0 + 0 );v4089.Parent=v3738;v4088=1 + 0 ;end if (v4088==(3 + 0)) then v3749.Parent=v3738;game.Debris:AddItem(v3738,250.5 -(172 + 78) );break;end if (v4088==(2 -0)) then if (v394 and v370) then v3749.Color=ColorSequence.new(v370);end v3749.Attachment0=v4089;v3749.Attachment1=v4090;v4088=3;end if ((1 + 0)==v4088) then v4090=Instance.new("Attachment");v4090.Position=Vector3New(0 -0 ,0 + 0 , -v3736);v4090.Parent=v3738;v4088=1 + 1 ;end end elseif v3749:IsA("BasePart") then v3749.Anchored=true;v3749.CanCollide=false;v3749.CanQuery=false;v3749.CFrame=CFrameNew(v3735,v375);local v4306=v3749.CFrame * CFrameNew(0 -0 ,0, -v3736) ;v3749.Parent=v3738.Parent;game.Debris:AddItem(v3738,v3737 + 5 );Spawn(function() local v4405=v6:Create(v3749,TweenInfo.new(v3737,Enum.EasingStyle.Linear),{CFrame=v4306});v4405:Play();Wait(v3737);if v3749 then for v4615,v4616 in next,v3749:GetDescendants() do if v4616:IsA("ParticleEmitter") then v4616.Enabled=false;end end end end);end Spawn(function() for v4091,v4092 in next,v3193:GetChildren() do if v4092:IsA("ParticleEmitter") then v4092:Emit(v4092:GetAttribute("EmitCount") or (1 -0) );end end end);end end end Spawn(function() if (v374 and v393) then Xpcall(function() if (v377 and  not v377.Parent:FindFirstChildOfClass("Humanoid")) then local v3750=Instance.new("Part");Delay(2 + 3 ,function() if v3750 then v3750:Destroy();end end);v3750.Transparency=1 + 0 ;v3750.Name="BULLETHOLE";v3750.Size=Vector3New(0.83,0.731 + 0 ,0.001);v3750.Anchored=true;v3750.CanCollide=false;v3750.CanTouch=false;v3750.CanQuery=false;local v3758=v393:Clone();v3758.Parent=v3750;local v3760=(v376 and (v376 * (0.1 -0))) or Vector3New(0 -0 ,0 + 0 ,0 + 0 ) ;v3750.Position=v375 + v3760 ;v3750.CFrame=CFrameNew(v375 + v3760 ,v375 + (v376 or Vector3New(0,1,0)) );local v3763=CustomBulletHoleRotations[v379];if v3763 then if (typeof(v3763)=="string") then if (v3763=="Position") then v3758.Position=v3750.Position;else v3758.CFrame=v3750.CFrame;end elseif (typeof(v3763)=="table") then v3758.CFrame=v3758.CFrame * v3763[1] * CFrame.Angles(MathRad(v3763[2].X),MathRad(v3763[449 -(133 + 314) ].Y),MathRad(v3763[1 + 1 ].Z)) ;else v3758.CFrame=v3758.CFrame * CFrame.Angles(MathRad(v3763.X),MathRad(v3763.Y),MathRad(v3763.Z)) ;end elseif v3758:IsA("Part") then v3758.CFrame=v3750.CFrame;end v3750.Parent=v381.Parent;for v3942,v3943 in next,v3750:GetDescendants() do if v3943:IsA("ParticleEmitter") then v3943:Emit(v3943:GetAttribute("EmitCount") or (214 -(199 + 14)) );end end end end,ErrHandler);end end);end local function v398(v936,v937) local v938=v936:FindFirstChild("ShootSound");if  not v938 then return;end if (v379 and (v379~="Default") and v380) then local v2269=0 -0 ;local v2270;while true do if (0==v2269) then v2270=v380:FindFirstChild("GunShootSounds");if v2270 then local v3766=1549 -(647 + 902) ;local v3767;while true do if ((0 -0)==v3766) then v3767=v2270:FindFirstChild(v378);if v3767 then local v4406=233 -(85 + 148) ;local v4407;while true do if (v4406==(1289 -(426 + 863))) then v4407=v3767:FindFirstChild(v379);if (v4407 and v4407:IsA("StringValue") and (v4407.Value~="")) then v938.SoundId=v4407.Value;end break;end end end break;end end end break;end end end local v939=v938:GetAttribute("SequenceSFX");if v939 then local v2271=0 -0 ;local v2272;local v2273;while true do if (v2271==2) then if ( #v2273>0) then v938.SoundId="rbxassetid://"   .. v2273[(v2272% #v2273) + 1 ] ;end break;end if ((1654 -(873 + 781))==v2271) then if (v938:GetAttribute("CurrentSequence")==nil) then v938:SetAttribute("CurrentSequence",1);else v938:SetAttribute("CurrentSequence",v938:GetAttribute("CurrentSequence") + (1 -0) );end v2272=v938:GetAttribute("CurrentSequence");v2271=1;end if (v2271==(2 -1)) then v2273={};for v3574 in string.gmatch(v939,"%d+") do table.insert(v2273,v3574);end v2271=1 + 1 ;end end end if v937 then local v2274=0;local v2275;while true do if (v2274==1) then v2275.Parent=v936;v2275:Play();v2274=7 -5 ;end if (v2274==(0 -0)) then v2275=v938:Clone();v2275.Name="\0";v2274=2 -1 ;end if (v2274==(1949 -(414 + 1533))) then v2275.Ended:Once(function() if (v2275 and v2275.Parent) then v2275:Destroy();end end);break;end end else v938:Play();end end local v399=ShotgunWeapons[v378] or false ;if v399 then if  not v366:GetAttribute("PlayingSound") then local v2596=0 + 0 ;while true do if (v2596==0) then v366:SetAttribute("PlayingSound",true);Delay(555.075 -(443 + 112) ,function() if (v366 and v366.Parent) then v366:SetAttribute("PlayingSound",nil);end end);v2596=1480 -(888 + 591) ;end if (v2596==1) then Spawn(function() if  not v80[v366] then v398(v366,true);v80[v366]=true;Delay(0.021 -0 ,function() v80[v366]=nil;end);end end);break;end end end elseif (v379=="Toilet") then local v2597=0 + 0 ;local v2598;local v2599;while true do if (v2597==(11 -8)) then v2599:Play();break;end if (v2597==(0 + 0)) then v2598={125391021099756 -  -34905939 ,132466522419365 -(24 + 449) ,129999172685446 -(624 + 474) };v2599=Instance.new("Sound");v2597=1;end if (v2597==(1844 -(517 + 1325))) then v2599.Parent=v366;v2599.Ended:Once(function() v2599:Destroy();end);v2597=4 -1 ;end if (v2597==(487 -(68 + 418))) then v2599.Name="ShootSound";v2599.SoundId="rbxassetid://"   .. v2598[MathRandom(1, #v2598)] ;v2597=4 -2 ;end end else Spawn(function() if  not v80[v366] then v398(v366,true);v80[v366]=true;Delay(0.021 -0 ,function() v80[v366]=nil;end);end end);end local v400=false;Spawn(function() if  not v380 then return;end local v940=v380:FindFirstChild("GunSkinMuzzleParticle");if  not v940 then return;end local v941=v940:FindFirstChild(v378);if v941 then local v2276=0 + 0 ;local v2277;while true do if (v2276==0) then v2277=v941:FindFirstChild("Muzzle");if v2277 then DoMuzzleEmit(v2277,v365);else DoMuzzleEmit(v941,v365);end v2276=1093 -(770 + 322) ;end if (v2276==1) then v400=true;break;end end else local v2278=v940:FindFirstChild(v379);if v2278 then local v2873=0;local v2874;while true do if (v2873==(0 + 0)) then v2874=v2278:FindFirstChild("Muzzle");if v2874 then local v4094=v2874:FindFirstChild("Different_GunMuzzle");if (v4094 and v4094:FindFirstChild(v378)) then DoMuzzleEmit(v4094[v378],v365);else DoMuzzleEmit(v2874,v365);end v400=true;else local v4095=0 + 0 ;local v4096;while true do if (v4095==0) then v4096=v2278:FindFirstChildOfClass("ParticleEmitter");if v4096 then local v4544=nil;local v4545=v366.Parent;if v4545 then local v4643=v4545:FindFirstChild("Default");if v4643 then local v4700=0 + 0 ;local v4701;while true do if (0==v4700) then v4701=v4643:FindFirstChild("Mesh");if v4701 then v4544=v4701:FindFirstChild("Muzzle");end break;end end end end if  not v4544 then v4544=v366:FindFirstChild("Muzzle");end if v4544 then local v4644=0;local v4645;while true do if (v4644==1) then v4645.RotSpeed=NumberRange.new(MathRandom( -90,128 -38 ));v4645.Parent=v4544;v4644=3 -1 ;end if (v4644==(5 -3)) then v4645:Emit(1);v400=true;break;end if (v4644==(0 -0)) then v4645=v4096:Clone();v4645.Rotation=NumberRange.new(MathRandom( -(101 + 79),269 -89 ));v4644=1 + 0 ;end end end end break;end end end break;end end end end end);Xpcall(function() local v942=0 + 0 ;local v943;while true do if (v942==(0 + 0)) then v943=v366.Parent.Handle:FindFirstChild("ShootBBGUI");if v943 then v943.Enabled= not v400;end break;end end end,ErrHandler);local v401=Instance.new("PointLight");v401.Brightness=0.5 -0 ;v401.Range=20 -5 ;v401.Shadows=false;v401.Color=Color3.new(1 + 0 ,1,1);v401.Parent=v381;local v407=v6:Create(v401,TweenInfo.new(0.5,Enum.EasingStyle.Bounce,Enum.EasingDirection.In),{Range=0 -0 });v407:Play();local v408;v408=v407.Completed:Connect(function() local v944=0;while true do if (v944==0) then if v401 then v401:Destroy();end v408:Disconnect();break;end end end);local v409=v365:FindFirstChild("BodyEffects");if v409 then local v1901=0 -0 ;local v1902;while true do if (v1901==(0 + 0)) then v1902=v409:FindFirstChild("Movement");if v1902 then local v3579=0 -0 ;local v3580;local v3581;local v3582;while true do if (v3579==3) then Delay(v3582,function() if (v3580 and v3580.Parent) then v3580:Destroy();end end);break;end if (v3579==(833 -(762 + 69))) then v3581=v366.Parent and v366.Parent:FindFirstChild("ShootingCooldown") ;v3582=(v3581 and tonumber(v3581.Value)) or 0.3 ;v3579=9 -6 ;end if (v3579==(1 + 0)) then v3580.Value=4 + 1 ;v3580.Parent=v1902;v3579=2;end if (v3579==(0 -0)) then v3580=Instance.new("IntValue");v3580.Name="ReduceWalk";v3579=1 + 0 ;end end end break;end end end Spawn(function() Animate(v366.Parent);end);return v375,v377,v376;end function GetDoubleTapCount(v410) local v411=0;local v412;local v413;while true do if (v411==(1 + 0)) then if ((v412['Mode']~="Always") and  not State.DoubleTapActive) then return 3 -2 ;end v413=v412["Weapon Configs"];v411=159 -(8 + 149) ;end if (v411==0) then v412=v14()['Modifications']["Double Tap"];if  not v412['Enabled'] then return 1;end v411=1321 -(1199 + 121) ;end if (v411==2) then if (v413 and v413['Enabled']) then local v2875=0 -0 ;local v2876;local v2877;while true do if (v2875==0) then v2876=v67(v410);v2877=v413[v2876];v2875=1;end if (v2875==(2 -1)) then if (v2877 and  not v2877['Enabled']) then return 1 + 0 ;end break;end end end return 2;end end end local v82=nil;do local v414=0 -0 ;local v415;while true do if (v414==(6 -3)) then v415.GetConfig=function(v2600) return v2600 or v415.DefaultConfig ;end;v415.Apply=function(v2601,v2602,v2603,v2604,v2605,v2606) v2605=v415.GetConfig(v2605);if ( not v2605 or  not v2605.Enabled or  not v2603 or  not v2603.Parent) then return v2602,v2603,v2604;end local v2607=v2605.Weapons;if  not v2607 then return v2602,v2603,v2604;end local v2608=v2606 or v415.GetWeaponClass ;local v2609=v2608(v2601);local v2610=v2607 and v2607[v2609] ;if ( not v2610 or  not v2610.Enabled) then return v2602,v2603,v2604;end local v2611=v2603:FindFirstAncestorOfClass("Model");if ( not v2611 or  not v2611:FindFirstChildOfClass("Humanoid")) then return v2602,v2603,v2604;end local v2612=v415.GetOverridePart(v2611,v2610.Mode);if  not v2612 then return v2602,v2603,v2604;end return v2602,v2612,v2604;end;v414=4 + 0 ;end if (v414==0) then v415={};v415.DefaultConfig={Enabled=true,Weapons={Shotguns={Enabled=true,Mode="half"},Pistols={Enabled=true,Mode="full"},Others={Enabled=true,Mode="full"}}};v414=1808 -(518 + 1289) ;end if (v414==(6 -2)) then v82=v415;break;end if (v414==2) then v415.GetWeaponClass=function(v2613) if v415.ShotgunWeapons[v2613] then return "Shotguns";end if v415.PistolWeapons[v2613] then return "Pistols";end return "Others";end;v415.GetOverridePart=function(v2614,v2615) local v2616=0 + 0 ;while true do if (v2616==(2 -0)) then return nil;end if (v2616==(0 + 0)) then if  not v2614 then return nil;end if (v2615=="full") then return v2614:FindFirstChild("Head");end v2616=470 -(304 + 165) ;end if (v2616==(1 + 0)) then if (v2615=="half") then return v2614:FindFirstChild("HumanoidRootPart");end if (v2615=="min") then return v2614:FindFirstChild("Right Leg") or v2614:FindFirstChild("RightLeg") ;end v2616=2;end end end;v414=3;end if (v414==1) then v415.ShotgunWeapons={["[Double-Barrel SG]"]=true,["[TacticalShotgun]"]=true,["[Tactical Shotgun]"]=true,["[Tactical-Shotgun]"]=true,["[Shotgun]"]=true,["[Drum-Shotgun]"]=true};v415.PistolWeapons={["[Revolver]"]=true,["[Silencer]"]=true,["[Glock]"]=true,["[Deagle]"]=true};v414=162 -(54 + 106) ;end end end function ApplyDamageModifierHit(v416,v417,v418,v419) local v420=v14()['Modifications']["Das Hood"]["Damage Modifier"];if (v82 and (type(v82.Apply)=="function")) then return v82.Apply(v416,v417,v418,v419,v420,v67);end if ( not v420 or  not v420['Enabled'] or  not v418 or  not v418.Parent) then return v417,v418,v419;end local v421=v420['Weapons'];if  not v421 then return v417,v418,v419;end local v422=v67(v416);local v423=v421[v422];if ( not v423 or  not v423['Enabled']) then return v417,v418,v419;end local v424=v418:FindFirstAncestorOfClass("Model");if ( not v424 or  not v424:FindFirstChildOfClass("Humanoid")) then return v417,v418,v419;end local v425=nil;if (v423['Mode']=="full") then v425=v424:FindFirstChild("Head");elseif (v423['Mode']=="half") then v425=v424:FindFirstChild("HumanoidRootPart");elseif (v423['Mode']=="min") then v425=v424:FindFirstChild("Right Leg") or v424:FindFirstChild("RightLeg") ;end if  not v425 then return v417,v418,v419;end return v417,v425,v419;end function EmulateGunFire(v426) local v427=v10.Character;if  not v427 then return;end if _G.GUN_COMBAT_TOGGLE then return;end if  not CanShoot(v427) then return;end local v428=v426:FindFirstChild("Handle");if  not v428 then return;end local v429=v426:FindFirstChild("Ammo");if ( not v429 or (v429.Value<=0)) then local v1903=1969 -(1618 + 351) ;local v1904;while true do if (v1903==(1 + 0)) then return;end if (v1903==(1016 -(10 + 1006))) then v1904=v428:FindFirstChild("NoAmmo");if v1904 then v1904:Play();end v1903=1 + 0 ;end end end local v430=v426:FindFirstChild("Range");local v431=(v430 and v430.Value) or (29 + 171) ;local v432=v426:FindFirstChild("RemoteEvent");local v433=v432 or {FireServer=function() end} ;local v434=GetMuzzlePosition(v426);if  not v434 then return;end local v435=ShotgunWeapons[v426.Name] or false ;ShootRayParams.FilterDescendantsInstances=BuildFilter(ShootFilter,v427);v433:FireServer("Shoot");local v437=GetDoubleTapCount(v426.Name);for v945=3 -2 ,v437 do if v435 then local v2288=v2:GetServerTimeNow();local v2289=1034 -(912 + 121) ;local v2290=v14()['Modifications']["Spread Modifications"];if v2290['Enabled'] then v2289=v2290['Value'] or 1 ;local v2878=v2290['Randomizer'];if (v2878 and v2878['Enabled']) then local v3583=v2878['Min'] or 1 ;local v3584=v2878['Max'] or (1 + 0) ;local v3585=MathRandom();v2289=v2289 * (v3583 + ((v3584-v3583) * v3585)) ;end end for v2617=1,5 do local v2618=1289 -(1140 + 149) ;local v2619;local v2620;local v2621;local v2622;local v2623;local v2624;local v2625;local v2626;local v2627;local v2628;while true do if (v2618==(0 + 0)) then v2619=(((MathRandom()>(0.5 -0)) and (MathRandom() * (0.05 + 0))) or ( -MathRandom() * (0.05 -0))) * v2289 ;v2620=(((MathRandom()>0.5) and (MathRandom() * (0.1 -0))) or ( -MathRandom() * (0.1 + 0))) * v2289 ;v2621=(((MathRandom()>(0.5 -0)) and (MathRandom() * (186.05 -(165 + 21)))) or ( -MathRandom() * (111.05 -(61 + 50)))) * v2289 ;v2622=Vector3New(v2619,v2620,v2621);v2618=1 + 0 ;end if (v2618==(9 -7)) then if (v945==1) then v2626,v2627,v2628=ShowPellet(v427,v428,v434,v2625,v431);end if  not v2626 then local v3944=v2624 * v431 ;local v3945=v2:Raycast(v434,v3944,ShootRayParams);v2626=(v3945 and v3945.Position) or (v434 + v3944) ;v2627=(v3945 and v3945.Instance) or nil ;v2628=(v3945 and v3945.Normal) or Vector3New(0 -0 ,1 + 0 ,0) ;end v2626,v2627,v2628=ApplyDamageModifierHit(v426.Name,v2626,v2627,v2628);v4.MainEvent:FireServer("ShootGun",v428,v434,v2626,v2627,v2628,v2288);break;end if (v2618==1) then v2623=v78(v434,v431);v2624=(v2623-v434).Unit + v2622 ;v2625=v434 + (v2624 * v431) ;v2626,v2627,v2628=nil;v2618=2;end end end else local v2291=v78(v434,v431);local v2292=v434 + ((v2291-v434).Unit * v431) ;local v2293,v2294,v2295;if (v945==1) then v2293,v2294,v2295=ShowPellet(v427,v428,v434,v2292,v431);end if  not v2293 then local v2879=(v2291-v434).Unit * v431 ;local v2880=v2:Raycast(v434,v2879,ShootRayParams);v2293=(v2880 and v2880.Position) or (v434 + v2879) ;v2294=(v2880 and v2880.Instance) or nil ;v2295=(v2880 and v2880.Normal) or Vector3New(1460 -(1295 + 165) ,1 + 0 ,0 + 0 ) ;end v2293,v2294,v2295=ApplyDamageModifierHit(v426.Name,v2293,v2294,v2295);v4.MainEvent:FireServer("ShootGun",v428,v434,v2293,v2294,v2295);end end v433:FireServer();end CachedMainEvent=nil;HookedTools={};function HookGunActivation(v438) if  not v438 then return;end v438.ChildAdded:Connect(function(v946) local v947=1397 -(819 + 578) ;local v948;local v949;local v950;local v951;while true do if (v947==3) then v946.Activated:Connect(function() State.IsShooting=true;local v2882=v949();if v950 then local v3586=0;local v3587;while true do if (v3586==(1404 -(331 + 1071))) then v946.Deactivated:Wait();v3587=false;v3586=746 -(588 + 155) ;end if (v3586==(1285 -(546 + 736))) then State.IsShooting=false;break;end if (v3586==(1938 -(1834 + 103))) then v3587=true;Spawn(function() while v3587 and (v946.Parent==v438)  do local v4311=0 + 0 ;while true do if (v4311==(0 -0)) then EmulateGunFire(v946);Wait(v2882 + (1766.0095 -(1536 + 230)) );v4311=492 -(128 + 363) ;end if (v4311==(1 + 0)) then v948=Tick();break;end end end end);v3586=4 -2 ;end if (v3586==0) then if ((Tick() -v948)<(v2882 + 0.0095 + 0)) then return;end v948=Tick();v3586=1 -0 ;end end elseif v951 then if v14()['Modifications']["Delay Changer"]['Enabled'] then local v4199=0 -0 ;local v4200;while true do if ((4 -2)==v4199) then v946.Deactivated:Wait();v4200=false;v4199=3 + 0 ;end if (v4199==(1010 -(615 + 394))) then v4200=true;Spawn(function() while v4200 and (v946.Parent==v438)  do local v4617=0 + 0 ;while true do if (v4617==(0 + 0)) then EmulateGunFire(v946);Wait(v2882 + (0.0095 -0) );v4617=4 -3 ;end if (v4617==1) then v948=Tick();break;end end end end);v4199=653 -(59 + 592) ;end if (v4199==(0 -0)) then if ((Tick() -v948)<(v2882 + (0.0095 -0))) then return;end v948=Tick();v4199=1;end if (v4199==(3 + 0)) then State.IsShooting=false;break;end end else local v4201=171.3 -(70 + 101) ;Pcall(function() local v4312=0 -0 ;local v4313;while true do if ((0 + 0)==v4312) then v4313=v946:FindFirstChild("ToleranceCooldown");if v4313 then v4201=v4313.Value;end break;end end end);if ((Tick() -v948)<v4201) then return;end v948=Tick();local v4202=7 -4 ;Xpcall(function() local v4314=v946:FindFirstChild("Ammo");if v4314 then v4202=MathMin(v4202,v4314.Value);end end,ErrHandler);Spawn(function() for v4408=242 -(123 + 118) ,v4202 do local v4409=0 + 0 ;while true do if (v4409==(0 + 0)) then EmulateGunFire(v946);Wait(v2882 + (1399.0095 -(653 + 746)) );break;end end end end);end else local v3946=0;while true do if (v3946==(1 -0)) then EmulateGunFire(v946);State.IsShooting=false;break;end if (v3946==(0 -0)) then if ((Tick() -v948)<(v2882 + 0.0095)) then return;end v948=Tick();v3946=1;end end end end);v946.Deactivated:Connect(function() State.IsShooting=false;end);break;end if (v947==(0 -0)) then if  not v946:IsA("Tool") then return;end if  not MuzzleOffsets[v946.Name] then return;end if HookedTools[v946] then return;end v947=1 + 0 ;end if (v947==(2 + 0)) then function v949() return v68(v946);end v950=AutoWeapons[v946.Name] or false ;v951=BurstWeapons[v946.Name] or false ;v947=3 + 0 ;end if (v947==(1 + 0)) then HookedTools[v946]=true;v948=0;v949=nil;v947=1 + 1 ;end end end);end function v77(v439,v440) local v441=0;local v442;local v443;local v444;local v445;local v446;local v447;local v448;local v449;local v450;local v451;local v452;local v453;local v454;while true do if (v441==(4 -2)) then v447=v75();v448=v446:ViewportPointToRay(v447.X,v447.Y);v449=(v439-v448.Origin):Dot(v448.Direction);v441=3;end if (v441==(4 + 0)) then v452=v446.CFrame:VectorToObjectSpace(v439-v451 );v453=MathMax(tonumber(v445['Width']) or 6 ,0 -0 );v454=MathMax(tonumber(v445['Height']) or 6 ,0);v441=5;end if (v441==(1239 -(885 + 349))) then return (MathAbs(v452.X)<=(v453/(2 + 0))) and (MathAbs(v452.Y)<=(v454/(4 -2))) ;end if (v441==(0 -0)) then v442=v14()['Main']['FOV'];v443=((v440=="Silent Aim") and "Silent") or v440 ;v444=v442 and v442[v443] ;v441=1;end if (v441==1) then v445=v444 and v444["3D"] ;if ( not v444 or (string.lower(tostring(v444['Options'] or "2D" ))~="3d") or  not v445) then return true;end v446=v2.CurrentCamera;v441=970 -(915 + 53) ;end if (v441==(804 -(768 + 33))) then v450=MathMax(tonumber(v445['Depth']) or (38 -28) ,0 -0 );if ((v449<=(328 -(287 + 41))) or (v449>v450)) then return false;end v451=v448.Origin + (v448.Direction * v449) ;v441=851 -(638 + 209) ;end end end function GetClosestPlayerToCursor(v455,v456,v457,v458) local v459=v2.CurrentCamera;local v460=v75();local v461=v459.CFrame.Position;local v462=v459.CFrame.LookVector;local v463=nil;local v464=MathHuge;for v952,v953 in next,v1:GetPlayers() do if (v953==v10) then continue;end if  not PassesConditions(v953,v457) then continue;end local v954=v953.Character;if  not v954 then continue;end local v955=v954:FindFirstChild("HumanoidRootPart");if  not v955 then continue;end if (v458 and  not v77(v955.Position,v458)) then continue;end if (v455 and (v455<MathHuge)) then local v2298=0 + 0 ;local v2299;while true do if (v2298==0) then v2299=(v461-v955.Position).Magnitude;if (v2299>v455) then continue;end break;end end end local v956,v957=v459:WorldToViewportPoint(v955.Position);if v456 then local v2300=1686 -(96 + 1590) ;local v2301;local v2302;local v2303;while true do if ((1672 -(741 + 931))==v2300) then v2301=(v955.Position-v461).Unit;v2302=v462:Dot(v2301);v2300=1 + 0 ;end if (v2300==1) then if (v2302<=0) then continue;end v2303=nil;v2300=5 -3 ;end if (2==v2300) then if (v957 and (v956.Z>0)) then v2303=(Vector2New(v956.X,v956.Y) -v460).Magnitude;else v2303=(1 -v2302) * (46718 -36718) ;end if (v2303<v464) then local v3772=0;while true do if (v3772==0) then v463=v953;v464=v2303;break;end end end break;end end else local v2304=0;local v2305;while true do if (v2304==(1 + 0)) then v2305=(Vector2New(v956.X,v956.Y) -v460).Magnitude;if (v2305<v464) then local v3773=0;while true do if (v3773==(0 + 0)) then v463=v953;v464=v2305;break;end end end break;end if (0==v2304) then if  not v957 then continue;end if (v956.Z<=(0 + 0)) then continue;end v2304=3 -2 ;end end end end return v463;end function ActivateTool() local v465=v10.Character;if  not v465 then return;end local v466=v465:FindFirstChildOfClass("Tool");if (v466 and v466:IsDescendantOf(v465) and (v466.Name~="[Knife]")) then v466:Activate();end end local v83;function TriggerShot(v467,v468,v469,v470,v471,v472,v473) local v474=0 + 0 ;local v475;while true do if ((0 + 0)==v474) then v475=DateTime.now().UnixTimestampMillis;if ((v475-State.LastTriggerShot)>=(v467 * (4079 -3079))) then State.LastTriggerShot=v475;local v2885=v472-v471 ;local v2886=v2885.Magnitude;if (v2886<=(0 + 0)) then return;end local v2887=v2885/v2886 ;local v2888=v14()['Modifications']["Spread Modifications"];local v2889=(v2888['Enabled'] and v2888) or nil ;local v2890=GetDoubleTapCount(v470);for v3200=495 -(64 + 430) ,v2890 do v83(v468,v469,v470,v471,v2887,v473,v2889);end end break;end end end function RunTriggerbot() local v476=v14()['Triggerbot'];if  not v476['Enabled'] then return;end if  not State.TriggerState then return;end local v477=State.Targets.Triggerbot;local v478=v477 and v477.Character ;if  not v478 then return;end local v479=v10.Character;if  not v479 then return;end local v480=v479:FindFirstChildOfClass("Tool");if ( not v480 or  not v480:FindFirstChild("Ammo") or (v480.Name=="[Knife]")) then return;end if  not State.CanTriggerbotShoot then return;end local v481=v479:FindFirstChild("Humanoid");if ( not v481 or (v481.Health<=0)) then return;end local v482=v479:FindFirstChild("BodyEffects");if  not v482 then return;end if (v482:FindFirstChild("K.O") and v482["K.O"].Value) then return;end if (v482:FindFirstChild("Reload") and v482.Reload.Value) then return;end if (v482:FindFirstChild("Dead") and v482.Dead.Value) then return;end if  not PassesConditions(v477,"Triggerbot") then return;end local v483=v479:FindFirstChild("HumanoidRootPart");local v484=v478:FindFirstChild("HumanoidRootPart");if ( not v483 or  not v484) then return;end local v485=(v483.Position-v484.Position).Magnitude;local v486=v476["Max Range"] or MathHuge ;if (v485>v486) then return;end local v487=v480:FindFirstChild("Handle");if  not v487 then return;end local v488=v480.Name;local v489=v480:FindFirstChild("Range");local v490=(v489 and v489.Value) or 200 ;if v476["Limit To Weapon Range"] then local v1905=GetMuzzlePosition(v480) or v483.Position ;if ((v1905-v484.Position).Magnitude>v490) then return;end end local v491=v2.CurrentCamera;local v492=v491.ViewportSize.Y;local v493=v491.FieldOfView;local v494=v484.Position;local v495=v476['Prediction'];if (v495 and (v495['Enabled']==true)) then local v1906=0 + 0 ;local v1907;while true do if (v1906==0) then v1907=GetDeltaVelocity(v484);v494=v494 + Vector3New(v1907.X * (v495['X'] or (363.13 -(106 + 257))) ,v1907.Y * (v495['Y'] or (0.13 + 0)) ,v1907.Z * (v495['Z'] or 0.13) ) ;break;end end end local v496=v476["Offscreen Targeting"];local v497=v496 and v496['Enabled'] ;local v498,v499=v491:WorldToViewportPoint(v494);if ( not v499 and  not v497) then return;end if  not v77(v494,"Triggerbot") then return;end local v500=v476["Trigger Mode"] or "FOV" ;local v501=false;local v502=v14()['Main']['FOV']['Triggerbot'];if (string.lower(tostring(v502['Options'] or "2D" ))=="3d") then v501=true;elseif v497 then v501=true;elseif (v500=="Player") then local v3201=721 -(496 + 225) ;local v3202;local v3203;while true do if (v3201==(0 -0)) then v3202=v10:GetMouse();v3203=v3202.Target;v3201=4 -3 ;end if (v3201==1) then v501=v3203 and v3203:IsDescendantOf(v478) ;break;end end else local v3204=v5:GetMouseLocation();local v3205=Vector2New(v498.X,v498.Y) -v3204 ;local v3206=v498.Z;if (v3206<=(1659 -(256 + 1402))) then return;end local v3207=(((v484.Size.Y * v492)/(v3206 * 2)) * (1979 -(30 + 1869)))/v493 ;local v3208=false;if (v3208=="Circle") then local v3774=0;local v3775;while true do if (v3774==(1369 -(213 + 1156))) then v3775=(8999999676 -(96 + 92)) * v3207 ;v501= not v502['Visualize']['Enabled'] or (((v3205.X * v3205.X) + (v3205.Y * v3205.Y))<=(v3775 * v3775)) ;break;end end else local v3776=((v502['Width'] and (v502['Width'][1 + 0 ] or (9000000387 -(142 + 757)))) or (9000000499 -(599 + 412))) * v3207 ;local v3777=((v502['Height'] and (v502['Height'][80 -(32 + 47) ] or 8999999488)) or 8999999488) * v3207 ;v501= not v502['Visualize']['Enabled'] or ((MathAbs(v3205.X)<=(v3776/2)) and (MathAbs(v3205.Y)<=(v3777/(1979 -(1053 + 924))))) ;end end if v501 then local v1908=GetMuzzlePosition(v480) or v483.Position ;if  not CachedMainEvent then CachedMainEvent=v4:FindFirstChild("MainEvent");end if  not CachedMainEvent then return;end local v1909=v476['Delay'] or (0 + 0) ;local v1910=v68(v480);local v1911=MathMax(v1909,v1910);TriggerShot(v1911,v480,v487,v488,v1908,v494,v490);end end SilentTargetLocked=false;UtilityUI=Instance.new("ScreenGui");UtilityUI.Name="ciderui";UtilityUI.IgnoreGuiInset=true;UtilityUI.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;UtilityUI.Parent=v8;function CreateSquare() local v503=0 -0 ;local v504;local v505;local v506;local v507;local v508;local v509;while true do if (v503==(1649 -(685 + 963))) then v505.BackgroundColor3=v504._Color;v505.Visible=v504._Visible;v505.Parent=UtilityUI;v506=Instance.new("UIStroke");v503=3 -1 ;end if (v503==0) then v504={_Size=Vector2New(0,0 -0 ),_Position=Vector2New(0,1709 -(541 + 1168) ),_Color=Color3.new(1598 -(645 + 952) ,839 -(669 + 169) ,3 -2 ),_Visible=false,_Filled=false,_Thickness=1,_Transparency=1 -0 };v505=Instance.new("Frame");v505.BorderSizePixel=0 + 0 ;v505.BackgroundTransparency=1 + 0 ;v503=1;end if (v503==(768 -(181 + 584))) then v507=Instance.new("UICorner");v507.CornerRadius=UDim.new(1395 -(665 + 730) ,0);v507.Parent=v505;v508={};v503=4;end if (v503==4) then v509={__newindex=function(v2630,v2631,v2632) if (v2631=="Size") then v504._Size=v2632;v505.Size=UDim2.fromOffset(v2632.X,v2632.Y);elseif (v2631=="Round") then v504._Round=v2632;v507.CornerRadius=(v2632 and UDim.new(2 -1 ,0)) or UDim.new(0 -0 ,0) ;elseif (v2631=="Position") then v504._Position=v2632;v505.Position=UDim2.fromOffset(v2632.X,v2632.Y);elseif (v2631=="Color") then v504._Color=v2632;v505.BackgroundColor3=v2632;v506.Color=v2632;elseif (v2631=="Visible") then local v4483=1350 -(540 + 810) ;while true do if (v4483==(0 -0)) then v504._Visible=v2632;v505.Visible=v2632;break;end end elseif (v2631=="Filled") then v504._Filled=v2632;v505.BackgroundTransparency=(v2632 and MathClamp((2 -1) -v504._Transparency ,0,1)) or 1 ;v506.Enabled= not v2632;elseif (v2631=="Thickness") then v504._Thickness=v2632;v506.Thickness=MathClamp(v2632,0.6 + 0 ,2147483850 -(166 + 37) );elseif (v2631=="Transparency") then local v4715=1881 -(22 + 1859) ;local v4716;while true do if (v4715==(1772 -(843 + 929))) then v504._Transparency=v2632;v4716=MathClamp((263 -(30 + 232)) -v2632 ,0 -0 ,1);v4715=778 -(55 + 722) ;end if (v4715==1) then v505.BackgroundTransparency=(v504._Filled and v4716) or (1 -0) ;v506.Transparency=v4716;break;end end end end,__index=function(v2633,v2634) local v2635=1675 -(78 + 1597) ;while true do if (0==v2635) then if ((v2634=="Remove") or (v2634=="Destroy")) then return function() v505:Destroy();end;elseif (v2634=="Size") then return v504._Size;elseif (v2634=="Round") then return v504._Round;elseif (v2634=="Position") then return v504._Position;elseif (v2634=="Color") then return v504._Color;elseif (v2634=="Visible") then return v504._Visible;elseif (v2634=="Filled") then return v504._Filled;elseif (v2634=="Thickness") then return v504._Thickness;elseif (v2634=="Transparency") then return v504._Transparency;end return nil;end end end};return setmetatable(v508,v509);end if (2==v503) then v506.Thickness=v504._Thickness;v506.Enabled=true;v506.LineJoinMode=Enum.LineJoinMode.Miter;v506.Parent=v505;v503=1 + 2 ;end end end function CreateLine() local v510=0 + 0 ;local v511;local v512;local v513;local v514;local v515;while true do if (v510==1) then v512.BackgroundColor3=v511._Color;v512.Visible=v511._Visible;v512.BackgroundTransparency=0;v512.Size=UDim2.new();v510=2;end if (v510==(0 + 0)) then v511={_From=Vector2New(549 -(305 + 244) ,0 + 0 ),_To=Vector2New(105 -(95 + 10) ,0 + 0 ),_Color=Color3.new(3 -2 ,1 -0 ,763 -(592 + 170) ),_Visible=false,_Thickness=1,_Transparency=3 -2 };v512=Instance.new("Frame");v512.AnchorPoint=Vector2New(0.5,0.5 -0 );v512.BorderSizePixel=0;v510=1 + 0 ;end if (v510==2) then v512.Parent=UtilityUI;v513=nil;function v513() local v2636=v511._To-v511._From ;local v2637=(v511._To + v511._From)/(1 + 1) ;local v2638=v2636.Magnitude;local v2639=MathDeg(MathAtan2(v2636.Y,v2636.X));v512.Position=UDim2.fromOffset(v2637.X,v2637.Y);v512.Rotation=v2639;v512.Size=UDim2.fromOffset(v2638,v511._Thickness);end v514={};v510=3;end if (v510==(6 -3)) then v515={__newindex=function(v2643,v2644,v2645) if (v2644=="From") then v511._From=v2645;v513();elseif (v2644=="To") then local v3780=0 + 0 ;while true do if (v3780==(0 -0)) then v511._To=v2645;v513();break;end end elseif (v2644=="Color") then local v4103=507 -(353 + 154) ;while true do if (v4103==(0 -0)) then v511._Color=v2645;v512.BackgroundColor3=v2645;break;end end elseif (v2644=="Visible") then local v4319=0 -0 ;while true do if (v4319==0) then v511._Visible=v2645;v512.Visible=v2645;break;end end elseif (v2644=="Thickness") then local v4484=0 + 0 ;while true do if (v4484==(0 + 0)) then v511._Thickness=v2645;v513();break;end end elseif (v2644=="Transparency") then local v4621=0 + 0 ;while true do if (v4621==0) then v511._Transparency=v2645;v512.BackgroundTransparency=MathClamp((1 -0) -v2645 ,0 -0 ,1);break;end end end end,__index=function(v2646,v2647) local v2648=0 -0 ;while true do if (v2648==0) then if ((v2647=="Remove") or (v2647=="Destroy")) then return function() v512:Destroy();end;elseif (v2647=="From") then return v511._From;elseif (v2647=="To") then return v511._To;elseif (v2647=="Color") then return v511._Color;elseif (v2647=="Visible") then return v511._Visible;elseif (v2647=="Thickness") then return v511._Thickness;elseif (v2647=="Transparency") then return v511._Transparency;end return nil;end end end};return setmetatable(v514,v515);end end end SilentFOVBox=CreateSquare();SilentFOVBox.Visible=false;SilentFOVBox.Filled=false;SilentFOVBox.Thickness=1;SilentFOVBox.Transparency=87 -(7 + 79) ;TriggerFOVBox=CreateSquare();TriggerFOVBox.Visible=false;TriggerFOVBox.Filled=false;TriggerFOVBox.Thickness=1 + 0 ;TriggerFOVBox.Transparency=182 -(24 + 157) ;AimbotFOVBox=CreateSquare();AimbotFOVBox.Visible=false;AimbotFOVBox.Filled=false;AimbotFOVBox.Thickness=1 -0 ;AimbotFOVBox.Transparency=1;local v101=function() local v516=0;local v517;while true do if (v516==(0 -0)) then v517={};for v2649=1 + 0 ,12 do local v2650=0 -0 ;local v2651;while true do if (v2650==(380 -(262 + 118))) then v2651=CreateLine();v2651.Visible=false;v2650=1;end if (v2650==(1085 -(1038 + 45))) then v517[ #v517 + 1 ]=v2651;break;end if (v2650==(1 -0)) then v2651.Thickness=1;v2651.Transparency=231 -(19 + 211) ;v2650=2;end end end v516=1;end if (v516==(114 -(88 + 25))) then return v517;end end end;local v102=function(v518) for v958,v959 in next,v518 do v959.Visible=false;end end;local v103=function(v519,v520,v521) local v522=v520 and v520["3D"] ;if ( not v520 or  not v520['Visualize']['Enabled'] or (string.lower(tostring(v520['Options'] or "2D" ))~="3d") or  not v522) then local v1912=0;while true do if (v1912==(0 -0)) then v102(v519);return;end end end local v523=v2.CurrentCamera;local v524=v75();local v525=v523:ViewportPointToRay(v524.X,v524.Y);local v526=v523.CFrame.RightVector;local v527=v523.CFrame.UpVector;local v528=MathMax(tonumber(v522['Width']) or 6 ,0 + 0 );local v529=MathMax(tonumber(v522['Height']) or 6 ,0 + 0 );local v530=MathMax(tonumber(v522['Depth']) or 10 ,1036 -(1007 + 29) );local v531=MathMin(MathMax(v528,v529,1 + 0 ),v530);local v532={v525.Origin + (v525.Direction * v531) ,v525.Origin + (v525.Direction * v530) };local v533={};for v961,v962 in ipairs(v532) do local v963=0;local v964;local v965;while true do if (v963==(1 + 1)) then v533[ #v533 + 1 ]=v962 + v964 + v965 ;v533[ #v533 + 1 ]=(v962-v964) + v965 ;break;end if (v963==(811 -(340 + 471))) then v964=v526 * (v528/(4 -2)) ;v965=v527 * (v529/2) ;v963=1;end if (v963==(590 -(276 + 313))) then v533[ #v533 + (2 -1) ]=(v962-v964) -v965 ;v533[ #v533 + 1 ]=(v962 + v964) -v965 ;v963=2;end end end local v534={};for v966,v967 in ipairs(v533) do local v968=0 + 0 ;local v969;local v970;while true do if (v968==0) then v969,v970=v523:WorldToViewportPoint(v967);if ( not v970 or (v969.Z<=(0 + 0))) then local v3212=0;while true do if (v3212==(0 + 0)) then v102(v519);return;end end end v968=1973 -(495 + 1477) ;end if (v968==(2 -1)) then v534[v966]=Vector2New(v969.X,v969.Y);break;end end end local v535={{1 + 0 ,1 + 1 },{2 + 0 ,9 -6 },{500 -(322 + 175) ,567 -(173 + 390) },{4,315 -(203 + 111) },{5,17 -11 },{390 -(328 + 56) ,7},{1 + 6 ,26 -18 },{37 -29 ,5 + 0 },{2 -1 ,910 -(76 + 829) },{1675 -(1506 + 167) ,272 -(58 + 208) },{3 + 0 ,7},{341 -(258 + 79) ,16 -8 }};for v971,v972 in ipairs(v535) do local v973=v519[v971];v973.From=v534[v972[1471 -(1219 + 251) ]];v973.To=v534[v972[1673 -(1231 + 440) ]];v973.Color=v521;v973.Visible=true;end end;Silent3DFOVBox=v101();Trigger3DFOVBox=v101();Aimbot3DFOVBox=v101();SilentFOVOutColor=Color3.fromRGB(313 -(34 + 24) ,148 + 107 ,255);SilentFOVInColor=Color3.fromRGB(475 -220 ,88 + 112 ,0);TriggerFOVOutColor=Color3.fromRGB(255,255,774 -519 );TriggerFOVInColor=Color3.fromRGB(817 -562 ,200,0);AimbotFOVOutColor=Color3.fromRGB(255,670 -415 ,854 -599 );AimbotFOVInColor=Color3.fromRGB(556 -301 ,1789 -(877 + 712) ,0);SilentTargetLine=CreateLine();SilentTargetLine.Visible=false;SilentTargetLine.Thickness=0.5 + 0 ;SilentTargetLine.Transparency=755 -(242 + 512) ;SilentTargetLine.Parent=DrawingGui;OffscreenSilentLine=CreateLine();OffscreenSilentLine.Visible=false;OffscreenSilentLine.Thickness=0.5 -0 ;OffscreenSilentLine.Transparency=1;CamLockTracerLine=CreateLine();CamLockTracerLine.Visible=false;CamLockTracerLine.Thickness=628 -(92 + 535) ;CamLockTracerLine.Transparency=1 + 0 ;function CreateTextLabel() local v536=0 -0 ;local v537;local v538;local v539;local v540;local v541;local v542;while true do if (v536==5) then v539.Enabled=v537._Outline;v539.Parent=v538;v540=nil;v536=1 + 5 ;end if (v536==(3 -2)) then v538.BorderSizePixel=0 + 0 ;v538.BackgroundTransparency=1 + 0 ;v538.RichText=true;v536=2;end if (v536==(1 + 1)) then v538.Font=Enum.Font.SourceSansBold;v538.TextSize=v537._Size;v538.TextColor3=v537._Color;v536=5 -2 ;end if (v536==7) then v542={__newindex=function(v2656,v2657,v2658) if (v2657=="Text") then v537._Text=v2658;v538.Text=v2658;elseif (v2657=="Size") then v537._Size=v2658;v538.TextSize=v2658;elseif (v2657=="Position") then v537._Position=v2658;v540();elseif (v2657=="Color") then local v4320=0 -0 ;while true do if ((1785 -(1476 + 309))==v4320) then v537._Color=v2658;v538.TextColor3=v2658;break;end end elseif (v2657=="Visible") then v537._Visible=v2658;v538.Visible=v2658;elseif (v2657=="Center") then local v4622=1284 -(299 + 985) ;while true do if (v4622==(0 + 0)) then v537._Center=v2658;v540();break;end end elseif (v2657=="Outline") then local v4684=0 -0 ;while true do if (v4684==(93 -(86 + 7))) then v537._Outline=v2658;v539.Enabled=v2658;break;end end elseif (v2657=="OutlineColor") then local v4717=0;while true do if (v4717==(0 -0)) then v537._OutlineColor=v2658;v539.Color=v2658;break;end end elseif (v2657=="Transparency") then v537._Transparency=v2658;local v4739=MathClamp(1 -v2658 ,0,1 + 0 );v538.TextTransparency=v4739;v539.Transparency=v4739;elseif (v2657=="Font") then v538.Font=v2658;elseif (v2657=="FontFace") then local v4766=880 -(672 + 208) ;while true do if (v4766==(0 + 0)) then v537._FontFace=v2658;v538.FontFace=v2658;break;end end elseif (v2657=="StrokeThickness") then v539.Thickness=v2658;elseif (v2657=="StrokeTransparency") then v539.Transparency=v2658;end end,__index=function(v2659,v2660) if (v2660=="TextBounds") then return v538.TextBounds;elseif (v2660=="Label") then return v538;elseif (v2660=="Stroke") then return v539;elseif ((v2660=="Remove") or (v2660=="Destroy")) then return function() v538:Destroy();end;elseif (v2660=="Text") then return v537._Text;elseif (v2660=="Size") then return v537._Size;elseif (v2660=="Position") then return v537._Position;elseif (v2660=="Color") then return v537._Color;elseif (v2660=="FontFace") then return v537._FontFace;elseif (v2660=="Visible") then return v537._Visible;elseif (v2660=="Center") then return v537._Center;elseif (v2660=="Outline") then return v537._Outline;elseif (v2660=="Transparency") then return v537._Transparency;end return nil;end};return setmetatable(v541,v542);end if (v536==(136 -(14 + 118))) then v539=Instance.new("UIStroke");v539.Thickness=446 -(339 + 106) ;v539.Color=v537._OutlineColor;v536=5;end if (v536==(0 + 0)) then v537={_Text="",_Size=7 + 6 ,_Position=Vector2New(0,1395 -(440 + 955) ),_Color=Color3.new(1 + 0 ,1 -0 ,1),_Visible=false,_Center=false,_Outline=true,_OutlineColor=Color3.new(0 + 0 ,0 -0 ,0 + 0 ),_Transparency=1,_FontFace=nil};v538=Instance.new("TextLabel");v538.AnchorPoint=Vector2New(0.5,353.5 -(260 + 93) );v536=1;end if (v536==(6 + 0)) then function v540() local v2661=v538.TextBounds;local v2662=(v537._Center and (0 -0)) or (v2661.X/2) ;v538.Position=UDim2.fromOffset(v537._Position.X + v2662 ,v537._Position.Y + (v2661.Y/(3 -1)) );end v538:GetPropertyChangedSignal("TextBounds"):Connect(v540);v541={};v536=7;end if (v536==3) then v538.Visible=v537._Visible;v538.Text="";v538.Parent=UtilityUI;v536=1978 -(1181 + 793) ;end end end NameESPDrawings={};HealthBarDrawings={};HealthBarValueCache={};function GetHealthBarArmor(v543) local v544=0 + 0 ;local v545;local v546;local v547;local v548;local v549;while true do if (v544==0) then v545=v543 and v543.Character ;v546=v545 and v545:FindFirstChild("BodyEffects") ;v544=308 -(105 + 202) ;end if (v544==2) then v548=v543 and v543:FindFirstChild("leaderstats") ;v549=v548 and (v548:FindFirstChild("Armor") or v548:FindFirstChild("Armour") or v548:FindFirstChild("Defense") or v548:FindFirstChild("Vest")) ;v544=3 + 0 ;end if (v544==1) then v547=v546 and (v546:FindFirstChild("Armor") or v546:FindFirstChild("Armour") or v546:FindFirstChild("Defense")) ;if (v547 and tonumber(v547.Value)) then return tonumber(v547.Value),true;end v544=812 -(352 + 458) ;end if (v544==(11 -8)) then if (v549 and tonumber(v549.Value)) then return tonumber(v549.Value),true;end return 0 -0 ,false;end end end function GetStableHealthBarValues(v550,v551) local v552=Clock();local v553=HealthBarValueCache[v550];if ( not v553 or (v553.Character~=v550.Character)) then v553={Character=v550.Character,Health=tonumber(v551.Health) or (0 + 0) ,MaxHealth=tonumber(v551.MaxHealth) or (292 -192) ,Armor=949 -(438 + 511) ,ZeroSince=nil,ArmorMissingSince=nil};HealthBarValueCache[v550]=v553;end local v554=tonumber(v551.MaxHealth);if (v554 and (v554>(1383 -(1262 + 121))) and (v554==v554)) then v553.MaxHealth=v554;end local v555=((v553.MaxHealth>0) and v553.MaxHealth) or (1168 -(728 + 340)) ;local v556=tonumber(v551.Health);local v557=(v551:GetState()==EnumDead) or  not v551.Parent ;if (v556 and (v556==v556) and (v556>(1790 -(816 + 974)))) then local v1915=0 -0 ;while true do if (v1915==0) then v553.Health=MathClamp(v556,0 -0 ,v555);v553.ZeroSince=nil;break;end end elseif v557 then v553.Health=0;v553.ZeroSince=v552;else v553.ZeroSince=nil;end local v558,v559=GetHealthBarArmor(v550);if v559 then v553.Armor=MathMax(tonumber(v558) or (339 -(163 + 176)) ,0 -0 );v553.ArmorMissingSince=nil;else v553.ArmorMissingSince=v553.ArmorMissingSince or v552 ;if ((v552-v553.ArmorMissingSince)>=0.3) then v553.Armor=0 -0 ;end end return v553.Health,v555,v553.Armor,v557;end function RemoveHealthBarSet(v560) local v561=0 + 0 ;while true do if (v561==(1810 -(1564 + 246))) then if  not v560 then return;end for v2668,v2669 in next,v560 do pcall(function() v2669:Remove();end);end break;end end end function HideHealthBarSet(v562) if  not v562 then return;end for v980,v981 in next,v562 do v981.Visible=false;end end function Cleanup() v55(State);for v983= #_Conns,346 -(124 + 221) , -1 do local v984=_Conns[v983];_Conns[v983]=nil;if (v984 and v984.Connected) then pcall(function() v984:Disconnect();end);end end pcall(function() v3:UnbindFromRenderStep("ciderrage");end);if (UtilityUI and UtilityUI.Parent) then pcall(function() UtilityUI:Destroy();end);end for v986,v987 in next,NameESPDrawings do pcall(function() v987:Remove();end);end for v988 in next,NameESPDrawings do NameESPDrawings[v988]=nil;end for v990,v991 in next,HealthBarDrawings do RemoveHealthBarSet(v991);end for v992 in next,HealthBarDrawings do HealthBarDrawings[v992]=nil;end for v994 in next,HealthBarValueCache do HealthBarValueCache[v994]=nil;end end getgenv().cidercc_cleanup=Cleanup;function CleanNameESP() local v563=0 + 0 ;while true do if (v563==(451 -(115 + 336))) then for v2670,v2671 in next,NameESPDrawings do if  not v2670.Parent then v2671:Remove();NameESPDrawings[v2670]=nil;end end for v2672,v2673 in next,HealthBarDrawings do if  not v2672.Parent then local v3216=0 -0 ;while true do if ((0 + 0)==v3216) then RemoveHealthBarSet(v2673);HealthBarDrawings[v2672]=nil;v3216=47 -(45 + 1) ;end if (v3216==(1 + 0)) then HealthBarValueCache[v2672]=nil;break;end end end end break;end end end TrackConn(v1.PlayerRemoving:Connect(function(v564) if (State.Future.LastTarget==v564) then State.Future.LastTarget=nil;State.Future.LastWeaponClass=nil;State.Future.CurrentValues=nil;end local v565=NameESPDrawings[v564];if v565 then local v1922=0;while true do if (v1922==(1990 -(1282 + 708))) then v565:Remove();NameESPDrawings[v564]=nil;break;end end end local v566=HealthBarDrawings[v564];if v566 then local v1923=0;while true do if (v1923==0) then RemoveHealthBarSet(v566);HealthBarDrawings[v564]=nil;break;end end end HealthBarValueCache[v564]=nil;end));PanelTitle=CreateTextLabel();PanelTitle.Visible=false;PanelTitle.Size=18;PanelTitle.Outline=true;PanelTitle.Center=true;PanelTitle.Font=Enum.Font.GothamMedium;PanelTitle.FontFace=Font.new("rbxasset://fonts/families/GothamSSm.json",Enum.FontWeight.SemiBold,Enum.FontStyle.Normal);PanelTitle.StrokeThickness=1212.7 -(583 + 629) ;PanelTitle.StrokeTransparency=0;PanelLabels={};for v568=1,14 do local v569=0;local v570;while true do if (v569==(1 + 0)) then v570.Size=30 -18 ;v570.Outline=true;v569=2 + 0 ;end if (v569==(1170 -(943 + 227))) then v570=CreateTextLabel();v570.Visible=false;v569=1 + 0 ;end if (v569==(1635 -(1539 + 92))) then v570.StrokeTransparency=0;PanelLabels[v568]=v570;break;end if (v569==(1949 -(706 + 1240))) then v570.FontFace=Font.new("rbxasset://fonts/families/GothamSSm.json",Enum.FontWeight.SemiBold,Enum.FontStyle.Normal);v570.StrokeThickness=258.7 -(81 + 177) ;v569=4;end if (2==v569) then v570.Center=true;v570.Font=Enum.Font.GothamMedium;v569=8 -5 ;end end end BrandHealthBarObject=nil;BrandHealthBarScanAt=0;function GetBrandHealthBarAnchor(v571) local v572=BrandHealthBarObject;if (v572 and v572.Parent and v572.Visible) then local v1924=v572.AbsoluteSize;local v1925=v572.AbsolutePosition;if ((v1924.X>(297 -(212 + 45))) and (v1924.Y>0)) then return v1925.X + (v1924.X/(6 -4)) ,v571.Y-100 ;end end local v573=Clock();if ((v573-BrandHealthBarScanAt)<(1946.75 -(708 + 1238))) then return v571.X * 0.625 ,v571.Y-(9 + 91) ;end BrandHealthBarScanAt=v573;local v574=v10:FindFirstChildOfClass("PlayerGui");local v575=nil;local v576= -MathHuge;if v574 then for v2361,v2362 in next,v574:GetDescendants() do local v2363=0 + 0 ;local v2364;local v2365;local v2366;local v2367;local v2368;local v2369;while true do if (v2363==(1670 -(586 + 1081))) then v2369=v2368.Y + v2367.X ;if ((v2364=="hp") or (v2364=="health")) then v2369=v2369 + (1011 -(348 + 163)) ;end if (v2369>v576) then local v3783=0 + 0 ;while true do if (v3783==(280 -(215 + 65))) then v576=v2369;v575=v2362;break;end end end break;end if (0==v2363) then if ( not v2362:IsA("GuiObject") or  not v2362.Visible) then continue;end v2364=string.lower(v2362.Name);v2365="";v2363=2 -1 ;end if (v2363==2) then v2367=v2362.AbsoluteSize;v2368=v2362.AbsolutePosition;if ((v2367.X<40) or (v2367.Y<=(1859 -(1541 + 318))) or (v2368.Y<(v571.Y * (0.55 + 0)))) then continue;end v2363=2 + 1 ;end if (v2363==(1 + 0)) then if (v2362:IsA("TextLabel") or v2362:IsA("TextButton")) then v2365=string.lower(v2362.Text or "" );end v2366=(v2364=="hp") or string.find(v2364,"health",1751 -(1036 + 714) ,true) or (v2365=="health") or (v2365=="hp") ;if  not v2366 then continue;end v2363=2 + 0 ;end end end end BrandHealthBarObject=v575;if v575 then local v1926=0 + 0 ;local v1927;local v1928;while true do if ((1281 -(883 + 397))==v1926) then return v1928.X + (v1927.X/2) ,v571.Y-100 ;end if (v1926==(590 -(563 + 27))) then v1927=v575.AbsoluteSize;v1928=v575.AbsolutePosition;v1926=3 -2 ;end end end return v571.X * (1986.625 -(1369 + 617)) ,v571.Y-(1587 -(85 + 1402)) ;end TriggerTargetLocked=false;AimbotTargetLocked=false;AntiFutureVisDot=CreateSquare();AntiFutureVisDot.Visible=false;AntiFutureVisDot.Color=Color3.fromRGB(88 + 167 ,80,206 -126 );AntiFutureVisDot.Filled=true;AntiFutureVisDot.Size=Vector2New(411 -(274 + 129) ,225 -(12 + 205) );AntiFutureVisLabel=CreateTextLabel();AntiFutureVisLabel.Visible=false;AntiFutureVisLabel.Size=11;AntiFutureVisLabel.Outline=true;AntiFutureVisLabel.Center=true;AntiFutureVisLabel.Font=Enum.Font.SourceSansBold;AntiFutureVisLabel.FontFace=Font.new("rbxasset://fonts/families/LegacyArial.json",Enum.FontWeight.Bold,Enum.FontStyle.Normal);TrackConn(v5.InputBegan:Connect(function(v577,v578) if ( not v578 or (v577.UserInputType==Enum.UserInputType.MouseButton2)) then if (v577.UserInputType==Enum.UserInputType.MouseButton2) then v81=true;end end end));TrackConn(v5.InputEnded:Connect(function(v579) if (v579.UserInputType==Enum.UserInputType.MouseButton2) then v81=false;end end));local function v135(v580,v581) if (type(v581)~="table") then return false;end local v582=v581['Key'];if (v582==nil) then return false;end local v583=Tostring(v582);local v584=v583:lower();local v585=Tostring(v581['Mode'] or "" ):lower();local v586=(v585=="mouse") or (v584:sub(1,5 + 0 )=="mouse") or (v584:find("mousebutton",3 -2 ,true)~=nil) ;if v586 then local v1929={mouse1="mousebutton1",mouse2="mousebutton2",mouse3="mousebutton3",leftmouse="mousebutton1",rightmouse="mousebutton2",middlemouse="mousebutton3"};v584=v1929[v584] or v584 ;local v1930=Tostring(v580.UserInputType):match("([^%.]+)$");return (v1930~=nil) and (v1930:lower()==v584) ;end local v587=Tostring(v580.KeyCode):match("([^%.]+)$");return (v587~=nil) and (v587:lower()==v584) ;end TrackConn(v5.InputBegan:Connect(function(v588,v589) local v590=v14()["Silent Aim"];local v591=v14()['Triggerbot'];local v592=v591['Bind'];local v593=v135(v588,v592);if v593 then local v1931=Tostring(v592['Type'] or "Hold" ):lower();if (v1931=="toggle") then State.TriggerState= not State.TriggerState;elseif (v1931=="hold") then State.TriggerState=true;end end if v589 then return;end if (v14()['Main']['Checks']["Silent Aim"]['Typing'] and IsTyping()) then return;end if (v590['Enabled'] and (v14()['Main']["Silent Aim"]['Selection']=="Target")) then local v1932=v14()['Main']['Binds'] and v14()['Main']['Binds']['Target'] ;if v1932 then local v2675=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v1932:upper()]) then v2675=true;end end);if  not v2675 then Pcall(function() if (v588.UserInputType==Enum.UserInputType[v1932]) then v2675=true;end end);end if v2675 then SilentTargetLocked= not SilentTargetLocked;if SilentTargetLocked then local v3784=v14()["Silent Aim"]["Offscreen Targeting"];State.Targets.Silent=GetClosestPlayerToCursor(v14()["Silent Aim"]["Max Range"],v3784 and v3784['Enabled'] ,"Targeting","Silent Aim");else State.Targets.Silent=nil;end end end end if (v591['Enabled'] and (v14()['Main']['Triggerbot']['Selection']=="Target")) then local v1933=0;local v1934;while true do if ((0 + 0)==v1933) then v1934=v14()['Main']['Binds'] and v14()['Main']['Binds']['Target'] ;if v1934 then local v3592=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v1934:upper()]) then v3592=true;end end);if  not v3592 then Pcall(function() if (v588.UserInputType==Enum.UserInputType[v1934]) then v3592=true;end end);end if v3592 then TriggerTargetLocked= not TriggerTargetLocked;if TriggerTargetLocked then local v4204=384 -(27 + 357) ;local v4205;while true do if (v4204==(480 -(91 + 389))) then v4205=v14()['Triggerbot']["Offscreen Targeting"];State.Targets.Triggerbot=GetClosestPlayerToCursor(v14()['Triggerbot']["Max Range"],v4205 and v4205['Enabled'] ,"Targeting","Triggerbot");break;end end else State.Targets.Triggerbot=nil;end end end break;end end end local v594=v14()['Main']['Binds'] and v14()['Main']['Binds']['Aimbot'] ;if v594 then local v1935=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v594:upper()]) then v1935=true;end end);if  not v1935 then Pcall(function() if (v588.UserInputType==Enum.UserInputType[v594]) then v1935=true;end end);end if v1935 then local v2676=v14()['Aimbot'];local v2677=v2676['Mode'] or "Toggle" ;if (v2677=="Hold") then local v3220=297 -(90 + 207) ;while true do if (v3220==0) then AimbotTargetLocked=true;State.Targets.Aimbot=GetClosestPlayerToCursor(v14()['Aimbot']["Max Range"],nil,"Targeting","Aimbot");break;end end else local v3221=0 + 0 ;while true do if (v3221==(861 -(706 + 155))) then AimbotTargetLocked= not AimbotTargetLocked;if AimbotTargetLocked then State.Targets.Aimbot=GetClosestPlayerToCursor(v14()['Aimbot']["Max Range"],nil,"Targeting","Aimbot");else State.Targets.Aimbot=nil;end break;end end end end end local v595=v14()['Main']['Binds'] and v14()['Main']['Binds']["Walk Speed"] ;if v595 then local v1936=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v595:upper()]) then v1936=true;end end);if v1936 then State.SpeedModificationsActive= not State.SpeedModificationsActive;if  not State.SpeedModificationsActive then v55(State);end end end local v596=v14()['Main']['Binds'] and v14()['Main']['Binds']["Jump Power"] ;if v596 then local v1937=0;local v1938;while true do if (v1937==(1795 -(730 + 1065))) then v1938=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v596:upper()]) then v1938=true;end end);v1937=1;end if (1==v1937) then if v1938 then State.JumpModificationsActive= not State.JumpModificationsActive;end break;end end end local v597=v14()['Modifications']["Double Tap"];local v598=v14()['Main']['Binds'] and v14()['Main']['Binds']["Double Tap"] ;if (v597['Enabled'] and (v597['Mode']~="Always") and v598) then local v1939=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v598:upper()]) then v1939=true;end end);if v1939 then State.DoubleTapActive= not State.DoubleTapActive;end end local v599=v14()['Main']['Binds'] and v14()['Main']['Binds']['ESP'] ;if v599 then local v1940=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v599:upper()]) then v1940=true;end end);if v1940 then v14()["Name ESP"]['Enabled']= not v14()["Name ESP"]['Enabled'];end end local v600=v14()['Main']['Binds'] and v14()['Main']['Binds']['Sorter'] ;if (v600 and v14()['Utilities']["Inventory Sorter"]['Enabled']) then local v1941=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v600:upper()]) then v1941=true;end end);if v1941 then Spawn(function() local v2897=0;local v2898;local v2899;local v2900;local v2901;local v2902;while true do if (v2897==3) then for v3951,v3952 in next,v2902:GetChildren() do if (v3952:FindFirstChild("Drink") or v3952:FindFirstChild("Eat")) then local v4209=0;while true do if (v4209==(1563 -(1339 + 224))) then v3952.Parent=v2899;v2901=v2901-(1 + 0) ;break;end end end end if (v2901>(0 + 0)) then for v4210=1,v2901 do local v4211=Instance.new("Tool");v4211.Name="";v4211.ToolTip="PlaceHolder";v4211.GripPos=Vector3New(0,1,0);v4211.RequiresHandle=false;v4211.Parent=v2899;end end for v3953,v3954 in next,v2902:GetChildren() do if v3954:IsA("Tool") then v3954.Parent=v2899;end end for v3955,v3956 in next,v2899:GetChildren() do if (v3956.Name=="") then v3956:Destroy();end end v2897=5 -1 ;end if (v2897==(845 -(268 + 575))) then v2902.Name="SorterTemp";v2902.Parent=v2;for v3957,v3958 in next,v2899:GetChildren() do if v3958:IsA("Tool") then v3958.Parent=v2902;end end for v3959,v3960 in next,v2900 do local v3961=0;local v3962;while true do if (v3961==0) then v3962=v2902:FindFirstChild(v3960);if v3962 then v3962.Parent=v2899;Wait(1294.05 -(919 + 375) );else v2901=v2901 + (2 -1) ;end break;end end end v2897=974 -(180 + 791) ;end if (v2897==(1806 -(323 + 1482))) then if  not v2899 then local v4105=1918 -(1177 + 741) ;while true do if (v4105==0) then State.SorterActive=false;return;end end end v2900=v14()['Utilities']["Inventory Sorter"]['Order'];v2901=10 -#v2900 ;v2902=Instance.new("Folder");v2897=1 + 1 ;end if (v2897==(14 -10)) then v2902:Destroy();Wait(0.5 + 0 );State.SorterActive=false;break;end if (v2897==(0 -0)) then State.SorterActive=true;v2898=v10.Character;if  not v2898 then State.SorterActive=false;return;end v2899=v10:FindFirstChildOfClass("Backpack");v2897=1 + 0 ;end end end);end end if (v588.KeyCode==Enum.KeyCode.LeftControl) then State.CanTriggerbotShoot=false;end local v601=v14()["Anti Future"];local v602=v14()['Main']['Binds'] and v14()['Main']['Binds']["Anti Future"] ;if (v602 and v601['Enabled']) then local v1943=0;local v1944;while true do if (v1943==(109 -(96 + 13))) then v1944=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v602:upper()]) then v1944=true;end end);v1943=1922 -(962 + 959) ;end if (v1943==1) then if v1944 then RunAntiFutureToggle();end break;end end end local v603=v14()["Panic Ground"];local v604=v14()['Main']['Binds'] and v14()['Main']['Binds']["Panic Ground"] ;if (v604 and v603 and v603['Enabled']) then local v1945=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v604:upper()]) then v1945=true;end end);if v1945 then RunPanicGround();end end local v605=v14()['CamLock'];local v606=v14()['Main']['Binds'] and v14()['Main']['Binds']['CamLock'] ;if (v606 and v605 and v605['Enabled']) then local v1946=0;local v1947;while true do if (0==v1946) then v1947=false;Pcall(function() if (v588.KeyCode==Enum.KeyCode[v606:upper()]) then v1947=true;end end);v1946=1;end if (v1946==(2 -1)) then if v1947 then local v3594=v605['Mode'] or "Hold" ;if (v3594=="Toggle") then if State.CamLock.Active then local v4219=0 + 0 ;while true do if (v4219==(1351 -(461 + 890))) then State.CamLock.Active=false;State.CamLock.Target=nil;break;end end else local v4220=GetClosestPlayerToCursor(nil,false,"Target","Aimbot");if v4220 then State.CamLock.Target=v4220;State.CamLock.Active=true;end end else local v3963=GetClosestPlayerToCursor(nil,false,"Target","Aimbot");if v3963 then State.CamLock.Target=v3963;State.CamLock.Active=true;end end end break;end end end end));TrackConn(v5.InputEnded:Connect(function(v607) local v608=v14()['Aimbot'];if (v608['Mode']=="Hold") then local v1948=0;local v1949;while true do if (v1948==(0 + 0)) then v1949=v14()['Main']['Binds'] and v14()['Main']['Binds']['Aimbot'] ;if v1949 then local v3595=false;Pcall(function() if (v607.KeyCode==Enum.KeyCode[v1949:upper()]) then v3595=true;end end);if  not v3595 then Pcall(function() if (v607.UserInputType==Enum.UserInputType[v1949]) then v3595=true;end end);end if v3595 then AimbotTargetLocked=false;State.Targets.Aimbot=nil;end end break;end end end local v609=v14()['Triggerbot'];local v610=v609['Bind'];if (v610 and (Tostring(v610['Type'] or "Hold" ):lower()=="hold") and v135(v607,v610)) then State.TriggerState=false;end if (v607.KeyCode==Enum.KeyCode.LeftControl) then State.CanTriggerbotShoot=true;end local v611=v14()['CamLock'];local v612=v14()['Main']['Binds'] and v14()['Main']['Binds']['CamLock'] ;if (v612 and v611 and v611['Enabled'] and ((v611['Mode'] or "Hold")=="Hold")) then local v1952=false;Pcall(function() if (v607.KeyCode==Enum.KeyCode[v612:upper()]) then v1952=true;end end);if v1952 then local v2681=0 -0 ;while true do if ((243 -(19 + 224))==v2681) then State.CamLock.Active=false;State.CamLock.Target=nil;break;end end end end end));TrackConn(v3.Heartbeat:Connect(function() v15=shared.Cider or v15 ;UpdatePositionCache();CachedIgnored=v2:FindFirstChild("Ignored");CachedBush=v2:FindFirstChild("Bush");end));TrackConn(v3.Heartbeat:Connect(function() local v613=0 + 0 ;local v614;local v615;local v616;local v617;local v618;while true do if (v613==(198 -(37 + 161))) then v614=v14()["Panic Ground"];v615=v614 and v614['Auto'] ;v613=1 + 0 ;end if (v613==(2 + 1)) then v618=v615["Health Amount"] or 25 ;if (v617.Health<=v618) then if  not State.PanicGround.AutoTriggered then local v3598=0 + 0 ;while true do if (v3598==0) then State.PanicGround.AutoTriggered=true;RunPanicGround();break;end end end else State.PanicGround.AutoTriggered=false;end break;end if (v613==2) then v617=v616 and v616:FindFirstChildOfClass("Humanoid") ;if ( not v617 or (v617.Health<=(61 -(60 + 1)))) then local v2904=0;while true do if (v2904==0) then State.PanicGround.AutoTriggered=false;return;end end end v613=926 -(826 + 97) ;end if (v613==(1 + 0)) then if ( not v614 or  not v614['Enabled'] or  not v615 or  not v615['Enabled']) then State.PanicGround.AutoTriggered=false;return;end v616=v10.Character;v613=6 -4 ;end end end));TrackConn(v3.PreRender:Connect(function() local v619=v14()["Silent Aim"];local v620=v14()['Triggerbot'];local v621=v14()['Aimbot'];local v622=v2.CurrentCamera;local v623=v622.ViewportSize.Y;local v624=v622.FieldOfView;local v625=v75();local v626=v619["Offscreen Targeting"] and v619["Offscreen Targeting"]['Enabled'] ;local v627=v620["Offscreen Targeting"] and v620["Offscreen Targeting"]['Enabled'] ;local v628=GetClosestPlayerToCursor(nil,nil,"Automatic");if (v619['Enabled'] and (v14()['Main']["Silent Aim"]['Selection']=="Automatic")) then State.Targets.Silent=GetClosestPlayerToCursor(v619["Max Range"],v626,"Automatic","Silent Aim");end if (v620['Enabled'] and (v14()['Main']['Triggerbot']['Selection']=="Automatic")) then State.Targets.Triggerbot=GetClosestPlayerToCursor(v620["Max Range"],v627,"Automatic","Triggerbot");end local v629=State.Targets.Silent;local v630=v629;local v631=v14()['Main']['FOV']['Silent'];local v632=string.lower(tostring(v631['Options'] or "2D" ))=="3d" ;v103(Silent3DFOVBox,v631,v631['Visualize']['Color'] or SilentFOVOutColor );if ( not v630 and v631['Visualize']['Enabled']) then v630=v628;end local v633=v622.ViewportSize.X;if ( not v632 and v631['Visualize']['Enabled'] and v630) then local v1955=0;local v1956;local v1957;while true do if (v1955==(0 -0)) then v1956=v630.Character;v1957=v1956 and v1956:FindFirstChild("HumanoidRootPart") ;v1955=1;end if (v1955==1) then if (v1957 and IsVisible(v1957.Position,v630)) then local v3599,v3600=v622:WorldToViewportPoint(v1957.Position);if (v3600 and (v3599.Z>(686 -(375 + 310)))) then local v3965=1999 -(1864 + 135) ;local v3966;local v3967;local v3968;local v3969;local v3970;local v3971;local v3972;while true do if (v3965==3) then v3972=nil;if v3967 then v3972=((v3971.X * v3971.X) + (v3971.Y * v3971.Y))<=((v3969/(4 -2)) * (v3969/2)) ;else v3972=(MathAbs(v3971.X)<=(v3969/(1 + 1))) and (MathAbs(v3971.Y)<=(v3970/2)) ;end SilentFOVBox.Color=(v3972 and SilentFOVInColor) or SilentFOVOutColor ;v3965=2 + 2 ;end if ((9 -5)==v3965) then SilentFOVBox.Visible=v631['Visualize']['Enabled'];break;end if (v3965==(1131 -(314 + 817))) then v3966=(((v1957.Size.Y * v623)/(v3599.Z * (2 + 0))) * (294 -(32 + 182)))/v624 ;v3967=false;v3968=v631;v3965=1;end if ((1 + 0)==v3965) then v3969,v3970=nil;if v3967 then local v4493=0 -0 ;local v4494;while true do if (v4493==0) then v4494=MathMin((70 -(39 + 26)) * v3966 ,v633 * (146 -(54 + 90)) );v3969=v4494;v4493=199 -(45 + 153) ;end if (v4493==1) then v3970=v4494;break;end end else local v4495=(v3968['Width'] and (v3968['Width'][1] or (92 + 58))) or (702 -(457 + 95)) ;local v4496=(v3968['Height'] and (v3968['Height'][1 + 0 ] or (313 -163))) or 150 ;v3969=MathMin(v4495 * v3966 ,v633 * (4 -2) );v3970=MathMin(v4496 * v3966 ,v623 * 2 );end SilentFOVBox.Round=v3967;v3965=2;end if (v3965==(7 -5)) then SilentFOVBox.Size=Vector2New(MathFloor(v3969 + 0.5 ),MathFloor(v3970 + 0.5 + 0 ));SilentFOVBox.Position=Vector2New(MathFloor((v3599.X-(v3969/(6 -4))) + (0.5 -0) ),MathFloor((v3599.Y-(v3970/(750 -(485 + 263)))) + 0.5 ));v3971=Vector2New(v3599.X,v3599.Y) -v625 ;v3965=3;end end else SilentFOVBox.Visible=false;end else SilentFOVBox.Visible=false;end break;end end else SilentFOVBox.Visible=false;end local v634=v619["Target Tracer"];local v635=v619["Offscreen Targeting"];local v636=v635 and v635['Enabled'] ;if (v634 and v634['Enabled'] and v629) then local v1959=707 -(575 + 132) ;local v1960;local v1961;while true do if (v1959==0) then v1960=v629.Character;v1961=v1960 and v1960:FindFirstChild("Head") ;v1959=862 -(750 + 111) ;end if (v1959==(1011 -(445 + 565))) then if v1961 then local v3602,v3603=v622:WorldToViewportPoint(v1961.Position);local v3604=v634['Thickness'] or (0.5 + 0) ;if (v3603 and (v3602.Z>0)) then local v3974=0;while true do if ((0 + 0)==v3974) then SilentTargetLine.From=Vector2New(v625.X,v625.Y);SilentTargetLine.To=Vector2New(v3602.X,v3602.Y);v3974=1 -0 ;end if (v3974==(1 + 1)) then SilentTargetLine.Visible=true;OffscreenSilentLine.Visible=false;break;end if (v3974==(311 -(189 + 121))) then SilentTargetLine.Color=v634['Color'] or Color3.fromRGB(64 + 191 ,255,1602 -(634 + 713) ) ;SilentTargetLine.Thickness=v3604;v3974=2;end end elseif v636 then local v4223=538 -(493 + 45) ;local v4224;local v4225;local v4226;local v4227;local v4228;local v4229;local v4230;local v4231;local v4232;local v4233;local v4234;while true do if (v4223==(971 -(493 + 475))) then v4233=MathMin(v4231/MathAbs(v4230.X + 0.0001 + 0 ) ,v4232/MathAbs(v4230.Y + (784.0001 -(158 + 626)) ) );v4234=Vector2New(v633/(1 + 1) ,v623/(2 -0) ) + (v4230 * v4233) ;SilentTargetLine.Visible=false;v4223=1 + 3 ;end if (v4223==5) then OffscreenSilentLine.Thickness=v3604;OffscreenSilentLine.Visible=true;break;end if (v4223==(1 + 3)) then OffscreenSilentLine.From=v625;OffscreenSilentLine.To=v4234;OffscreenSilentLine.Color=v634['Color'] or Color3.fromRGB(255,1346 -(1035 + 56) ,1214 -(114 + 845) ) ;v4223=2 + 3 ;end if ((2 -1)==v4223) then v4227=v622.CFrame.UpVector;v4228=v4225:Dot(v4226);v4229=v4225:Dot(v4227);v4223=2 + 0 ;end if (v4223==2) then v4230=Vector2New(v4228, -v4229).Unit;v4231=(v633/2) -(1059 -(179 + 870)) ;v4232=(v623/(2 -0)) -(888 -(827 + 51)) ;v4223=3;end if ((0 -0)==v4223) then v4224=v1960:FindFirstChild("HumanoidRootPart") or v1961 ;v4225=(v4224.Position-v622.CFrame.Position).Unit;v4226=v622.CFrame.RightVector;v4223=1;end end else local v4235=0;while true do if (v4235==(0 + 0)) then SilentTargetLine.Visible=false;OffscreenSilentLine.Visible=false;break;end end end else local v3605=473 -(95 + 378) ;while true do if (v3605==0) then SilentTargetLine.Visible=false;OffscreenSilentLine.Visible=false;break;end end end break;end end else SilentTargetLine.Visible=false;OffscreenSilentLine.Visible=false;end do local v996=0 + 0 ;local v997;local v998;while true do if ((1 -0)==v996) then if (v998 and v998['Enabled'] and State.CamLock.Active and State.CamLock.Target) then local v3222=State.CamLock.Target;local v3223=v3222.Character;local v3224=v3223 and v3223:FindFirstChild("Head") ;if v3224 then local v3794,v3795=v622:WorldToViewportPoint(v3224.Position);if (v3795 and (v3794.Z>(0 + 0))) then local v4110=0;local v4111;local v4112;while true do if (3==v4110) then CamLockTracerLine.Thickness=v998['Thickness'] or (1012 -(334 + 677)) ;CamLockTracerLine.Visible=true;break;end if (v4110==(3 -2)) then if (v4111=="Bottom") then v4112=Vector2New(v633/(1058 -(1049 + 7)) ,v623);else v4112=Vector2New(v633/(8 -6) ,v623/2 );end CamLockTracerLine.From=v4112;v4110=2;end if (v4110==(0 -0)) then v4111=v998['From'] or "Center" ;v4112=nil;v4110=1 + 0 ;end if (v4110==(5 -3)) then CamLockTracerLine.To=Vector2New(v3794.X,v3794.Y);CamLockTracerLine.Color=v998['Color'] or Color3.fromRGB(255,160 -80 ,80) ;v4110=2 + 1 ;end end else CamLockTracerLine.Visible=false;end else CamLockTracerLine.Visible=false;end else CamLockTracerLine.Visible=false;end break;end if (v996==0) then v997=v14()['CamLock'];v998=v997 and v997['Tracer'] ;v996=1;end end end local v637=State.Targets.Triggerbot;local v638=v637;local v639=v14()['Main']['FOV']['Triggerbot'];local v640=string.lower(tostring(v639['Options'] or "2D" ))=="3d" ;v103(Trigger3DFOVBox,v639,v639['Visualize']['Color'] or TriggerFOVOutColor );if ( not v638 and v639['Visualize']['Enabled']) then v638=v628;end if ( not v640 and v639['Visualize']['Enabled'] and v638) then local v1964=v638.Character;local v1965=v1964 and v1964:FindFirstChild("HumanoidRootPart") ;if (v1965 and IsVisible(v1965.Position,v638)) then local v2683,v2684=v622:WorldToViewportPoint(v1965.Position);if (v2684 and (v2683.Z>(1421 -(1004 + 416)))) then local v3226=(((v1965.Size.Y * v623)/(v2683.Z * 2)) * 80)/v624 ;local v3227=false;local v3228=v639;local v3229,v3230;if v3227 then local v3797=1957 -(1621 + 336) ;local v3798;while true do if (v3797==(1939 -(337 + 1602))) then v3798=MathMin((9000001005 -(1014 + 503)) * v3226 ,v633 * (1017 -(446 + 569)) );v3229=v3798;v3797=1;end if (v3797==1) then v3230=v3798;break;end end else local v3799=0 + 0 ;local v3800;local v3801;while true do if (v3799==0) then v3800=(v3228['Width'] and (v3228['Width'][2 -1 ] or (9672538509 -672539021))) or 8999999488 ;v3801=(v3228['Height'] and (v3228['Height'][1 + 0 ] or 8999999488)) or (8999999993 -(223 + 282)) ;v3799=1;end if (v3799==1) then v3229=MathMin(v3800 * v3226 ,v633 * 2 );v3230=MathMin(v3801 * v3226 ,v623 * (1 + 1) );break;end end end TriggerFOVBox.Round=v3227;TriggerFOVBox.Size=Vector2New(MathFloor(v3229 + (0.5 -0) ),MathFloor(v3230 + (0.5 -0) ));TriggerFOVBox.Position=Vector2New(MathFloor((v2683.X-(v3229/(672 -(623 + 47)))) + (45.5 -(32 + 13)) ),MathFloor((v2683.Y-(v3230/(2 + 0))) + 0.5 ));local v3234=Vector2New(v2683.X,v2683.Y) -v625 ;local v3235;if v3227 then v3235=((v3234.X * v3234.X) + (v3234.Y * v3234.Y))<=((v3229/2) * (v3229/(2 + 0))) ;else v3235=(MathAbs(v3234.X)<=(v3229/2)) and (MathAbs(v3234.Y)<=(v3230/2)) ;end TriggerFOVBox.Color=(v3235 and TriggerFOVInColor) or TriggerFOVOutColor ;TriggerFOVBox.Visible=v639['Visualize']['Enabled'];else TriggerFOVBox.Visible=false;end else TriggerFOVBox.Visible=false;end else TriggerFOVBox.Visible=false;end local v641=State.Targets.Aimbot;local v642=v641;local v643=v14()['Main']['FOV']['Aimbot'];local v644=string.lower(tostring(v643['Options'] or "2D" ))=="3d" ;v103(Aimbot3DFOVBox,v643,v643['Visualize']['Color'] or AimbotFOVOutColor );if ( not v642 and v643['Visualize']['Enabled']) then v642=v628;end if ( not v644 and v643['Visualize']['Enabled'] and v642) then local v1967=0;local v1968;local v1969;while true do if (v1967==1) then if (v1969 and IsVisible(v1969.Position,v642)) then local v3606,v3607=v622:WorldToViewportPoint(v1969.Position);if (v3607 and (v3606.Z>(1802 -(1070 + 731)))) then local v3975=0;local v3976;local v3977;local v3978;local v3979;local v3980;local v3981;local v3982;while true do if (v3975==(1 + 0)) then v3979,v3980=nil;if v3977 then local v4509=0;local v4510;while true do if (1==v4509) then v3980=v4510;break;end if ((1404 -(1257 + 147))==v4509) then v4510=MathMin(8999999488 * v3976 ,v633 * 2 );v3979=v4510;v4509=1;end end else local v4511=(v3978['Width'] and (v3978['Width'][1] or (8999999488 -0))) or (8999999621 -(98 + 35)) ;local v4512=(v3978['Height'] and (v3978['Height'][1 + 0 ] or (8999999488 -0))) or (10660720691 -1660721203) ;v3979=MathMin(v4511 * v3976 ,v633 * (2 + 0) );v3980=MathMin(v4512 * v3976 ,v623 * (2 + 0) );end AimbotFOVBox.Round=v3977;v3975=1 + 1 ;end if (v3975==(557 -(395 + 162))) then v3976=(((v1969.Size.Y * v623)/(v3606.Z * 2)) * 80)/v624 ;v3977=false;v3978=v643;v3975=1;end if (v3975==(2 + 0)) then AimbotFOVBox.Size=Vector2New(MathFloor(v3979 + (1941.5 -(816 + 1125)) ),MathFloor(v3980 + 0.5 ));AimbotFOVBox.Position=Vector2New(MathFloor((v3606.X-(v3979/(2 -0))) + (1148.5 -(701 + 447)) ),MathFloor((v3606.Y-(v3980/(2 -0))) + (0.5 -0) ));v3981=Vector2New(v3606.X,v3606.Y) -v625 ;v3975=1344 -(391 + 950) ;end if (v3975==(7 -4)) then v3982=nil;if v3977 then v3982=((v3981.X * v3981.X) + (v3981.Y * v3981.Y))<=((v3979/(4 -2)) * (v3979/2)) ;else v3982=(MathAbs(v3981.X)<=(v3979/(4 -2))) and (MathAbs(v3981.Y)<=(v3980/(2 + 0))) ;end AimbotFOVBox.Color=(v3982 and AimbotFOVInColor) or AimbotFOVOutColor ;v3975=4;end if (v3975==(3 + 1)) then AimbotFOVBox.Visible=v643['Visualize']['Enabled'];break;end end else AimbotFOVBox.Visible=false;end else AimbotFOVBox.Visible=false;end break;end if (v1967==(0 -0)) then v1968=v642.Character;v1969=v1968 and v1968:FindFirstChild("HumanoidRootPart") ;v1967=1;end end else AimbotFOVBox.Visible=false;end local v645=v14()["Name ESP"];if v645['Enabled'] then local v1971=1522 -(251 + 1271) ;local v1972;local v1973;local v1974;local v1975;while true do if (v1971==(0 + 0)) then v1972=v645['Color'] or Color3.fromRGB(481 -301 ,450 -270 ,180) ;v1973=v645["Target Color"] or Color3.fromRGB(422 -167 ,1459 -(1147 + 112) ,0) ;v1971=1;end if (v1971==(1 + 0)) then v1974=v645["Text Size"] or 13 ;v1975=v619['Enabled'] and (v14()['Main']["Silent Aim"]['Selection']=="Target") ;v1971=3 -1 ;end if (v1971==2) then for v3240,v3241 in next,v1:GetPlayers() do if (v3241==v10) then continue;end local v3242=v3241.Character;if  not v3242 then if NameESPDrawings[v3241] then NameESPDrawings[v3241].Visible=false;end continue;end local v3243=v3242:FindFirstChild("HumanoidRootPart");if  not v3243 then local v3802=0 + 0 ;while true do if (v3802==(697 -(335 + 362))) then if NameESPDrawings[v3241] then NameESPDrawings[v3241].Visible=false;end continue;break;end end end local v3244=v3243.Position-Vector3New(0 + 0 ,4 -1 ,0) ;local v3245,v3246=v622:WorldToViewportPoint(v3244);if  not v3246 then if NameESPDrawings[v3241] then NameESPDrawings[v3241].Visible=false;end continue;end if  not NameESPDrawings[v3241] then local v3803=0 -0 ;local v3804;while true do if (v3803==(0 -0)) then v3804=CreateTextLabel();v3804.Outline=true;v3803=4 -3 ;end if (1==v3803) then v3804.Center=true;NameESPDrawings[v3241]=v3804;break;end end end local v3247=NameESPDrawings[v3241];local v3248=(v3241==State.Targets.Silent) or (v3241==State.Targets.Aimbot) or ( not v1975 and (v3241==State.Targets.Triggerbot)) or (State.CamLock.Active and (v3241==State.CamLock.Target)) ;v3247.Text=v3241.DisplayName;v3247.Size=v1974;v3247.Color=(v3248 and v1973) or v1972 ;v3247.Position=Vector2New(MathFloor(v3245.X + (0.5 -0) ),MathFloor(v3245.Y + 0.5 ));v3247.Visible=true;end break;end end else for v2372,v2373 in next,NameESPDrawings do v2373.Visible=false;end end local v646=v14()["Health Bar"];if (v646 and v646['Enabled']) then local v1976=v646['Position'] or "Bottom" ;local v1977=v646["Show Armor"];local v1978=v646["Health Color"] or Color3.fromRGB(85,255,821 -(237 + 329) ) ;local v1979=v646["Armor Color"] or Color3.fromRGB(429 -309 ,185,169 + 86 ) ;local v1980=State.Targets.Silent or State.Targets.Aimbot or State.Targets.Triggerbot or (State.CamLock.Active and State.CamLock.Target) ;for v2375,v2376 in next,HealthBarDrawings do if (v2375~=v1980) then HideHealthBarSet(v2376);end end local v1981=v1980 and v1980.Character ;local v1982=v1981 and v1981:FindFirstChild("HumanoidRootPart") ;local v1983=v1981 and v1981:FindFirstChildOfClass("Humanoid") ;if (v1980 and v1982 and v1983) then local v2686,v2687=v622:WorldToViewportPoint(v1982.Position + Vector3New(0 + 0 ,3,1124 -(408 + 716) ) );local v2688,v2689=v622:WorldToViewportPoint(v1982.Position-Vector3New(0 -0 ,824.5 -(344 + 477) ,0 + 0 ) );if (v2687 or v2689) then if  not HealthBarDrawings[v1980] then local v3805=1761 -(1188 + 573) ;local v3806;while true do if (v3805==(2 -1)) then HealthBarDrawings[v1980]=v3806;break;end if (v3805==(0 + 0)) then v3806={};for v4339,v4340 in next,{"HealthBack","HealthFill","ArmorBack","ArmorFill"} do local v4341=0;local v4342;while true do if (v4341==(2 -1)) then v4342.Visible=false;v3806[v4340]=v4342;break;end if (v4341==(1529 -(508 + 1021))) then v4342=CreateSquare();v4342.Filled=true;v4341=1 + 0 ;end end end v3805=1;end end end local v3255=HealthBarDrawings[v1980];local v3256,v3257,v3258,v3259=GetStableHealthBarValues(v1980,v1983);local v3260=MathClamp(v3256/v3257 ,1166 -(228 + 938) ,1);local v3261=MathClamp(v3258/100 ,685 -(332 + 353) ,1 -0 );local v3262=v1977 and (v3258>(0 -0)) ;v3255.HealthBack.Color=Color3.fromRGB(8,8,12);v3255.HealthFill.Color=v1978;v3255.ArmorBack.Color=Color3.fromRGB(8 + 0 ,8,12);v3255.ArmorFill.Color=v1979;local v3267=(v2686.X + v2688.X)/(2 + 0) ;local v3268=66;local v3269=2;local v3270=3 -2 ;local v3271=424 -(18 + 405) ;local v3272=v14()["Name ESP"];local v3273=v3272["Text Size"] or (6 + 7) ;local v3274=v3268 + (v3270 * (2 + 0)) ;local v3275=MathFloor((v3267-(v3274/(2 -0))) + 0.5 );local v3276=MathMax(v2686.Y,v2688.Y);local v3277;if (v1976=="Top") then v3277=MathFloor(((MathMin(v2686.Y,v2688.Y) -(v3269 + (v3270 * 2))) -(982 -(194 + 784))) + 0.5 );elseif v3272['Enabled'] then local v4116=NameESPDrawings[v1980];local v4117=(v4116 and v4116.Position.Y) or v3276 ;local v4118=(v4116 and v4116.TextBounds.Y) or v3273 ;v3277=MathFloor(v4117 + MathMax(v4118,v3273) + 2 + (1770.5 -(694 + 1076)) );else v3277=MathFloor(v3276 + (1907 -(122 + 1782)) + 0.5 );end local v3278=v3277;local v3279=v3278 + v3270 ;local v3280=v3278 + v3269 + (v3270 * (2 + 0)) + v3271 ;local v3281=v3280 + v3270 ;v3255.HealthBack.Size=Vector2New(v3274,v3269 + (v3270 * (2 + 0)) );v3255.HealthBack.Position=Vector2New(v3275,v3278);v3255.HealthFill.Size=Vector2New(MathFloor((v3268 * v3260) + 0.5 + 0 ),v3269);v3255.HealthFill.Position=Vector2New(v3275 + v3270 ,v3279);v3255.ArmorBack.Size=Vector2New(v3274,v3269 + (v3270 * 2) );v3255.ArmorBack.Position=Vector2New(v3275,v3280);v3255.ArmorFill.Size=Vector2New(MathFloor((v3268 * v3261) + 0.5 + 0 ),v3269);v3255.ArmorFill.Position=Vector2New(v3275 + v3270 ,v3281);local v3290=(v3260>(0 -0)) and  not v3259 ;v3255.HealthBack.Visible=v3290;v3255.HealthFill.Visible=v3290;v3255.ArmorBack.Visible=v3262 and  not v3259 ;v3255.ArmorFill.Visible=v3262 and (v3261>0) and  not v3259 ;else HideHealthBarSet(HealthBarDrawings[v1980]);end end else for v2377,v2378 in next,HealthBarDrawings do HideHealthBarSet(v2378);end end local v647=v14()['Main']['Brand'];if v647['Enabled'] then local v1984=v647;local v1985=v647['Accent'] or Color3.fromRGB(255,200,0) ;local v1986=v622.ViewportSize;local v1987,v1988=v1986.X,v1986.Y;local v1989=MathClamp(MathMin(v1987/1920 ,v1988/(1001 + 79) ),1970.55 -(214 + 1756) ,4.35 -3 );local v1990=MathFloor((15 * v1989) + 0.5 + 0 );local v1991=MathFloor((12 * v1989) + 0.5 + 0 );local v1992=MathFloor(((599 -(217 + 368)) * v1989) + 0.5 );local v1993=MathFloor(((54 -36) * v1989) + 0.5 + 0 );local v1994=0 + 0 ;if (v619['Enabled'] and State.Toggles.SilentAim and State.Targets.Silent) then local v2690=0;while true do if (v2690==0) then v1994=v1994 + 1 + 0 ;if (State.Targets.Silent and State.Targets.Silent.Character) then v1994=v1994 + (890 -(844 + 45)) ;end break;end end end if (v621['Enabled'] and AimbotTargetLocked) then v1994=v1994 + (285 -(242 + 42)) ;end if (v620['Enabled'] and State.TriggerState and State.Targets.Triggerbot) then v1994=v1994 + (1 -0) ;end if (v619['Enabled'] and State.Targets.Silent and v619["Auto Shoot"] and v619["Auto Shoot"]['Enabled']) then v1994=v1994 + (2 -1) ;end if (v14()['Movement']["Speed Modifications"]['Enabled'] and State.SpeedModificationsActive) then v1994=v1994 + (1201 -(132 + 1068)) ;end if State.SorterActive then v1994=v1994 + (1 -0) ;end if (v14()['Modifications']["Double Tap"]['Enabled'] and ((v14()['Modifications']["Double Tap"]['Mode']=="Always") or State.DoubleTapActive)) then v1994=v1994 + 1 ;end if (v14()["Anti Future"]['Enabled'] and State.AntiFuture.Active) then v1994=v1994 + (1624 -(214 + 1409)) ;end if (v14()['Movement']["Jump Modifications"]['Enabled'] and State.JumpModificationsActive) then v1994=v1994 + 1 + 0 ;end local v1995=v1993 + (v1994 * v1992) ;local v1996,v1997=GetBrandHealthBarAnchor(v1986);local v1998=v1996;local v1999=(v1997-v1995) -MathFloor((7 * v1989) + (1634.5 -(497 + 1137)) ) ;local v2000=MathFloor((PanelTitle.TextBounds.X/2) + 0.5 );local v2001=v2000 + 4 ;local v2002=(v1987-v2000) -(944 -(9 + 931)) ;v1998=MathClamp(MathFloor(v1998 + (289.5 -(181 + 108)) ),v2001,v2002);v1999=MathClamp(MathFloor(v1999 + 0.5 + 0 ),14 -8 ,(v1988-v1995) -(17 -11) );PanelTitle.Size=v1990;for v2379=1 + 0 , #PanelLabels do PanelLabels[v2379].Size=v1991;end PanelTitle.Text=string.format('<font color="rgb(255, 255, 255)">placid</font><font color="rgb(%d, %d, %d)">.cc</font>',MathFloor((v1985.R * (159 + 96)) + (476.5 -(296 + 180)) ),MathFloor((v1985.G * 255) + (1403.5 -(1183 + 220)) ),MathFloor((v1985.B * (1520 -(1037 + 228))) + (0.5 -0) ));PanelTitle.Position=Vector2New(v1998,v1999);PanelTitle.Visible=true;local v2007=v1999 + v1993 ;local v2008=0 -0 ;if (v619['Enabled'] and State.Toggles.SilentAim and State.Targets.Silent) then local v2691=State.Targets.Silent;local v2692=v1984['Feature'];v2008=v2008 + (3 -2) ;local v2693=PanelLabels[v2008];if v2693 then local v3295=(v2691 and v2691.DisplayName) or "none" ;local v3296=(v2691 and v1985) or v1984['Feature'] ;v2693.Text=string.format('<font color="rgb(%d, %d, %d)">silent aim</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>',MathFloor((v2692.R * 255) + 0.5 ),MathFloor((v2692.G * (989 -(527 + 207))) + 0.5 ),MathFloor((v2692.B * 255) + (527.5 -(187 + 340)) ),MathFloor((v3296.R * 255) + (1870.5 -(1298 + 572)) ),MathFloor((v3296.G * (633 -378)) + (170.5 -(144 + 26)) ),MathFloor((v3296.B * (635 -380)) + (0.5 -0) ),v3295);v2693.Color=Color3.new(1,1 + 0 ,1);v2693.Position=Vector2New(v1998,v2007);v2693.Visible=true;v2007=v2007 + v1992 ;end if (v2691 and v2691.Character) then v2008=v2008 + 1 ;local v3301=PanelLabels[v2008];if v3301 then local v3807=0 -0 ;local v3808;local v3809;local v3810;local v3811;local v3812;while true do if (v3807==(2 -1)) then v3811=v2691.Character:FindFirstChild("BodyEffects");if v3811 then local v4421=v3811:FindFirstChild("Armor") or v3811:FindFirstChild("Armour") or v3811:FindFirstChild("Defense") ;if (v4421 and v4421.Value and (v4421.Value>0)) then v3809=MathFloor(v4421.Value + (0.5 -0) );end end if ((v3809==(0 + 0)) and v2691) then local v4422=0;local v4423;while true do if (v4422==0) then v4423=v2691:FindFirstChild("leaderstats");if v4423 then local v4685=0 -0 ;local v4686;while true do if (v4685==(0 + 0)) then v4686=v4423:FindFirstChild("Armor") or v4423:FindFirstChild("Armour") or v4423:FindFirstChild("Defense") or v4423:FindFirstChild("Vest") ;if (v4686 and v4686.Value) then v3809=MathFloor(v4686.Value + 0.5 + 0 );end break;end end end break;end end end v3807=204 -(5 + 197) ;end if (v3807==(690 -(339 + 347))) then v2007=v2007 + v1992 ;break;end if (v3807==0) then v3808,v3809=0,0 -0 ;v3810=v2691.Character:FindFirstChildOfClass("Humanoid");if v3810 then v3808=MathFloor(v3810.Health + 0.5 );end v3807=3 -2 ;end if (2==v3807) then v3812=string.format('<font color="rgb(%d, %d, %d)">health</font> <font color="rgb(85, 255, 85)">&gt; %d</font>',MathFloor((v2692.R * (631 -(365 + 11))) + 0.5 ),MathFloor((v2692.G * (242 + 13)) + (0.5 -0) ),MathFloor((v2692.B * (598 -343)) + (924.5 -(837 + 87)) ),v3808);if (v3809>(0 -0)) then v3812=v3812   .. string.format(' / <font color="rgb(85, 170, 255)">%d</font>',v3809) ;end v3301.Text=v3812;v3807=3;end if (3==v3807) then v3301.Color=Color3.new(1671 -(837 + 833) ,1 + 0 ,1388 -(356 + 1031) );v3301.Position=Vector2New(v1998,v2007);v3301.Visible=true;v3807=4;end end end end end if (v621['Enabled'] and AimbotTargetLocked) then v2008=v2008 + 1 ;local v2694=PanelLabels[v2008];if v2694 then local v3302=State.Targets.Aimbot;local v3303=(v3302 and v3302.DisplayName) or "none" ;local v3304=v1984['Feature'];local v3305=(v3302 and v1985) or v1984['Feature'] ;v2694.Text=string.format('<font color="rgb(%d, %d, %d)">aimbot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>',MathFloor((v3304.R * (116 + 139)) + 0.5 ),MathFloor((v3304.G * (1901 -(73 + 1573))) + (1388.5 -(1307 + 81)) ),MathFloor((v3304.B * (489 -(7 + 227))) + 0.5 ),MathFloor((v3305.R * (418 -163)) + (166.5 -(90 + 76)) ),MathFloor((v3305.G * (800 -545)) + 0.5 + 0 ),MathFloor((v3305.B * (211 + 44)) + 0.5 + 0 ),v3303);v2694.Color=Color3.new(1,1,1);v2694.Position=Vector2New(v1998,v2007);v2694.Visible=true;v2007=v2007 + v1992 ;end end if (v620['Enabled'] and State.TriggerState and State.Targets.Triggerbot) then v2008=v2008 + (3 -2) ;local v2695=PanelLabels[v2008];if v2695 then local v3310=260 -(197 + 63) ;local v3311;local v3312;local v3313;local v3314;while true do if (v3310==(1 + 1)) then v2695.Text=string.format('<font color="rgb(%d, %d, %d)">triggerbot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>',MathFloor((v3313.R * 255) + 0.5 ),MathFloor((v3313.G * 255) + 0.5 + 0 ),MathFloor((v3313.B * (134 + 121)) + 0.5 ),MathFloor((v3314.R * (42 + 213)) + (0.5 -0) ),MathFloor((v3314.G * (1624 -(618 + 751))) + 0.5 + 0 ),MathFloor((v3314.B * (2165 -(206 + 1704))) + (0.5 -0) ),v3312);v2695.Color=Color3.new(1 -0 ,1,1 + 0 );v3310=1278 -(155 + 1120) ;end if (1==v3310) then v3313=v1984['Feature'];v3314=(v3311 and v1985) or v1984['Feature'] ;v3310=2;end if (v3310==0) then v3311=State.Targets.Triggerbot;v3312=(v3311 and v3311.DisplayName) or "none" ;v3310=1507 -(396 + 1110) ;end if (v3310==(6 -3)) then v2695.Position=Vector2New(v1998,v2007);v2695.Visible=true;v3310=4;end if ((2 + 2)==v3310) then v2007=v2007 + v1992 ;break;end end end end if (v619['Enabled'] and State.Targets.Silent and v619["Auto Shoot"] and v619["Auto Shoot"]['Enabled']) then v2008=v2008 + 1 + 0 ;local v2696=PanelLabels[v2008];if v2696 then local v3315=0;local v3316;local v3317;local v3318;local v3319;while true do if (v3315==(1 + 0)) then v3318=v1985;v3319=string.lower(v3317);v3315=978 -(230 + 746) ;end if (v3315==(605 -(473 + 128))) then v2007=v2007 + v1992 ;break;end if (v3315==(50 -(39 + 9))) then v2696.Text=string.format('<font color="rgb(%d, %d, %d)">auto shoot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>',MathFloor((v3316.R * (521 -(38 + 228))) + 0.5 ),MathFloor((v3316.G * (463 -208)) + (473.5 -(106 + 367)) ),MathFloor((v3316.B * 255) + 0.5 ),MathFloor((v3318.R * 255) + 0.5 ),MathFloor((v3318.G * (23 + 232)) + (1862.5 -(354 + 1508)) ),MathFloor((v3318.B * 255) + (0.5 -0) ),v3319);v2696.Color=Color3.new(1 + 0 ,1 + 0 ,1 -0 );v3315=3;end if (v3315==(1247 -(334 + 910))) then v2696.Position=Vector2New(v1998,v2007);v2696.Visible=true;v3315=4;end if (v3315==0) then v3316=v1984['Feature'];v3317=State.AutoShootStatus or "idle" ;v3315=896 -(92 + 803) ;end end end end if (v14()['Movement']["Speed Modifications"]['Enabled'] and State.SpeedModificationsActive) then v2008=v2008 + 1 + 0 ;local v2697=PanelLabels[v2008];if v2697 then local v3320=v1984['Feature'];v2697.Text=string.format('<font color="rgb(%d, %d, %d)">speed</font>',MathFloor((v3320.R * (1436 -(1035 + 146))) + 0.5 ),MathFloor((v3320.G * (871 -(230 + 386))) + 0.5 + 0 ),MathFloor((v3320.B * (1765 -(353 + 1157))) + (1114.5 -(53 + 1061)) ));v2697.Color=Color3.new(1636 -(1568 + 67) ,1 + 0 ,1);v2697.Position=Vector2New(v1998,v2007);v2697.Visible=true;v2007=v2007 + v1992 ;end end if State.SorterActive then v2008=v2008 + 1 ;local v2698=PanelLabels[v2008];if v2698 then local v3325=v1984['Feature'];v2698.Text=string.format('<font color="rgb(%d, %d, %d)">sorter</font> <font color="rgb(%d, %d, %d)">&gt; active</font>',MathFloor((v3325.R * 255) + 0.5 ),MathFloor((v3325.G * 255) + 0.5 + 0 ),MathFloor((v3325.B * (645 -390)) + (0.5 -0) ),MathFloor((v1985.R * 255) + (0.5 -0) ),MathFloor((v1985.G * 255) + 0.5 + 0 ),MathFloor((v1985.B * (1467 -(615 + 597))) + 0.5 + 0 ));v2698.Color=Color3.new(1 -0 ,1 + 0 ,1 + 0 );v2698.Position=Vector2New(v1998,v2007);v2698.Visible=true;v2007=v2007 + v1992 ;end end if (v14()['Modifications']["Double Tap"]['Enabled'] and ((v14()['Modifications']["Double Tap"]['Mode']=="Always") or State.DoubleTapActive)) then v2008=v2008 + 1 ;local v2699=PanelLabels[v2008];if v2699 then local v3330=0 + 0 ;local v3331;while true do if ((1901 -(1056 + 843))==v3330) then v2699.Visible=true;v2007=v2007 + v1992 ;break;end if (v3330==(0 -0)) then v3331=v1984['Feature'];v2699.Text=string.format('<font color="rgb(%d, %d, %d)">double tap</font> <font color="rgb(%d, %d, %d)">&gt; active</font>',MathFloor((v3331.R * 255) + 0.5 ),MathFloor((v3331.G * (423 -168)) + (0.5 -0) ),MathFloor((v3331.B * 255) + 0.5 ),MathFloor((v1985.R * (150 + 105)) + 0.5 ),MathFloor((v1985.G * (2231 -(286 + 1690))) + (911.5 -(98 + 813)) ),MathFloor((v1985.B * (68 + 187)) + (0.5 -0) ));v3330=1;end if ((1 + 0)==v3330) then v2699.Color=Color3.new(508 -(263 + 244) ,1 + 0 ,1688 -(1502 + 185) );v2699.Position=Vector2New(v1998,v2007);v3330=1 + 1 ;end end end end if (v14()["Anti Future"]['Enabled'] and State.AntiFuture.Active) then v2008=v2008 + 1 ;local v2700=PanelLabels[v2008];if v2700 then local v3332=0 -0 ;local v3333;local v3334;local v3335;local v3336;local v3337;local v3338;while true do if (v3332==(5 -3)) then v2700.Position=Vector2New(v1998,v2007);v2700.Visible=true;v2007=v2007 + v1992 ;break;end if (v3332==(1528 -(629 + 898))) then v3337=v3336['Strength'] or (1089 -689) ;v3338=(v3336["Air Only"] and " (air)") or "" ;v2700.Text=string.format('<font color="rgb(%d, %d, %d)">anti future</font> <font color="rgb(%d, %d, %d)">&gt; %d%s</font>',MathFloor((v3333.R * 255) + (0.5 -0) ),MathFloor((v3333.G * (620 -(12 + 353))) + 0.5 ),MathFloor((v3333.B * (2166 -(1680 + 231))) + 0.5 + 0 ),MathFloor((v3334.R * 255) + 0.5 + 0 ),MathFloor((v3334.G * (1404 -(212 + 937))) + 0.5 ),MathFloor((v3334.B * 255) + 0.5 ),v3337,v3338);v2700.Color=Color3.new(1,1 + 0 ,1063 -(111 + 951) );v3332=1 + 1 ;end if (v3332==0) then v3333=v1984['Feature'];v3334=v1985;v3335=v14()["Anti Future"];v3336=v3335['Options'] or {} ;v3332=28 -(18 + 9) ;end end end end if (v14()['Movement']["Jump Modifications"]['Enabled'] and State.JumpModificationsActive) then v2008=v2008 + 1 + 0 ;local v2701=PanelLabels[v2008];if v2701 then local v3339=v1984['Feature'];v2701.Text=string.format('<font color="rgb(%d, %d, %d)">jump</font>',MathFloor((v3339.R * (789 -(31 + 503))) + (1632.5 -(595 + 1037)) ),MathFloor((v3339.G * 255) + 0.5 ),MathFloor((v3339.B * 255) + (1444.5 -(189 + 1255)) ));v2701.Color=Color3.new(1 + 0 ,1,1 -0 );v2701.Position=Vector2New(v1998,v2007);v2701.Visible=true;v2007=v2007 + v1992 ;end end for v2381=v2008 + 1 , #PanelLabels do PanelLabels[v2381].Visible=false;end else local v2009=1279 -(1170 + 109) ;while true do if (v2009==0) then PanelTitle.Visible=false;for v3344,v3345 in next,PanelLabels do v3345.Visible=false;end break;end end end do local v999=1817 -(348 + 1469) ;local v1000;local v1001;local v1002;local v1003;local v1004;local v1005;local v1006;while true do if (v999==(1289 -(1115 + 174))) then v1000=v14()["Anti Future"];v1001=State.AntiFuture.Active;v999=2 -1 ;end if (v999==(1017 -(85 + 929))) then v1006=v1001 and v1002 and (v1003~=nil) ;if v1006 then local v3347=v10.Character and v10.Character:FindFirstChild("HumanoidRootPart") ;local v3348;if ((v1004~=nil) and (v1005~=nil)) then local v3813=MathClamp(Clock() -v1005 ,0 + 0 ,1867.05 -(1151 + 716) );v3348=v1003 + (v1004 * v3813) ;else v3348=v1003;end local v3349,v3350=v622:WorldToViewportPoint(v3348);if (v3350 and (v3349.Z>0.5)) then local v3814,v3815=v3349.X,v3349.Y;local v3816=(v3347 and MathFloor((v3348-v3347.Position).Magnitude + 0.5 + 0 )) or 0 ;local v3817=8 + 0 ;AntiFutureVisDot.Size=Vector2New(v3817,v3817);AntiFutureVisDot.Position=Vector2New(v3814-(v3817/(1706 -(95 + 1609))) ,v3815-(v3817/(6 -4)) );AntiFutureVisDot.Color=Color3.fromRGB(1013 -(364 + 394) ,73 + 7 ,24 + 56 );AntiFutureVisDot.Visible=true;AntiFutureVisLabel.Text=string.format('<font color="rgb(255,80,80)">server</font> <font color="rgb(150,150,150)">%d studs</font>',v3816);AntiFutureVisLabel.Position=Vector2New(v3814,v3815 + v3817 + 2 + 4 );AntiFutureVisLabel.Visible=true;else local v3825=0 + 0 ;while true do if (0==v3825) then AntiFutureVisDot.Visible=false;AntiFutureVisLabel.Visible=false;break;end end end else AntiFutureVisDot.Visible=false;AntiFutureVisLabel.Visible=false;end break;end if (v999==(1 + 0)) then v1002=v1000["Visualize Server"];v1003=State.AntiFuture.LastServerPosition;v999=2 + 0 ;end if (v999==(1 + 1)) then v1004=State.AntiFuture.LastSpoofedVelocity;v1005=State.AntiFuture.LastSpoofTime;v999=3 + 0 ;end end end RunTriggerbot();if (v621['Enabled'] and v641 and PassesConditions(v641,"Aimbot")) then local v2010=v641.Character;if v2010 then local v2708=v2010:FindFirstChild("HumanoidRootPart");if v2708 then local v3353=(v2708.Position-v622.CFrame.Position).Magnitude;if ((v3353<=(v621["Max Range"] or (237 + 513))) and v77(v2708.Position,"Aimbot")) then local v3826=956 -(719 + 237) ;local v3827;local v3828;local v3829;local v3830;local v3831;while true do if ((0 -0)==v3826) then v3827,v3828=v76(v2010,v621);if  not v3827 then v3827=v2708.Position;end v3826=1 + 0 ;end if (v3826==(2 -1)) then v3827=ApplyPrediction(v3827,v641,v621);v3829=v622.CFrame.Position;v3826=5 -3 ;end if (v3826==(4 -2)) then v3830=CFrameNew(v3829,v3827);v3831=v621['Smoothing'];v3826=1994 -(761 + 1230) ;end if ((196 -(80 + 113))==v3826) then if (v3831 and v3831['Enabled']) then local v4425=v3831['X'] or (0.14 + 0) ;local v4426=v3831['Y'] or (0.14 + 0) ;local v4427=v3831['Z'] or 0.14 ;local v4428,v4429,v4430;if v3831['DistanceAdaptive'] then local v4553=v3831['MinAlpha'] or 0.06 ;local v4554=v3831['MaxAlpha'] or 0.28 ;local v4555=v621["Max Range"] or (23 + 727) ;local v4556=MathClamp((3 -2) -(v3353/v4555) ,0 + 0 ,1);local v4557=v4553 + ((v4554-v4553) * v4556) ;v4428=v4557;v4429=v4557;v4430=v4557;else local v4558=0 + 0 ;while true do if (v4558==0) then v4428=v4425;v4429=v4426;v4558=1;end if (v4558==1) then v4430=v4427;break;end end end local v4431=v3831['Easing'];local v4432=(v4431 and Enum.EasingStyle[v4431['In'] or "Sine" ]) or Enum.EasingStyle.Sine ;local v4433=(v4431 and Enum.EasingDirection[v4431['Out'] or "Out" ]) or Enum.EasingDirection.Out ;local v4434=v622.CFrame.LookVector;local v4435=v3830.LookVector;local v4436=Vector3New(v4434.X + ((v4435.X-v4434.X) * v6:GetValue(v4428,v4432,v4433)) ,v4434.Y + ((v4435.Y-v4434.Y) * v6:GetValue(v4429,v4432,v4433)) ,v4434.Z + ((v4435.Z-v4434.Z) * v6:GetValue(v4430,v4432,v4433)) );v622.CFrame=CFrameNew(v3829,v3829 + v4436 );else v622.CFrame=v3830;end break;end end end end end end local v648=v14()['CamLock'];if (v648 and v648['Enabled'] and State.CamLock.Active) then local v2011=State.CamLock.Target;if (v2011 and v2011.Character) then local v2709=v2011.Character;local v2710=v648["Target Part"] or "Head" ;local v2711=v2709:FindFirstChild(v2710) or v2709:FindFirstChild("HumanoidRootPart") ;if (v2711 and PassesConditions(v2011,"Aimbot")) then local v3354=v2711.Position;local v3355=v648['Prediction'];if (v3355 and v3355['Enabled']) then local v3832=GetDeltaVelocity(v2011);local v3833=v3355['Values'] or {} ;v3354=v3354 + (v3832 * Vector3New(v3833['X'] or (1243.06 -(965 + 278)) ,v3833['Y'] or (1729.06 -(1391 + 338)) ,v3833['Z'] or (0.06 -0) )) ;end local v3356=v622.CFrame.Position;local v3357=v648['Smoothing'];if (v3357 and v3357['Enabled']) then local v3834=v3357['Speed'] or 0.18 ;local v3835=v3834;if v3357['DistanceScale'] then local v4119=v3357['MinSpeed'] or (0.08 + 0) ;local v4120=v3357['MaxSpeed'] or (0.28 -0) ;local v4121=(v3354-v3356).Magnitude;local v4122=MathClamp(1 -(v4121/200) ,0 + 0 ,1409 -(496 + 912) );v3835=v4119 + ((v4120-v4119) * v4122) ;end local v3836=v622.CFrame.LookVector;local v3837=(v3354-v3356).Unit;local v3838=Vector3New(v3836.X + ((v3837.X-v3836.X) * v3835) ,v3836.Y + ((v3837.Y-v3836.Y) * v3835) ,v3836.Z + ((v3837.Z-v3836.Z) * v3835) );v622.CFrame=CFrameNew(v3356,v3356 + v3838 );else v622.CFrame=CFrameNew(v3356,v3354);end else State.CamLock.Target=nil;State.CamLock.Active=false;end else local v2712=0 -0 ;while true do if (v2712==(0 + 0)) then State.CamLock.Target=nil;State.CamLock.Active=false;break;end end end end end));function v83(v649,v650,v651,v652,v653,v654,v655) if ShotgunWeapons[v651] then local v2012=0 -0 ;local v2013;local v2014;while true do if (v2012==1) then if v655 then local v3611=1330 -(1190 + 140) ;local v3612;while true do if ((1 + 0)==v3611) then if (v3612 and v3612['Enabled']) then local v4343=v3612['Min'] or (719 -(317 + 401)) ;local v4344=v3612['Max'] or (950 -(303 + 646)) ;local v4345=MathRandom();v2014=v2014 * (v4343 + ((v4344-v4343) * v4345)) ;end break;end if (v3611==(0 -0)) then v2014=v655['Value'] or (1733 -(1675 + 57)) ;v3612=v655['Randomizer'];v3611=1;end end end for v3360=1 + 0 ,13 -8  do local v3361=0;local v3362;local v3363;local v3364;local v3365;local v3366;local v3367;local v3368;local v3369;while true do if (v3361==2) then v3366=v652 + (v3365 * v654) ;v3367,v3368,v3369=ShowPellet(v10.Character,v650,v652,v3366,v654);v3361=3;end if (v3361==1) then v3364=(((MathRandom()>(0.5 + 0)) and (MathRandom() * (977.05 -(338 + 639)))) or ( -MathRandom() * (379.05 -(320 + 59)))) * v2014 ;v3365=v653 + Vector3New(v3362,v3363,v3364) ;v3361=2 + 0 ;end if (v3361==(732 -(628 + 104))) then v3362=(((MathRandom()>(0.5 -0)) and (MathRandom() * 0.05)) or ( -MathRandom() * 0.05)) * v2014 ;v3363=(((MathRandom()>(1891.5 -(439 + 1452))) and (MathRandom() * (1947.1 -(105 + 1842)))) or ( -MathRandom() * 0.1)) * v2014 ;v3361=4 -3 ;end if (v3361==(7 -4)) then v3367,v3368,v3369=ApplyDamageModifierHit(v651,v3367,v3368,v3369);CachedMainEvent:FireServer("ShootGun",v650,v652,v3367,v3368,v3369,v2013);break;end end end break;end if (v2012==(0 -0)) then v2013=v2:GetServerTimeNow();v2014=1;v2012=1;end end else local v2015=v652 + (v653 * v654) ;local v2016,v2017,v2018=ShowPellet(v10.Character,v650,v652,v2015,v654);v2016,v2017,v2018=ApplyDamageModifierHit(v651,v2016,v2017,v2018);CachedMainEvent:FireServer("ShootGun",v650,v652,v2016,v2017,v2018);end end local v136=function() local v656=0 + 0 ;local v657;local v658;local v659;local v660;local v661;local v662;local v663;local v664;local v665;local v666;local v667;local v668;local v669;local v670;local v671;local v672;while true do if (0==v656) then v657=v14()["Silent Aim"];v658=v657["Auto Shoot"];if ( not v658 or  not v658['Enabled'] or  not v657['Enabled']) then State.AutoShootStatus="Disabled";return;end v656=1 -0 ;end if (v656==(4 + 2)) then if ((v667-v663.Position).Magnitude>v666) then State.AutoShootStatus="Out of Range";return;end if (v658["Wall Check"] and  not IsVisible(v663.Position,v659)) then State.AutoShootStatus="Blocked";return;end v668=v657["Offscreen Targeting"];v656=7;end if (v656==8) then if  not v669 then if  not (v672 and (v671.Z>1)) then State.AutoShootStatus="Blocked";return;end local v2913=v14()['Main']['FOV'] and v14()['Main']['FOV']['Silent'] ;if (v2913 and (v2913['Width'] or v2913['Height'])) then local v3614=v5:GetMouseLocation();local v3615=v670.ViewportSize.Y;local v3616=v670.FieldOfView;local v3617=(((v663.Size.Y * v3615)/(v671.Z * (1166 -(274 + 890)))) * (70 + 10))/v3616 ;local v3618=((v2913['Width'] and v2913['Width'][2]) or (9000000178 -(498 + 192))) * v3617 ;local v3619=((v2913['Height'] and v2913['Height'][2]) or (9916595956 -916596468)) * v3617 ;local v3620=Vector2New(v671.X,v671.Y) -v3614 ;if  not ((MathAbs(v3620.X)<=(v3618/(1 + 1))) and (MathAbs(v3620.Y)<=(v3619/(2 + 0)))) then local v4006=0 + 0 ;while true do if (0==v4006) then State.AutoShootStatus="Blocked";return;end end end end end State.AutoShootStatus="Shooting";v661:Activate();break;end if ((2 + 3)==v656) then v665=v661:FindFirstChild("Range");v666=(v665 and v665.Value) or (292 -92) ;v667=GetMuzzlePosition(v661) or v664.Position ;v656=18 -12 ;end if (2==v656) then if  not v660 then State.AutoShootStatus="No Character";return;end v661=v660:FindFirstChildOfClass("Tool");if ( not v661 or  not v661:FindFirstChild("Ammo") or (v661.Name=="[Knife]")) then State.AutoShootStatus="No Gun";return;end v656=8 -5 ;end if (v656==1) then v659=State.Targets.Silent;if  not v659 then State.AutoShootStatus="No Target";return;end v660=v10.Character;v656=3 -1 ;end if (v656==(7 + 0)) then v669=v668 and v668['Enabled'] ;v670=v2.CurrentCamera;v671,v672=v670:WorldToViewportPoint(v663.Position);v656=8;end if (4==v656) then if  not v663 then State.AutoShootStatus="No Target";return;end v664=v660:FindFirstChild("HumanoidRootPart");if  not v664 then return;end v656=5;end if (v656==3) then if  not PassesConditions(v659,"Silent Aim") then local v2918=0 + 0 ;while true do if (v2918==(0 + 0)) then State.AutoShootStatus="Conditions";return;end end end v662=v659.Character;v663=v662 and v662:FindFirstChild("HumanoidRootPart") ;v656=3 + 1 ;end end end;v3:BindToRenderStep("ciderrage",159 -(139 + 19) ,v136);TrackConn(v3.RenderStepped:Connect(v136));TrackConn(v3.Stepped:Connect(v136));TrackConn(v3.Heartbeat:Connect(v136));if (CurrentGame.Name=="Da Hood") then if v10.Character then HookGunActivation(v10.Character);end TrackConn(v10.CharacterAdded:Connect(HookGunActivation));end do local v673=v14()['Modifications']["Das Hood"];local v674=v673["Inf Range"];local v675=v673['Wallbang'];if v674['Enabled'] then task.spawn(function() local v2391=v4:FindFirstChild("MainEvent") or v4:WaitForChild("MainEvent",2 + 8 ) ;if v2391 then local v2919=0;local v2920;while true do if (v2919==(1994 -(1687 + 306))) then if v2920 then local v4124;v4124=v2920(game,"__namecall",function(v4248,...) local v4249=getnamecallmethod();local v4250={...};if ((v4248==v2391) and (v4249=="FireServer") and (v4250[1155 -(1018 + 136) ]=="ShootGun")) then if (v4250[6] and (type(v4250[1 + 5 ])=="number")) then v4250[6]=43 -33 ;end if (v4250[818 -(117 + 698) ] and v4250[5]) then local v4560=(v4250[484 -(305 + 176) ] -v4250[1 + 4 ]).Unit;v4250[3 + 0 ]=v4250[8 -3 ] + (v4560 * (10 + 0)) ;end if (v4250[2 -0 ] and v4250[8 -4 ] and v4250[8 -3 ]) then local v4562=260 -(159 + 101) ;local v4563;while true do if (v4562==(0 -0)) then v4563=v4250[2].Parent;if v4563 then v4250[13 -9 ],v4250[3 + 2 ],v4250[6]=ApplyDamageModifierHit(v4563.Name,v4250[4],v4250[15 -10 ],v4250[11 -5 ]);end break;end end end end if (v4250[1]=="CHECKER_4") then return nil;end return v4124(v4248,Unpack(v4250));end);end break;end if (v2919==0) then TrackConn(v3.Heartbeat:Connect(function() local v4007=0 + 0 ;local v4008;local v4009;while true do if (v4007==(267 -(112 + 154))) then v4009=v10:FindFirstChild("Backpack");if v4009 then for v4564,v4565 in next,v4009:GetChildren() do if v4565:IsA("Tool") then local v4650=0 -0 ;local v4651;while true do if (v4650==0) then v4651=v4565:FindFirstChild("Range");if v4651 then v4651.Value=999999;end break;end end end end end break;end if (v4007==(31 -(21 + 10))) then v4008=v10.Character;if v4008 then for v4566,v4567 in next,v4008:GetChildren() do if v4567:IsA("Tool") then local v4652=1719 -(531 + 1188) ;local v4653;while true do if (v4652==0) then v4653=v4567:FindFirstChild("Range");if v4653 then v4653.Value=999999;end break;end end end end end v4007=1;end end end));v2920=hookmetamethod or (getgenv and getgenv().hookmetamethod) ;v2919=1;end end end end);end if v675['Enabled'] then local v2019=0;local v2020;while true do if (v2019==0) then v2020=nil;function v2020() local v3370=0 + 0 ;local v3371;local v3372;while true do if (v3370==(664 -(96 + 567))) then v3372=v2:FindFirstChild("MAP") or v2:FindFirstChild("Map") ;if (v3372 and (v3372.Parent~=v3371)) then v3372.Parent=v3371;end break;end if (v3370==0) then v3371=v2:FindFirstChild("Ignored");if  not v3371 then v3371=Instance.new("Folder");v3371.Name="Ignored";v3371.Parent=v2;end v3370=1 -0 ;end end end v2019=1;end if (v2019==1) then v2020();TrackConn(v3.Heartbeat:Connect(function() if v14()['Modifications']["Das Hood"]['Wallbang']['Enabled'] then v2020();end end));break;end end end end if ((CurrentGame.Name~="Da Hood") and (type(hookfunction)=="function")) then local v1007=v14()['Modifications']["Spread Modifications"];if v1007['Enabled'] then local v2392=v1007["Spread Angles"];local v2393;v2393=hookfunction(math.random,function(...) local v2713={...};if checkcaller() then return v2393(...);end if (( #v2713==(0 -0)) or ((v2713[1]== -(1695.05 -(867 + 828))) and (v2713[2]==(0.05 -0))) or ((v2713[3 -2 ]== -0.1) and (v2713[4 -2 ]==(0.1 -0))) or (v2713[1]== -(0.05 + 0)) or (v2713[1]== -(0.1 -0))) then local v3373=771 -(134 + 637) ;local v3374;local v3375;local v3376;local v3377;while true do if (v3373==(1 + 1)) then if (v3375==0) then if (v3376==(1157 -(775 + 382))) then return 0 -0 ;elseif (v3376==(608 -(45 + 562))) then return 862 -(545 + 317) ;else return (v2713[1 -0 ] + v2713[2])/2 ;end end v3377=v2393(...);v3373=3;end if (v3373==(1029 -(763 + 263))) then if (v3376==0) then return ((v3377-(0.5 + 0)) * v3375) + (1750.5 -(512 + 1238)) ;elseif (v3376==(1595 -(272 + 1322))) then return v3377 * v3375 ;else local v4439=(v2713[1] + v2713[2])/2 ;return v4439 + ((v3377-v4439) * v3375) ;end break;end if ((1 -0)==v3373) then v3375=MathClamp((v3374['Value'] or 0)/(1346 -(533 + 713)) ,28 -(14 + 14) ,826 -(499 + 326) );v3376= #v2713;v3373=3 -1 ;end if (v3373==(424 -(104 + 320))) then v3374=v14()['Modifications']["Spread Modifications"];if ( not v3374['Enabled'] or (v2392 and v2392['Enabled'])) then return v2393(...);end v3373=1;end end end return v2393(...);end);end end do local v676=v14()['Modifications']["Misc Gun Modifications"]["Range Enhancer"];if (v676 and v676['Enabled']) then local function v2021(v2394) local v2395=0;local v2396;while true do if (v2395==(1997 -(1929 + 68))) then v2396=v72();if (v2396 and (type(v2396.shoot)=="function") and (type(v2396.getAim)=="function")) then return v2396,"emulated";end v2395=1324 -(1206 + 117) ;end if (v2395==1) then if v2394 then local v3842,v3843=pcall(require,v2394);if (v3842 and (type(v3843)=="table") and (type(v3843.shoot)=="function") and (type(v3843.getAim)=="function")) then return v3843,"require";end end return nil,"missing";end end end local function v2022(v2397) local v2398=0;local v2399;local v2400;local v2401;local v2402;while true do if (v2398==(0 + 0)) then if ( not v2397 or  not v2397:IsA("Tool")) then return;end v2399=v2397:FindFirstChild("Range");v2398=1;end if (v2398==(1595 -(683 + 909))) then v2402=(v2401 and v2401['Enabled'] and v2401['Value']) or (0 -0) ;v2399.Value=v2400 + v2402 ;break;end if (v2398==(1 -0)) then if  not v2399 then return;end v2400=v2397:GetAttribute("__CiderBaseRange");v2398=779 -(772 + 5) ;end if (v2398==2) then if (type(v2400)~="number") then v2400=v2399.Value;v2397:SetAttribute("__CiderBaseRange",v2400);end v2401=v14()['Modifications']["Misc Gun Modifications"]["Range Enhancer"];v2398=1430 -(19 + 1408) ;end end end local function v2023() local v2403=0;local v2404;local v2405;while true do if ((289 -(134 + 154))==v2403) then v2405=v10:FindFirstChild("Backpack");if v2405 then for v4011,v4012 in next,v2405:GetChildren() do v2022(v4012);end end break;end if ((0 -0)==v2403) then v2404=v10.Character;if v2404 then for v4013,v4014 in next,v2404:GetChildren() do v2022(v4014);end end v2403=3 -2 ;end end end task.spawn(function() local v2406=0;local v2407;local v2408;local v2409;while true do if (v2406==(1 + 0)) then if (v2408 and v2409) then local v3845,v3846=v2021(v2409);shared.__cider_range_gunhandler_source=v3846;if v3845 then local v4125=0;while true do if (v4125==0) then if (v3845.shoot and (type(v3845.shoot)=="function") and  not v3845.__CiderRangeWrapped) then local v4568=v3845.shoot;v3845.shoot=function(v4623) local v4624=v14()['Modifications']["Misc Gun Modifications"]["Range Enhancer"];local v4625=(v4624 and v4624['Enabled'] and v4624['Value']) or 0 ;if (v4623 and v4623.Range) then v4623.Range=v4623.Range + v4625 ;end return v4568(v4623);end;v3845.__CiderRangeWrapped=true;end if (v3845.getAim and (type(v3845.getAim)=="function") and  not v3845.__CiderRangeAimWrapped) then local v4571=v3845.getAim;v3845.getAim=function(v4626,v4627) local v4628=v14()['Modifications']["Misc Gun Modifications"]["Range Enhancer"];local v4629=(v4628 and v4628['Enabled'] and v4628['Value']) or (0 + 0) ;return v4571(v4626,v4627 + v4629 );end;v3845.__CiderRangeAimWrapped=true;end break;end end end end break;end if (v2406==0) then v2407=v4:FindFirstChild("Modules") or v4:WaitForChild("Modules",207 -(10 + 192) ) ;v2408,v2409=pcall(function() return v2407 and v2407:WaitForChild("GunHandler",52 -(13 + 34) ) ;end);v2406=1;end end end);task.spawn(function() v2023();TrackConn(v3.Heartbeat:Connect(function() v2023();end));TrackConn(v10.CharacterAdded:Connect(function() local v2714=0;while true do if (v2714==(1289 -(342 + 947))) then task.wait(1);v2023();break;end end end));end);if (v676["Use Hooks"] and getgc and islclosure and getfunctionhash and debug) then task.spawn(function() local v2921=0 -0 ;local v2922;while true do if (v2921==(1708 -(119 + 1589))) then v2922=v14()['Modifications']["Misc Gun Modifications"]["Range Enhancer"]['Value'] or (26 -14) ;for v4015,v4016 in getgc() do if ((type(v4016)=="function") and islclosure(v4016)) then if (getfunctionhash(v4016)=="f01a12bbf0fe1944cdca10883eb444581d9a6bbd8f40472dbf23b6b39fd412f21769d9bfccef6b899f802bae846d2bb3") then local v4440=0 -0 ;local v4441;while true do if (v4440==(554 -(545 + 7))) then debug.setconstant(v4016,76 -49 ,0 + 0 );break;end if (v4440==(1704 -(494 + 1209))) then debug.setupvalue(v4016,2,0 -0 );debug.setconstant(v4016,26,0);v4440=1000 -(197 + 801) ;end if (v4440==0) then v4441=debug.getupvalue(v4016,10);if v4441 then v4441.Value=v2922;end v4440=1 -0 ;end end end end end break;end end end);end end end if (CurrentGame.Hooks=="Raycast") then local v1008=0 -0 ;local v1009;while true do if (v1008==(954 -(919 + 35))) then v1009=v1009 or (getgenv and getgenv().hookmetamethod) ;if v1009 then local v3381=0 + 0 ;local v3382;while true do if (v3381==(0 -0)) then v3382=nil;v3382=v1009(game,"__namecall",function(v4126,...) local v4127=0;local v4128;local v4129;while true do if (v4127==(468 -(369 + 98))) then if ( not checkcaller() and (v4129=="Raycast") and (v4126==v2)) then local v4574=v14()["Silent Aim"];if (v4574['Enabled'] and State.Targets.Silent and PassesConditions(State.Targets.Silent,"Silent Aim")) then local v4654=1115 -(400 + 715) ;local v4655;local v4656;local v4657;local v4658;while true do if (v4654==(0 + 0)) then v4655=v4128[1 + 0 ];v4656=v4128[1327 -(744 + 581) ];v4654=1 + 0 ;end if (v4654==(1623 -(653 + 969))) then v4657=v4656.Magnitude;v4658=v78(v4655,v4657);v4654=3 -1 ;end if (v4654==(1633 -(12 + 1619))) then if (v4658~=v11.Hit.Position) then local v4744=163 -(103 + 60) ;while true do if (v4744==0) then v4128[9 -7 ]=(v4658-v4655).Unit * v4657 ;return v3382(v4126,Unpack(v4128));end end end break;end end end end return v3382(v4126,Unpack(v4128));end if (v4127==(0 -0)) then v4128={...};v4129=getnamecallmethod();v4127=1663 -(710 + 952) ;end end end);break;end end else warn("game not supported!");end break;end end end local function v137(v677) if  not v677 then return;end local v678=v677:FindFirstChildOfClass("Humanoid") or v677:WaitForChild("Humanoid",10) ;if  not v678 then return;end TrackConn(v678.StateChanged:Connect(function(v1010,v1011) if  not v14()['Movement']["Anti Trip"] then return;end if ((v1011==EnumFallingDown) or (v1011==EnumRagdoll)) then v678:ChangeState(EnumGettingUp);end end));end if v10.Character then v137(v10.Character);end TrackConn(v10.CharacterAdded:Connect(v137));local function v138(v679) if  not v679 then return;end local v680=v679:FindFirstChildOfClass("Humanoid") or v679:WaitForChild("Humanoid",10) ;if  not v680 then return;end local v681=v680.Health;TrackConn(v680.HealthChanged:Connect(function(v1012) if (v1012<v681) then TriggerAntiFutureBoost();end v681=v1012;end));end if v10.Character then v138(v10.Character);end TrackConn(v10.CharacterAdded:Connect(v138));do local v682={Ninja={Idle="rbxassetid://656118341",Run="rbxassetid://656118852",Walk="rbxassetid://656121766",Jump="rbxassetid://656117878",Fall="rbxassetid://10921159222",Climb="rbxassetid://656114359",Swim="rbxassetid://10921161002",SwimIdle="rbxassetid://10922757002"},Robot={Idle="rbxassetid://616089559",Run="rbxassetid://616091570",Walk="rbxassetid://616095330",Jump="rbxassetid://616090535",Fall="rbxassetid://616092998",Climb="rbxassetid://616086039",Swim="rbxassetid://10921253142",SwimIdle="rbxassetid://10921253767"},Default={Idle="rbxassetid://507766666",Run="rbxassetid://10921261968",Walk="rbxassetid://10921269718",Jump="rbxassetid://10921263860",Fall="rbxassetid://10921262864",Climb="rbxassetid://10921257536",Swim="rbxassetid://10921264784",SwimIdle="rbxassetid://10921265698"},Custom={Idle="rbxassetid://92080889861410",Run="rbxassetid://16738337225",Walk="rbxassetid://16738340646",Jump="rbxassetid://104325245285198",Fall="rbxassetid://616003713",Climb="rbxassetid://18537363391",Swim="rbxassetid://133308483266208",SwimIdle="rbxassetid://109346520324160"},Levitate={Idle="rbxassetid://616008087",Run="rbxassetid://616010382",Walk="rbxassetid://616013216",Jump="rbxassetid://616008936",Fall="rbxassetid://616005863",Climb="rbxassetid://616003713",Swim="rbxassetid://10921139478",SwimIdle="rbxassetid://10921138209"},Mage={Idle="rbxassetid://707855907",Run="rbxassetid://707861613",Walk="rbxassetid://707897309",Jump="rbxassetid://707853694",Fall="rbxassetid://707829716",Climb="rbxassetid://707826056",Swim="rbxassetid://10921150788",SwimIdle="rbxassetid://10921151661"},Stylish={Idle="rbxassetid://616138447",Run="rbxassetid://616140816",Walk="rbxassetid://616146177",Jump="rbxassetid://616139451",Fall="rbxassetid://616134815",Climb="rbxassetid://616133594",Swim="rbxassetid://10921281000",SwimIdle="rbxassetid://10921281964"},Hero={Idle="rbxassetid://616113536",Run="rbxassetid://616117076",Walk="rbxassetid://616122287",Jump="rbxassetid://616115533",Fall="rbxassetid://616108001",Climb="rbxassetid://616104706",Swim="rbxassetid://10921295495",SwimIdle="rbxassetid://10921297391"},Toy={Idle="rbxassetid://782845736",Run="rbxassetid://782842708",Walk="rbxassetid://782843345",Jump="rbxassetid://782847020",Fall="rbxassetid://782846423",Climb="rbxassetid://782843869",Swim="rbxassetid://10921309319",SwimIdle="rbxassetid://10921310341"},Astronaut={Idle="rbxassetid://891633237",Run="rbxassetid://891636393",Walk="rbxassetid://891667138",Jump="rbxassetid://891627522",Fall="rbxassetid://891617961",Climb="rbxassetid://891609353",Swim="rbxassetid://10921044000",SwimIdle="rbxassetid://10921045006"},Bubbly={Idle="rbxassetid://910009958",Run="rbxassetid://910025107",Walk="rbxassetid://910034870",Jump="rbxassetid://910016857",Fall="rbxassetid://910001910",Climb="rbxassetid://742636889",Swim="rbxassetid://10921063569",SwimIdle="rbxassetid://10922582160"},Cartoony={Idle="rbxassetid://742638445",Run="rbxassetid://742638842",Walk="rbxassetid://742640026",Jump="rbxassetid://742637942",Fall="rbxassetid://742637151",Climb="rbxassetid://742636889",Swim="rbxassetid://10921079380",SwimIdle="rbxassetid://10921081059"},Elder={Idle="rbxassetid://845400520",Run="rbxassetid://845386501",Walk="rbxassetid://845403856",Jump="rbxassetid://845398858",Fall="rbxassetid://845396048",Climb="rbxassetid://845392038",Swim="rbxassetid://10921108971",SwimIdle="rbxassetid://10921110146"},Ghost={Idle="rbxassetid://616008087",Run="rbxassetid://616013216",Walk="rbxassetid://616013216",Jump="rbxassetid://616008936",Fall="rbxassetid://616005863",Climb="rbxassetid://616156119",Swim="rbxassetid://133308483266208",SwimIdle="rbxassetid://109346520324160"},Knight={Idle="rbxassetid://657568135",Run="rbxassetid://657564596",Walk="rbxassetid://657552124",Jump="rbxassetid://658409194",Fall="rbxassetid://657600338",Climb="rbxassetid://658360781",Swim="rbxassetid://10921125160",SwimIdle="rbxassetid://10921125935"},Vampire={Idle="rbxassetid://1083450166",Run="rbxassetid://1083462077",Walk="rbxassetid://1083473930",Jump="rbxassetid://1083455352",Fall="rbxassetid://1083443587",Climb="rbxassetid://1083439238",Swim="rbxassetid://10921324408",SwimIdle="rbxassetid://10921325443"},Werewolf={Idle="rbxassetid://1083214717",Run="rbxassetid://1083216690",Walk="rbxassetid://1083178339",Jump="rbxassetid://1083218792",Fall="rbxassetid://1083189019",Climb="rbxassetid://1083182000",Swim="rbxassetid://10921340419",SwimIdle="rbxassetid://10921341319"},Zombie={Idle="rbxassetid://616160636",Run="rbxassetid://616163682",Walk="rbxassetid://616168032",Jump="rbxassetid://616161997",Fall="rbxassetid://616157476",Climb="rbxassetid://616156119",Swim="rbxassetid://10921352344",SwimIdle="rbxassetid://10921353442"},Bold={Idle="rbxassetid://16738334710",Run="rbxassetid://16738337225",Walk="rbxassetid://16738340646",Jump="rbxassetid://16738336650",Fall="rbxassetid://16738333171",Climb="rbxassetid://16738332169",Swim="rbxassetid://16738339158",SwimIdle="rbxassetid://16738339817"},Adidas={Idle="rbxassetid://18537371272",Run="rbxassetid://18537384940",Walk="rbxassetid://18537392113",Jump="rbxassetid://18537380791",Fall="rbxassetid://18537367238",Climb="rbxassetid://18537363391",Swim="rbxassetid://18537389531",SwimIdle="rbxassetid://18537387180"},Catwalk={Idle="rbxassetid://94970088341563",Run="rbxassetid://81024476153754",Walk="rbxassetid://109168724482748",Jump="rbxassetid://116936326516985",Fall="rbxassetid://119377220967554",Climb="rbxassetid://92294537340807",Swim="rbxassetid://134591743181628",SwimIdle="rbxassetid://98854111361360"},Walmart={Idle="rbxassetid://18747063918",Run="rbxassetid://18747070484",Walk="rbxassetid://18747074203",Jump="rbxassetid://18747069148",Fall="rbxassetid://18747062535",Climb="rbxassetid://18747060903",Swim="rbxassetid://18747073181",SwimIdle="rbxassetid://18747071682"},Wicked={Idle="rbxassetid://76049494037641",Run="rbxassetid://72301599441680",Walk="rbxassetid://92072849924640",Jump="rbxassetid://104325245285198",Fall="rbxassetid://121152442762481",Climb="rbxassetid://131326830509784",Swim="rbxassetid://99384245425157",SwimIdle="rbxassetid://113199415118199"},NFL={Idle="rbxassetid://74451233229259",Run="rbxassetid://117333533048078",Walk="rbxassetid://110358958299415",Jump="rbxassetid://119846112151352",Fall="rbxassetid://129773241321032",Climb="rbxassetid://134630013742019",Swim="rbxassetid://132697394189921",SwimIdle="rbxassetid://79090109939093"},Pirate={Idle="rbxassetid://750782770",Run="rbxassetid://750783738",Walk="rbxassetid://750785693",Jump="rbxassetid://750782230",Fall="rbxassetid://750780242",Climb="rbxassetid://750779899",Swim="rbxassetid://750784579",SwimIdle="rbxassetid://750785176"},Adidas2={Idle="rbxassetid://102357151005774",Run="rbxassetid://82598234841035",Walk="rbxassetid://122150855457006",Jump="rbxassetid://75290611992385",Fall="rbxassetid://98600215928904",Climb="rbxassetid://88763136693023",Swim="rbxassetid://133308483266208",SwimIdle="rbxassetid://109346520324160"},Animals={Idle="rbxassetid://102357151005774",Run="rbxassetid://87721497492370",Walk="rbxassetid://122150855457006",Jump="rbxassetid://75290611992385",Fall="rbxassetid://98600215928904",Climb="rbxassetid://88763136693023",Swim="rbxassetid://133308483266208",SwimIdle="rbxassetid://109346520324160"},Aura={Idle="rbxassetid://114191137265065",Run="rbxassetid://118320322718866",Walk="rbxassetid://83842218823011",Jump="rbxassetid://109996626521204",Fall="rbxassetid://95603166884636",Climb="rbxassetid://97824616490448",Swim="rbxassetid://134530128383903",SwimIdle="rbxassetid://94922130551805"},Wicked2={Idle="rbxassetid://132238900951109",Run="rbxassetid://135515454877967",Walk="rbxassetid://73718308412641",Jump="rbxassetid://78508480717326",Fall="rbxassetid://78147885297412",Climb="rbxassetid://129447497744818",Swim="rbxassetid://110657013921774",SwimIdle="rbxassetid://129183123083281"},Unboxed={Idle="rbxassetid://138183121662404",Run="rbxassetid://134824450619865",Walk="rbxassetid://90478085024465",Jump="rbxassetid://121454505477205",Fall="rbxassetid://94788218468396",Climb="rbxassetid://121145883950231",Swim="rbxassetid://105962919001086",SwimIdle="rbxassetid://129126268464847"},Ud={Idle="rbxassetid://3303162549",Run="rbxassetid://3236836670",Walk="rbxassetid://3303162967",Jump="rbxassetid://10921263860",Fall="rbxassetid://10921262864",Climb="rbxassetid://10921257536",Swim="rbxassetid://10921264784",SwimIdle="rbxassetid://10921265698"},Toilet={Idle="rbxassetid://4417978624",Run="rbxassetid://4417979645",Walk="rbxassetid://10921269718",Jump="rbxassetid://10921263860",Fall="rbxassetid://10921262864",Climb="rbxassetid://10921257536",Swim="rbxassetid://10921264784",SwimIdle="rbxassetid://10921265698"},Gm={Idle="rbxassetid://96439737641086",Run="rbxassetid://101925097435036",Walk="rbxassetid://85809016093530",Jump="rbxassetid://74159004634379",Fall="rbxassetid://98070939608691",Climb="rbxassetid://108236155509584",Swim="rbxassetid://83003487432457",SwimIdle="rbxassetid://112946194103503"},Kat={Idle="rbxassetid://72329200359275",Run="rbxassetid://73117360545482",Walk="rbxassetid://99182913548783",Jump="rbxassetid://103632305262747",Fall="rbxassetid://127802717128367",Climb="rbxassetid://106213237973858",Swim="rbxassetid://134148268480210",SwimIdle="rbxassetid://138619485942849"},Oldschool={Idle="rbxassetid://10921232093",Run="rbxassetid://10921240218",Walk="rbxassetid://10921244891",Jump="rbxassetid://10921242013",Fall="rbxassetid://10921241244",Climb="rbxassetid://10921229866",Swim="rbxassetid://10921243048",SwimIdle="rbxassetid://10921244018"}};local v683={Idle={Folder="idle",Children={"Animation1","Animation2"}},Run={Folder="run",Children={"RunAnim"}},Walk={Folder="walk",Children={"WalkAnim"}},Jump={Folder="jump",Children={"JumpAnim"}},Fall={Folder="fall",Children={"FallAnim"}},Climb={Folder="climb",Children={"ClimbAnim"}},Swim={Folder="swim",Children={"Swim"}},SwimIdle={Folder="swimidle",Children={"SwimIdleAnim"}}};local function v684(v1013,v1014) if  not v1013 then return nil;end if ((v1013:sub(253 -(245 + 7) ,760 -(212 + 535) )=="rbxassetid://") or v1013:match("^%d+$")) then return "rbxassetid://"   .. v1013:match("%d+") ;end local v1015=v682[v1013];if  not v1015 then return nil;end local v1016=v1015[v1014];if  not v1016 then return nil;end if (v1016:sub(4 -3 ,1489 -(905 + 571) )=="rbxassetid://") then return v1016;end return "rbxassetid://"   .. v1016 ;end local function v685(v1017,v1018) local v1019=0;local v1020;local v1021;local v1022;local v1023;while true do if (v1019==(4 -3)) then v1021=v1017:FindFirstChild("Animate");if  not v1021 then return;end v1019=2 -0 ;end if (v1019==(7 -5)) then v1022=v1017:FindFirstChildOfClass("Humanoid");if  not v1022 then return;end v1019=3;end if (v1019==(1 + 3)) then for v2923,v2924 in next,v1022:GetPlayingAnimationTracks() do pcall(function() v2924:Stop(1463 -(522 + 941) );end);end pcall(function() local v2925=0;local v2926;while true do if (v2925==(1511 -(292 + 1219))) then v2926=v1017:FindFirstChild("Animate");if v2926 then v2926.Disabled=true;v2926.Disabled=false;end break;end end end);break;end if (v1019==0) then v1020=v14()['Utilities']["Animation Changer"];if ( not v1018 and  not v1020['Enabled']) then return;end v1019=1113 -(787 + 325) ;end if (v1019==(8 -5)) then v1023=v1020['Animations'] or {} ;for v2927,v2928 in next,v683 do local v2929=0;local v2930;local v2931;local v2932;while true do if (v2929==0) then v2930=v1023[v2927];if  not v2930 then continue;end v2929=1;end if (v2929==(1 + 0)) then v2931=v684(v2930,v2927);if  not v2931 then continue;end v2929=4 -2 ;end if (v2929==(537 -(424 + 110))) then for v4017,v4018 in next,v2928.Children do local v4019=0 + 0 ;local v4020;while true do if (v4019==0) then v4020=v2932:FindFirstChild(v4018);if (v4020 and v4020:IsA("Animation")) then v4020.AnimationId=v2931;end break;end end end break;end if ((2 + 0)==v2929) then v2932=v1021:FindFirstChild(v2928.Folder);if  not v2932 then continue;end v2929=1 + 2 ;end end end v1019=316 -(33 + 279) ;end end end shared.__CiderApplyAnimationChanger=v685;local v687=v14()['Utilities']["Animation Changer"];if v687['Enabled'] then local v2024=0 + 0 ;while true do if (v2024==0) then if v10.Character then task.delay(1353.5 -(1338 + 15) ,function() v685(v10.Character);end);end TrackConn(v10.CharacterAdded:Connect(function(v3383) task.delay(1424 -(528 + 895) ,function() v685(v3383);end);end));break;end end end end do local v688=v14()['Utilities']["Hitbox Expander"];if v688['Enabled'] then local v2025=0;local v2026;while true do if (v2025==1) then TrackConn(v3.Heartbeat:Connect(function() local v3384=0;local v3385;local v3386;local v3387;local v3388;local v3389;while true do if ((0 + 0)==v3384) then v3385=v14()['Utilities']["Hitbox Expander"];if  not v3385['Enabled'] then local v4254=1924 -(1606 + 318) ;while true do if (v4254==0) then for v4575,v4576 in next,v1:GetPlayers() do local v4577=1819 -(298 + 1521) ;local v4578;local v4579;while true do if (v4577==(0 -0)) then if (v4576==v10) then continue;end v4578=v4576.Character;v4577=311 -(154 + 156) ;end if (v4577==(3 -2)) then v4579=v4578 and v4578:FindFirstChild("HumanoidRootPart") ;if v4579 then v2026(v4579);end break;end end end return;end end end v3384=1 -0 ;end if (v3384==(1116 -(712 + 403))) then v3386=v3385['Size'] or 8 ;v3387=v3385["Target Only"];v3384=452 -(168 + 282) ;end if (v3384==(5 -2)) then for v4131,v4132 in next,v1:GetPlayers() do local v4133=0 + 0 ;local v4134;local v4135;while true do if ((0 + 0)==v4133) then if (v4132==v10) then continue;end v4134=v4132.Character;v4133=2 -1 ;end if ((1452 -(1242 + 209))==v4133) then if  not v4134 then continue;end v4135=v4134:FindFirstChild("HumanoidRootPart");v4133=681 -(20 + 659) ;end if (2==v4133) then if  not v4135 then continue;end if (v3387 and (v3389~=v4132)) then local v4580=0 + 0 ;while true do if (v4580==(0 + 0)) then v2026(v4135);continue;break;end end end v4133=4 -1 ;end if (v4133==(7 -3)) then if v3388 then v4135.Transparency=619.5 -(427 + 192) ;v4135.BrickColor=BrickColor.new("Really black");v4135.Material=Enum.Material.SmoothPlastic;else v4135.Transparency=1;v4135.Material=Enum.Material.Plastic;v4135.BrickColor=BrickColor.new("Medium stone grey");end break;end if (3==v4133) then v4135.Size=Vector3New(v3386,v3386,v3386);v4135.CanCollide=false;v4133=4;end end end break;end if (v3384==2) then v3388=v3385['Visualize'];v3389=v3387 and (State.Targets.Silent or State.Targets.Triggerbot or State.Targets.Aimbot) ;v3384=6 -3 ;end end end));break;end if (v2025==(0 + 0)) then v2026=nil;function v2026(v3390) local v3391=1947 -(1427 + 520) ;while true do if (v3391==(0 + 0)) then if  not v3390 then return;end v3390.Size=Vector3New(2,2,3 -2 );v3391=1 + 0 ;end if (1==v3391) then v3390.Transparency=1;v3390.Material=Enum.Material.Plastic;v3391=1234 -(712 + 520) ;end if (v3391==2) then v3390.BrickColor=BrickColor.new("Medium stone grey");break;end end end v2025=2 -1 ;end end end end local function v139(v689,v690,v691) local v692=0;local v693;local v694;local v695;local v696;local v697;local v698;local v699;local v700;local v701;while true do if (v692==(1349 -(565 + 781))) then if (v701 and (v701['Enabled']==false)) then return "Normal";end return v699;end if ((565 -(35 + 530))==v692) then v693=v689 and v689:FindFirstChildOfClass("Tool") ;v694=false;v695=false;if v693 then local v2933=v693.Name;local v2934=string.lower(v2933);v694=(v2933=="[Knife]") or (v2934:find("knife")~=nil) ;local v2935=v693:FindFirstChild("Ammo");if (v2935 and (v2935.Value==(0 + 0))) then v695=true;else local v3621=0 -0 ;local v3622;while true do if (v3621==(1378 -(1330 + 48))) then v3622=v693:FindFirstChild("Reloading");if (v3622 and v3622.Value) then v695=true;end break;end end end end v692=1 + 0 ;end if (v692==(1 + 0)) then v696=v689 and v689:FindFirstChild("BodyEffects") ;if v696 then local v2936=0;local v2937;while true do if (v2936==(0 -0)) then v2937=v696:FindFirstChild("Reload");if (v2937 and (v2937.Value==true)) then v695=true;end break;end end end v697=109 -84 ;v698=v690 and (v690.Health>0) and (v690.Health<=v697) ;v692=1171 -(854 + 315) ;end if (v692==2) then v699="Normal";if v694 then v699="Knife";elseif v698 then v699="Low Health";elseif v695 then v699="Reload";elseif State.IsShooting then v699="Shooting";end v700=(v691 and v691['Conditions']) or {} ;v701=v700[v699];v692=9 -6 ;end end end local function v140(v702) local v703=0;local v704;local v705;while true do if (v703==2) then TrackConn(v704:GetPropertyChangedSignal("JumpPower"):Connect(function() local v2716=0 + 0 ;while true do if (v2716==(44 -(31 + 13))) then if  not v14()['Movement']["No Jump Cooldown"] then return;end if (v704.JumpPower==(0 -0)) then local v4029=0 -0 ;local v4030;while true do if (v4029==0) then v4030=v14()['Movement']["Jump Modifications"];if (v4030['Enabled'] and State.JumpModificationsActive and  not v4030["Spiderman Mode"]) then local v4514=v139(v702,v704,v4030);local v4515=v4030['Conditions'] or {} ;local v4516=v4515[v4514];local v4517=(v4516 and (v4516['Enabled']~=false) and v4516['Multiplier']) or (1 + 0) ;local v4518=v4030['Values'] or v4030 ;local v4519=((v4030['Mode']=="Multiplier") and ((v4518['Multiplier'] or (564 -(281 + 282))) * (280 -180))) or v4518['Number'] or 50 ;v704.JumpPower=v4519 * v4517 ;else v704.JumpPower=v705;end break;end end end break;end end end));break;end if (v703==1) then if  not v704 then return;end v705=v704.JumpPower;v703=2 + 0 ;end if (v703==0) then if  not v702 then return;end v704=v702:FindFirstChildOfClass("Humanoid");v703=1;end end end if v10.Character then v140(v10.Character);end TrackConn(v10.CharacterAdded:Connect(v140));TrackConn(v3.RenderStepped:Connect(function() local v706=949 -(216 + 733) ;local v707;local v708;local v709;local v710;local v711;local v712;local v713;local v714;while true do if (v706==1) then v709=v14()['Movement']["Speed Modifications"];if (State.SpeedModificationHumanoid~=v708) then v55(State);end if ( not v709['Enabled'] or  not State.SpeedModificationsActive) then local v2938=0;while true do if (v2938==(1847 -(137 + 1710))) then v55(State);return;end end end v706=2;end if (v706==(0 -0)) then v707=v10.Character;v708=v707 and v707:FindFirstChildOfClass("Humanoid") ;if  not v708 then return;end v706=539 -(100 + 438) ;end if (v706==(1367 -(205 + 1160))) then if  not State.SpeedModificationHumanoid then State.SpeedModificationHumanoid=v708;State.OriginalWalkSpeed=v708.WalkSpeed;end v710=v139(v707,v708,v709);v711=v709['Conditions'] or {} ;v706=3;end if (v706==4) then if (v709['Mode']=="Multiplier") then v708.WalkSpeed=(v714['Multiplier'] or (1 + 0)) * 100 * v713 ;else v708.WalkSpeed=(v714['Number'] or (9 + 7)) * v713 ;end break;end if (v706==(1308 -(535 + 770))) then v712=v711[v710];v713=(v712 and (v712['Enabled']~=false) and v712['Multiplier']) or (1 + 0) ;v714=v709['Values'] or v709 ;v706=4;end end end));local function v141(v715) if  not v715 then return;end local v716=v715:FindFirstChildOfClass("Humanoid") or v715:WaitForChild("Humanoid",6 + 4 ) ;if  not v716 then return;end local v717=v716.JumpPower;local v718=RaycastParamsNew();v718.FilterType=EnumExclude;v718.FilterDescendantsInstances={v715};local function v721(v1024) local v1025=0 + 0 ;local v1026;local v1027;local v1028;while true do if (v1025==(1429 -(1236 + 193))) then v1026=v1024.Position;v1027=v1024.CFrame;v1025=1;end if (v1025==(911 -(793 + 117))) then v1028={v1027.LookVector, -v1027.LookVector,v1027.RightVector, -v1027.RightVector,(v1027.LookVector + v1027.RightVector).Unit,(v1027.LookVector-v1027.RightVector).Unit,( -v1027.LookVector + v1027.RightVector).Unit,( -v1027.LookVector-v1027.RightVector).Unit};for v2944,v2945 in next,v1028 do if v2:Raycast(v1026,v2945 * (5 + 0) ,v718) then return true;end end v1025=2;end if (v1025==(4 -2)) then return false;end end end local function v722() local v1029=0 + 0 ;local v1030;local v1031;local v1032;local v1033;local v1034;local v1035;while true do if (v1029==1) then v1032=v1030['Conditions'] or {} ;v1033=v1032[v1031];v1029=2;end if (v1029==0) then v1030=v14()['Movement']["Jump Modifications"];v1031=v139(v715,v716,v1030);v1029=2 -1 ;end if (v1029==(2 + 0)) then v1034=(v1033 and (v1033['Enabled']~=false) and v1033['Multiplier']) or (1 + 0) ;v1035=v1030['Values'] or v1030 ;v1029=6 -3 ;end if (v1029==(457 -(246 + 208))) then if (v1030['Mode']=="Multiplier") then return (v1035['Multiplier'] or (1893 -(614 + 1278))) * (50 + 50) * v1034 ;else return (v1035['Number'] or 50) * v1034 ;end break;end end end local v723;local v724=false;v723=TrackConn(v3.RenderStepped:Connect(function() if  not v715.Parent then v723:Disconnect();return;end local v1036=v14()['Movement']["Jump Modifications"];if ( not v1036['Enabled'] or  not State.JumpModificationsActive or v1036["Spiderman Mode"]) then if v724 then v716.JumpPower=v717;v724=false;end return;end v716.UseJumpPower=true;v716.JumpPower=v722();v724=true;end));local v725;local v726=0;v725=TrackConn(v5.JumpRequest:Connect(function() local v1039=314 -(249 + 65) ;local v1040;local v1041;local v1042;while true do if (v1039==(4 -2)) then if ((Tick() -v726)<(1275.3 -(726 + 549))) then return;end if  not v721(v1041) then return;end v726=Tick();v1039=3 + 0 ;end if (v1039==(1427 -(916 + 508))) then v716.UseJumpPower=true;v716.JumpPower=v722();v716:ChangeState(EnumJumping);v1039=4;end if (v1039==(13 -9)) then v1042=nil;v1042=TrackConn(v716.StateChanged:Connect(function(v2947,v2948) if ((v2948==EnumFreefall) or (v2948==EnumLanded)) then v1042:Disconnect();v716.JumpPower=v717;end end));break;end if (v1039==1) then v1041=v715:FindFirstChild("HumanoidRootPart");if  not v1041 then return;end if (v716.FloorMaterial~=EnumAir) then return;end v1039=2 + 0 ;end if (v1039==(323 -(140 + 183))) then if  not v715.Parent then local v3392=0 + 0 ;while true do if (v3392==0) then v725:Disconnect();return;end end end v1040=v14()['Movement']["Jump Modifications"];if ( not v1040['Enabled'] or  not State.JumpModificationsActive or  not v1040["Spiderman Mode"]) then return;end v1039=1;end end end));end if v10.Character then v141(v10.Character);end TrackConn(v10.CharacterAdded:Connect(v141));do local function v727() return v14()['Utilities']["Skin Changer"];end if (type(getgenv)=="function") then local v2027=564 -(297 + 267) ;local v2028;local v2029;while true do if (1==v2027) then v2029=getgenv().__scKnifeData;if v2029 then for v3849,v3850 in next,v2029 do if (v3850 and v3850.conns) then for v4255,v4256 in next,v3850.conns do pcall(function() if v4256.Connected then v4256:Disconnect();end end);end end end end break;end if (v2027==0) then v2028=getgenv().__scAppliedSkins;if v2028 then for v3851,v3852 in next,v2028 do if (v3852 and v3852.Connections) then for v4257,v4258 in next,v3852.Connections do pcall(function() if v4258.Connected then v4258:Disconnect();end end);end end end end v2027=1;end end end local v728={};local v729={};local v730={};local v731={};if (type(getgenv)=="function") then local v2030=0 + 0 ;while true do if (v2030==0) then getgenv().__scAppliedSkins=v728;getgenv().__scKnifeData=v729;break;end end end local v732={};local v733=CachedSkinAssets;local v734=v4:FindFirstChild("SkinModules");local v735=nil;local v736;local v737;task.spawn(function() local v1043=342 -(37 + 305) ;local v1044;while true do if (v1043==(1267 -(323 + 943))) then v1044=((type(game.HttpGet)=="function") and function(v2953) return game:HttpGet(v2953);end) or ((type(getgenv)=="function") and getgenv().http_request and function(v2954) local v2955=0 + 0 ;local v2956;while true do if (v2955==(0 -0)) then v2956=getgenv().http_request({Url=v2954,Method="GET"});return v2956 and v2956.Body ;end end end) or ((type(getgenv)=="function") and getgenv().request and function(v2957) local v2958=getgenv().request({Url=v2957,Method="GET"});return v2958 and v2958.Body ;end) ;if v1044 then local v3393=1535 -(394 + 1141) ;local v3394;local v3395;while true do if (v3393==(0 + 0)) then v3394,v3395=pcall(v1044,"https://pastebin.com/raw/0uZ107WE");if (v3394 and v3395) then local v4259=0 + 0 ;local v4260;while true do if (v4259==(0 + 0)) then v4260=loadstring(v3395);if v4260 then local v4630,v4631=pcall(v4260);if (v4630 and (type(v4631)=="table")) then v735=v4631;elseif (v4630 and shared.skin_modules and next(shared.skin_modules)) then v735=shared.skin_modules;end end break;end end end break;end end end v1043=2 -0 ;end if (v1043==2) then task.wait(0.5 -0 );if v735 then local v3396=0;local v3397;while true do if (v3396==(0 + 0)) then v3397=v727();if (v3397 and v3397['Enabled']) then local v4261=0 + 0 ;local v4262;local v4263;while true do if (v4261==(529 -(87 + 442))) then v4262=v3397['Skins'];v4263=nil;v4261=1;end if (v4261==2) then pcall(function() v4263(v10:FindFirstChild("Backpack"));end);break;end if (v4261==1) then function v4263(v4589) if  not v4589 then return;end for v4632,v4633 in next,v4589:GetChildren() do if v4633:IsA("Tool") then local v4691=v4262[v4633.Name];if  not v4691 then local v4725=805 -(13 + 792) ;local v4726;while true do if (v4725==0) then v4726=v4633.Name:gsub("%[",""):gsub("%]","");v4691=v4262["["   .. v4726   .. "]" ];break;end end end if (v4691 and (v4691~="") and (v4691~="None")) then local v4727=0 + 0 ;while true do if (v4727==0) then pcall(function() v737(v4633);end);v732[v4633]=nil;v4727=1 + 0 ;end if (v4727==(1 + 0)) then pcall(function() ProcessTool(v4633);end);break;end end end end end end pcall(function() v4263(v10.Character);end);v4261=1867 -(1231 + 634) ;end end end break;end end end break;end if (v1043==(1766 -(1362 + 404))) then if  not v734 then local v3398=0 -0 ;local v3399;local v3400;while true do if (v3398==(0 + 0)) then v3399,v3400=pcall(function() return v4:WaitForChild("SkinModules",8 -5 );end);if (v3399 and v3400) then v734=v3400;end break;end end end if (v734 and (typeof(v734)=="Instance") and v734:IsA("ModuleScript")) then local v3401=0;local v3402;local v3403;while true do if (v3401==(1016 -(660 + 356))) then v3402,v3403=pcall(require,v734);if (v3402 and (type(v3403)=="table")) then local v4264=0;while true do if (v4264==(0 -0)) then v735=v3403;return;end end end break;end end end v1043=1 + 0 ;end end end);local function v738(v1045) local v1046=v1045:gsub(" ","");return (v1046=="GoldenAgeTanto") or (v1046=="GPO-Knife") or (v1046=="GPO-KnifePrestige") or (v1046=="Heaven") or (v1046=="LoveKukri") or (v1046=="PurpleDagger") or (v1046=="BlueDagger") or (v1046=="GreenDagger") or (v1046=="RedDagger") ;end local function v739(v1047) local v1048=1950 -(1111 + 839) ;local v1049;local v1050;while true do if (v1048==(953 -(496 + 455))) then for v2959,v2960 in next,v1047:GetChildren() do if ((v2960:IsA("Model") or v2960:IsA("MeshPart")) and (v2960~=v1050) and (v2960.Name~="Handle")) then v2960:Destroy();end end v729[v1047]=nil;break;end if (v1048==1) then v1050=v1047:FindFirstChild("Default");if v1050 then for v3624,v3625 in next,v1050:GetChildren() do if ((v3625.Name=="Handle.R") or v3625:IsA("Model") or (v3625:IsA("BasePart") and (v3625.Name~="Default"))) then v3625:Destroy();end end v1050.Transparency=698 -(66 + 632) ;end v1048=2 -0 ;end if (0==v1048) then v1049=v729[v1047];if v1049 then if v1049.conns then local v3853=1136 -(441 + 695) ;while true do if (v3853==0) then for v4349,v4350 in next,v1049.conns do if v4350 then v4350:Disconnect();end end v1049.conns=nil;break;end end end if v1049.track then local v3854=0;while true do if (v3854==(2 -1)) then v1049.track=nil;break;end if (v3854==0) then v1049.track:Stop();v1049.track:Destroy();v3854=1 -0 ;end end end if v1049.welds then for v4031,v4032 in next,v1049.welds do if v4032 then v4032:Destroy();end end end if v1049.sounds then for v4033,v4034 in next,v1049.sounds do if (v4034 and v4034.Parent) then v4034:Destroy();end end end end v1048=4 -3 ;end end end local function v740(v1051,v1052,v1053) if  not v738(v1053) then return;end if (v1052.Parent~=v1051) then return;end local v1054=v1051:FindFirstChild("Humanoid");local v1055=v1051:FindFirstChild("RightHand");if ( not v1054 or  not v1055) then return;end local v1056=v729[v1052];if (v1056 and v1056.welds and ( #v1056.welds>0)) then local v2415=v1052:FindFirstChild("Default") and v1052:FindFirstChild("Default"):FindFirstChild("Handle.R") ;if (v2415 and v2415.Parent) then local v2961=0 + 0 ;local v2962;local v2963;local v2964;while true do if (v2961==(1840 -(286 + 1552))) then for v4035,v4036 in next,v1052:GetChildren() do if ((v4036:IsA("Model") or v4036:IsA("MeshPart")) and (v4036~=v2963) and (v4036.Name~="Handle") and (v4036.Name~=v1053)) then v4036:Destroy();end end v2964=v1054:FindFirstChildOfClass("Animator");v2961=1280 -(1016 + 261) ;end if (0==v2961) then v2962=v2415:FindFirstChildOfClass("Motor6D");if v2962 then v2962.Part0=v1055;end v2961=1321 -(708 + 612) ;end if (v2961==(8 -5)) then if v2964 then local v4137=v1053:gsub(" ","");local v4138,v4139;if (v4137=="GoldenAgeTanto") then v4138,v4139="rbxassetid://13473404819","rbxassetid://5917819099";elseif ((v4137=="GPO-Knife") or (v4137=="GPO-KnifePrestige")) then v4138,v4139="rbxassetid://14014278925","rbxassetid://4604390759";elseif (v4137=="Heaven") then v4138,v4139="rbxassetid://14500266726","rbxassetid://14489860007";elseif (v4137=="PurpleDagger") then v4138,v4139="rbxassetid://17824999722","rbxassetid://17822743153";elseif (v4137=="BlueDagger") then v4138,v4139="rbxassetid://17824995184","rbxassetid://17822737046";elseif (v4137=="GreenDagger") then v4138,v4139="rbxassetid://17825004320","rbxassetid://17822741762";elseif (v4137=="RedDagger") then v4138,v4139="rbxassetid://17825008844","rbxassetid://17822952417";end if v4138 then if v1056.track then v1056.track:Stop();v1056.track:Destroy();v1056.track=nil;end local v4351=Instance.new("Animation");v4351.AnimationId=v4138;local v4353=v2964:LoadAnimation(v4351);v4353.Looped=false;v4353:Play();v1056.track=v4353;v4351:Destroy();v4353.Ended:Once(function() local v4445=0;while true do if (v4445==(0 + 0)) then if (v1056.track==v4353) then v1056.track=nil;end v4353:Destroy();break;end end end);end if v4139 then local v4356=Instance.new("Sound");v4356.SoundId=v4139;v4356.Parent=v2;v4356:Play();table.insert(v1056.sounds,v4356);v4356.Ended:Connect(function() v4356:Destroy();end);end end return;end if (v2961==1) then v2963=v1052:FindFirstChild("Default");if v2963 then local v4140=379 -(113 + 266) ;while true do if (v4140==(1170 -(979 + 191))) then v2963.Transparency=1;for v4524,v4525 in next,v2963:GetChildren() do if ((v4525:IsA("Model") or v4525:IsA("MeshPart")) and (v4525.Name~=v1053)) then v4525:Destroy();end end break;end end end v2961=2 -0 ;end end end end v739(v1052);v729[v1052]={track=nil,welds={},sounds={}};local v1058=v729[v1052];local v1059=v1052:FindFirstChild("Default");if  not v1059 then return;end v1059.Transparency=1736 -(339 + 1396) ;local v1061=v734 and v734:FindFirstChild("Knives") ;if  not v1061 then return;end local v1062=v1061:FindFirstChild(v1053);if  not v1062 then return;end local v1063=v1062:Clone();v1063.Name=v1053;local v1065=Instance.new("Part");v1065.Name="Handle.R";v1065.Transparency=1;v1065.CanCollide=false;v1065.Anchored=false;v1065.Size=Vector3New(0.001 + 0 ,0.001 + 0 ,0.001 -0 );v1065.Massless=true;v1065.Parent=v1059;local v1073=Instance.new("Motor6D");v1073.Name="Handle.R";v1073.Part0=v1055;v1073.Part1=v1065;v1073.Parent=v1065;local v1078,v1079,v1080;local v1081=v1053:gsub(" ","");if (v1081=="GoldenAgeTanto") then v1078=CFrameNew(0, -(0.2 + 0), -(1.2 + 0)) * CFrame.Angles(MathRad(437 -(187 + 160) ),MathRad(598.7 -335 ),MathRad(621 -441 )) ;v1079="rbxassetid://13473404819";v1080="rbxassetid://5917819099";elseif ((v1081=="GPO-Knife") or (v1081=="GPO-KnifePrestige")) then local v2965=0 + 0 ;while true do if (v2965==(3 -2)) then v1080="rbxassetid://4604390759";break;end if (v2965==(0 + 0)) then v1078=CFrameNew(0 + 0 , -(0.32 -0), -(329.07 -(56 + 272))) * CFrame.Angles(MathRad(90),MathRad( -(56.400000000000006 + 41)),MathRad(90)) ;v1079="rbxassetid://14014278925";v2965=1 + 0 ;end end elseif (v1081=="Heaven") then v1078=CFrameNew( -(0.02 -0), -0.82,0.2 + 0 ) * CFrame.Angles(MathRad(704.42 -(455 + 185) ),MathRad(3.79),MathRad(0)) ;v1079="rbxassetid://14500266726";v1080="rbxassetid://14489860007";elseif (v1081=="LoveKukri") then v1078=CFrameNew( -0.14,0.14, -(789.62 -(757 + 31))) * CFrame.Angles(MathRad( -(2089 -(762 + 1237))),MathRad(372 -192 ),MathRad( -(273.97 -(265 + 4)))) ;elseif (v1081=="PurpleDagger") then v1078=CFrameNew( -(0.13 -0), -(0.24 + 0), -(1.8 -0)) * CFrame.Angles(MathRad(249.05 -160 ),MathRad(96.63),MathRad(20 + 160 )) ;v1079="rbxassetid://17824999722";v1080="rbxassetid://17822743153";elseif (v1081=="BlueDagger") then local v4447=0 -0 ;while true do if (v4447==(0 -0)) then v1078=CFrameNew( -(0.13 -0), -(1734.24 -(1691 + 43)), -(1.8 + 0)) * CFrame.Angles(MathRad(278.05 -189 ),MathRad(24.629999999999995 + 72 ),MathRad(656 -476 )) ;v1079="rbxassetid://17824995184";v4447=177 -(127 + 49) ;end if (v4447==(1681 -(281 + 1399))) then v1080="rbxassetid://17822737046";break;end end elseif (v1081=="GreenDagger") then local v4590=0;while true do if (v4590==(1659 -(184 + 1475))) then v1078=CFrameNew( -(0.13 -0), -(0.24 -0), -1.07) * CFrame.Angles(MathRad(199.05 -110 ),MathRad(96.63),MathRad(112 + 68 )) ;v1079="rbxassetid://17825004320";v4590=1;end if (v4590==(1 + 0)) then v1080="rbxassetid://17822741762";break;end end elseif (v1081=="RedDagger") then v1078=CFrameNew( -0.13, -0.24, -(1292.07 -(260 + 1031))) * CFrame.Angles(MathRad(89.05),MathRad(96.63),MathRad(180)) ;v1079="rbxassetid://17825008844";v1080="rbxassetid://17822952417";end if  not v1078 then return;end if v1063:IsA("Model") then if  not v1063.PrimaryPart then for v3405,v3406 in next,v1063:GetChildren() do if v3406:IsA("BasePart") then v1063.PrimaryPart=v3406;break;end end end if v1063.PrimaryPart then for v3407,v3408 in next,v1063:GetDescendants() do if v3408:IsA("BasePart") then local v3856=1177 -(313 + 864) ;local v3857;while true do if (v3856==2) then v3857.Part0=v1065;v3857.Part1=v3408;v3856=3;end if ((696 -(655 + 37))==v3856) then v3857.Parent=v3408;table.insert(v1058.welds,v3857);break;end if ((3 + 0)==v3856) then v3857.C0=v1078;v3857.C1=v3408.CFrame:ToObjectSpace(v1063.PrimaryPart.CFrame);v3856=6 -2 ;end if (v3856==(0 -0)) then v3408.CanCollide=false;v3408.Massless=true;v3856=1 + 0 ;end if (v3856==(1 + 0)) then v3408.Anchored=false;v3857=Instance.new("Weld");v3856=3 -1 ;end end end end end v1063.Parent=v1059;elseif v1063:IsA("BasePart") then v1063.CanCollide=false;v1063.Massless=true;v1063.Anchored=false;v1063.Parent=v1059;local v2970=Instance.new("Weld");v2970.Part0=v1065;v2970.Part1=v1063;v2970.C0=v1078;v2970.Parent=v1063;table.insert(v1058.welds,v2970);end local v1082=v1054:FindFirstChildOfClass("Animator");if  not v1082 then local v2417=0;while true do if (v2417==0) then v1082=Instance.new("Animator");v1082.Parent=v1054;break;end end end if v1079 then local v2418=Instance.new("Animation");v2418.AnimationId=v1079;local v2420=v1082:LoadAnimation(v2418);v2420.Looped=false;v2420:Play();v1058.track=v2420;v2418:Destroy();v2420.Ended:Once(function() if (v1058.track==v2420) then v1058.track=nil;end v2420:Destroy();end);end if v1080 then local v2423=Instance.new("Sound");v2423.SoundId=v1080;v2423.Parent=v2;v2423:Play();table.insert(v1058.sounds,v2423);v2423.Ended:Connect(function() v2423:Destroy();end);end v1058.conns=v1058.conns or {} ;local function v1084() local v2031=0;while true do if (v2031==1) then for v3411,v3412 in next,v1052:GetChildren() do if ((v3412:IsA("Model") or v3412:IsA("MeshPart")) and (v3412~=v1059) and (v3412.Name~="Handle") and (v3412.Name~=v1053)) then v3412:Destroy();end end break;end if (v2031==0) then if (v729[v1052]~=v1058) then return;end if (v1059 and v1059.Parent) then v1059.Transparency=1;for v3858,v3859 in next,v1059:GetChildren() do if ((v3859:IsA("Model") or v3859:IsA("MeshPart")) and (v3859.Name~=v1053)) then v3859:Destroy();end end end v2031=771 -(383 + 387) ;end end end local v1085=v1052.ChildAdded:Connect(function(v2032) if ((v2032:IsA("Model") or v2032:IsA("MeshPart")) and (v2032~=v1059) and (v2032.Name~="Handle") and (v2032.Name~=v1053)) then task.defer(v1084);end end);table.insert(v1058.conns,v1085);if v1059 then local v2426=0;local v2427;local v2428;while true do if (1==v2426) then v2428=v1059:GetPropertyChangedSignal("Transparency"):Connect(function() if ((v729[v1052]==v1058) and (v1059.Transparency~=1)) then v1059.Transparency=1 + 0 ;end end);table.insert(v1058.conns,v2428);break;end if (v2426==(0 + 0)) then v2427=v1059.ChildAdded:Connect(function(v3627) if ((v3627:IsA("Model") or v3627:IsA("MeshPart")) and (v3627.Name~=v1053)) then task.defer(v1084);end end);table.insert(v1058.conns,v2427);v2426=1;end end end end local function v741() local v1086=0;while true do if (v1086==(0 -0)) then if v735 then return v735;end if (v734 and (typeof(v734)=="Instance") and v734:IsA("ModuleScript")) then local v3413,v3414=pcall(require,v734);if (v3413 and (type(v3414)=="table")) then v735=v3414;end end v1086=1 + 0 ;end if (v1086==2) then return v735;end if (v1086==1) then if ( not v735 and shared.skin_modules and next(shared.skin_modules)) then v735=shared.skin_modules;end if v735 then for v3628,v3629 in next,v731 do local v3630=0;while true do if (v3630==0) then if (v3628 and v3628.Parent and v3629 and (v3629~="") and (v3629~="None")) then task.defer(function() v732[v3628]=nil;ProcessTool(v3628);end);end v731[v3628]=nil;break;end end end end v1086=2;end end end local function v742(v1087,v1088) local v1089=v741();if  not v1089 then return nil;end local v1090=v1089[v1087];if  not v1090 then local v2429="["   .. v1087:gsub("%[",""):gsub("%]","")   .. "]" ;v1090=v1089[v2429];end if  not v1090 then return nil;end local v1091=v1090[v1088];if  not v1091 then v1091=v1090[v1088:gsub("-"," ")];end if  not v1091 then v1091=v1090[v1088:gsub("-","")];end return v1091;end local function v743(v1092,v1093,v1094) if ( not v734 or (typeof(v734)~="Instance")) then return nil;end if v1094 then local v2433=v1092:lower():gsub(" ","");local v2434=v734:FindFirstChild("Knives");if v2434 then for v3416,v3417 in next,v2434:GetChildren() do if v3417:IsA("MeshPart") then local v3860=v3417.Name:lower():gsub(" ","");if ((v3417.Name==v1092) or (v3860==v2433)) then return v3417;end elseif (v3417:IsA("Folder") or v3417:IsA("Model")) then local v4142=v3417.Name:lower():gsub(" ","");if ((v3417.Name==v1092) or (v4142==v2433)) then for v4449,v4450 in next,v3417:GetChildren() do if v4450:IsA("MeshPart") then return v4450;end end end end end end if v733 then local v2975=0 + 0 ;local v2976;while true do if (v2975==(510 -(304 + 206))) then v2976=v733:FindFirstChild("KnifeMeshes") or v733:FindFirstChild("Knives") ;if v2976 then for v4275,v4276 in next,v2976:GetChildren() do if v4276:IsA("MeshPart") then local v4451=225 -(182 + 43) ;local v4452;while true do if ((775 -(264 + 511))==v4451) then v4452=v4276.Name:lower():gsub(" ","");if ((v4276.Name==v1092) or (v4452==v2433)) then return v4276;end break;end end elseif (v4276:IsA("Folder") or v4276:IsA("Model")) then local v4591=v4276.Name:lower():gsub(" ","");if ((v4276.Name==v1092) or (v4591==v2433)) then for v4693,v4694 in next,v4276:GetChildren() do if v4694:IsA("MeshPart") then return v4694;end end end end end end break;end end end return nil;end local v1095=v734:FindFirstChild("Meshes");if  not v1095 then return nil;end local v1096={v1092,v1092:gsub(" ",""),v1092:gsub(" ","_")};for v2033,v2034 in next,v1096 do local v2035=981 -(128 + 853) ;local v2036;while true do if (v2035==(1702 -(1635 + 67))) then v2036=v1095:FindFirstChild(v2034);if v2036 then if v1093 then for v4143,v4144 in next,v2036:GetChildren() do if v4144:IsA("MeshPart") then local v4359=v4144.Name:lower():gsub(" ",""):gsub("-","");local v4360=v1093:lower():gsub(" ",""):gsub("-","");if ((v4144.Name==v1093) or (v4359==v4360)) then return v4144;end end end end for v3861,v3862 in next,v2036:GetChildren() do if v3862:IsA("MeshPart") then return v3862;end end end break;end end end if v733 then local v2435=v733:FindFirstChild("GunMeshes");if v2435 then for v3418,v3419 in next,v1096 do local v3420=v2435:FindFirstChild(v3419);if v3420 then for v4038,v4039 in next,v3420:GetChildren() do if v4039:IsA("MeshPart") then return v4039;end end end end end end return nil;end local function v744(v1097,v1098) if  not v733 then return nil;end local v1099=v733:FindFirstChild("GunShootSounds");if  not v1099 then return nil;end local v1100=v1099:FindFirstChild(v1097);if  not v1100 then return nil;end local v1101=v1100:FindFirstChild(v1098);if (v1101 and v1101:IsA("StringValue")) then return v1101.Value;end return nil;end local v736;local v737;local function v745(v1102) if  not v1102 then return nil;end for v2037,v2038 in next,v1102:GetDescendants() do if (v2038:IsA("Sound") and ((v2038.Name=="Shoot") or (v2038.Name=="ShootSound"))) then return v2038;end end return nil;end local function v746(v1103) local v1104=0 + 0 ;local v1105;local v1106;local v1107;while true do if (v1104==(2 + 1)) then v1105.ShootSound=v1106;v1107=v744(v1103.Name,v1105.SkinName);v1104=201 -(131 + 66) ;end if (v1104==4) then if (v1107 and (v1107~="")) then v1106.SoundId=v1107;end break;end if (v1104==(3 -2)) then v1106=v745(v1103);if  not v1106 then return;end v1104=2;end if (v1104==2) then if  not v1105.ShootSoundOriginals then v1105.ShootSoundOriginals={};end if (v1105.ShootSoundOriginals[v1106]==nil) then v1105.ShootSoundOriginals[v1106]=v1106.SoundId;end v1104=3;end if ((0 -0)==v1104) then v1105=v728[v1103];if  not v1105 then return;end v1104=1;end end end local function v747(v1108,v1109,v1110) if ( not v1108 or  not v1109) then return;end local function v1111(v2039) return ( #v2039==(0 + 0)) or (v2039=="\0") ;end for v2040,v2041 in next,v1108:GetChildren() do if (v2041:IsA("MeshPart") and (v2041~=v1109) and (v2041~=v1110) and  not v1111(v2041.Name)) then v2041:Destroy();end end for v2042,v2043 in next,v1109:GetChildren() do if (v2043:IsA("MeshPart") and  not v1111(v2043.Name)) then v2043:Destroy();end end end local function v748(v1112) local v1113=v728[v1112];if  not v1113 then return;end local v1114=v1113.Default;if ( not v1114 or  not v1114.Parent) then return;end local v1115=v1112 and v1112:FindFirstChild("Handle") ;v747(v1112,v1114,v1115);if v1113.HideDefault then if (v1114.Transparency~=(1 + 0)) then v1114.Transparency=1 -0 ;end else if ((v1113.DesiredTransparency~=nil) and (v1114.Transparency~=v1113.DesiredTransparency)) then v1114.Transparency=v1113.DesiredTransparency;end if ((v1113.DesiredTextureID~=nil) and (v1114.TextureID~=v1113.DesiredTextureID)) then v1114.TextureID=v1113.DesiredTextureID;end end end function v737(v1116) if ( not v1116 or  not v728[v1116]) then return;end v739(v1116);local v1117=v728[v1116];if v1117.Connections then for v2728,v2729 in next,v1117.Connections do if (v2729 and v2729.Connected) then v2729:Disconnect();end end end for v2044,v2045 in next,v1117.ClonedChildren or {}  do if (v2045 and v2045.Parent) then v2045:Destroy();end end if (v1117.Default and v1117.Default.Parent) then for v2730,v2731 in next,v1117.Default:GetChildren() do if (v2731.Name=="\0") then v2731:Destroy();end end v1117.Default.Transparency=v1117.OriginalTransparency or (0 -0) ;v1117.Default.TextureID=v1117.OriginalTextureID or "" ;end if v1117.ShootSoundOriginals then for v2732,v2733 in next,v1117.ShootSoundOriginals do if (v2732 and v2732.Parent and v2733) then v2732.SoundId=v2733;end end elseif (v1117.ShootSound and v1117.OriginalShootSoundId) then v1117.ShootSound.SoundId=v1117.OriginalShootSoundId;end local v1118=v1116:FindFirstChild("Handle");if v1118 then v1118:SetAttribute("SkinName",v1117.OriginalSkinName or "" );end v728[v1116]=nil;end local function v749(v1120,v1121) if ( not v1120 or v730[v1120]) then return;end v730[v1120]=true;task.delay(1605.35 -(306 + 1299) ,function() local v2046=0;local v2047;while true do if (v2046==(0 + 0)) then v2047=v728[v1120];if ( not v2047 or (v2047.SkinName~=v1121)) then return;end v2046=2 -1 ;end if (v2046==(790 -(671 + 118))) then v737(v1120);v736(v1120,v1121);break;end end end);end function v736(v1123,v1124) if  not v1123 then return;end if (v728[v1123] and (v728[v1123].SkinName==v1124)) then return;end local v1125=v1123:FindFirstChild("Handle");if  not v1125 then return;end local v1126=v1123:FindFirstChild("Default");if ( not v1126 or  not v1126:IsA("MeshPart")) then local v2438=0;while true do if ((0 -0)==v2438) then v1126=v1125:FindFirstChildOfClass("MeshPart");if  not v1126 then for v4040,v4041 in next,v1123:GetDescendants() do if v4041:IsA("MeshPart") then v1126=v4041;break;end end end break;end end end if  not v1126 then return;end local v1127=v745(v1123);if v728[v1123] then v737(v1123);end v728[v1123]={SkinName=v1124,OriginalTextureID=v1126.TextureID,OriginalTransparency=v1126.Transparency,OriginalSkinName=v1125:GetAttribute("SkinName") or "" ,Default=v1126,ShootSound=v1127,OriginalShootSoundId=(v1127 and v1127.SoundId) or nil ,ShootSoundOriginals=(v1127 and {[v1127]=v1127.SoundId}) or {} ,ClonedChildren={},Connections={},DesiredTextureID=v1126.TextureID,DesiredTransparency=v1126.Transparency,HideDefault=false};v1125:SetAttribute("SkinName",v1124);local v1129=v1125:GetAttributeChangedSignal("SkinName"):Connect(function() if (v1125:GetAttribute("SkinName")~=v1124) then v1125:SetAttribute("SkinName",v1124);end end);table.insert(v728[v1123].Connections,v1129);local v1130=(v1123.Name:lower():find("knife")~=nil) or (v1123.Name=="[Knife]") ;local v1131=v1123.Name:lower():sub(78 -(73 + 3) , -(5 -3));local v1132=v742(v1123.Name,v1124);local v1133= not v1130 and v1132 and (type(v1132.TextureID)=="string") and (v1132.TextureID~="") ;if ( not v1130 and  not v1132) then v731[v1123]=v1124;task.defer(v741);v746(v1123);return;end if  not v1130 then local v2440=0 -0 ;while true do if ((0 -0)==v2440) then for v3631,v3632 in next,v1123:GetChildren() do if (v3632:IsA("MeshPart") and (v3632~=v1126) and (v3632~=v1125)) then v3632:Destroy();end end for v3633,v3634 in next,v1126:GetChildren() do if v3634:IsA("MeshPart") then v3634:Destroy();end end v2440=1;end if (v2440==1) then v1126.Transparency=v728[v1123].OriginalTransparency or 0 ;v1126.TextureID=v728[v1123].OriginalTextureID or "" ;break;end end end local v1134=nil;if ( not v1130 and v1132 and v1132.TextureID and  not v1133) then local v2441=1755 -(1668 + 87) ;local v2442;while true do if (v2441==(0 + 0)) then v2442=v1132.TextureID;if (typeof(v2442)=="Instance") then if v2442:IsA("MeshPart") then v1134=v2442;elseif (v2442:IsA("Model") or v2442:IsA("Folder")) then v1134=v2442:GetChildren();end end break;end end end if ( not v1130 and  not v1134 and  not v1133 and v734 and (typeof(v734)=="Instance")) then local v2443=0;local v2444;while true do if (v2443==(1900 -(296 + 1603))) then if  not v1134 then local v3863=v734:FindFirstChild("GunModels");if v3863 then local v4145=106 -(79 + 27) ;local v4146;while true do if (v4145==(0 + 0)) then v4146=v3863:FindFirstChild(v1124) or v3863:FindFirstChild("["   .. v1124   .. "]" ) or v3863:FindFirstChild(v1124:gsub("-"," ")) or v3863:FindFirstChild(v1124:gsub("-","")) ;if v4146 then if v4146:IsA("MeshPart") then v1134=v4146;elseif v4146:IsA("Model") then v1134=v4146:FindFirstChildOfClass("MeshPart");end end break;end end end end break;end if (v2443==0) then v2444=v734:FindFirstChild("Meshes");if v2444 then local v3864=v2444:FindFirstChild(v1124) or v2444:FindFirstChild(v1124:gsub(" ","")) or v2444:FindFirstChild(v1124:gsub(" ","_")) or v2444:FindFirstChild(v1124:gsub("-"," ")) or v2444:FindFirstChild(v1124:gsub("-","")) ;if v3864 then if v3864:IsA("MeshPart") then v1134=v3864;else v1134=v3864:GetChildren();end end end v2443=1008 -(700 + 307) ;end end end local v1135=nil;if (v1134 and  not v1130) then if ((typeof(v1134)=="Instance") and v1134:IsA("MeshPart")) then v1135=v1134;elseif (type(v1134)=="table") then for v3865,v3866 in next,v1134 do if ((typeof(v3866)=="Instance") and v3866:IsA("MeshPart")) then local v4147=v3866.Name:lower();if (v4147:find("rpg") and (v1131=="rpg")) then v1135=v3866;break;elseif (v4147:find("aug") and (v1131=="aug")) then v1135=v3866;break;elseif (v4147:find("tac") and (v1131=="tacticalshotgun")) then v1135=v3866;break;elseif (v4147:find("rev") and (v1131=="revolver")) then v1135=v3866;break;elseif ((v4147:find("db") or v4147:find("double")) and ((v1131=="double-barrel sg") or (v1131=="double-barrelsg"))) then v1135=v3866;break;elseif (v4147:find("rifle") and (v1131=="rifle")) then v1135=v3866;break;elseif (v4147:find("flame") and (v1131=="flamethrower")) then v1135=v3866;break;end end end if  not v1135 then for v4148,v4149 in next,v1134 do if ((typeof(v4149)=="Instance") and v4149:IsA("MeshPart")) then v1135=v4149;break;end end end end end local v1136=false;if (v1135 and  not v1130) then local v2445=0;local v2446;local v2447;local v2448;while true do if (v2445==3) then v2448.Name="\0";v2448.Parent=v2446;v2446.Name="\0";v2445=3 + 1 ;end if (v2445==5) then if v728[v1123] then v728[v1123].HideDefault=true;v728[v1123].DesiredTransparency=1;v728[v1123].DesiredTextureID=v728[v1123].OriginalTextureID or "" ;table.insert(v728[v1123].ClonedChildren,v2446);end break;end if (v2445==(1803 -(1477 + 322))) then v2446.Parent=v1123;v1126.Transparency=1;v1136=true;v2445=2 + 3 ;end if ((0 -0)==v2445) then v2446=v1135:Clone();v2446.Anchored=false;v2446.CanCollide=false;v2445=1;end if (v2445==2) then v2448.Part0=v2446;v2448.Part1=v1126;v2448.C0=v2447:Inverse();v2445=3 + 0 ;end if (v2445==(3 -2)) then v2446.CFrame=v1126.CFrame;v2447=(v1132 and v1132.CFrame and (typeof(v1132.CFrame)=="CFrame") and v1132.CFrame) or CFrame.new() ;v2448=Instance.new("Weld");v2445=2 + 0 ;end end elseif ( not v1130 and v1132) then local v2985=v1132.TextureID;if v2985 then if ((typeof(v2985)=="Instance") and v2985:IsA("MeshPart")) then local v4042=0 -0 ;local v4043;local v4044;local v4045;while true do if (v4042==(13 -8)) then if v728[v1123] then local v4526=0 + 0 ;while true do if (v4526==(2 -1)) then v728[v1123].DesiredTextureID=v728[v1123].OriginalTextureID or "" ;table.insert(v728[v1123].ClonedChildren,v4043);break;end if (v4526==(0 -0)) then v728[v1123].HideDefault=true;v728[v1123].DesiredTransparency=1 -0 ;v4526=1;end end end break;end if (v4042==(1787 -(20 + 1766))) then v4043.CFrame=v1126.CFrame;v4043.Name="\0";v4043.Parent=v1123;v4042=3 -1 ;end if (v4042==(811 -(88 + 721))) then v4044=(v1132.CFrame and (typeof(v1132.CFrame)=="CFrame") and v1132.CFrame) or CFrame.new() ;v4045=Instance.new("Weld");v4045.Part0=v4043;v4042=3 + 0 ;end if ((1 + 2)==v4042) then v4045.Part1=v1126;v4045.C0=v4044:Inverse();v4045.Name="\0";v4042=2 + 2 ;end if (v4042==0) then v4043=v2985:Clone();v4043.Anchored=false;v4043.CanCollide=false;v4042=1;end if (v4042==(2 + 2)) then v4045.Parent=v4043;v1126.Transparency=2 -1 ;v1136=true;v4042=9 -4 ;end end elseif (type(v2985)=="string") then v1126.TextureID=v2985;v1126.Transparency=437 -(93 + 344) ;if v728[v1123] then local v4453=0;while true do if ((1213 -(960 + 253))==v4453) then v728[v1123].HideDefault=false;v728[v1123].DesiredTransparency=0 + 0 ;v4453=2 -1 ;end if (v4453==1) then v728[v1123].DesiredTextureID=v2985;break;end end end end end end if ( not v1130 and v728[v1123]) then local function v2449() if  not v728[v1123] then return;end v748(v1123);end local function v2450(v2734) return ( #v2734==0) or (v2734=="\0") ;end local v2451=v1123.ChildAdded:Connect(function(v2735) if (v2735:IsA("MeshPart") and  not v2450(v2735.Name) and (v2735~=v1126) and (v2735~=v1125)) then task.defer(v2449);end end);table.insert(v728[v1123].Connections,v2451);local v2452=v1126.ChildAdded:Connect(function(v2736) if (v2736:IsA("MeshPart") and  not v2450(v2736.Name)) then task.defer(v2449);end end);table.insert(v728[v1123].Connections,v2452);if v1136 then local v2986=0 -0 ;local v2987;while true do if (v2986==(1416 -(74 + 1342))) then v2987=v1126:GetPropertyChangedSignal("Transparency"):Connect(function() if (v728[v1123] and (v1126.Transparency~=(1 + 0))) then v1126.Transparency=1;end end);table.insert(v728[v1123].Connections,v2987);break;end end else local v2988=0;local v2989;while true do if (v2988==0) then v2989=v1126:GetPropertyChangedSignal("Transparency"):Connect(function() local v4046=0;local v4047;while true do if (v4046==(474 -(33 + 441))) then v4047=v728[v1123];if (v4047 and (v4047.DesiredTransparency~=nil) and (v1126.Transparency~=v4047.DesiredTransparency)) then v1126.Transparency=v4047.DesiredTransparency;end break;end end end);table.insert(v728[v1123].Connections,v2989);break;end end end local v2453=v1126:GetPropertyChangedSignal("TextureID"):Connect(function() if (v728[v1123] and (v1126.TextureID~=v728[v1123].DesiredTextureID)) then v1126.TextureID=v728[v1123].DesiredTextureID or "" ;end end);table.insert(v728[v1123].Connections,v2453);task.defer(v2449);task.delay(0.1 -0 ,function() if v728[v1123] then v748(v1123);end end);task.delay(1419.35 -(64 + 1355) ,function() if v728[v1123] then v748(v1123);end end);end for v2048,v2049 in next,v1125:GetChildren() do if ( #v2049.Name==(0 -0)) then v2049:Destroy();end end if v733 then local v2454=v733:FindFirstChild("GunHandleParticle");if v2454 then local v2990=0;local v2991;while true do if (v2990==(11 -(5 + 6))) then v2991=v2454:FindFirstChild(v1124) or v2454:FindFirstChild(v1124:gsub("-"," ")) or v2454:FindFirstChild(v1124:gsub("-","")) ;if v2991 then local v4150=v2991:FindFirstChildOfClass("ParticleEmitter");if v4150 then local v4374=0 + 0 ;local v4375;while true do if (v4374==(0 + 0)) then v4375=v4150:Clone();v4375.Parent=v1125;v4374=447 -(369 + 77) ;end if (1==v4374) then v4375.Name="\0";table.insert(v728[v1123].ClonedChildren,v4375);break;end end end end break;end end end end if (v1130 and v733) then local v2455=v733:FindFirstChild("SkinScripts");if v2455 then for v3442,v3443 in next,v2455:GetChildren() do if (v3443.Name:lower():gsub(" ","")==v1124:lower():gsub(" ","")) then local v3870=v3443:FindFirstChildOfClass("Sound");if v3870 then local v4151=v3870:Clone();v4151.Name="\0";v4151.Parent=v1125;v4151:Play();game.Debris:AddItem(v4151,1 + 2 );end for v4048,v4049 in next,v3443:GetDescendants() do if (v4049:IsA("Sound") or v4049:IsA("StringValue")) then local v4280=v4049.Name:lower():gsub(" ","");if ((v4280=="equipsfx") or (v4280=="sfx") or (v4280=="equip") or (v4280=="tantoequip")) then v728[v1123].KnifeEquipSound=(v4049:IsA("Sound") and v4049.SoundId) or v4049.Value ;elseif ((v4280=="attacksfx") or (v4280=="attack")) then v728[v1123].KnifeAttackSound=(v4049:IsA("Sound") and v4049.SoundId) or v4049.Value ;end end end break;end end end local v2456=v733:FindFirstChild("SkinScriptsStorage");if v2456 then for v3444,v3445 in next,v2456:GetChildren() do if (v3445.Name:lower():gsub(" ","")==v1124:lower():gsub(" ","")) then for v4050,v4051 in next,v3445:GetDescendants() do if v4051:IsA("Animation") then local v4281=v4051.Name:lower():gsub(" ","");if ((v4281=="knife") or (v4281=="equipknife") or (v4281=="knifeequip") or (v4281=="tantoequip")) then v728[v1123].KnifeEquipAnim=v4051;break;end end end break;end end end local v2457=v733:FindFirstChild("KnifeSkinAnimation");if v2457 then for v3446,v3447 in next,v2457:GetChildren() do if (v3447.Name:lower():gsub(" ","")==v1124:lower():gsub(" ","")) then for v4052,v4053 in next,v3447:GetDescendants() do if v4053:IsA("Animation") then v728[v1123].KnifeAttackAnim=v4053;break;end end break;end end end end if (v1130 and (v1124:lower():gsub(" ","")=="goldenagetanto")) then if  not v728[v1123].KnifeEquipAnim then local v2992=Instance.new("Animation");v2992.AnimationId="rbxassetid://13473404819";v728[v1123].KnifeEquipAnim=v2992;else v728[v1123].KnifeEquipAnim.AnimationId="rbxassetid://13473404819";end end if (v1130 and ((v1124:lower():gsub(" ","")=="gpoknife") or (v1124:lower():gsub(" ","")=="gpoknifeprestige"))) then if  not v728[v1123].KnifeEquipAnim then local v2996=738 -(438 + 300) ;local v2997;while true do if ((295 -(50 + 244))==v2996) then v728[v1123].KnifeEquipAnim=v2997;break;end if (v2996==(1201 -(95 + 1106))) then v2997=Instance.new("Animation");v2997.AnimationId="rbxassetid://102007904524177";v2996=1 -0 ;end end else v728[v1123].KnifeEquipAnim.AnimationId="rbxassetid://102007904524177";end end v746(v1123);local v1137=v1123.DescendantAdded:Connect(function(v2050) if (v2050:IsA("Sound") and ((v2050.Name=="Shoot") or (v2050.Name=="ShootSound"))) then task.defer(function() if (v728[v1123] and (v728[v1123].SkinName==v1124)) then v746(v1123);end end);end end);table.insert(v728[v1123].Connections,v1137);if  not v1130 then v749(v1123,v1124);end end function ProcessTool(v1138) if v732[v1138] then return;end v732[v1138]=true;local v1140=v727();if  not v1140['Enabled'] then return;end local v1141=v1140['Skins'];local v1142=v1141[v1138.Name];if  not v1142 then local v2458=0;local v2459;while true do if (v2458==(0 -0)) then v2459=v1138.Name:gsub("%[",""):gsub("%]","");v1142=v1141["["   .. v2459   .. "]" ];break;end end end if ( not v1142 or (v1142=="") or (v1142=="None")) then return;end local v1143=(v1138.Name:lower():find("knife")~=nil) or (v1138.Name=="[Knife]") ;if (v1143 and v738(v1142)) then local v2460=1896 -(1741 + 155) ;local v2461;while true do if (v2460==(2 -1)) then v2461=v1138.Equipped:Connect(function() if  not v728[v1138] then if v2461 then v2461:Disconnect();end return;end local v3635=v1138.Parent;if (v3635~=v10.Character) then return;end v740(v3635,v1138,v1142);end);if  not v728[v1138].Connections then v728[v1138].Connections={};end v2460=2 -0 ;end if (v2460==(3 -1)) then table.insert(v728[v1138].Connections,v2461);if (v10.Character and (v1138.Parent==v10.Character)) then v740(v10.Character,v1138,v1142);end v2460=3;end if (v2460==(2 + 1)) then if (v728[v1138] and (v728[v1138].KnifeAttackAnim or v728[v1138].KnifeAttackSound)) then local v3874;v3874=v1138.Activated:Connect(function() local v4054=0 + 0 ;local v4055;while true do if (v4054==(1 + 0)) then if v4055.KnifeAttackSound then local v4529=0;local v4530;while true do if (v4529==2) then v4530:Play();game.Debris:AddItem(v4530,7 -4 );break;end if (v4529==(0 -0)) then v4530=Instance.new("Sound");v4530.SoundId=v4055.KnifeAttackSound;v4529=1778 -(1263 + 514) ;end if (v4529==(498 -(73 + 424))) then v4530.Volume=1;v4530.Parent=v1138:FindFirstChild("Handle") or v1138 ;v4529=4 -2 ;end end end if v4055.KnifeAttackAnim then local v4531=308 -(93 + 215) ;local v4532;while true do if (v4531==(0 -0)) then v4532=v10.Character;if v4532 then local v4705=v4532:FindFirstChildOfClass("Humanoid");if v4705 then local v4730=v4705:FindFirstChildOfClass("Animator");if  not v4730 then local v4763=1935 -(1756 + 179) ;while true do if (v4763==(1679 -(550 + 1129))) then v4730=Instance.new("Animator");v4730.Parent=v4705;break;end end end local v4731=Instance.new("Animation");v4731.AnimationId=v4055.KnifeAttackAnim.AnimationId;local v4734=v4730:LoadAnimation(v4731);v4734.Priority=Enum.AnimationPriority.Action;v4734:Play();v4731:Destroy();end end break;end end end break;end if (v4054==(107 -(57 + 50))) then v4055=v728[v1138];if  not v4055 then if v3874 then v3874:Disconnect();end return;end v4054=630 -(30 + 599) ;end end end);table.insert(v728[v1138].Connections,v3874);end break;end if (v2460==0) then v736(v1138,v1142);v2461=nil;v2460=1 + 0 ;end end else local v2462=0 -0 ;while true do if (v2462==(919 -(794 + 124))) then if (v10.Character and (v1138.Parent==v10.Character)) then v736(v1138,v1142);end break;end if (v2462==(0 + 0)) then v736(v1138,v1142);v1138.Equipped:Connect(function() local v3636=v1138.Parent;if (v3636~=v10.Character) then return;end v736(v1138,v1142);end);v2462=1 + 0 ;end end end end function ProcessCharacter(v1144) local v1145=0;while true do if (v1145==(1 -0)) then v1144.ChildAdded:Connect(function(v2999) if v2999:IsA("Tool") then local v3637=1927 -(1299 + 628) ;while true do if ((0 -0)==v3637) then Wait(0.1 -0 );ProcessTool(v2999);break;end end end end);break;end if ((0 + 0)==v1145) then if  not v1144 then return;end for v3000,v3001 in next,v1144:GetChildren() do if v3001:IsA("Tool") then ProcessTool(v3001);end end v1145=1;end end end function ProcessBackpack(v1146) local v1147=0 -0 ;while true do if (v1147==(1445 -(335 + 1110))) then if  not v1146 then return;end for v3002,v3003 in next,v1146:GetChildren() do if v3003:IsA("Tool") then ProcessTool(v3003);end end v1147=1;end if (v1147==1) then v1146.ChildAdded:Connect(function(v3004) if v3004:IsA("Tool") then Wait(0.1);ProcessTool(v3004);end end);break;end end end task.spawn(v741);local v750=v10.Character or v10.CharacterAdded:Wait() ;local v751=v10:FindFirstChild("Backpack") or v10:WaitForChild("Backpack",5 + 0 ) ;ProcessCharacter(v750);if v751 then ProcessBackpack(v751);end v10.CharacterAdded:Connect(function(v1148) local v1149=0 -0 ;local v1150;while true do if (v1149==(0 -0)) then Wait(332.5 -(268 + 64) );ProcessCharacter(v1148);v1149=1 + 0 ;end if (v1149==(1279 -(243 + 1035))) then v1150=v10:FindFirstChild("Backpack") or v10:WaitForChild("Backpack",12 -7 ) ;if v1150 then ProcessBackpack(v1150);end break;end end end);local function v752(v1151) local v1152=v727();if ( not v1152 or  not v1152['Enabled']) then return nil;end local v1153=v1152['Skins'];local v1154=v1153[v1151.Name];if  not v1154 then local v2463=v1151.Name:gsub("%[",""):gsub("%]","");v1154=v1153["["   .. v2463   .. "]" ];end if ( not v1154 or (v1154=="") or (v1154=="None")) then return nil;end return v1154;end local function v753() local function v1155(v2051) if  not v2051 then return;end for v2465,v2466 in next,v2051:GetChildren() do if v2466:IsA("Tool") then local v3005=v752(v2466);local v3006=(v728[v2466] and v728[v2466].SkinName) or nil ;if (v3005~=v3006) then local v3638=0 -0 ;while true do if (v3638==(4 -3)) then pcall(function() v737(v2466);end);pcall(function() ProcessTool(v2466);end);break;end if (v3638==0) then v732[v2466]=nil;v730[v2466]=nil;v3638=1;end end end end end end v1155(v10.Character);v1155(v10:FindFirstChild("Backpack"));end local v754=v18;function v18() local v1156=0 + 0 ;while true do if (v1156==0) then if v754 then v754();end v753();break;end end end end do local v755=0 + 0 ;while true do if (v755==(1 -0)) then if v10.Character then Spawn(SetupAntiStomp,v10.Character);end v10.CharacterAdded:Connect(SetupAntiStomp);break;end if (v755==0) then KOConnection=nil;function SetupAntiStomp(v2737) local v2738=100 -(90 + 10) ;local v2739;local v2740;while true do if (v2738==(806 -(209 + 595))) then if  not v2740 then return;end KOConnection=v2740.Changed:Connect(function(v3875) local v3876=0;local v3877;local v3878;local v3879;while true do if (v3876==(806 -(603 + 202))) then if  not v3875 then return;end v3878=v2737:FindFirstChild("HumanoidRootPart");v3876=2 + 0 ;end if (v3876==(0 -0)) then v3877=v14()["Anti Stomp"];if ( not v3877 or  not v3877['Enabled']) then return;end v3876=1 + 0 ;end if (v3876==3) then v3878.Velocity=Vector3New(185709 -120173 ,65534,2881 + 62655 );v3879=v2737:FindFirstChildOfClass("Humanoid");v3876=4;end if (v3876==2) then if  not v3878 then return;end v3878.CFrame=CFrameNew(0 -0 , -2147483647,0 -0 );v3876=282 -(174 + 105) ;end if (v3876==(13 -9)) then if v3879 then for v4533=914 -(532 + 381) ,9 + 1  do v3879.Health=839 -(137 + 702) ;Wait();end end break;end end end);break;end if (v2738==(0 -0)) then if KOConnection then KOConnection:Disconnect();KOConnection=nil;end v2739=v2737:WaitForChild("BodyEffects",1 + 4 );v2738=3 -2 ;end if (v2738==1) then if  not v2739 then return;end v2740=v2739:WaitForChild("K.O",1891 -(1819 + 67) );v2738=2 + 0 ;end end end v755=1;end end end do function GetMiscGunCfg() return v14()['Modifications']["Misc Gun Modifications"];end CurrentCamera=v2.CurrentCamera;SavedCFrame=CurrentCamera.CFrame;RestorePending=false;function QueueRestore() if RestorePending then return;end RestorePending=true;Defer(function() if RestorePending then local v2741=0 + 0 ;while true do if (v2741==0) then CurrentCamera.CFrame=SavedCFrame;RestorePending=false;break;end end end end);end v3.RenderStepped:Connect(function() CurrentCamera=v2.CurrentCamera;if  not RestorePending then SavedCFrame=CurrentCamera.CFrame;end end);local v758=v4:FindFirstChild("MainEvent");if (v758 and v758:IsA("RemoteEvent")) then v758.OnClientEvent:Connect(function(v2468) if ((v2468=="ShootingRecoil") and GetMiscGunCfg()["No Recoil"]) then QueueRestore();end end);end local function v759(v1158) local v1159=1357 -(259 + 1098) ;local v1160;local v1161;while true do if (v1159==(1 + 0)) then v1161=v1160:FindFirstChild("GunShotChanges");if  not v1161 then return;end v1159=1 + 1 ;end if (v1159==(1 + 1)) then v1161.Changed:Connect(function() if GetMiscGunCfg()["No Recoil"] then QueueRestore();end end);break;end if (v1159==(0 -0)) then v1160=v1158:WaitForChild("BodyEffects",2 + 3 );if  not v1160 then return;end v1159=1 + 0 ;end end end if v10.Character then Spawn(v759,v10.Character);end v10.CharacterAdded:Connect(function(v1162) Spawn(v759,v1162);end);end do local v760=v14()['Char'] or {} ;local v761=v760["Body Size"] or {} ;local v762={Skinny={width=0.52 -0 ,depth=1706.52 -(667 + 1039) ,height=1020 -(274 + 745) ,head=1 + 0 ,proportion=1,bodyType=0},Normal={width=1 + 0 ,depth=431 -(288 + 142) ,height=1307 -(301 + 1005) ,head=1 + 0 ,proportion=2 -1 ,bodyType=0},Fat={width=1874.5 -(674 + 1199) ,depth=1.5 + 0 ,height=1 + 0 ,head=1,proportion=2 -1 ,bodyType=0}};local v763=v762[v761['Mode']] or v762.Skinny ;local v764={target=v760['Target'] or "" ,charchanger={enabled=(v760['Enabled']==true) and (v761['Enabled']~=false) ,width=v763.width,depth=v763.depth,height=v763.height,head=v763.head,proportion=v763.proportion,bodyType=v763.bodyType,targetScales=nil,enforceIntervalSeconds=0.8}};local v765=game:GetService("Players");local v766=game:GetService("RunService");local v767=game:GetService("InsertService");local v768=v765.LocalPlayer;local v769=nil;local v770=nil;local v771={};local v772=nil;local v773=nil;local v774=0;local v775=85 -65 ;local v776=118 + 482 ;local v777={};local v778={};local v779={};local v780={};local v781={};local v782={};local v783={};local v784={faceTexture=525 -(92 + 353) ,description=37 + 3 ,appearanceModel=59 -35 ,appearanceInfo=60,resolvedUserId=120,animationSet=121 -57 ,emoteData=227 -147 };local v785,v786=pcall(function() return getgenv();end);local v787="__CopyOutfitState";local v788=nil;if (v785 and v786) then local v2052=0;while true do if (v2052==(0 + 0)) then v788=v786[v787];if (v788 and (type(v788.teardown)=="function")) then pcall(v788.teardown);end break;end end end local v789={currentUserId=nil,active=v760['Enabled']==true ,teardown=nil,colorSnapshot=nil,guiIdentity=nil};if (v785 and v786) then v786[v787]=v789;end local v790={"Shirt","Pants","ShirtGraphic","Accessory","Hat","BodyColors","CharacterMesh"};local v791={};for v1163,v1164 in ipairs(v790) do v791[v1164]=true;end local v792={"BodyHeightScale","BodyWidthScale","BodyDepthScale","HeadScale","BodyTypeScale","BodyProportionScale"};local v793={};for v1166,v1167 in ipairs(v792) do v793[v1167]=true;end local v794={"ClimbAnimation","FallAnimation","IdleAnimation","JumpAnimation","RunAnimation","SwimAnimation","WalkAnimation"};local v795={"Head","Torso","UpperTorso","LowerTorso","LeftArm","RightArm","LeftLeg","RightLeg","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand","LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"};local v796=74891470;local v797=134082579;local v798=248994311 -109386593 ;local v799={RightLowerLeg={mesh=1104551482 -201609389 ,hidden=true},RightUpperLeg={mesh=902942976 -(509 + 371) ,texture=902843398},RightFoot={mesh=902942089,hidden=true}};local function v800() local v1169=0 + 0 ;local v1170;while true do if (v1169==(0 -0)) then v1170=v14()['Char'];return v1170 or v760 or {} ;end end end local function v801(v1171) local v1172=v800();local v1173=v1172['Accessories'];if (type(v1173)=="table") then return (v1173['Enabled']==true) and (v1173[v1171]==true) ;end return v1172[v1171]==true ;end local function v802(v1174) local v1175=1097 -(97 + 1000) ;while true do if ((3 -2)==v1175) then if v801("Korblox") then pcall(function() v1174.RightLeg=v798;end);end if v801("Frigid Horns") then pcall(function() v1174.Hat=v796;end);end v1175=2;end if (v1175==(1845 -(143 + 1702))) then if  not v1174 then return nil;end if v801("Headless") then pcall(function() v1174.Head=v797;end);pcall(function() v1174.Face=0 -0 ;end);end v1175=370 -(40 + 329) ;end if (v1175==(2 + 0)) then return v1174;end end end local function v803(v1176) local v1177=0;while true do if (v1177==(0 + 0)) then if  not v1176 then return;end for v3008,v3009 in ipairs(v1176:GetChildren()) do if v3009:IsA("Decal") then v3009.Transparency=1 -0 ;end end break;end end end local function v804(v1178) if  not v801("Headless") then return;end local v1179=v1178 and v1178:FindFirstChild("Head") ;if  not v1179 then return;end v1179.Transparency=1;v803(v1179);end local function v805(v1181) local v1182=0 + 0 ;local v1183;local v1184;local v1185;local v1186;local v1187;local v1188;while true do if (3==v1182) then if v1183 then v1183:Destroy();end v1186=Instance.new("Part");v1186.Name="PhantomShell";v1182=69 -(9 + 56) ;end if (0==v1182) then if  not v1181 then return;end v1183=v1181:FindFirstChild("PhantomShell");if  not v801("Korblox") then if v1183 then v1183:Destroy();end return;end v1182=585 -(531 + 53) ;end if (v1182==(6 + 0)) then v1187=Instance.new("WeldConstraint");v1187.Part0=v1186;v1187.Part1=v1185;v1182=780 -(89 + 684) ;end if (v1182==(1 + 0)) then v1184=v1181:FindFirstChildOfClass("Humanoid");if  not v1184 then return;end if (v1184.RigType==Enum.HumanoidRigType.R15) then if v1183 then v1183:Destroy();end for v3645,v3646 in pairs(v799) do local v3647=v1181:FindFirstChild(v3645);if v3647 then pcall(function() v3647.MeshId="rbxassetid://"   .. v3646.mesh ;end);if v3646.texture then pcall(function() v3647.TextureID="rbxassetid://"   .. v3646.texture ;end);end if v3646.hidden then v3647.Transparency=1 + 0 ;end end end return;end v1182=2;end if (v1182==8) then v1188.MeshId="rbxassetid://902942093";v1188.TextureId="rbxassetid://902843398";v1188.Scale=Vector3.new(0.85 + 0 ,1.25,0.85 -0 );v1182=7 + 2 ;end if (v1182==(5 + 0)) then v1186.Massless=true;v1186.CFrame=v1185.CFrame * CFrame.new(613 -(238 + 375) ,0.75,0) ;v1186.Parent=v1181;v1182=6;end if (v1182==(4 + 0)) then v1186.Size=Vector3.new(1 -0 ,2 + 0 ,1);v1186.CanCollide=false;v1186.CanTouch=false;v1182=14 -9 ;end if (v1182==2) then v1185=v1181:FindFirstChild("Right Leg");if  not v1185 then return;end v1185.Transparency=2 -1 ;v1182=8 -5 ;end if (v1182==(14 -7)) then v1187.Parent=v1186;v1188=Instance.new("SpecialMesh");v1188.MeshType=Enum.MeshType.FileMesh;v1182=29 -21 ;end if (v1182==(10 -1)) then v1188.Parent=v1186;break;end end end local function v806(v1189) local v1190=0;local v1191;while true do if (v1190==1) then if  not v1191 then return;end task.spawn(function() local v3010,v3011=pcall(function() return v1191:GetAppliedDescription();end);if ( not v3010 or  not v3011) then return;end pcall(function() v3011.Hat=v796;end);pcall(function() v1191:ApplyDescription(v3011);end);end);break;end if ((0 + 0)==v1190) then if  not v801("Frigid Horns") then return;end v1191=v1189 and v1189:FindFirstChildOfClass("Humanoid") ;v1190=1;end end end local function v807(v1192) local v1193=0;while true do if (v1193==(1 + 0)) then v806(v1192);break;end if (v1193==(0 + 0)) then v804(v1192);v805(v1192);v1193=1;end end end local function v808(v1194,v1195) local v1196=462 -(428 + 34) ;local v1197;while true do if (v1196==0) then v1197=v800();if (v1197["Override Animation"]==true) then local v3450=shared.__CiderApplyAnimationChanger;if (type(v3450)=="function") then v3450(v1194,true);end return;end v1196=1 + 0 ;end if (v1196==1) then if (typeof(mimicAnimationsFromUserId)=="function") then mimicAnimationsFromUserId(v1195,true);end break;end end end local function v809(v1198) if v773 then v773:Disconnect();v773=nil;end if  not v1198 then return;end v807(v1198);v773=v1198.DescendantAdded:Connect(function(v2054) if (v2054:IsA("Decal") and v2054.Parent and (v2054.Parent.Name=="Head")) then if v801("Headless") then v2054.Transparency=1 -0 ;end return;end local v2055=v2054.Name;if ((v2055=="Head") or (v2055=="Humanoid") or (v2055=="Right Leg") or v799[v2055]) then task.defer(function() if v1198.Parent then v807(v1198);end end);end end);end local function v810(v1199) local v1200=0 -0 ;while true do if (v1200==(0 -0)) then v809(v1199);for v3012,v3013 in ipairs({0.1 -0 ,0.35,0.75 + 0 ,1.5 -0 }) do task.delay(v3013,function() if v1199.Parent then v807(v1199);end end);end break;end end end local function v811(v1201) if ( not v1201 or  not v801("Headless")) then return;end local v1202=v1201.ChildAdded:Connect(function(v2056) if v2056:IsA("Decal") then v2056.Transparency=1;end end);v771[ #v771 + 1 + 0 ]=v1202;end local function v812() local v1204=0 + 0 ;while true do if (v1204==(0 + 0)) then if v770 then v770:Disconnect();v770=nil;end for v3014= #v771,1 -0 , -(1 -0) do local v3015=v771[v3014];if (v3015 and v3015.Connected) then v3015:Disconnect();end v771[v3014]=nil;end break;end end end local function v813(v1205) return v791[v1205]==true ;end local function v814(v1206) return v813(v1206) and (v1206~="BodyColors") ;end local function v815(v1207) return (v1207=="Accessory") or (v1207=="Hat") ;end local function v816(v1208) local v1209=1200 -(177 + 1023) ;local v1210;while true do if (v1209==0) then v1210={};if  not v1208 then return v1210;end v1209=1 -0 ;end if (1==v1209) then for v3017,v3018 in ipairs(v1208:GetChildren()) do if v3018:IsA("BasePart") then v1210[v3018.Name]=v3018;end end return v1210;end end end local function v817(v1211) local v1212=0 + 0 ;local v1213;while true do if ((2 -1)==v1212) then return v1213;end if (v1212==(1465 -(120 + 1345))) then v1213={};for v3019,v3020 in pairs(v1211 or {} ) do for v3452,v3453 in ipairs(v3020:GetChildren()) do if v3453:IsA("Attachment") then local v3880=337 -(8 + 329) ;local v3881;while true do if (0==v3880) then v3881=v1213[v3453.Name];if (v3881==nil) then v1213[v3453.Name]=v3019;elseif (v3881~=v3019) then v1213[v3453.Name]=false;end break;end end end end end v1212=126 -(19 + 106) ;end end end countMapEntries=nil;pruneTimestampedCache=nil;prunePairedTimestampCache=nil;cacheGetTimed=nil;cacheSetTimed=nil;cacheGetEntry=nil;cacheSetEntry=nil;local function v818(v1214) local v1215=0 -0 ;while true do if (v1215==0) then if  not v1214 then return nil;end for v3021,v3022 in ipairs(v1214:GetChildren()) do if (v3022:IsA("Decal") and (v3022.Face==Enum.NormalId.Front) and (v3022.Texture~="")) then return v3022.Texture;end end v1215=1 -0 ;end if (v1215==1) then for v3023,v3024 in ipairs(v1214:GetChildren()) do if (v3024:IsA("Decal") and (v3024.Texture~="")) then return v3024.Texture;end end return nil;end end end local function v819(v1216,v1217) local v1218=0 + 0 ;while true do if (v1218==(0 -0)) then if (v1217 and (v1217~="")) then cacheSetTimed(v777,v778,v1216,v1217,v784.faceTexture);end return v1217;end end end local function v820(v1219,v1220) local v1221,v1222=pcall(function() return v767:LoadAsset(v1219);end);if (v1221 and v1222) then local v2469=0 -0 ;local v2470;while true do if (v2469==1) then v1222:Destroy();if v2470 then return v819(v1220,v2470);end break;end if (v2469==(0 -0)) then v2470=nil;for v3649,v3650 in ipairs(v1222:GetDescendants()) do if (v3650:IsA("Decal") and (v3650.Texture~="")) then v2470=v3650.Texture;break;end end v2469=1 -0 ;end end end return v819(v1220,"rbxassetid://"   .. tostring(v1219) );end function countMapEntries(v1223) local v1224=0;for v2057 in pairs(v1223) do v1224=v1224 + 1 ;end return v1224;end function pruneTimestampedCache(v1225,v1226,v1227) local v1228=0 + 0 ;local v1229;while true do if (v1228==(1503 -(957 + 546))) then v1229=countMapEntries(v1225);while v1229>v1226  do local v3025,v3026=nil,math.huge;for v3454,v3455 in pairs(v1225) do local v3456=(v3455 and v3455.timestamp) or (0 -0) ;if (v3456<v3026) then v3026=v3456;v3025=v3454;end end if (v3025==nil) then break;end local v3027=v1225[v3025];v1225[v3025]=nil;if v1227 then v1227(v3025,v3027);end v1229=v1229-(1 + 0) ;end break;end end end function prunePairedTimestampCache(v1230,v1231,v1232) local v1233=0 + 0 ;local v1234;while true do if (v1233==(0 + 0)) then v1234=countMapEntries(v1230);while v1234>v1232  do local v3029,v3030=nil,math.huge;for v3457 in pairs(v1230) do local v3458=0 + 0 ;local v3459;while true do if (v3458==(703 -(227 + 476))) then v3459=v1231[v3457] or 0 ;if (v3459<v3030) then v3030=v3459;v3029=v3457;end break;end end end if (v3029==nil) then break;end v1230[v3029]=nil;v1231[v3029]=nil;v1234=v1234-(1 -0) ;end break;end end end function cacheGetTimedNow(v1235,v1236,v1237,v1238) local v1239=v1235[v1237];local v1240=v1236[v1237];if ((v1239~=nil) and v1240 and ((os.clock() -v1240)<=v1238)) then return v1239;end if (v1239~=nil) then v1235[v1237]=nil;end if (v1240~=nil) then v1236[v1237]=nil;end return nil;end function cacheSetTimedNow(v1241,v1242,v1243,v1244,v1245) local v1246=0;while true do if (v1246==0) then v1241[v1243]=v1244;v1242[v1243]=os.clock();v1246=1 -0 ;end if (v1246==(1 -0)) then prunePairedTimestampCache(v1241,v1242,v1245);return v1244;end end end function cacheGetEntryNow(v1247,v1248,v1249,v1250) local v1251=0;local v1252;while true do if (v1251==(3 -1)) then v1247[v1248]=nil;return nil;end if (v1251==1) then if ((os.clock() -(v1252.timestamp or (0 -0)))<=v1249) then return v1252;end if v1250 then v1250(v1252);end v1251=2;end if (v1251==0) then v1252=v1247[v1248];if  not v1252 then return nil;end v1251=955 -(166 + 788) ;end end end function cacheSetEntryNow(v1253,v1254,v1255,v1256,v1257) v1253[v1254]=v1255;pruneTimestampedCache(v1253,v1256,v1257);return v1255;end cacheGetTimed=cacheGetTimedNow;cacheSetTimed=cacheSetTimedNow;cacheGetEntry=cacheGetEntryNow;cacheSetEntry=cacheSetEntryNow;function getCharacterAppearanceModel(v1259) local v1260=cacheGetEntry(v780,v1259,v775,function(v2058) if (v2058 and v2058.model) then pcall(function() v2058.model:Destroy();end);end end);if (v1260 and v1260.model) then local v2473=0;local v2474;local v2475;while true do if (v2473==(986 -(21 + 965))) then v2474,v2475=pcall(function() return v1260.model:Clone();end);if (v2474 and v2475) then return v2475;end break;end end end local v1261,v1262=false,nil;for v2059=697 -(127 + 569) ,2 + 0  do local v2060,v2061=pcall(function() return v765:GetCharacterAppearanceAsync(v1259);end);if (v2060 and v2061) then v1261,v1262=true,v2061;break;end if (v2059==(1 + 0)) then task.wait(0.15);end end if  not (v1261 and v1262) then return nil;end local v1263,v1264=pcall(function() return v1262:Clone();end);if (v1263 and v1264) then local v2476=0 + 0 ;local v2477;while true do if (1==v2476) then cacheSetEntry(v780,v1259,{model=v1264,timestamp=os.clock()},v784.appearanceModel,function(v3651,v3652) if (v3652 and v3652.model) then pcall(function() v3652.model:Destroy();end);end end);break;end if ((0 -0)==v2476) then v2477=v780[v1259];if (v2477 and v2477.model) then pcall(function() v2477.model:Destroy();end);end v2476=1 + 0 ;end end end return v1262;end function getTargetDescriptionCached(v1265) local v1266=cacheGetEntry(v779,v1265,v775,function(v2062) if (v2062 and v2062.desc) then pcall(function() v2062.desc:Destroy();end);end end);if (v1266 and v1266.desc) then local v2478=0 -0 ;local v2479;local v2480;while true do if (v2478==(0 + 0)) then v2479,v2480=pcall(function() return v1266.desc:Clone();end);if (v2479 and v2480) then return v2480;end break;end end end local v1267,v1268=pcall(function() return v765:GetHumanoidDescriptionFromUserId(v1265);end);if ( not v1267 or  not v1268) then return nil;end local v1269,v1270=pcall(function() return v1268:Clone();end);if (v1269 and v1270) then local v2481=v779[v1265];if (v2481 and v2481.desc) then pcall(function() v2481.desc:Destroy();end);end cacheSetEntry(v779,v1265,{desc=v1270,timestamp=os.clock()},v784.description,function(v2765,v2766) if (v2766 and v2766.desc) then pcall(function() v2766.desc:Destroy();end);end end);end local v1271,v1272=pcall(function() return v1268:Clone();end);return (v1271 and v1272) or v1268 ;end function getCharacterAppearanceInfoCached(v1273) local v1274=0 + 0 ;local v1275;local v1276;local v1277;while true do if ((1292 -(1162 + 130))==v1274) then v1275=cacheGetEntry(v781,v1273,v775);if (v1275 and v1275.info) then return v1275.info;end v1274=1 -0 ;end if (v1274==(2 + 0)) then return nil;end if (v1274==(2 -1)) then v1276,v1277=pcall(function() return v765:GetCharacterAppearanceInfoAsync(v1273);end);if (v1276 and v1277) then cacheSetEntry(v781,v1273,{info=v1277,timestamp=os.clock()},v784.appearanceInfo);return v1277;end v1274=938 -(889 + 47) ;end end end function clearAvatarCaches() local v1278=0 + 0 ;while true do if (v1278==(1265 -(1153 + 111))) then for v3033 in pairs(v781) do v781[v3033]=nil;end for v3035 in pairs(v777) do v777[v3035]=nil;v778[v3035]=nil;end v1278=2 -0 ;end if (v1278==2) then for v3038 in pairs(v783) do v782[v3038]=nil;v783[v3038]=nil;end break;end if (0==v1278) then for v3041,v3042 in pairs(v779) do local v3043=0 + 0 ;while true do if (v3043==(0 + 0)) then if (v3042 and v3042.desc) then pcall(function() v3042.desc:Destroy();end);end v779[v3041]=nil;break;end end end for v3044,v3045 in pairs(v780) do if (v3045 and v3045.model) then pcall(function() v3045.model:Destroy();end);end v780[v3044]=nil;end v1278=1;end end end function clearCopyChildren(v1279) for v2063,v2064 in ipairs(v1279:GetChildren()) do if v813(v2064.ClassName) then pcall(function() v2064:Destroy();end);end end end function hasAnySourceBodyPart(v1280) for v2065,v2066 in ipairs(v795) do if v1280:FindFirstChild(v2066) then return true;end end return false;end function normalizeForLookup(v1281) local v1282=0 + 0 ;local v1283;while true do if (v1282==(1 + 1)) then return v1283;end if (v1282==(0 + 0)) then v1283=string.lower(tostring(v1281 or "" ));v1283=string.gsub(v1283,"^@","");v1282=1 -0 ;end if (v1282==1) then v1283=string.gsub(v1283,"%s+","");v1283=string.gsub(v1283,"_+","");v1282=2 + 0 ;end end end function findUserIdInServerByNameOrDisplay(v1284) local v1285=0;local v1286;local v1287;local v1288;local v1289;local v1290;local v1291;local v1292;while true do if (v1285==(98 -(23 + 73))) then v1291=285 -(26 + 259) ;v1292={};for v3047,v3048 in ipairs(v765:GetPlayers()) do local v3049=string.lower(v3048.Name);local v3050=string.lower(v3048.DisplayName);local v3051=normalizeForLookup(v3048.Name);local v3052=normalizeForLookup(v3048.DisplayName);if ((v3049==v1287) or (v3051==v1288)) then v1289=v3048.UserId;break;end if ((v3050==v1287) or (v3052==v1288)) then v1290=v3048.UserId;v1291=v1291 + 1 + 0 ;end local v3053=((v1287~="") and (string.sub(v3049,1 -0 , #v1287)==v1287)) or (string.sub(v3051,3 -2 , #v1288)==v1288) ;local v3054=((v1287~="") and (string.sub(v3050,1630 -(1094 + 535) , #v1287)==v1287)) or (string.sub(v3052,1 + 0 , #v1288)==v1288) ;if (v3053 or v3054) then v1292[ #v1292 + (1877 -(1554 + 322)) ]=v3048.UserId;end end v1285=1428 -(989 + 436) ;end if ((1179 -(816 + 362))==v1285) then if (v1288=="") then return nil;end v1289=nil;v1290=nil;v1285=3 -1 ;end if (v1285==(7 -4)) then if v1289 then return v1289;end if (v1291==1) then return v1290;end if ( #v1292>0) then return v1292[3 -2 ];end v1285=7 -3 ;end if (v1285==(9 -5)) then if v1290 then return v1290;end return nil;end if (v1285==(0 -0)) then v1286=tostring(v1284 or "" ):gsub("^%s+",""):gsub("%s+$","");v1287=string.lower(v1286);v1288=normalizeForLookup(v1286);v1285=1;end end end function resolveUserToId(v1293) if (v1293==nil) then return nil;end if (type(v1293)=="number") then return math.floor(v1293);end if (type(v1293)~="string") then return nil;end local v1294=v1293:gsub("^%s+",""):gsub("%s+$","");if (v1294=="") then return nil;end local v1295=tonumber(v1294);if v1295 then return math.floor(v1295);end local v1296=v1294:gsub("^@","");if (v1296=="") then return nil;end local v1297=normalizeForLookup(v1296);if (v1297=="") then return nil;end local v1298=cacheGetTimed(v782,v783,v1297,v776);if v1298 then return v1298;end local v1299=findUserIdInServerByNameOrDisplay(v1296);if v1299 then return cacheSetTimed(v782,v783,v1297,v1299,v784.resolvedUserId);end local v1300,v1301=pcall(function() return v765:GetUserIdFromNameAsync(v1296);end);if (v1300 and v1301) then return cacheSetTimed(v782,v783,v1297,v1301,v784.resolvedUserId);end return nil;end if (v785 and v786) then v786.__ResolveUserToIdShared=resolveUserToId;end local function v821() return resolveUserToId(v764.target);end local v822={active=false,serial=0 + 0 ,identity=nil,originals=setmetatable({},{__mode="k"}),identityCache={},connections={},boundObjects=setmetatable({},{__mode="k"}),boundRoots=setmetatable({},{__mode="k"})};local v823="__CiderInspectTargetState";local v824=(v785 and v786 and v786[v823]) or nil ;if (type(v824)~="table") then v824={active=false,targetUserId=nil,targetName=nil,targetDescription=nil,hookInstalled=false,hookVersion=763 -(86 + 677) };if (v785 and v786) then v786[v823]=v824;end end v824.refreshing=false;v824.lastRefresh=tonumber(v824.lastRefresh) or (0 + 0) ;local v827=nil;local v828=nil;local function v829() local v1302=v824.targetDescription;v824.targetDescription=nil;v824.preferDescription=false;if v1302 then pcall(function() v1302:Destroy();end);end end local function v830() local v1305=0 + 0 ;while true do if (v1305==(1028 -(263 + 763))) then v824.lastRefresh=0 + 0 ;v829();break;end if (v1305==(859 -(649 + 209))) then v824.targetName=nil;v824.refreshing=false;v1305=8 -6 ;end if (v1305==(731 -(643 + 88))) then v824.active=false;v824.targetUserId=nil;v1305=1770 -(54 + 1715) ;end end end local function v831(v1306,v1307,v1308) local v1309=0 -0 ;local v1310;local v1311;while true do if (v1309==(2 -1)) then v1311=v824.targetUserId~=v1310 ;if v1311 then pcall(function() v9:CloseInspectMenu();end);v829();v824.refreshing=false;v824.lastRefresh=0 -0 ;end v1309=2 + 0 ;end if (v1309==(1 + 2)) then if (v1307~=nil) then v824.targetName=tostring(v1307);end if v1308 then v802(v1308);v829();v824.targetDescription=v1308;v824.preferDescription=true;end break;end if (v1309==(0 -0)) then v1310=tonumber(v1306);if  not v1310 then return;end v1309=1;end if (v1309==(1385 -(132 + 1251))) then v824.active=true;v824.targetUserId=v1310;v1309=3;end end end local function v832(v1312) local v1313=tonumber(v1312);if v1313 then return v1313;end local v1314,v1315=pcall(function() return v1312.Id or v1312.UserId ;end);if v1314 then return tonumber(v1315);end return nil;end local v833=2 + 0 ;if (v824.hookVersion~=v833) then local v2068=0 -0 ;local v2069;local v2070;while true do if ((1 + 0)==v2068) then if ((type(v2069)=="function") and (type(v2070)=="function")) then local v3657=nil;local v3658=function(v3883,...) local v3884=v2070();local v3885=(v785 and v786 and v786[v823]) or v824 ;if (v3885 and v3885.active and (v3883==v9)) then local v4157=458 -(185 + 273) ;local v4158;while true do if (v4157==(1 + 0)) then return v3657(v3883,table.unpack(v4158));end if (v4157==(0 -0)) then v4158={...};if (v3884=="InspectPlayerFromUserId") then if ((v832(v4158[1])==v768.UserId) and v3885.targetUserId) then if (v3885.preferDescription and v3885.targetDescription) then local v4706=v3885.targetDescription;local v4707=v3885.targetName or tostring(v3885.targetUserId) ;task.defer(function() pcall(function() v9:CloseInspectMenu();end);pcall(function() v9:InspectPlayerFromHumanoidDescription(v4706,v4707);end);end);return nil;end v4158[1 + 0 ]=v3885.targetUserId;end elseif (v3884=="InspectPlayerFromHumanoidDescription") then local v4669=0;local v4670;while true do if (v4669==(1224 -(361 + 863))) then v4670=tostring(v4158[2] or "" );if (((v4670==v768.Name) or (v4670==v768.DisplayName)) and v3885.targetDescription) then v4158[2 -1 ]=v3885.targetDescription;v4158[1329 -(443 + 884) ]=v3885.targetName or v4670 ;end break;end end end v4157=1;end end end return v3657(v3883,...);end;local v3659=((type(newcclosure)=="function") and newcclosure(v3658)) or v3658 ;local v3660,v3661=pcall(function() return v2069(game,"__namecall",v3659);end);if (v3660 and (type(v3661)=="function")) then v3657=v3661;v824.hookInstalled=true;v824.hookVersion=v833;end end break;end if (v2068==0) then v2069=hookmetamethod or (v785 and v786 and v786.hookmetamethod) ;v2070=getnamecallmethod or (v785 and v786 and v786.getnamecallmethod) ;v2068=1;end end end local function v834(v1316) local v1317=0 -0 ;local v1318;local v1319;while true do if (v1317==(1 + 0)) then v1319={v768.Name,v768.DisplayName};for v3055,v3056 in ipairs(v1319) do local v3057=0 + 0 ;local v3058;while true do if ((0 -0)==v3057) then v3058=string.lower(tostring(v3056 or "" ));if (v3058~="") then if ((v1318==(v3058   .. "'s avatar")) or (v1318==(v3058   .. "’s avatar"))) then return true;end end break;end end end v1317=749 -(16 + 731) ;end if (v1317==(0 + 0)) then if (type(v1316)~="string") then return false;end v1318=string.lower(v1316);v1317=1;end if (v1317==(2 + 0)) then return false;end end end local function v835() if ( not v824.active or  not v824.targetUserId) then return;end local v1320=os.clock();if (v824.refreshing or ((v1320-v824.lastRefresh)<1.5)) then return;end v824.refreshing=true;v824.lastRefresh=v1320;task.defer(function() if ( not v824.active or  not v824.targetUserId) then v824.refreshing=false;return;end pcall(function() v9:CloseInspectMenu();end);task.wait();local v2071=false;if v824.targetDescription then v2071=pcall(function() v9:InspectPlayerFromHumanoidDescription(v824.targetDescription,v824.targetName or tostring(v824.targetUserId) );end);end if  not v2071 then pcall(function() v9:InspectPlayerFromUserId(v824.targetUserId);end);end task.delay(1.25,function() v824.refreshing=false;end);end);end local function v836(v1323) local v1324=0 + 0 ;while true do if (v1324==(761 -(527 + 233))) then task.spawn(function() local v3059=v1323 and v1323:FindFirstChildOfClass("Humanoid") ;if ( not v3059 and v1323) then v3059=v1323:WaitForChild("Humanoid",7 + 3 );end if ( not v3059 or  not v1323.Parent or v789.active) then return;end local v3060=nil;pcall(function() v3060=v3059:GetAppliedDescription();end);if  not v3060 then v3060=getTargetDescriptionCached(v768.UserId);end if ( not v3060 or v789.active) then return;end v802(v3060);v831(v768.UserId,v768.DisplayName,v3060);if v827 then v827(v3060,v768.UserId);end end);break;end if (v1324==(0 -0)) then if v789.active then return;end if ( not v801("Headless") and  not v801("Korblox") and  not v801("Frigid Horns")) then v830();if v827 then v827(nil);end return;end v1324=1 + 0 ;end end end local function v837(v1325,v1326,v1327) if ((type(v1325)~="string") or (type(v1326)~="string") or (v1326=="")) then return v1325;end local v1328=v1326:gsub("([^%w])","%%%1");return v1325:gsub(v1328,function() return tostring(v1327 or "" );end);end local function v838(v1329) return (type(v1329)=="string") and (v1329~="") and (string.match(v1329,"[%w_]")~=nil) ;end local function v839(v1330,v1331,v1332) local v1333=1785 -(1107 + 678) ;local v1334;local v1335;local v1336;local v1337;local v1338;while true do if (v1333==3) then while v1335<= #v1330  do local v3061,v3062=string.find(v1330,v1331,v1335,true);if  not v3061 then v1334[ #v1334 + 1 + 0 ]=string.sub(v1330,v1335);break;end local v3063=((v3061>(1 + 0)) and string.sub(v1330,v3061-(51 -(4 + 46)) ,v3061-(3 -2) )) or "" ;local v3064=((v3062< #v1330) and string.sub(v1330,v3062 + (1 -0) ,v3062 + 1 )) or "" ;local v3065= not v1337 or  not v838(v3063) ;local v3066= not v1338 or  not v838(v3064) ;if (v3065 and v3066) then v1334[ #v1334 + 1 + 0 ]=string.sub(v1330,v1335,v3061-(1 -0) );v1334[ #v1334 + (1 -0) ]=tostring(v1332 or "" );v1335=v3062 + 1 ;v1336=true;else v1334[ #v1334 + (1397 -(1262 + 134)) ]=string.sub(v1330,v1335,v3061);v1335=v3061 + 1 ;end end return table.concat(v1334),v1336;end if (v1333==(4 -2)) then v1337=v838(string.sub(v1331,1 + 0 ,1 + 0 ));v1338=v838(string.sub(v1331, -(796 -(383 + 412))));v1333=3;end if ((1 + 0)==v1333) then v1335=1;v1336=false;v1333=1 + 1 ;end if (v1333==(0 + 0)) then if ((type(v1330)~="string") or (type(v1331)~="string") or (v1331=="")) then return v1330,false;end v1334={};v1333=1 + 0 ;end end end local function v840(v1339,v1340,v1341,v1342) if ((type(v1341)~="string") or (v1341=="") or v1340[v1341]) then return;end v1340[v1341]=true;v1339[ #v1339 + 1 + 0 ]={from=v1341,to=tostring(v1342 or "" )};end local function v841(v1345) local v1346={};local v1347={};local function v1348(v2072,v2073) v840(v1346,v1347,v2072,v2073);v840(v1346,v1347,string.lower(v2072),string.lower(v2073));v840(v1346,v1347,string.upper(v2072),string.upper(v2073));end v1348("@"   .. v768.Name ,"@"   .. v1345.username );v1348(v768.DisplayName,v1345.displayName);v1348(v768.Name,v1345.username);table.sort(v1346,function(v2074,v2075) return  #v2074.from> #v2075.from ;end);return v1346;end local function v842(v1349,v1350,v1351) local v1352=0 -0 ;local v1353;local v1354;while true do if (1==v1352) then return nil;end if (v1352==(0 + 0)) then v1353,v1354=pcall(function() return v765:GetUserThumbnailAsync(v1349,v1350,v1351);end);if (v1353 and (type(v1354)=="string") and (v1354~="")) then return v1354;end v1352=2 -1 ;end end end local v843={{Enum.ThumbnailType.HeadShot,"Size48x48","headshot"},{Enum.ThumbnailType.HeadShot,"Size60x60","headshot"},{Enum.ThumbnailType.HeadShot,"Size100x100","headshot"},{Enum.ThumbnailType.HeadShot,"Size150x150","headshot"},{Enum.ThumbnailType.HeadShot,"Size420x420","headshot"},{Enum.ThumbnailType.AvatarBust,"Size150x150","bust"},{Enum.ThumbnailType.AvatarBust,"Size352x352","bust"},{Enum.ThumbnailType.AvatarBust,"Size420x420","bust"},{Enum.ThumbnailType.AvatarThumbnail,"Size150x150","full"},{Enum.ThumbnailType.AvatarThumbnail,"Size352x352","full"},{Enum.ThumbnailType.AvatarThumbnail,"Size420x420","full"},{Enum.ThumbnailType.AvatarThumbnail,"Size720x720","full"}};local function v844(v1355) local v1356={};for v2076,v2077 in ipairs(v843) do local v2078,v2079=pcall(function() return Enum.ThumbnailSize[v2077[5 -3 ]];end);if (v2078 and v2079) then local v2776=v842(v768.UserId,v2077[1 -0 ],v2079);local v2777=v842(v1355,v2077[700 -(514 + 185) ],v2079);if (v2776 and v2777) then v1356[v2776]=v2777;end end end return v1356;end do local v1357={serial=0 + 0 ,active=false,userId=nil,description=nil,modelTemplate=nil,contentKinds={},overlays=setmetatable({},{__mode="k"}),boundImages=setmetatable({},{__mode="k"}),boundRoots=setmetatable({},{__mode="k"}),connections={}};local function v1358() for v2483= #v1357.connections,1 -0 , -(3 -2) do local v2484=v1357.connections[v2483];v1357.connections[v2483]=nil;if (v2484 and v2484.Connected) then pcall(function() v2484:Disconnect();end);end end v1357.boundImages=setmetatable({},{__mode="k"});v1357.boundRoots=setmetatable({},{__mode="k"});end local function v1359(v2082) local v2083=v1357.overlays[v2082];if  not v2083 then return;end v1357.overlays[v2082]=nil;if (v2082 and v2082.Parent) then pcall(function() if (v2082.ImageTransparency==(1505 -(771 + 733))) then v2082.ImageTransparency=v2083.imageTransparency;end end);end if v2083.viewport then pcall(function() v2083.viewport:Destroy();end);end end function v828() local v2085=0;while true do if (v2085==4) then if v1357.description then local v3668=0;while true do if (v3668==0) then pcall(function() v1357.description:Destroy();end);v1357.description=nil;break;end end end break;end if (0==v2085) then v1357.active=false;v1357.serial=v1357.serial + 1 ;v2085=1 -0 ;end if (v2085==(1 -0)) then v1358();for v3467 in pairs(v1357.overlays) do v1359(v3467);end v2085=2;end if (v2085==3) then v1357.userId=nil;if v1357.modelTemplate then pcall(function() v1357.modelTemplate:Destroy();end);v1357.modelTemplate=nil;end v2085=1171 -(407 + 760) ;end if ((2 + 0)==v2085) then v1357.overlays=setmetatable({},{__mode="k"});v1357.contentKinds={};v2085=1 + 2 ;end end end local function v1360(v2086) if ( not v1357.active or  not v2086) then return nil;end local v2087,v2088=pcall(function() return v2086.Image;end);if ( not v2087 or (type(v2088)~="string") or (v2088=="")) then return nil;end local v2089=v1357.contentKinds[v2088];if  not v2089 then local v2778=0 + 0 ;local v2779;local v2780;local v2781;while true do if (v2778==1) then v2781=tostring(v1357.userId or "" );if ( not string.find(v2088,v2780,1855 -(169 + 1685) ,true) and ((v2781=="") or  not string.find(v2088,v2781,1 + 0 ,true))) then return nil;end v2778=2;end if (v2778==0) then v2779=string.lower(v2088);v2780=tostring(v768.UserId);v2778=392 -(41 + 350) ;end if (v2778==(5 -3)) then if string.find(v2779,"headshot",2 -1 ,true) then v2089="headshot";elseif string.find(v2779,"bust",1,true) then v2089="bust";elseif (string.find(v2779,"avatar",4 -3 ,true) or string.find(v2779,"thumbnail",1,true)) then v2089="full";end break;end end end if  not v2089 then return nil;end if (v2089=="full") then local v2782=v2086;for v3072=1,8 do if  not v2782 then break;end local v3073=string.lower(v2782.Name or "" );if (string.find(v3073,"playerlist",2 -1 ,true) or string.find(v3073,"player_list",1,true) or string.find(v3073,"player list",1 + 0 ,true) or string.find(v3073,"playercard",888 -(790 + 97) ,true) or string.find(v3073,"playerprofile",1,true)) then return nil;end local v3074=v2782:GetDescendants();for v3468=4 -3 ,MathMin( #v3074,30 + 70 ) do local v3469=0 + 0 ;local v3470;while true do if (0==v3469) then v3470=v3074[v3468];if (v3470:IsA("TextLabel") or v3470:IsA("TextButton")) then local v4288,v4289=pcall(function() return string.lower(v3470.Text or "" );end);if (v4288 and string.find(v4289,"in this server",246 -(235 + 10) ,true)) then return nil;end end break;end end end v2782=v2782.Parent;end end return v2089;end local function v1361(v2090) local v2091=nil;local v2092=pcall(function() v2091=v765:CreateHumanoidModelFromDescription(v2090,Enum.HumanoidRigType.R15);end);if ( not v2092 or  not v2091) then return nil;end for v2486,v2487 in ipairs(v2091:GetDescendants()) do if v2487:IsA("BasePart") then local v3076=0 + 0 ;while true do if (v3076==1) then v2487.CanTouch=false;v2487.CanQuery=false;break;end if (v3076==(0 -0)) then v2487.Anchored=true;v2487.CanCollide=false;v3076=1184 -(887 + 296) ;end end elseif (v2487:IsA("Script") or v2487:IsA("LocalScript")) then v2487:Destroy();end end local v2093=v2091:FindFirstChildOfClass("Humanoid");if v2093 then v2093.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None;end return v2091;end local function v1362(v2094,v2095) local v2096=nil;local v2097=nil;for v2488,v2489 in ipairs(v2094:GetChildren()) do if v2489:IsA("BasePart") then local v3077=1045 -(512 + 533) ;local v3078;local v3079;local v3080;while true do if (0==v3077) then v3078=v2489.Size/2 ;v3079=v2489.Position-v3078 ;v3077=1425 -(662 + 762) ;end if (v3077==(679 -(334 + 343))) then v2097=(v2097 and Vector3New(MathMax(v2097.X,v3080.X),MathMax(v2097.Y,v3080.Y),MathMax(v2097.Z,v3080.Z))) or v3080 ;break;end if (v3077==(3 -2)) then v3080=v2489.Position + v3078 ;v2096=(v2096 and Vector3New(MathMin(v2096.X,v3079.X),MathMin(v2096.Y,v3079.Y),MathMin(v2096.Z,v3079.Z))) or v3079 ;v3077=491 -(198 + 291) ;end end end end if ( not v2096 or  not v2097) then return nil,nil;end local v2098=v2097-v2096 ;local v2099=(v2096 + v2097)/2 ;local v2100=MathMax(v2098.Y,v2098.X * 1.35 ,1 + 3 );local v2101=(v2100/(2 * math.tan(MathRad(v2095)/(576 -(141 + 433)) ))) * (4.08 -3) ;return v2099,v2101;end local function v1363(v2102,v2103,v2104) local v2105=0;local v2106;local v2107;local v2108;local v2109;local v2110;while true do if (3==v2105) then v2109=v2103:FindFirstChild("HumanoidRootPart");v2110=(v2109 and v2109.CFrame.LookVector) or Vector3New(0 + 0 ,777 -(227 + 550) , -(2 -1)) ;v2106.CFrame=CFrameNew(v2107 + (v2110 * v2108) ,v2107);break;end if (v2105==2) then if ((v2104=="headshot") or (v2104=="bust")) then local v3670=0;local v3671;local v3672;while true do if (v3670==0) then v3671=v2103:FindFirstChild("Head");v3672=v2103:FindFirstChild("UpperTorso") or v2103:FindFirstChild("Torso") ;v3670=2 -1 ;end if (v3670==(104 -(72 + 31))) then if v3671 then local v4378=0;while true do if (v4378==0) then v2107=v3671.Position + Vector3New(348 -(89 + 259) ,((v2104=="bust") and  -(0.35 + 0)) or  -0.05 ,0 + 0 ) ;v2108=((v2104=="bust") and (2.2 + 4)) or (7.3 -3) ;break;end end elseif v3672 then local v4535=0;while true do if (v4535==(0 + 0)) then v2107=v3672.Position + Vector3New(0,0.7,0 -0 ) ;v2108=1408 -(1333 + 70) ;break;end end end break;end end end if  not v2107 then v2107,v2108=v1362(v2103,v2106.FieldOfView);end if  not v2107 then local v3673=1832 -(701 + 1131) ;local v3674;while true do if (v3673==(128 -(55 + 72))) then v2108=168 -(99 + 57) ;break;end if (v3673==(0 -0)) then v3674=v2103:FindFirstChild("HumanoidRootPart");v2107=(v3674 and (v3674.Position + Vector3New(0 + 0 ,0.25,1579 -(1243 + 336) ))) or Vector3Zero ;v3673=1330 -(774 + 555) ;end end end v2105=3;end if (v2105==(0 + 0)) then v2106=Instance.new("Camera");v2106.FieldOfView=((v2104=="full") and (827 -(150 + 649))) or (16 + 8) ;v2106.Parent=v2102;v2105=1;end if (v2105==(1 -0)) then v2102.CurrentCamera=v2106;v2107=nil;v2108=nil;v2105=2;end end end local function v1364(v2111) local v2112=0;local v2113;local v2114;local v2115;local v2116;local v2117;local v2118;local v2119;while true do if (7==v2112) then v1357.overlays[v2111]={viewport=v2116,imageTransparency=v2119,kind=v2113};v2116.Parent=v2111;v2111.ImageTransparency=1 -0 ;break;end if (0==v2112) then if ( not v1357.active or  not v1357.description or  not v2111.Parent) then return;end v2113=v1360(v2111);if  not v2113 then local v3675=1984 -(1122 + 862) ;while true do if (v3675==0) then v1359(v2111);return;end end end v2114=v1357.overlays[v2111];v2112=1 -0 ;end if (v2112==5) then v2116.LightDirection=Vector3New( -(1 + 0), -1, -1);v2117=Instance.new("WorldModel");v2117.Parent=v2116;v2115.Parent=v2117;v2112=11 -5 ;end if (v2112==(1 + 0)) then if (v2114 and (v2114.kind==v2113) and v2114.viewport and v2114.viewport.Parent) then return;end v1359(v2111);v2115=nil;if v1357.modelTemplate then pcall(function() v2115=v1357.modelTemplate:Clone();end);end v2112=1 + 1 ;end if (v2112==(749 -(549 + 194))) then v1363(v2116,v2115,v2113);v2118=v2111:FindFirstChildOfClass("UICorner");if v2118 then v2118:Clone().Parent=v2116;end v2119=v2111.ImageTransparency;v2112=7;end if (v2112==(3 + 1)) then v2116.ZIndex=v2111.ZIndex + (3 -2) ;v2116.Active=false;v2116.Ambient=Color3RGB(190,10 + 180 ,190);v2116.LightColor=Color3RGB(255,255,397 -142 );v2112=5 + 0 ;end if (v2112==(7 -5)) then if  not v2115 then return;end v2116=Instance.new("ViewportFrame");v2116.Name="CiderAvatarVisual";v2116.BackgroundTransparency=1704 -(453 + 1250) ;v2112=8 -5 ;end if (v2112==(3 + 0)) then v2116.BorderSizePixel=575 -(203 + 372) ;v2116.Size=UDim2.fromScale(1 + 0 ,1);v2116.Position=UDim2.fromScale(0 -0 ,0);v2116.AnchorPoint=Vector2New(0,0);v2112=4;end end end local function v1365(v2120) local v2121=1382 -(978 + 404) ;local v2122;while true do if (v2121==0) then if ( not v2120 or v1357.boundImages[v2120]) then return;end if ( not v2120:IsA("ImageLabel") and  not v2120:IsA("ImageButton")) then return;end v2121=3 -2 ;end if ((1 + 0)==v2121) then v1357.boundImages[v2120]=true;v2122=v2120:GetPropertyChangedSignal("Image"):Connect(function() if  not v1357.active then return;end task.defer(function() if v2120.Parent then v1364(v2120);end end);end);v2121=2;end if (v2121==(320 -(56 + 262))) then v1357.connections[ #v1357.connections + 1 ]=v2122;v1364(v2120);break;end end end local function v1366(v2123) if ( not v2123 or v1357.boundRoots[v2123]) then return;end v1357.boundRoots[v2123]=true;local v2125=v2123.DescendantAdded:Connect(function(v2490) local v2491=0;while true do if (v2491==0) then if  not v1357.active then return;end v1365(v2490);break;end end end);v1357.connections[ #v1357.connections + 1 + 0 ]=v2125;end local function v1367() if  not v1357.active then return;end local v2127={v8,v768:FindFirstChildOfClass("PlayerGui")};for v2492,v2493 in ipairs(v2127) do if v2493 then v1366(v2493);for v3471,v3472 in ipairs(v2493:GetDescendants()) do v1365(v3472);end end end end function v827(v2128,v2129) v828();if  not v2128 then return;end if ( not v801("Headless") and  not v801("Korblox") and  not v801("Frigid Horns")) then return;end local v2130=nil;pcall(function() v2130=v2128:Clone();end);if  not v2130 then return;end v802(v2130);local v2131=v1361(v2130);if  not v2131 then local v2785=0;while true do if (v2785==(0 + 0)) then v2130:Destroy();return;end end end v1357.description=v2130;v1357.modelTemplate=v2131;v1357.userId=tonumber(v2129) or v768.UserId ;v1357.active=true;v1357.serial=v1357.serial + (1953 -(653 + 1299)) ;local v2137=v1357.serial;v1367();task.spawn(function() local v2494={v768.UserId};if (v1357.userId~=v768.UserId) then v2494[ #v2494 + 1 ]=v1357.userId;end local v2495={};for v2786,v2787 in ipairs(v2494) do for v3107,v3108 in ipairs(v843) do if ( not v1357.active or (v2137~=v1357.serial)) then return;end local v3109,v3110=pcall(function() return Enum.ThumbnailSize[v3108[1 + 1 ]];end);if (v3109 and v3110) then local v3677=0;local v3678;while true do if (v3677==(0 -0)) then v3678=v842(v2787,v3108[1],v3110);if v3678 then v2495[v3678]=v3108[1925 -(1042 + 880) ];end break;end end end end end if ( not v1357.active or (v2137~=v1357.serial)) then return;end v1357.contentKinds=v2495;v1367();end);end end local function v845(v1368) local v1369=0 + 0 ;local v1370;local v1371;local v1372;local v1373;local v1374;while true do if (v1369==(1003 -(16 + 986))) then pcall(function() v1371=v765:GetPlayerByUserId(v1368);end);v1372=(v1371 and v1371.Name) or nil ;v1373=(v1371 and v1371.DisplayName) or nil ;v1369=2;end if (2==v1369) then if ( not v1372 or  not v1373) then local v3473,v3474=pcall(function() return game:GetService("UserService");end);if (v3473 and v3474) then local v3890=0;local v3891;local v3892;local v3893;while true do if (v3890==1) then if v3893 then v1372=v1372 or v3893.Username or v3893.Name ;v1373=v1373 or v3893.DisplayName ;end break;end if (0==v3890) then v3891,v3892=pcall(function() return v3474:GetUserInfosByUserIdsAsync({v1368});end);v3893=(v3891 and (type(v3892)=="table") and v3892[3 -2 ]) or nil ;v3890=1 -0 ;end end end end if  not v1372 then local v3475=0;local v3476;local v3477;while true do if (v3475==(1511 -(617 + 894))) then v3476,v3477=pcall(function() return v765:GetNameFromUserIdAsync(v1368);end);if v3476 then v1372=v3477;end break;end end end v1372=tostring(v1372 or v1368 );v1369=3;end if (3==v1369) then v1373=tostring(v1373 or v1372 );v1374={userId=v1368,username=v1372,displayName=v1373,thumbnailMap={}};v1374.replacements=v841(v1374);v1369=4;end if (v1369==0) then v1370=v822.identityCache[v1368];if (v1370 and ((os.clock() -v1370.timestamp)<=(119 -59))) then return v1370.identity;end v1371=nil;v1369=459 -(271 + 187) ;end if ((1588 -(731 + 853))==v1369) then v822.identityCache[v1368]={identity=v1374,timestamp=os.clock()};task.spawn(function() local v3111=v844(v1368);local v3112=v822.identityCache[v1368];if (v3112 and (v3112.identity==v1374)) then v1374.thumbnailMap=v3111;end end);return v1374;end end end local function v846(v1375,v1376,v1377,v1378) local v1379=0 -0 ;local v1380;local v1381;while true do if (v1379==(1522 -(199 + 1322))) then v1381=v1380[v1376];if  not v1381 then local v3478=0 -0 ;while true do if (0==v3478) then v1381={original=v1377,spoofed=v1378};v1380[v1376]=v1381;break;end end else v1381.spoofed=v1378;end break;end if (v1379==0) then v1380=v822.originals[v1375];if  not v1380 then v1380={};v822.originals[v1375]=v1380;end v1379=1;end end end local function v847() for v2138= #v822.connections,1 + 0 , -(1661 -(1291 + 369)) do local v2139=v822.connections[v2138];v822.connections[v2138]=nil;if (v2139 and v2139.Connected) then pcall(function() v2139:Disconnect();end);end end v822.boundObjects=setmetatable({},{__mode="k"});v822.boundRoots=setmetatable({},{__mode="k"});end local function v848() v822.active=false;v822.serial=v822.serial + 1 + 0 ;v847();for v2141,v2142 in pairs(v822.originals) do if v2141 then for v3113,v3114 in pairs(v2142) do pcall(function() if (v2141[v3113]==v3114.spoofed) then v2141[v3113]=v3114.original;end end);end end end v822.originals=setmetatable({},{__mode="k"});v822.identity=nil;v789.guiIdentity=nil;end local function v849(v1389,v1390) if ((type(v1389)~="string") or (v1389=="")) then return v1389;end local v1391=v1389;local v1392={};for v2143,v2144 in ipairs(v1390.replacements) do local v2145=0 + 0 ;local v2146;local v2147;local v2148;while true do if (v2145==0) then v2146="\1CIDER_ID_"   .. tostring(v2143)   .. "\2" ;v2147,v2148=v839(v1391,v2144.from,v2146);v2145=1 + 0 ;end if ((1 + 0)==v2145) then if v2148 then local v3680=685 -(561 + 124) ;while true do if (v3680==0) then v1391=v2147;v1392[ #v1392 + 1 ]={token=v2146,value=v2144.to};break;end end end break;end end end for v2149,v2150 in ipairs(v1392) do v1391=v837(v1391,v2150.token,v2150.value);end return v1391;end local function v850(v1393,v1394) if ((type(v1393)~="string") or (v1393=="")) then return v1393;end local v1395=v1394.thumbnailMap[v1393];if v1395 then return v1395;end local v1396=string.lower(v1393);local v1397=tostring(v768.UserId);if  not string.find(v1393,v1397,1,true) then return v1393;end if  not (string.find(v1396,"rbxthumb",1 + 0 ,true) or string.find(v1396,"thumbnail",1,true) or string.find(v1396,"headshot",1,true) or string.find(v1396,"avatar",1,true) or string.find(v1396,"userid",1,true) or string.find(v1396,"userids",1,true)) then return v1393;end return v837(v1393,v1397,tostring(v1394.userId));end local function v851(v1398,v1399) if  not v1398 then return;end if (v1398:IsA("TextLabel") or v1398:IsA("TextButton") or v1398:IsA("TextBox")) then local v2497=853 -(25 + 828) ;local v2498;local v2499;while true do if (v2497==(0 -0)) then v2498,v2499=pcall(function() return v1398.Text;end);if v2498 then if v834(v2499) then v835();end local v3896=v849(v2499,v1399);if (v3896~=v2499) then local v4161=0;local v4162;while true do if ((0 -0)==v4161) then v4162=pcall(function() v1398.Text=v3896;end);if v4162 then v846(v1398,"Text",v2499,v3896);end break;end end end end break;end end elseif (v1398:IsA("ImageLabel") or v1398:IsA("ImageButton")) then local v3115=590 -(99 + 491) ;local v3116;local v3117;while true do if ((48 -(18 + 30))==v3115) then v3116,v3117=pcall(function() return v1398.Image;end);if v3116 then local v4163=0 -0 ;local v4164;while true do if (v4163==(0 -0)) then v4164=v850(v3117,v1399);if (v4164~=v3117) then local v4596=pcall(function() v1398.Image=v4164;end);if v4596 then v846(v1398,"Image",v3117,v4164);end end break;end end end break;end end end end local function v852(v1400,v1401) local v1402=0 -0 ;local v1403;local v1404;local v1405;while true do if (v1402==(0 + 0)) then if ( not v1400 or v822.boundObjects[v1400]) then return;end v1403=nil;v1402=3 -2 ;end if ((733 -(501 + 231))==v1402) then if (v1400:IsA("TextLabel") or v1400:IsA("TextButton") or v1400:IsA("TextBox")) then v1403="Text";elseif (v1400:IsA("ImageLabel") or v1400:IsA("ImageButton")) then v1403="Image";end if  not v1403 then return;end v1402=2;end if ((2 + 0)==v1402) then v1404,v1405=pcall(function() return v1400:GetPropertyChangedSignal(v1403):Connect(function() local v3481=1698 -(470 + 1228) ;while true do if (v3481==0) then if ( not v822.active or (v822.identity~=v1401)) then return;end v851(v1400,v1401);break;end end end);end);if (v1404 and v1405) then v822.boundObjects[v1400]=true;v822.connections[ #v822.connections + 1 + 0 ]=v1405;end break;end end end local function v853(v1406,v1407) if ( not v1406 or v822.boundRoots[v1406]) then return;end local v1408,v1409=pcall(function() return v1406.DescendantAdded:Connect(function(v2500) local v2501=0 + 0 ;while true do if (v2501==(687 -(537 + 149))) then v851(v2500,v1407);break;end if (v2501==(0 -0)) then if ( not v822.active or (v822.identity~=v1407)) then return;end v852(v2500,v1407);v2501=1 + 0 ;end end end);end);if (v1408 and v1409) then v822.boundRoots[v1406]=true;v822.connections[ #v822.connections + 1 ]=v1409;end end local function v854(v1410) local v1411=0;local v1412;while true do if (v1411==(0 -0)) then v1412={v8,v768:FindFirstChildOfClass("PlayerGui")};for v3118,v3119 in ipairs(v1412) do if v3119 then v853(v3119,v1410);v851(v3119,v1410);local v3681,v3682=pcall(function() return v3119:GetDescendants();end);if v3681 then for v4165,v4166 in ipairs(v3682) do v852(v4166,v1410);v851(v4166,v1410);end end end end break;end end end local function v855(v1413,v1414) v848();v828();v831(v1413);v822.active=true;v822.serial=v822.serial + 1 ;local v1417=v822.serial;task.spawn(function() local v2151=0;local v2152;while true do if (v2151==(0 + 0)) then v2152=v845(v1413);if ( not v822.active or (v1417~=v822.serial)) then return;end v2151=1;end if (v2151==(1 + 0)) then if ( not v789.active or (v1414~=v774)) then return;end v822.identity=v2152;v2151=2;end if (v2151==(2 + 1)) then task.spawn(function() local v3484=0 + 0 ;local v3485;while true do if (v3484==(0 + 0)) then v3485=getTargetDescriptionCached(v1413);if ( not v822.active or (v1417~=v822.serial)) then if v3485 then pcall(function() v3485:Destroy();end);end return;end v3484=1 + 0 ;end if (v3484==1) then if v3485 then v831(v1413,v2152.displayName,v3485);v827(v3485,v1413);end break;end end end);while v822.active and (v1417==v822.serial) and v789.active and (v1414==v774)  do local v3486=0;while true do if (v3486==0) then v854(v2152);task.wait(2);break;end end end break;end if (v2151==(2 + 0)) then v789.guiIdentity=v2152;v831(v1413,v2152.displayName);v2151=4 -1 ;end end end);end local function v856(v1418) local v1419=0 + 0 ;while true do if (v1419==(579 -(134 + 445))) then if  not v1418 then return;end if v1418.bodyColors then local v3487=0;while true do if (v3487==(0 -0)) then pcall(function() v1418.bodyColors:Destroy();end);v1418.bodyColors=nil;break;end end end break;end end end local function v857() local v1420=0 + 0 ;local v1421;while true do if (v1420==3) then if v773 then v773:Disconnect();v773=nil;end clearAvatarCaches();if (typeof(animCleanup)=="function") then animCleanup();end if (v785 and v786) then local v3488=0 + 0 ;while true do if (v3488==(0 -0)) then if (v786.__CopyOutfitColorSnapshot and (v786.__CopyOutfitColorSnapshot~=v1421)) then v856(v786.__CopyOutfitColorSnapshot);end v786.__CopyOutfitColorSnapshot=nil;v3488=261 -(36 + 224) ;end if (v3488==1) then if (v786[v787]==v789) then v786[v787]=nil;end break;end end end break;end if (v1420==(1862 -(1033 + 827))) then v848();v830();v828();if v772 then local v3489=1846 -(1002 + 844) ;while true do if (v3489==(1350 -(1126 + 224))) then v772:Disconnect();v772=nil;break;end end end v1420=3;end if (v1420==0) then v1421=v789.colorSnapshot;v789.active=false;v774=v774 + 1 + 0 ;v789.currentUserId=nil;v1420=1 + 0 ;end if (1==v1420) then v856(v1421);v789.colorSnapshot=nil;v769=nil;v812();v1420=6 -4 ;end end end v789.teardown=v857;local function v859(v1422) local v1423=64 -(48 + 16) ;local v1424;local v1425;while true do if (v1423==2) then for v3122,v3123 in ipairs(v1422:GetChildren()) do if v3123:IsA("BasePart") then v1424.partColors[v3123.Name]=v3123.BrickColor;end end return v1424;end if (v1423==1) then v1425=v1422:FindFirstChildOfClass("BodyColors");if v1425 then v1424.bodyColors=v1425:Clone();end v1423=2 + 0 ;end if (v1423==0) then if  not v1422 then return nil;end v1424={bodyColors=nil,partColors={}};v1423=4 -3 ;end end end local function v860(v1426) v856(v789.colorSnapshot);local v1427=v859(v1426);v789.colorSnapshot=v1427;if (v785 and v786) then v786.__CopyOutfitColorSnapshot=v1427;end end local function v861(v1429) return v789.active and (v1429==v774) ;end local function v862(v1430,v1431) local v1432=v1430:FindFirstChild("Head");if  not v1432 then return;end if v801("Headless") then local v2505=0 -0 ;while true do if (v2505==(1 + 0)) then return;end if ((1089 -(910 + 179))==v2505) then v1432.Transparency=1 -0 ;v803(v1432);v2505=1;end end end for v2153,v2154 in ipairs(v1432:GetChildren()) do if (v2154:IsA("Decal") and ((v2154.Name=="face") or (v2154.Face==Enum.NormalId.Front))) then v2154:Destroy();end end if v1432:IsA("MeshPart") then pcall(function() v1432.TextureID="";end);end local v1433=v1432:FindFirstChildOfClass("SpecialMesh");if v1433 then pcall(function() v1433.TextureId="";end);end local v1434=v1432:FindFirstChildOfClass("SurfaceAppearance");if v1434 then pcall(function() v1434:Destroy();end);end if ( not v1431 or (v1431=="")) then v1431="rbxassetid://0";end local v1435=Instance.new("Decal");v1435.Name="face";v1435.Face=Enum.NormalId.Front;v1435.Texture=v1431;v1435.Parent=v1432;end local function v863(v1441,v1442,v1443) local v1444=cacheGetTimed(v777,v778,v1441,v775);if v1444 then return v1444;end local v1445=v1442 and v1442:FindFirstChild("Head") ;local v1446=v818(v1445);if v1446 then return v819(v1441,v1446);end if (v1443 and v1443.Face and (v1443.Face~=(0 -0))) then return v820(v1443.Face,v1441);end local v1447=getCharacterAppearanceInfoCached(v1441);if (v1447 and v1447.assets) then for v2799,v2800 in ipairs(v1447.assets) do if (v2800.assetType and (v2800.assetType.id==18) and v2800.id) then return v820(v2800.id,v1441);end end end local v1448,v1449=pcall(function() return v765:CreateHumanoidModelFromUserId(v1441);end);if (v1448 and v1449) then local v2506=1379 -(933 + 446) ;local v2507;local v2508;while true do if (1==v2506) then v1449:Destroy();if v2508 then return v819(v1441,v2508);end break;end if (v2506==(0 + 0)) then v2507=v1449:FindFirstChild("Head");v2508=v818(v2507);v2506=1;end end end return nil;end local function v864(v1450) local v1451={};for v2155,v2156 in ipairs(v1450:GetChildren()) do if v2156:IsA("BasePart") then v1451[v2156.Name]=v2156.Size;end end return v1451;end local function v865(v1452,v1453,v1454,v1455,v1456) local v1457=v1452:FindFirstChild("Handle");if ( not v1457 or  not v1457:IsA("BasePart")) then return;end local v1458=nil;for v2157,v2158 in ipairs(v1457:GetChildren()) do if v2158:IsA("Attachment") then local v2803=(v1456 and v1456[v2158.Name]) or nil ;if (type(v2803)=="string") then v1458=v2803;break;end if (v2803==false) then local v3492=1524 -(248 + 1276) ;local v3493;while true do if (v3492==0) then v3493=v1455 or v816(v1453) ;for v4167,v4168 in pairs(v3493) do if (v4168 and v4168:IsA("BasePart") and v4168:FindFirstChild(v2158.Name)) then v1458=v4167;break;end end break;end end end end if v1458 then break;end end if  not v1457:GetAttribute("_cpBaseSizeX") then local v2509=0 + 0 ;local v2510;while true do if (v2509==(1 + 0)) then v1457:SetAttribute("_cpBaseSizeZ",v1457.Size.Z);for v3685,v3686 in ipairs(v1457:GetChildren()) do if v3686:IsA("Attachment") then v3686:SetAttribute("_cpBasePosX",v3686.Position.X);v3686:SetAttribute("_cpBasePosY",v3686.Position.Y);v3686:SetAttribute("_cpBasePosZ",v3686.Position.Z);end end v2509=6 -4 ;end if ((6 -4)==v2509) then v2510=v1457:FindFirstChildOfClass("SpecialMesh");if v2510 then local v3897=0;while true do if ((1545 -(151 + 1394))==v3897) then v2510:SetAttribute("_cpBaseScaleX",v2510.Scale.X);v2510:SetAttribute("_cpBaseScaleY",v2510.Scale.Y);v3897=1;end if ((945 -(929 + 15))==v3897) then v2510:SetAttribute("_cpBaseScaleZ",v2510.Scale.Z);break;end end end break;end if (v2509==(1996 -(1173 + 823))) then v1457:SetAttribute("_cpBaseSizeX",v1457.Size.X);v1457:SetAttribute("_cpBaseSizeY",v1457.Size.Y);v2509=1 -0 ;end end end local v1459=nil;if v1458 then local v2511=1776 -(482 + 1294) ;local v2512;local v2513;while true do if ((0 -0)==v2511) then v2512=v1454[v1458];v2513=v1453:FindFirstChild(v1458);v2511=1;end if (v2511==(1 + 0)) then if (v2512 and v2513 and v2513:IsA("BasePart")) then local v3898=1306 -(1125 + 181) ;local v3899;local v3900;local v3901;while true do if (v3898==(0 -0)) then v3899=math.max(v2512.X,0.001);v3900=math.max(v2512.Y,0.001 + 0 );v3898=1;end if (v3898==1) then v3901=math.max(v2512.Z,0.001 -0 );v1459=((v2513.Size.X/v3899) + (v2513.Size.Y/v3900) + (v2513.Size.Z/v3901))/(1192 -(626 + 563)) ;break;end end end break;end end end local function v1460(v2159) local v2160=1250 -(153 + 1097) ;local v2161;local v2162;local v2163;local v2164;while true do if (v2160==1) then v2163=v1457:GetAttribute("_cpBaseSizeZ");if (v2161 and v2162 and v2163) then pcall(function() v1457.Size=Vector3.new(v2161 * v2159 ,v2162 * v2159 ,v2163 * v2159 );end);end v2160=6 -4 ;end if (v2160==(2 + 1)) then if v2164 then local v3687=0 -0 ;local v3688;local v3689;local v3690;while true do if ((1 + 0)==v3687) then v3690=v2164:GetAttribute("_cpBaseScaleZ");pcall(function() if (v3688 and v3689 and v3690) then v2164.Scale=Vector3.new(v3688 * v2159 ,v3689 * v2159 ,v3690 * v2159 );else v2164.Scale=v2164.Scale * v2159 ;end end);break;end if (v3687==0) then v3688=v2164:GetAttribute("_cpBaseScaleX");v3689=v2164:GetAttribute("_cpBaseScaleY");v3687=1 + 0 ;end end end break;end if (v2160==2) then for v3495,v3496 in ipairs(v1457:GetChildren()) do if v3496:IsA("Attachment") then local v3903=v3496:GetAttribute("_cpBasePosX");local v3904=v3496:GetAttribute("_cpBasePosY");local v3905=v3496:GetAttribute("_cpBasePosZ");if (v3903 and v3904 and v3905) then pcall(function() v3496.Position=Vector3.new(v3903 * v2159 ,v3904 * v2159 ,v3905 * v2159 );end);end end end v2164=v1457:FindFirstChildOfClass("SpecialMesh");v2160=1 + 2 ;end if (v2160==(0 + 0)) then v2161=v1457:GetAttribute("_cpBaseSizeX");v2162=v1457:GetAttribute("_cpBaseSizeY");v2160=1 + 0 ;end end end if (v1459 and (math.abs(v1459-1 )>0.01)) then v1460(v1459);else v1460(1158 -(199 + 958) );end end local function v866(v1461,v1462,v1463,v1464) for v2165,v2166 in ipairs(v1461:GetChildren()) do if v815(v2166.ClassName) then v865(v2166,v1461,v1462,v1463,v1464);end end end local function v867(v1465,v1466) local v1467=v1466:FindFirstChildOfClass("Humanoid");if ( not v1467 or  not v1465) then return false;end for v2167,v2168 in ipairs(v794) do pcall(function() v1465[v2168]=0 + 0 ;end);end local v1468=pcall(function() v1467:ApplyDescription(v1465);end);return v1468;end local function v868(v1469) local v1470=0 -0 ;local v1471;while true do if (v1470==0) then v1471=typeof(v1469);if (v1471=="Color3") then return v1469;end v1470=2 -1 ;end if (v1470==(1177 -(1169 + 7))) then if (v1471=="BrickColor") then return v1469.Color;end if (v1471=="number") then local v3497,v3498=pcall(function() return BrickColor.new(v1469);end);if (v3497 and v3498) then return v3498.Color;end end v1470=1875 -(751 + 1122) ;end if (v1470==(1 + 1)) then return nil;end end end local function v869(v1472,v1473,v1474,v1475) if  not v1473 then return;end local v1476=v1473:FindFirstChildOfClass("BodyColors");if  not v1476 then local v2515=0;while true do if (v2515==(0 + 0)) then v1476=Instance.new("BodyColors");v1476.Parent=v1473;break;end end end local v1477=(v1475 and v1475.bodyColors) or nil ;local v1478=v1474 and v1474:FindFirstChildOfClass("BodyColors") ;local v1479=(v1477 and v1477.HeadColor3) or (v1472 and v868(v1472.HeadColor)) or (v1478 and v1478.HeadColor3) ;local v1480=(v1477 and v1477.LeftArmColor3) or (v1472 and v868(v1472.LeftArmColor)) or (v1478 and v1478.LeftArmColor3) ;local v1481=(v1477 and v1477.RightArmColor3) or (v1472 and v868(v1472.RightArmColor)) or (v1478 and v1478.RightArmColor3) ;local v1482=(v1477 and v1477.TorsoColor3) or (v1472 and v868(v1472.TorsoColor)) or (v1478 and v1478.TorsoColor3) ;local v1483=(v1477 and v1477.LeftLegColor3) or (v1472 and v868(v1472.LeftLegColor)) or (v1478 and v1478.LeftLegColor3) ;local v1484=(v1477 and v1477.RightLegColor3) or (v1472 and v868(v1472.RightLegColor)) or (v1478 and v1478.RightLegColor3) ;local v1485=(v1475 and v1475.partColors) or nil ;local function v1486(v2169,v2170) if v1485 then local v2804=0 + 0 ;local v2805;while true do if (v2804==0) then v2805=v868(v1485[v2169]);if v2805 then return v2805;end break;end end end return v2170;end if v1479 then v1476.HeadColor3=v1479;end if v1480 then v1476.LeftArmColor3=v1480;end if v1481 then v1476.RightArmColor3=v1481;end if v1482 then v1476.TorsoColor3=v1482;end if v1483 then v1476.LeftLegColor3=v1483;end if v1484 then v1476.RightLegColor3=v1484;end local v1487={Head=v1486("Head",v1479),LeftArm=v1486("LeftArm",v1480),RightArm=v1486("RightArm",v1481),["Left Arm"]=v1486("Left Arm",v1480),["Right Arm"]=v1486("Right Arm",v1481),LeftUpperArm=v1486("LeftUpperArm",v1480),LeftLowerArm=v1486("LeftLowerArm",v1480),LeftHand=v1486("LeftHand",v1480),RightUpperArm=v1486("RightUpperArm",v1481),RightLowerArm=v1486("RightLowerArm",v1481),RightHand=v1486("RightHand",v1481),Torso=v1486("Torso",v1482),UpperTorso=v1486("UpperTorso",v1482),LowerTorso=v1486("LowerTorso",v1482),LeftLeg=v1486("LeftLeg",v1483),LeftUpperLeg=v1486("LeftUpperLeg",v1483),LeftLowerLeg=v1486("LeftLowerLeg",v1483),LeftFoot=v1486("LeftFoot",v1483),["Left Leg"]=v1486("Left Leg",v1483),["Right Leg"]=v1486("Right Leg",v1484),RightLeg=v1486("RightLeg",v1484),RightUpperLeg=v1486("RightUpperLeg",v1484),RightLowerLeg=v1486("RightLowerLeg",v1484),RightFoot=v1486("RightFoot",v1484)};for v2171,v2172 in pairs(v1487) do if v2172 then local v2806=0;local v2807;while true do if (v2806==0) then v2807=v1473:FindFirstChild(v2171);if (v2807 and v2807:IsA("BasePart")) then pcall(function() v2807.Color=v2172;end);end break;end end end end end local v870=0 + 0 ;local v871;local function v872(v1488,v1489) local v1490={width=(v1489 and v1489.WidthScale) or 1 ,depth=(v1489 and v1489.DepthScale) or 1 ,height=(v1489 and v1489.HeightScale) or (1 -0) ,head=(v1489 and v1489.HeadScale) or (1182 -(589 + 592)) ,proportion=(v1489 and v1489.ProportionScale) or (0 -0) ,bodyType=(v1489 and v1489.BodyTypeScale) or 0 };local v1491,v1492=pcall(function() return v765:GetPlayerByUserId(v1488);end);local v1493=v1491 and v1492 and v1492.Character ;local v1494=v1493 and v1493:FindFirstChildOfClass("Humanoid") ;if  not v1494 then return v1490;end local v1495,v1496=pcall(function() return v1494:GetAppliedDescription();end);local function v1497(v2173,v2174,v2175) local v2176=v1494:FindFirstChild(v2173);if (v2176 and v2176:IsA("NumberValue")) then return v2176.Value;end if (v1495 and v1496) then local v2808,v2809=pcall(function() return v1496[v2174];end);if (v2808 and (type(v2809)=="number")) then return v2809;end end return v2175;end v1490.width=v1497("BodyWidthScale","WidthScale",v1490.width);v1490.depth=v1497("BodyDepthScale","DepthScale",v1490.depth);v1490.height=v1497("BodyHeightScale","HeightScale",v1490.height);v1490.head=v1497("HeadScale","HeadScale",v1490.head);v1490.proportion=v1497("BodyProportionScale","ProportionScale",v1490.proportion);v1490.bodyType=v1497("BodyTypeScale","BodyTypeScale",v1490.bodyType);return v1490;end local function v873(v1504) local v1505=0 + 0 ;local v1506;local v1507;local v1508;local v1509;while true do if (v1505==0) then v1506=v764 and v764.charchanger ;if  not v1506 then return;end v1505=25 -(13 + 11) ;end if (v1505==4) then for v3124,v3125 in pairs(v1509) do if (type(v3125)=="number") then local v3691=v1507:FindFirstChild(v3124);if (v3691 and v3691:IsA("NumberValue")) then if (math.abs(v3691.Value-v3125 )>(0.001 + 0)) then pcall(function() v3691.Value=v3125;end);end end end end break;end if (v1505==(1 + 0)) then if ( not v1504 or  not v1504.Parent) then return;end v1507=v1504:FindFirstChildOfClass("Humanoid");v1505=2;end if ((1263 -(684 + 576))==v1505) then if  not v1508 then return;end v1509={BodyWidthScale=v1508.width,BodyDepthScale=v1508.depth,BodyHeightScale=v1508.height,HeadScale=v1508.head,BodyProportionScale=v1508.proportion,BodyTypeScale=v1508.bodyType};v1505=2 + 2 ;end if (v1505==(4 -2)) then if  not v1507 then return;end v1508=(v1506.enabled and v1506) or v1506.targetScales ;v1505=2 + 1 ;end end end local function v874(v1510) v870=v870 + 1 + 0 ;local v1511=v870;local v1512=v764 and v764.charchanger ;local v1513=(v1512 and tonumber(v1512.enforceIntervalSeconds)) or (0.8 -0) ;task.spawn(function() while v1511==v870  do task.wait(v1513);if (v1511~=v870) then return;end local v2522=v768.Character;if ( not v2522 or  not v2522.Parent) then v1510=nil;else v1510=v2522;end if v1510 then v873(v1510);end end end);end if (v785 and v786) then v786.nxhbtc={Set=function(v2523) local v2524=0 + 0 ;while true do if (v2524==(0 + 0)) then if (type(v2523)~="table") then return;end for v3692,v3693 in pairs(v2523) do if (v764.charchanger[v3692]~=nil) then v764.charchanger[v3692]=v3693;end end v2524=1 + 0 ;end if (v2524==(1 + 0)) then if (v2523.enabled~=nil) then shared.Cider['Char']["Body Size"]['Enabled']=v2523.enabled==true ;end v873(v768.Character);break;end end end,Enable=function() local v2525=0 + 0 ;local v2526;while true do if ((1849 -(230 + 1618))==v2525) then v873(v768.Character);v874(v768.Character);v2525=2 + 0 ;end if (v2525==(1 + 1)) then v2526=v789.currentUserId or v769 or v821() ;if v2526 then v871(v2526);end break;end if ((0 + 0)==v2525) then v764.charchanger.enabled=true;shared.Cider['Char']["Body Size"]['Enabled']=true;v2525=204 -(131 + 72) ;end end end,Disable=function() local v2527=0 + 0 ;local v2528;while true do if (v2527==(204 -(144 + 60))) then v764.charchanger.enabled=false;shared.Cider['Char']["Body Size"]['Enabled']=false;v2527=4 -3 ;end if ((2 -0)==v2527) then if v2528 then v871(v2528);end break;end if (v2527==(1 + 0)) then v870=v870 + (4 -3) ;v2528=v789.currentUserId or v769 or v821() ;v2527=2;end end end,Reapply=function() v873(v768.Character);local v2529=v789.currentUserId or v769 or v821() ;if v2529 then v871(v2529);end end};end local function v875(v1514,v1515,v1516) if  not v861(v1516) then return;end local v1517=getCharacterAppearanceModel(v1514);if  not v1517 then return;end if  not v861(v1516) then v1517:Destroy();return;end clearCopyChildren(v1515);local v1518=v1517;local v1519=nil;local v1520=nil;local v1521=v1518:FindFirstChild("Head")~=nil ;local v1522=hasAnySourceBodyPart(v1518);if ( not v1521 or  not v1522) then local v2530,v2531=pcall(function() return v765:CreateHumanoidModelFromUserId(v1514);end);if (v2530 and v2531) then local v3126=0;while true do if (v3126==(0 + 0)) then v1519=v2531;v1518=v1519;break;end end end end if  not v861(v1516) then if v1519 then v1519:Destroy();end v1517:Destroy();return;end local v1523=v802(getTargetDescriptionCached(v1514));v764.charchanger.targetScales=v872(v1514,v1523);local v1525=v867(v1523,v1515);task.wait();local v1526=nil;if v1525 then v1526=v859(v1515);end local v1527=nil;if (v1526 and v1526.bodyColors) then local v2532=0;while true do if (0==v2532) then v1527={bodyColors=v1526.bodyColors:Clone(),partColors={}};for v3694,v3695 in pairs(v1526.partColors or {} ) do v1527.partColors[v3694]=v3695;end break;end end end if  not v861(v1516) then v856(v1526);v856(v1527);if v1520 then v1520:Destroy();end if v1519 then v1519:Destroy();end v1517:Destroy();return;end if (v1525 and  not v1520) then local v2533=1922 -(523 + 1399) ;local v2534;local v2535;while true do if ((0 + 0)==v2533) then v2534,v2535=pcall(function() return v765:CreateHumanoidModelFromUserId(v1514);end);if (v2534 and v2535) then v1520=v2535;end break;end end end local v1528=v1520 or v1518 ;local v1529=v863(v1514,v1528,v1523);local v1530=v864(v1528);local v1531=v816(v1515);local v1532=v817(v1531);for v2178,v2179 in ipairs(v795) do if v1525 then if (v2179=="Head") then v862(v1515,v1529);end else local v2810=v1528:FindFirstChild(v2179) or v1518:FindFirstChild(v2179) ;local v2811=v1515:FindFirstChild(v2179);if (v2810 and v2811) then v2811.Transparency=v2810.Transparency;local v3506=v2810:FindFirstChildOfClass("SpecialMesh");local v3507=v2811:FindFirstChildOfClass("SpecialMesh");if v3506 then if  not v3507 then local v4170=404 -(72 + 332) ;while true do if (v4170==0) then v3507=v3506:Clone();v3507.Parent=v2811;break;end end else local v4171=0;while true do if (v4171==(977 -(269 + 707))) then v3507.Scale=v3506.Scale;v3507.Offset=v3506.Offset;break;end if (v4171==(0 -0)) then v3507.MeshId=v3506.MeshId;v3507.TextureId=v3506.TextureId;v4171=2 -1 ;end end end elseif v3507 then v3507:Destroy();end pcall(function() if (v2810:IsA("MeshPart") and v2811:IsA("MeshPart")) then local v4064=130 -(123 + 7) ;while true do if (v4064==0) then v2811.MeshId=v2810.MeshId;v2811.TextureID=v2810.TextureID;break;end end end end);for v3697,v3698 in ipairs(v2810:GetChildren()) do if v3698:IsA("Attachment") then local v4065=0 + 0 ;local v4066;while true do if (v4065==(0 + 0)) then v4066=v2811:FindFirstChild(v3698.Name);if v4066 then local v4537=0 -0 ;while true do if (v4537==0) then v4066.Position=v3698.Position;v4066.Orientation=v3698.Orientation;break;end end else v3698:Clone().Parent=v2811;end break;end end end end if (v2179=="Head") then v862(v1515,v1529);end end end end if  not v861(v1516) then local v2536=0 -0 ;while true do if ((1088 -(38 + 1050))==v2536) then v856(v1526);if v1520 then v1520:Destroy();end v2536=1 + 0 ;end if (v2536==(1 + 1)) then return;end if (v2536==(1 + 0)) then if v1519 then v1519:Destroy();end v1517:Destroy();v2536=825 -(426 + 397) ;end end end for v2180,v2181 in ipairs(v1518:GetChildren()) do if v814(v2181.ClassName) then if (v1525 and (v2181.ClassName=="CharacterMesh")) then else local v3508=v2181:Clone();v3508.Parent=v1515;if v815(v3508.ClassName) then v865(v3508,v1515,v1530,v1531,v1532);end end end end local v1533=1406 -(751 + 655) ;local function v1534(v2182) local v2183=0;local v2184;while true do if (v2183==0) then v1533=v1533 + (1 -0) ;v2184=v1533;v2183=1 + 0 ;end if (v2183==(1246 -(39 + 1206))) then task.delay(v2182 or 0 ,function() local v3510=0 -0 ;local v3511;while true do if (v3510==(844 -(566 + 275))) then v807(v1515);v808(v1515,v1514);break;end if (v3510==(937 -(167 + 768))) then if v3511 then pcall(function() v3511:BuildRigFromAttachments();end);end v862(v1515,v1529);v3510=2 + 1 ;end if (v3510==(0 -0)) then if (v2184~=v1533) then return;end if  not v861(v1516) then return;end v3510=1 + 0 ;end if (v3510==1) then if  not v1515.Parent then return;end v3511=v1515:FindFirstChildOfClass("Humanoid");v3510=2 + 0 ;end end end);break;end end end local v1535=v1515:FindFirstChildOfClass("Humanoid");if v1535 then pcall(function() v1535:BuildRigFromAttachments();end);end if  not v861(v1516) then local v2537=0 -0 ;while true do if (v2537==(16 -(8 + 7))) then if v1520 then v1520:Destroy();end if v1519 then v1519:Destroy();end v2537=1685 -(1510 + 173) ;end if (v2537==0) then v856(v1526);v856(v1527);v2537=1 -0 ;end if (v2537==(1 + 1)) then v1517:Destroy();return;end end end v869(v1523,v1515,v1528,v1526);v856(v1526);v862(v1515,v1529);v807(v1515);v860(v1515);v873(v1515);task.defer(function() local v2185=253 -(30 + 223) ;local v2186;while true do if ((1256 -(300 + 956))==v2185) then v2186={0.1 -0 ,0.28 -0 ,0.55};for v3512,v3513 in ipairs(v2186) do local v3514=486 -(21 + 465) ;while true do if (v3514==(1 + 0)) then if  not v1515.Parent then v856(v1527);return;end if v1527 then if v1527.bodyColors then local v4468=0 + 0 ;local v4469;local v4470;while true do if (v4468==0) then v4469,v4470=pcall(function() return v1527.bodyColors:Clone();end);if (v4469 and v4470) then pcall(function() local v4708=0;local v4709;while true do if (v4708==(0 + 0)) then v4709=v1515:FindFirstChildOfClass("BodyColors");if v4709 then v4709:Destroy();end v4708=1;end if (v4708==(1 -0)) then v4470.Parent=v1515;break;end end end);end break;end end end for v4386,v4387 in pairs(v1527.partColors or {} ) do local v4388=v1515:FindFirstChild(v4386);if (v4388 and v4388:IsA("BasePart") and v4387) then pcall(function() v4388.BrickColor=v4387;end);end end v869(nil,v1515,nil,v1527);else v869(v1523,v1515,nil,nil);end v3514=1219 -(553 + 664) ;end if ((0 + 0)==v3514) then task.wait(v3513);if  not v861(v1516) then local v4292=0;while true do if (v4292==0) then v856(v1527);return;end end end v3514=1;end if (v3514==2) then v873(v1515);v807(v1515);break;end end end v2185=79 -(73 + 5) ;end if (v2185==(1716 -(1128 + 587))) then v856(v1527);break;end end end);v812();v770=v1515.ChildAdded:Connect(function(v2187) if v815(v2187.ClassName) then task.defer(function() if  not v861(v1516) then return;end if  not v1515.Parent then return;end local v3127=v816(v1515);local v3128=v817(v3127);v865(v2187,v1515,v1530,v3127,v3128);v1534(0.03);end);elseif ((v2187.Name=="Head") or v2187:IsA("Decal")) then if (v2187.Name=="Head") then v811(v2187);end v1534(0.02);end end);v811(v1515:FindFirstChild("Head"));task.spawn(function() local v2188={0.05,690.12 -(558 + 132) ,0.24 -0 ,0.4 + 0 ,0.65 + 0 ,0.95};for v2538,v2539 in ipairs(v2188) do task.wait(v2539);if  not v861(v1516) then return;end if  not v1515.Parent then return;end v1534(0.02);end end);local v1536=false;local v1537=false;local function v1538() if v1536 then v1537=true;return;end v1536=true;task.delay(0.03 + 0 ,function() local v2540=0 -0 ;local v2541;local v2542;while true do if (v2540==(1 + 1)) then v2542=v817(v2541);v866(v1515,v1530,v2541,v2542);v2540=2 + 1 ;end if (v2540==(771 -(294 + 477))) then v1536=false;if  not v861(v1516) then v812();return;end v2540=1 + 0 ;end if ((2 -1)==v2540) then if  not v1515.Parent then local v3907=0;while true do if (v3907==(0 -0)) then v812();return;end end end v2541=v816(v1515);v2540=1 + 1 ;end if (v2540==(3 + 0)) then v1534(0.02 -0 );if v1537 then local v3908=0;while true do if (v3908==(982 -(97 + 885))) then v1537=false;v1538();break;end end end break;end end end);end local function v1539() v1538();end local v1540=v1515:FindFirstChildOfClass("Humanoid");if v1540 then local v2543=0;local v2544;local v2545;while true do if (v2543==(1 + 0)) then for v3699,v3700 in ipairs(v1540:GetChildren()) do v2544(v3700);end v2545=v1540.ChildAdded:Connect(function(v3701) v2544(v3701);end);v2543=2;end if (v2543==(0 -0)) then v2544=nil;function v2544(v3702) if ( not v3702 or  not v3702:IsA("NumberValue")) then return;end if  not v793[v3702.Name] then return;end local v3703=v3702:GetPropertyChangedSignal("Value"):Connect(v1539);v771[ #v771 + (366 -(271 + 94)) ]=v3703;end v2543=1604 -(777 + 826) ;end if (v2543==(1 + 1)) then v771[ #v771 + (1356 -(117 + 1238)) ]=v2545;break;end end end task.delay(1715.2 -(686 + 1029) ,v1539);if v1520 then v1520:Destroy();end if v1519 then v1519:Destroy();end v1517:Destroy();end local function v876(v1541) v812();if  not v1541 then return;end clearCopyChildren(v1541);end local function v877(v1542,v1543) local v1544={0,0.45,2.25 -1 ,531 -(67 + 461) };local v1545=false;for v2189,v2190 in ipairs(v1544) do task.delay(v2190,function() if (v1545 or  not v789.active or (v1543~=v774)) then return;end local v2546=v786 and v786.EmoteMimic ;if (v2546 and (type(v2546.SetTargetUserId)=="function")) then local v3129=0 -0 ;local v3130;local v3131;while true do if (v3129==(0 -0)) then v3130,v3131=pcall(function() return v2546.SetTargetUserId(v1542);end);if (v3130 and v3131) then v1545=true;end break;end end end end);end end function v871(v1546) if  not v789.active then return;end if  not shared.Cider['Char']['Enabled'] then return;end local v1547=v768.Character;if  not v1547 then return;end v774=v774 + (2 -1) ;local v1548=v774;v769=v1546;v789.currentUserId=v1546;v876(v1547);v855(v1546,v1548);task.spawn(function() local v2191=0;while true do if (v2191==(1 + 2)) then task.delay(632 -(129 + 500) ,function() if ((v1548==v774) and v789.active and v1547.Parent) then v808(v1547,v1546);end end);break;end if (v2191==2) then v808(v1547,v1546);task.delay(1712 -(1157 + 554) ,function() if ((v1548==v774) and v789.active and v1547.Parent) then v808(v1547,v1546);end end);v2191=3 -0 ;end if (v2191==1) then v875(v1546,v1547,v1548);v877(v1546,v1548);v2191=609 -(82 + 525) ;end if (v2191==(0 + 0)) then if  not v789.active then return;end if (v1548~=v774) then return;end v2191=1;end end end);end if (v785 and v786) then local function v2192(v2547) local v2548=0 -0 ;local v2549;while true do if (v2548==(1625 -(948 + 675))) then v871(v2549);break;end if (v2548==(1 + 0)) then v769=v2549;v789.currentUserId=v2549;v2548=2;end if ((0 + 0)==v2548) then v2549=resolveUserToId(v2547);if  not v2549 then return;end v2548=1;end end end local function v2193() local v2550=0;local v2551;while true do if (v2550==0) then v2551=v789.currentUserId or v769 or v821() ;if v2551 then v871(v2551);end break;end end end local function v2194() local v2552=0 -0 ;local v2553;while true do if (v2552==(854 -(406 + 447))) then v2553=v821();if v2553 then v871(v2553);end break;end if (v2552==(117 -(91 + 26))) then v789.currentUserId=nil;v769=nil;v2552=3 -2 ;end end end v786.OutfitCopy={SetTarget=v2192,SetTargetUserId=v2192,SetTargetUsername=v2192,Reapply=v2193,UseDefaultTarget=v2194,Cleanup=v857};v786.CopySetUserId=v2192;v786.CopyReapplyOutfit=v2193;v786.CopyUseDefaultTarget=v2194;v786.CopyOutfitCleanup=v857;end v772=v768.CharacterAdded:Connect(function(v1550) local v1551=0 + 0 ;local v1552;local v1553;local v1554;while true do if (v1551==0) then v810(v1550);task.delay(1.5,function() if v1550.Parent then v836(v1550);end end);if  not v789.active then return;end v1552=v774;v1551=1;end if (v1551==(989 -(968 + 18))) then v873(v1550);v874(v1550);break;end if (v1551==(2 + 0)) then if  not v1554 then return;end task.wait(0.5);if ( not v789.active or (v1552~=v774) or  not v1550.Parent) then return;end v871(v1553);v1551=3 + 0 ;end if (v1551==(1 -0)) then v812();v1553=v789.currentUserId or v769 or v821() ;if  not v1553 then return;end v1554=v1550:WaitForChild("Humanoid",277 -(172 + 95) );v1551=6 -4 ;end end end);if v768.Character then local v2200=265 -(260 + 5) ;local v2201;while true do if (v2200==1) then if v2201 then local v3705=0;local v3706;while true do if (v3705==0) then v807(v768.Character);v836(v768.Character);v3705=2 -1 ;end if (v3705==2) then v873(v768.Character);v874(v768.Character);break;end if (v3705==(820 -(265 + 554))) then v3706=v789.currentUserId or v821() ;if v3706 then v871(v3706);end v3705=2;end end end break;end if (v2200==0) then v810(v768.Character);v2201=v768.Character:WaitForChild("Humanoid",1581 -(1440 + 131) );v2200=2 -1 ;end end end local v878=v768;local v879={climb="rbxassetid://507765644",fall="rbxassetid://507765000",jump="rbxassetid://507765000",run="rbxassetid://913376220",walk="rbxassetid://913402848",swim="rbxassetid://913384386",idle1="rbxassetid://507766388",idle2="rbxassetid://507766666"};local v880={{folder="climb",fallback=v879.climb},{folder="fall",fallback=v879.fall},{folder="jump",fallback=v879.jump},{folder="run",fallback=v879.run},{folder="walk",fallback=v879.walk},{folder="swim",fallback=v879.swim}};if (v786 and v786.__AnimationMimicState and v786.__AnimationMimicState.cleanup) then pcall(v786.__AnimationMimicState.cleanup);end animState={connections={},originalByCharacter={},directControllerByChar={},lastTargetInput=v764.target,pinnedTargetUserId=nil,lastSourceUserId=nil,applyToken=1956 -(809 + 1147) ,animationSetCache={},active=(v760['Enabled']==true) and (v760["Override Animation"]~=true) ,settings={autoApplyOnRespawn=true,useFallbackWhenMissing=true,useDirectTrackFallback=true,cacheTtlSeconds=22,minLiveCoverage=498 -(178 + 319) ,replicateDescriptionToOthers=false,invalidateAnimationCacheOnTargetSwitch=false}};if v786 then v786.__AnimationMimicState=animState;end function normalizeAnimationId(v1555) if (v1555==nil) then return nil;end local v1556=tostring(v1555):match("%d+");if  not v1556 then return nil;end if ((tonumber(v1556) or (0 -0))<=(0 + 0)) then return nil;end return "rbxassetid://"   .. v1556 ;end function numericIdFromContentId(v1557) local v1558=1270 -(1255 + 15) ;local v1559;while true do if (v1558==0) then if  not v1557 then return nil;end v1559=tostring(v1557):match("%d+");v1558=1543 -(1221 + 321) ;end if (v1558==(2 -1)) then return (v1559 and tonumber(v1559)) or nil ;end end end FALLBACK_ANIMATION_NUMERIC_IDS={climb=numericIdFromContentId(v879.climb),fall=numericIdFromContentId(v879.fall),jump=numericIdFromContentId(v879.jump),run=numericIdFromContentId(v879.run),walk=numericIdFromContentId(v879.walk),swim=numericIdFromContentId(v879.swim),idle1=numericIdFromContentId(v879.idle1)};function getLocalRigType() local v1560=0 + 0 ;local v1561;local v1562;while true do if (v1560==(0 -0)) then v1561=v878.Character;v1562=v1561 and v1561:FindFirstChildOfClass("Humanoid") ;v1560=3 -2 ;end if (v1560==(1 + 0)) then return (v1562 and v1562.RigType) or Enum.HumanoidRigType.R15 ;end end end function isCharacterR15(v1563) local v1564=0 + 0 ;local v1565;while true do if ((0 -0)==v1564) then v1565=v1563 and v1563:FindFirstChildOfClass("Humanoid") ;return (v1565~=nil) and (v1565.RigType==Enum.HumanoidRigType.R15) ;end end end function normalizeAvatarType(v1566) local v1567=407 -(204 + 203) ;local v1568;while true do if (v1567==(79 -(48 + 30))) then if (v1568:find("R15") or (v1568=="2")) then return "R15";end if (v1568:find("R6") or (v1568=="1")) then return "R6";end v1567=2;end if (v1567==(0 + 0)) then if (v1566==nil) then return nil;end v1568=tostring(v1566):upper();v1567=1;end if (v1567==(1966 -(1472 + 492))) then return nil;end end end function getUserAvatarType(v1569) local v1570=0;local v1571;while true do if (v1570==(0 -0)) then v1571=getCharacterAppearanceInfoCached(v1569);return normalizeAvatarType(v1571 and (v1571.playerAvatarType or v1571.PlayerAvatarType) );end end end function resolveTargetToUserId(v1572) return resolveUserToId(v1572);end function rememberOriginal(v1573,v1574) if ( not v1573 or  not v1574) then return;end if  not animState.originalByCharacter[v1573] then animState.originalByCharacter[v1573]={};end if (animState.originalByCharacter[v1573][v1574]==nil) then animState.originalByCharacter[v1573][v1574]=v1574.AnimationId;end end function resetCharacterAnimations(v1575) local v1576=0 + 0 ;local v1577;while true do if (v1576==(611 -(258 + 353))) then v1577=animState.originalByCharacter[v1575];if  not v1577 then return false;end v1576=1995 -(1382 + 612) ;end if (v1576==(1 + 0)) then for v3132,v3133 in pairs(v1577) do if (v3132 and v3132.Parent) then v3132.AnimationId=v3133;end end animState.originalByCharacter[v1575]=nil;v1576=1 + 1 ;end if (v1576==(1 + 1)) then return true;end end end function extractFolderAnimationData(v1578,v1579) local v1580=0 -0 ;local v1581;local v1582;while true do if (v1580==(2 + 0)) then return v1582;end if (v1580==1) then v1582={byName={},ordered={},first=nil};for v3134,v3135 in ipairs(v1581:GetChildren()) do if v3135:IsA("Animation") then local v3708=0;local v3709;while true do if (v3708==0) then v3709=normalizeAnimationId(v3135.AnimationId);if v3709 then if  not v1582.first then v1582.first=v3709;end v1582.byName[v3135.Name]=v3709;v1582.ordered[ #v1582.ordered + 1 ]=v3709;end break;end end end end v1580=2;end if ((119 -(35 + 84))==v1580) then v1581=v1578 and v1578:FindFirstChild(v1579) ;if  not v1581 then return nil;end v1580=216 -(75 + 140) ;end end end function buildAnimationSetFromAnimate(v1583) if  not v1583 then return nil;end return {climb=extractFolderAnimationData(v1583,"climb"),fall=extractFolderAnimationData(v1583,"fall"),jump=extractFolderAnimationData(v1583,"jump"),run=extractFolderAnimationData(v1583,"run"),walk=extractFolderAnimationData(v1583,"walk"),swim=extractFolderAnimationData(v1583,"swim"),idle=extractFolderAnimationData(v1583,"idle")};end function resolveIdFromFolderData(v1584,v1585,v1586) local v1587;if v1584 then v1587=v1584.byName[v1585] or v1584.ordered[v1586] or v1584.first ;end return normalizeAnimationId(v1587);end function resolveIdFromFolderDataWithFallback(v1588,v1589,v1590,v1591) local v1592=0 -0 ;while true do if (v1592==(1799 -(923 + 876))) then if animState.settings.useFallbackWhenMissing then return resolveIdFromFolderData(v1588,v1589,v1590) or normalizeAnimationId(v1591) ;end return resolveIdFromFolderData(v1588,v1589,v1590);end end end function makeSingleAnimationData(v1593,v1594) local v1595=0 -0 ;local v1596;while true do if (v1595==(812 -(284 + 528))) then v1596=normalizeAnimationId(v1594);if  not v1596 then return nil;end v1595=1020 -(867 + 152) ;end if (v1595==1) then return {byName={[v1593]=v1596},ordered={v1596},first=v1596};end end end function makeIdleAnimationData(v1597) local v1598=0 -0 ;local v1599;while true do if (v1598==0) then v1599=normalizeAnimationId(v1597);if  not v1599 then return nil;end v1598=1;end if (v1598==(37 -(21 + 15))) then return {byName={Animation1=v1599,Animation2=v1599},ordered={v1599,v1599},first=v1599};end end end ANIM_KEYS={"climb","fall","jump","run","walk","swim","idle"};function hasAnimationFolderData(v1600) return (v1600~=nil) and (v1600.first~=nil) ;end function countAnimationSetCoverage(v1601) local v1602=849 -(59 + 790) ;local v1603;while true do if (v1602==(0 + 0)) then if  not v1601 then return 0;end v1603=0;v1602=1;end if (1==v1602) then for v3136,v3137 in ipairs(ANIM_KEYS) do if hasAnimationFolderData(v1601[v3137]) then v1603=v1603 + 1 + 0 ;end end return v1603;end end end function getCachedAnimationSet(v1604) local v1605=cacheGetEntry(animState.animationSetCache,v1604,animState.settings.cacheTtlSeconds);if  not v1605 then return nil;end return v1605.set;end function setCachedAnimationSet(v1606,v1607) if ( not v1606 or  not v1607) then return;end cacheSetEntry(animState.animationSetCache,v1606,{set=v1607,timestamp=os.clock()},v784.animationSet);end function getAnimationSetFromLivePlayer(v1608) local v1609,v1610=pcall(function() return v765:GetPlayerByUserId(v1608);end);if ( not v1609 or  not v1610) then return nil;end local v1611=v1610.Character;if  not v1611 then return nil;end local v1612=v1611:FindFirstChild("Animate");if  not v1612 then return nil;end local v1613=buildAnimationSetFromAnimate(v1612);return ((countAnimationSetCoverage(v1613)>0) and v1613) or nil ;end function getAnimationSetFromDescription(v1614) local v1615=getTargetDescriptionCached(v1614);if  not v1615 then return nil;end return {climb=makeSingleAnimationData("ClimbAnim",v1615.ClimbAnimation),fall=makeSingleAnimationData("FallAnim",v1615.FallAnimation),jump=makeSingleAnimationData("JumpAnim",v1615.JumpAnimation),run=makeSingleAnimationData("RunAnim",v1615.RunAnimation),walk=makeSingleAnimationData("WalkAnim",v1615.WalkAnimation),swim=makeSingleAnimationData("Swim",v1615.SwimAnimation),idle=makeIdleAnimationData(v1615.IdleAnimation)};end function getAnimationSetFromTempRig(v1616) local v1617=0;local v1618;local v1619;local v1620;local v1621;local v1622;while true do if ((943 -(467 + 473))==v1617) then v1622=buildAnimationSetFromAnimate(v1621);v1620:Destroy();v1617=19 -15 ;end if (v1617==0) then v1618=getLocalRigType();v1619,v1620=pcall(function() return v765:CreateHumanoidModelFromUserId(v1616,v1618);end);v1617=2 -1 ;end if (v1617==1) then if ( not v1619 or  not v1620) then return nil;end v1620.Name="AnimationMimicTempRig";v1617=4 -2 ;end if (v1617==2) then v1621=v1620:FindFirstChild("Animate") or v1620:WaitForChild("Animate",5) ;if  not v1621 then local v3518=0 -0 ;while true do if (v3518==0) then v1620:Destroy();return nil;end end end v1617=2 + 1 ;end if (v1617==(8 -4)) then return v1622;end end end function getAnimationSetFromUserId(v1623) local v1624=0;local v1625;local v1626;local v1627;local v1628;local v1629;local v1630;local v1631;while true do if ((0 -0)==v1624) then v1625=getCachedAnimationSet(v1623);if v1625 then return v1625;end v1626=getAnimationSetFromLivePlayer(v1623);v1627=countAnimationSetCoverage(v1626);v1624=1 -0 ;end if ((1 + 2)==v1624) then v1631=v1630(v1631,{set=v1628,priority=1});if ( not v1631 or  not v1631.set) then return nil;end setCachedAnimationSet(v1623,v1631.set);return v1631.set;end if (v1624==(1 + 0)) then if ((v1627>=(animState.settings.minLiveCoverage or (1 + 0))) and (v1627>(237 -(58 + 179)))) then local v3519=0 -0 ;while true do if (v3519==0) then setCachedAnimationSet(v1623,v1626);return v1626;end end end v1628=getAnimationSetFromDescription(v1623);v1629=getAnimationSetFromTempRig(v1623);v1630=nil;v1624=1255 -(677 + 576) ;end if (v1624==(1 + 1)) then function v1630(v3138,v3139) if  not v3139 then return v3138;end local v3140=countAnimationSetCoverage(v3139.set);if (v3140<=(0 -0)) then return v3138;end if  not v3138 then return {set=v3139.set,coverage=v3140,priority=v3139.priority};end if (v3140>v3138.coverage) then return {set=v3139.set,coverage=v3140,priority=v3139.priority};end if ((v3140==v3138.coverage) and (v3139.priority>v3138.priority)) then return {set=v3139.set,coverage=v3140,priority=v3139.priority};end return v3138;end v1631=nil;v1631=v1630(v1631,{set=v1626,priority=223 -(88 + 132) });v1631=v1630(v1631,{set=v1629,priority=2 + 0 });v1624=3;end end end function getAnimationSetFromUserIdWithRetry(v1632,v1633) v1633=v1633 or (9 -7) ;for v2203=3 -2 ,v1633 do local v2204=291 -(12 + 279) ;local v2205;while true do if (v2204==0) then v2205=getAnimationSetFromUserId(v1632);if v2205 then return v2205;end v2204=1 -0 ;end if (v2204==(1 + 0)) then if (v2203<v1633) then task.wait(0.12);end break;end end end return nil;end function applyAnimationSetToDescriptionFields(v1634,v1635) if ( not v1634 or  not v1635) then return false;end local function v1636(v2206,v2207,v2208,v2209) return numericIdFromContentId(resolveIdFromFolderDataWithFallback(v1635[v2206],v2207,v2208,v2209));end v1634.ClimbAnimation=v1636("climb","ClimbAnim",1,v879.climb) or FALLBACK_ANIMATION_NUMERIC_IDS.climb ;v1634.FallAnimation=v1636("fall","FallAnim",948 -(652 + 295) ,v879.fall) or FALLBACK_ANIMATION_NUMERIC_IDS.fall ;v1634.JumpAnimation=v1636("jump","JumpAnim",1,v879.jump) or FALLBACK_ANIMATION_NUMERIC_IDS.jump ;v1634.RunAnimation=v1636("run","RunAnim",1,v879.run) or FALLBACK_ANIMATION_NUMERIC_IDS.run ;v1634.WalkAnimation=v1636("walk","WalkAnim",1 + 0 ,v879.walk) or FALLBACK_ANIMATION_NUMERIC_IDS.walk ;v1634.SwimAnimation=v1636("swim","Swim",1 + 0 ,v879.swim) or FALLBACK_ANIMATION_NUMERIC_IDS.swim ;v1634.IdleAnimation=v1636("idle","Animation1",990 -(848 + 141) ,v879.idle1) or FALLBACK_ANIMATION_NUMERIC_IDS.idle1 ;return true;end function getCurrentScaleValues(v1644) local v1645=740 -(372 + 368) ;local v1646;local v1647;local v1648;while true do if (v1645==2) then return {height=v1646("BodyHeightScale",(v1647 and v1648 and v1648.HeightScale) or 1 ),width=v1646("BodyWidthScale",(v1647 and v1648 and v1648.WidthScale) or (1 + 0) ),depth=v1646("BodyDepthScale",(v1647 and v1648 and v1648.DepthScale) or (1131 -(542 + 588)) ),head=v1646("HeadScale",(v1647 and v1648 and v1648.HeadScale) or (819 -(6 + 812)) ),bodyType=v1646("BodyTypeScale",(v1647 and v1648 and v1648.BodyTypeScale) or (1705 -(1599 + 106)) ),proportion=v1646("BodyProportionScale",(v1647 and v1648 and v1648.ProportionScale) or (0 -0) )};end if (v1645==0) then if  not v1644 then return nil;end v1646=nil;v1645=1 + 0 ;end if (1==v1645) then function v1646(v3141,v3142) local v3143=v1644:FindFirstChild(v3141);return (v3143 and v3143:IsA("NumberValue") and v3143.Value) or v3142 ;end v1647,v1648=pcall(function() return v1644:GetAppliedDescription();end);v1645=1 + 1 ;end end end local v881=v856;function restoreCharacterColors(v1649,v1650) if ( not v1649 or  not v1650) then return;end if v1650.bodyColors then local v2557=0 -0 ;local v2558;local v2559;local v2560;while true do if (v2557==(1 -0)) then if (v2559 and v2560) then local v3909=0;local v3910;local v3911;while true do if (v3909==(1 + 0)) then v3911=pcall(function() v2560.Parent=v1649;end);if  not v3911 then pcall(function() v2560:Destroy();end);task.defer(function() task.wait(0.12 + 0 );if  not v1649.Parent then return;end local v4540,v4541=pcall(function() return v2558:Clone();end);if ( not v4540 or  not v4541) then return;end pcall(function() local v4598=0 + 0 ;local v4599;while true do if (v4598==(1 + 0)) then v4541.Parent=v1649;break;end if (v4598==0) then v4599=v1649:FindFirstChildOfClass("BodyColors");if v4599 then v4599:Destroy();end v4598=1 + 0 ;end end end);end);end break;end if ((0 + 0)==v3909) then v3910=v1649:FindFirstChildOfClass("BodyColors");if v3910 then pcall(function() v3910:Destroy();end);end v3909=1;end end end break;end if (v2557==(1929 -(1690 + 239))) then v2558=v1650.bodyColors;v2559,v2560=pcall(function() return v2558:Clone();end);v2557=3 -2 ;end end end for v2210,v2211 in ipairs(v1649:GetChildren()) do if v2211:IsA("BasePart") then local v2816=v1650.partColors[v2211.Name];if v2816 then v2211.BrickColor=v2816;end end end end function replicateAnimationStateForOthers(v1651,v1652) local v1653=0 + 0 ;local v1654;local v1655;local v1656;local v1657;local v1658;while true do if (v1653==0) then if  not animState.settings.replicateDescriptionToOthers then return true;end v1654=v1651 and v1651:FindFirstChildOfClass("Humanoid") ;if  not v1654 then return false;end v1653=1 -0 ;end if (v1653==3) then if v1654.ApplyDescriptionClientServer then local v3522=0 -0 ;local v3523;while true do if (v3522==0) then v3523=pcall(function() v1654:ApplyDescriptionClientServer(v1658);end);if v3523 then local v4293=0 + 0 ;while true do if (v4293==(0 -0)) then restoreCharacterColors(v1651,v1655);task.defer(function() task.wait(0.08);restoreCharacterColors(v1651,v1655);v881(v1655);end);v4293=1869 -(1736 + 132) ;end if (v4293==(1 + 0)) then return true;end end end break;end end end v881(v1655);return false;end if (v1653==(3 -2)) then v1655=v859(v1651);v1656=getCurrentScaleValues(v1654);v1657,v1658=pcall(function() return v1654:GetAppliedDescription();end);v1653=9 -7 ;end if (v1653==(1 + 1)) then if ( not v1657 or  not v1658) then local v3524=32 -(27 + 5) ;while true do if ((0 + 0)==v3524) then v881(v1655);return false;end end end if v1656 then local v3525=0;while true do if (v3525==0) then v1658.HeightScale=v1656.height;v1658.WidthScale=v1656.width;v3525=1 + 0 ;end if (v3525==(1 + 1)) then v1658.BodyTypeScale=v1656.bodyType;v1658.ProportionScale=v1656.proportion;break;end if (v3525==1) then v1658.DepthScale=v1656.depth;v1658.HeadScale=v1656.head;v3525=2;end end end if  not applyAnimationSetToDescriptionFields(v1658,v1652) then v881(v1655);return false;end v1653=3;end end end function applyAnimationSetViaDescription(v1659,v1660) local v1661=0 + 0 ;local v1662;local v1663;local v1664;while true do if (v1661==(3 + 0)) then return v1664;end if (v1661==1) then if ( not v1662 or  not v1663) then return false;end if  not applyAnimationSetToDescriptionFields(v1663,v1660) then return false;end v1661=2;end if (v1661==(1117 -(771 + 346))) then if ( not v1659 or  not v1660) then return false;end v1662,v1663=pcall(function() return v1659:GetAppliedDescription();end);v1661=1635 -(1577 + 57) ;end if (v1661==(2 -0)) then if v1659.ApplyDescriptionClientServer then local v3526=pcall(function() v1659:ApplyDescriptionClientServer(v1663);end);if v3526 then return true;end end v1664=pcall(function() v1659:ApplyDescription(v1663);end);v1661=1083 -(684 + 396) ;end end end function stopDirectController(v1665) local v1666=0;local v1667;while true do if (v1666==(5 -3)) then if v1667.tracks then for v3710,v3711 in pairs(v1667.tracks) do pcall(function() v3711:Stop(0.08);end);end end if v1667.animations then for v3712,v3713 in pairs(v1667.animations) do pcall(function() v3713:Destroy();end);end end v1666=1199 -(700 + 496) ;end if (v1666==(1 + 0)) then if  not v1667 then return;end if (v1667.connection and v1667.connection.Connected) then v1667.connection:Disconnect();end v1666=254 -(65 + 187) ;end if (v1666==0) then if  not v1665 then return;end v1667=animState.directControllerByChar[v1665];v1666=940 -(827 + 112) ;end if (v1666==(3 + 0)) then animState.directControllerByChar[v1665]=nil;break;end end end function stopAllDirectControllers() local v1668={};for v2212 in pairs(animState.directControllerByChar) do v1668[ #v1668 + (2 -1) ]=v2212;end for v2214,v2215 in ipairs(v1668) do stopDirectController(v2215);end animState.directControllerByChar={};end function pruneStaleCharacterAnimationState(v1670) local v1671=0 -0 ;while true do if (v1671==(0 -0)) then for v3144 in pairs(animState.originalByCharacter) do if ((v3144~=v1670) and ( not v3144.Parent or (v3144~=v878.Character))) then local v3714=0 + 0 ;while true do if ((0 + 0)==v3714) then resetCharacterAnimations(v3144);animState.originalByCharacter[v3144]=nil;break;end end end end for v3145 in pairs(animState.directControllerByChar) do if ((v3145~=v1670) and ( not v3145.Parent or (v3145~=v878.Character))) then stopDirectController(v3145);end end break;end end end function startDirectController(v1672,v1673) local v1674=0;local v1675;local v1676;local v1677;local v1678;local v1679;local v1680;local v1681;local v1682;local v1683;while true do if (v1674==(1197 -(551 + 645))) then v1676=v1675:FindFirstChildOfClass("Animator");if  not v1676 then local v3527,v3528=pcall(function() return Instance.new("Animator");end);if (v3527 and v3528) then local v3912=343 -(166 + 177) ;while true do if (v3912==(1856 -(1361 + 495))) then v3528.Parent=v1675;v1676=v3528;break;end end end end if  not v1676 then return false;end v1677=nil;v1674=5 -3 ;end if (0==v1674) then if  not animState.settings.useDirectTrackFallback then return false;end v1675=v1672 and v1672:FindFirstChildOfClass("Humanoid") ;if ( not v1675 or  not v1673) then return false;end stopDirectController(v1672);v1674=1 + 0 ;end if (v1674==(6 -3)) then for v3146,v3147 in pairs(v1678) do if v3147 then local v3715=0 + 0 ;local v3716;local v3717;local v3718;while true do if (v3715==(225 -(148 + 76))) then v3716.AnimationId=v3147;v1680[v3146]=v3716;v3715=2;end if (v3715==0) then v3716=Instance.new("Animation");v3716.Name="Mimic_"   .. v3146 ;v3715=3 -2 ;end if (v3715==2) then v3717,v3718=pcall(function() return v1676:LoadAnimation(v3716);end);if (v3717 and v3718) then local v4392=0;while true do if (v4392==(0 -0)) then v3718.Priority=((v3146=="idle") and Enum.AnimationPriority.Idle) or Enum.AnimationPriority.Movement ;v3718.Looped=(v3146~="jump") and (v3146~="fall") ;v4392=1 + 0 ;end if (v4392==1) then v1679[v3146]=v3718;v1681=true;break;end end end break;end end end end if  not v1681 then local v3529=1742 -(735 + 1007) ;while true do if (v3529==(279 -(111 + 168))) then for v4176,v4177 in pairs(v1680) do pcall(function() v4177:Destroy();end);end return false;end end end v1682={tracks=v1679,animations=v1680,connection=nil,active=nil,nextUpdateAt=0 + 0 };animState.directControllerByChar[v1672]=v1682;v1674=4;end if (v1674==(1 + 1)) then function v1677(v3148,v3149,v3150,v3151) return resolveIdFromFolderDataWithFallback(v1673[v3148],v3149,v3150,v3151);end v1678={idle=v1677("idle","Animation1",1 -0 ,v879.idle1),run=v1677("run","RunAnim",1,v879.run),walk=v1677("walk","WalkAnim",1 + 0 ,v879.walk),jump=v1677("jump","JumpAnim",1,v879.jump),fall=v1677("fall","FallAnim",1,v879.fall),climb=v1677("climb","ClimbAnim",1,v879.climb),swim=v1677("swim","Swim",1,v879.swim)};v1679,v1680={},{};v1681=false;v1674=3;end if (v1674==4) then v1683=nil;function v1683(v3152) local v3153=0 + 0 ;while true do if (v3153==(0 + 0)) then if (v1682.active==v3152) then local v4178=v1682.tracks[v3152];if (v4178 and  not v4178.IsPlaying) then pcall(function() v4178:Play(0.08 -0 ,1 + 0 ,1);end);end return;end v1682.active=v3152;v3153=1;end if (v3153==(933 -(147 + 785))) then for v4079,v4080 in pairs(v1682.tracks) do if (v4079==v3152) then pcall(function() if  not v4080.IsPlaying then v4080:Play(0.08,667 -(483 + 183) ,2 -1 );end end);else pcall(function() if v4080.IsPlaying then v4080:Stop(0.08);end end);end end break;end end end v1682.connection=v766.Heartbeat:Connect(function() local v3154=0 + 0 ;local v3155;local v3156;local v3157;while true do if (v3154==(1913 -(1790 + 121))) then if ((v3157==Enum.HumanoidStateType.Climbing) and v1679.climb) then v1683("climb");return;end if ((v3157==Enum.HumanoidStateType.Swimming) and v1679.swim) then local v4179=0 -0 ;while true do if (v4179==(1539 -(259 + 1280))) then v1683("swim");return;end end end if (v3156>0.08) then local v4180=0;while true do if (0==v4180) then if v1679.run then v1683("run");elseif v1679.walk then v1683("walk");end return;end end end if v1679.idle then v1683("idle");end break;end if (v3154==1) then v3156=v1675.MoveDirection.Magnitude;v3157=v1675:GetState();if (v3157==Enum.HumanoidStateType.Freefall) then local v4181=1584 -(160 + 1424) ;while true do if (v4181==(0 + 0)) then if v1679.fall then v1683("fall");elseif v1679.jump then v1683("jump");end return;end end end if ((v3157==Enum.HumanoidStateType.Jumping) and v1679.jump) then v1683("jump");return;end v3154=2;end if ((0 + 0)==v3154) then if ( not animState.active or  not v1672.Parent) then stopDirectController(v1672);return;end v3155=os.clock();if (v3155<v1682.nextUpdateAt) then return;end v1682.nextUpdateAt=v3155 + (770.03 -(479 + 291)) ;v3154=1;end end end);return true;end end end function applyFolderDataToFolder(v1684,v1685,v1686,v1687) if  not v1685 then return 0;end local v1688=0 -0 ;local v1689=971 -(569 + 402) ;for v2216,v2217 in ipairs(v1685:GetChildren()) do if v2217:IsA("Animation") then local v2821=1305 -(635 + 670) ;local v2822;while true do if (v2821==(2 -1)) then if v2822 then if v1687 then rememberOriginal(v1684,v2217);end v2217.AnimationId=v2822;v1688=v1688 + 1 ;end break;end if (v2821==0) then v1689=v1689 + 1 ;v2822=resolveIdFromFolderData(v1686,v2217.Name,v1689);v2821=3 -2 ;end end end end return v1688;end function getFirstAnimationInFolder(v1690) local v1691=598 -(42 + 556) ;while true do if (v1691==(1401 -(1246 + 155))) then if  not v1690 then return nil;end for v3158,v3159 in ipairs(v1690:GetChildren()) do if v3159:IsA("Animation") then return v3159;end end v1691=1;end if (v1691==(733 -(31 + 701))) then return nil;end end end function applySlotFromSet(v1692,v1693,v1694,v1695,v1696,v1697) local v1698=0;local v1699;local v1700;local v1701;local v1702;while true do if (v1698==2) then if ( not v1701 or  not animState.settings.useFallbackWhenMissing) then return false;end v1702=normalizeAnimationId(v1696);v1698=9 -6 ;end if ((502 -(393 + 106))==v1698) then if  not v1702 then return false;end if v1697 then rememberOriginal(v1692,v1701);end v1698=1175 -(727 + 444) ;end if (v1698==(2 -1)) then if (applyFolderDataToFolder(v1692,v1699,v1700,v1697)>(0 + 0)) then return true;end v1701=getFirstAnimationInFolder(v1699);v1698=655 -(269 + 384) ;end if (v1698==(1573 -(598 + 971))) then v1701.AnimationId=v1702;return true;end if (v1698==0) then v1699=v1693:FindFirstChild(v1695);v1700=v1694 and v1694[v1695] ;v1698=1 + 0 ;end end end function applyIdleFromSet(v1703,v1704,v1705,v1706) local v1707=v1704:FindFirstChild("idle");if  not v1707 then return false;end local v1708=0;local v1709=0 -0 ;for v2218,v2219 in ipairs(v1707:GetChildren()) do if v2219:IsA("Animation") then local v2824=0 -0 ;local v2825;local v2826;while true do if (v2824==0) then v1709=v1709 + (2 -1) ;v2825=nil;v2824=1446 -(800 + 645) ;end if (v2824==(1 + 1)) then if v2826 then local v4082=790 -(687 + 103) ;while true do if (v4082==(1162 -(142 + 1020))) then if v1706 then rememberOriginal(v1703,v2219);end v2219.AnimationId=v2826;v4082=2 -1 ;end if (v4082==1) then v1708=v1708 + 1 ;break;end end end break;end if (v2824==1) then if animState.settings.useFallbackWhenMissing then v2825=((v2219.Name=="Animation2") and v879.idle2) or v879.idle1 ;end v2826=resolveIdFromFolderDataWithFallback(v1705,v2219.Name,v1709,v2825);v2824=1 + 1 ;end end end end return v1708>(513 -(306 + 207)) ;end function hardResetAnimator(v1710) if  not v1710 then return;end local v1711=v1710:GetPlayingAnimationTracks();for v2220,v2221 in ipairs(v1711) do v2221:Stop(1404 -(112 + 1292) );end end function flushAnimationState(v1712) local v1713=0 + 0 ;local v1714;local v1715;while true do if (v1713==2) then for v3160,v3161 in ipairs(v1715) do v3161:Stop(952 -(587 + 365) );end break;end if (v1713==0) then if  not v1712 then return;end v1714=v1712:FindFirstChildOfClass("Humanoid");v1713=1;end if (v1713==(1716 -(829 + 886))) then if  not v1714 then return;end v1715=v1714:GetPlayingAnimationTracks();v1713=2;end end end function refreshAnimate(v1716) local v1717=0 -0 ;local v1718;local v1719;while true do if (v1717==(0 + 0)) then v1718=v1716 and v1716:FindFirstChild("Animate") ;if (v1718 and v1718:IsA("LocalScript")) then v1718.Disabled=true;task.wait();v1718.Disabled=false;end v1717=3 -2 ;end if (v1717==1) then v1719=v1716 and v1716:FindFirstChildOfClass("Humanoid") ;if v1719 then local v3531=0;local v3532;while true do if (v3531==(0 -0)) then v3532=v1719:GetPlayingAnimationTracks();for v4182,v4183 in ipairs(v3532) do v4183:Stop(0 + 0 );end v3531=1 + 0 ;end if (v3531==(1 -0)) then v1719:ChangeState(Enum.HumanoidStateType.Running);break;end end end break;end end end function forceAnimationKick(v1720) local v1721=977 -(613 + 364) ;local v1722;while true do if (v1721==(3 + 0)) then task.defer(function() local v3162=0 + 0 ;local v3163;while true do if ((0 + 0)==v3162) then if  not v1720.Parent then return;end v3163=v1722:GetPlayingAnimationTracks();v3162=1;end if (v3162==(4 -2)) then task.wait();v1722:ChangeState(Enum.HumanoidStateType.Running);break;end if (v3162==(3 -2)) then if ( #v3163>(0 -0)) then return;end v1722:ChangeState(Enum.HumanoidStateType.RunningNoPhysics);v3162=2 + 0 ;end end end);break;end if (v1721==(1940 -(1467 + 472))) then v1722:Move(Vector3.new(0 -0 ,0,0),true);v1722:ChangeState(Enum.HumanoidStateType.RunningNoPhysics);v1721=1549 -(1077 + 470) ;end if (0==v1721) then v1722=v1720 and v1720:FindFirstChildOfClass("Humanoid") ;if  not v1722 then return;end v1721=1 + 0 ;end if (v1721==2) then task.wait();v1722:ChangeState(Enum.HumanoidStateType.Running);v1721=1 + 2 ;end end end function scrubTracksForDuration(v1723,v1724) local v1725=v1723 and v1723:FindFirstChildOfClass("Humanoid") ;if  not v1725 then return;end local v1726=v1725:GetPlayingAnimationTracks();for v2222,v2223 in ipairs(v1726) do v2223:Stop(0 -0 );end task.wait(v1724 or (429.2 -(12 + 417)) );local v1727=v1725:GetPlayingAnimationTracks();for v2224,v2225 in ipairs(v1727) do v2225:Stop(0);end end function applyAnimationSetToCharacter(v1728,v1729) local v1730=0;local v1731;local v1732;local v1733;while true do if (3==v1730) then replicateAnimationStateForOthers(v1728,v1729);task.defer(function() local v3164=0;while true do if (v3164==1) then pcall(function() v786.EmoteMimic.Reapply();end);break;end if (v3164==0) then if  not animState.active then return;end if  not (v786 and v786.EmoteMimic and (type(v786.EmoteMimic.Reapply)=="function")) then return;end v3164=2 -1 ;end end end);return true;end if (v1730==(0 + 0)) then if ( not v1728 or  not v1729) then return false;end v1731=v1728:FindFirstChild("Animate");v1732=v1728:FindFirstChildOfClass("Humanoid");v1730=1;end if ((2 -0)==v1730) then if v1731 then local v3533=0 -0 ;while true do if (v3533==(0 -0)) then for v4184,v4185 in ipairs(v880) do if applySlotFromSet(v1728,v1731,v1729,v4185.folder,v4185.fallback,true) then v1733=v1733 + 1 + 0 ;end end if applyIdleFromSet(v1728,v1731,v1729.idle,true) then v1733=v1733 + 1 ;end break;end end end if (v1733>(0 + 0)) then stopDirectController(v1728);refreshAnimate(v1728);else local v3534=0 + 0 ;local v3535;while true do if ((0 -0)==v3534) then v3535=applyAnimationSetViaDescription(v1732,v1729);if v3535 then stopDirectController(v1728);elseif  not startDirectController(v1728,v1729) then return false;end break;end end end forceAnimationKick(v1728);v1730=1108 -(924 + 181) ;end if (v1730==1) then if  not v1732 then return false;end hardResetAnimator(v1732);v1733=797 -(263 + 534) ;v1730=1 + 1 ;end end end function restoreOwnAnimationsHard(v1734) if  not v1734 then return false;end local v1735=getAnimationSetFromUserId(v878.UserId);if  not v1735 then return false;end local v1736=v1734:FindFirstChild("Animate");local v1737=v1734:FindFirstChildOfClass("Humanoid");if  not v1737 then return false;end hardResetAnimator(v1737);local v1738=0 + 0 ;if v1736 then local v2561=0 -0 ;while true do if (v2561==0) then for v3719,v3720 in ipairs(v880) do if applySlotFromSet(v1734,v1736,v1735,v3720.folder,v3720.fallback,false) then v1738=v1738 + (2 -1) ;end end if applyIdleFromSet(v1734,v1736,v1735.idle,false) then v1738=v1738 + 1 + 0 ;end break;end end end if (v1738>(707 -(562 + 145))) then local v2562=0;while true do if (v2562==(0 + 0)) then stopDirectController(v1734);refreshAnimate(v1734);break;end end elseif applyAnimationSetViaDescription(v1737,v1735) then stopDirectController(v1734);else if  not animState.active then return false;end if  not startDirectController(v1734,v1735) then return false;end end forceAnimationKick(v1734);replicateAnimationStateForOthers(v1734,v1735);task.defer(function() if  not animState.active then return;end if  not (v786 and v786.EmoteMimic and (type(v786.EmoteMimic.Reapply)=="function")) then return;end pcall(function() v786.EmoteMimic.Reapply();end);end);return true;end function mimicAnimationsFromUserId(v1739,v1740) if  not animState.active then return false;end v1740=((v1740~=false) and v1740) or false ;local v1741=tonumber(v1739);if  not v1741 then return false;end local v1742=v878.Character;if  not v1742 then return false;end pruneStaleCharacterAnimationState(v1742);if ( not v1740 and (animState.lastSourceUserId==v1741)) then return true;end animState.applyToken=animState.applyToken + 1 + 0 ;local v1744=animState.applyToken;local v1745=getUserAvatarType(v1741);if (v1745=="R6") then local v2563=0 + 0 ;while true do if ((0 + 0)==v2563) then animState.lastSourceUserId=nil;restoreOwnAnimationsHard(v1742);v2563=1 + 0 ;end if (v2563==(1 -0)) then flushAnimationState(v1742);return false;end end end local v1746=getAnimationSetFromUserIdWithRetry(v1741,3 + 0 );if  not v1746 then local v2564=0 -0 ;while true do if (v2564==(0 + 0)) then animState.lastSourceUserId=nil;return false;end end end if (v1744~=animState.applyToken) then return false;end local v1747=animState.lastSourceUserId and (animState.lastSourceUserId~=v1741) ;if v1747 then local v2565=0;while true do if (v2565==0) then restoreOwnAnimationsHard(v1742);flushAnimationState(v1742);v2565=1 + 0 ;end if (v2565==(1877 -(1459 + 417))) then scrubTracksForDuration(v1742,0.18);if (v1744~=animState.applyToken) then return false;end break;end end end animState.lastSourceUserId=v1741;animState.pinnedTargetUserId=v1741;local v1750=applyAnimationSetToCharacter(v1742,v1746);if  not v1750 then return false;end task.defer(function() task.wait(286.2 -(194 + 92) );if (v1744~=animState.applyToken) then return;end if  not v1742.Parent then return;end local v2226=v1742:FindFirstChildOfClass("Humanoid");if  not v2226 then return;end if ( #v2226:GetPlayingAnimationTracks()==0) then local v2827=1385 -(1057 + 328) ;while true do if ((0 -0)==v2827) then restoreOwnAnimationsHard(v1742);applyAnimationSetToCharacter(v1742,v1746);break;end end end end);return v1750;end function mimicAnimationsFromTarget(v1751) if  not animState.active then return false;end local v1752=resolveTargetToUserId(v1751);if  not v1752 then return false;end animState.lastTargetInput=v1751;animState.pinnedTargetUserId=v1752;if animState.settings.invalidateAnimationCacheOnTargetSwitch then animState.animationSetCache[v1752]=nil;end return mimicAnimationsFromUserId(v1752,true);end function disconnectAllConnections() local v1755=0 -0 ;while true do if ((532 -(5 + 527))==v1755) then for v3165,v3166 in ipairs(animState.connections) do if (v3166 and v3166.Connected) then v3166:Disconnect();end end animState.connections={};break;end end end function clearRuntimeCaches() animState.animationSetCache={};end function restoreCharacterToSelf(v1757) if  not v1757 then return false;end resetCharacterAnimations(v1757);local v1758=restoreOwnAnimationsHard(v1757);flushAnimationState(v1757);return v1758;end function animCleanup() if  not animState.active then return;end animState.active=false;animState.lastSourceUserId=nil;animState.pinnedTargetUserId=nil;animState.lastTargetInput=nil;animState.applyToken=animState.applyToken + 1 ;disconnectAllConnections();local v1764=v878.Character;stopAllDirectControllers();restoreCharacterToSelf(v1764);flushAnimationState(v1764);animState.originalByCharacter={};clearRuntimeCaches();end animState.cleanup=animCleanup;if v786 then v786.CloneAnimationsFromTarget=mimicAnimationsFromTarget;v786.AnimationMimicCleanup=animCleanup;end if (v786 and v786.__EmoteMimicState and (type(v786.__EmoteMimicState.cleanup)=="function")) then pcall(v786.__EmoteMimicState.cleanup);end local function v883(v1766,v1767) if (type(v1766)~="table") then return v1766;end v1767=v1767 or {} ;if v1767[v1766] then return v1767[v1766];end local v1768={};v1767[v1766]=v1768;for v2229,v2230 in pairs(v1766) do v1768[v883(v2229,v1767)]=v883(v2230,v1767);end return v1768;end local v884={active=v760['Enabled']==true ,targetInput=v764.target,currentUserId=nil,applyToken=0 + 0 ,connections={},emoteCache={},cacheTtlSeconds=800 -(342 + 438) ,cleanup=nil,settings={autoApplyOnRespawn=true}};if v786 then v786.__EmoteMimicState=v884;end local function v885() local v1770=0;while true do if (v1770==(0 + 0)) then for v3167,v3168 in ipairs(v884.connections) do if (v3168 and v3168.Connected) then v3168:Disconnect();end end v884.connections={};break;end end end local function v886() v884.emoteCache={};end local function v887(v1772) local v1773=0 + 0 ;local v1774;local v1775;while true do if (v1773==2) then if (type(v1772.GetEquippedEmotes)=="function") then local v3538=0;local v3539;local v3540;while true do if (v3538==(0 + 0)) then v3539,v3540=pcall(function() return v1772:GetEquippedEmotes();end);if (v3539 and (type(v3540)=="table")) then v1775=v883(v3540);end break;end end end if (v1774==nil) then local v3541=0;local v3542;local v3543;while true do if (v3541==(0 -0)) then v3542,v3543=pcall(function() return v1772.Emotes;end);if (v3542 and (type(v3543)=="table")) then v1774=v883(v3543);end break;end end end v1773=1 + 2 ;end if (v1773==1) then v1775=nil;if (type(v1772.GetEmotes)=="function") then local v3544,v3545=pcall(function() return v1772:GetEmotes();end);if (v3544 and (type(v3545)=="table")) then v1774=v883(v3545);end end v1773=2;end if (v1773==0) then if  not v1772 then return nil;end v1774=nil;v1773=1 + 0 ;end if (v1773==(7 -3)) then if (type(v1775)~="table") then v1775={};end return {emotes=v1774,equipped=v1775};end if (v1773==3) then if (v1775==nil) then local v3546=0 -0 ;local v3547;local v3548;while true do if (v3546==(12 -(6 + 6))) then v3547,v3548=pcall(function() return v1772.EquippedEmotes;end);if (v3547 and (type(v3548)=="table")) then v1775=v883(v3548);end break;end end end if (type(v1774)~="table") then v1774={};end v1773=11 -7 ;end end end local function v888(v1776) return (type(v1776)=="table") and (next(v1776)~=nil) ;end local function v889(v1777) if (type(v1777)~="table") then return false;end return v888(v1777.emotes) or v888(v1777.equipped) ;end local function v890(v1778) local v1779=0;local v1780;local v1781;local v1782;local v1783;local v1784;local v1785;local v1786;while true do if (v1779==(2 -1)) then v1782=v1781.Character;v1783=v1782 and v1782:FindFirstChildOfClass("Humanoid") ;v1779=2;end if (v1779==0) then v1780,v1781=pcall(function() return v765:GetPlayerByUserId(v1778);end);if ( not v1780 or  not v1781) then return nil;end v1779=1 + 0 ;end if (v1779==4) then pcall(function() v1785:Destroy();end);return v1786;end if ((1256 -(206 + 1047))==v1779) then if ( not v1784 or  not v1785) then return nil;end v1786=v887(v1785);v1779=1116 -(470 + 642) ;end if (v1779==(1 + 1)) then if  not v1783 then return nil;end v1784,v1785=pcall(function() return v1783:GetAppliedDescription();end);v1779=3;end end end local function v891(v1787) local v1788=cacheGetEntry(v884.emoteCache,v1787,v884.cacheTtlSeconds);if (v1788 and v1788.data) then return {emotes=v883(v1788.data.emotes),equipped=v883(v1788.data.equipped)};end local v1789=nil;local v1790=getTargetDescriptionCached(v1787);if v1790 then v1789=v887(v1790);pcall(function() v1790:Destroy();end);end if  not v889(v1789) then v1789=v890(v1787);end if ( not v1789 or  not v889(v1789)) then return nil;end cacheSetEntry(v884.emoteCache,v1787,{data=v1789,timestamp=os.clock()},v784.emoteData);return v1789;end local function v892(v1791,v1792) local v1793=1067 -(552 + 515) ;local v1794;while true do if (v1793==2) then return v1794;end if (v1793==(1 + 0)) then if v888(v1792.emotes) then local v3549=pcall(function() v1791:SetEmotes(v883(v1792.emotes));end);v1794=v1794 or v3549 ;end if v888(v1792.equipped) then local v3550=0;local v3551;while true do if (v3550==(0 + 0)) then v3551=pcall(function() v1791:SetEquippedEmotes(v883(v1792.equipped));end);v1794=v1794 or v3551 ;break;end end end v1793=2 + 0 ;end if ((0 + 0)==v1793) then if ( not v1791 or  not v1792) then return false;end v1794=false;v1793=1;end end end local function v893(v1795,v1796) if ( not v1795 or  not v1796) then return;end v1795.HeightScale=v1796.height;v1795.WidthScale=v1796.width;v1795.DepthScale=v1796.depth;v1795.HeadScale=v1796.head;v1795.BodyTypeScale=v1796.bodyType;v1795.ProportionScale=v1796.proportion;end local function v894(v1809,v1810) local v1811=0;while true do if (v1811==(1 + 0)) then task.defer(function() local v3169=0;while true do if (v3169==0) then task.wait(0.06 + 0 );if (v1809 and v1809.Parent) then restoreCharacterColors(v1809,v1810);end break;end end end);task.defer(function() task.wait(1051.2 -(701 + 350) );if (v1809 and v1809.Parent) then restoreCharacterColors(v1809,v1810);end v881(v1810);end);break;end if (0==v1811) then if  not v1810 then return;end restoreCharacterColors(v1809,v1810);v1811=1;end end end local function v895(v1812,v1813) if ( not v1812 or  not v1813) then return false;end if  not v889(v1813) then return false;end local v1814=v1812.Parent;local v1815=v859(v1814);local v1816=getCurrentScaleValues(v1812);local v1817=v1812:FindFirstChildOfClass("HumanoidDescription") or v1812:FindFirstChild("HumanoidDescription") ;if (v1817 and v892(v1817,v1813)) then local v2567=0 + 0 ;while true do if (v2567==(0 + 0)) then v881(v1815);task.defer(function() local v3721=0 + 0 ;while true do if (v3721==(0 -0)) then if ( not v884.active or  not v1817.Parent) then return;end v892(v1817,v1813);break;end end end);v2567=1;end if (v2567==(3 -2)) then return true;end end end local v1818,v1819=pcall(function() return v1812:GetAppliedDescription();end);if ( not v1818 or  not v1819) then v881(v1815);return false;end if  not v892(v1819,v1813) then local v2568=0 + 0 ;while true do if (v2568==(0 -0)) then v881(v1815);pcall(function() v1819:Destroy();end);v2568=1 + 0 ;end if (v2568==(1 + 0)) then return false;end end end v893(v1819,v1816);if v1812.ApplyDescriptionClientServer then local v2569=0 -0 ;local v2570;while true do if (v2569==(1346 -(281 + 1065))) then v2570=pcall(function() v1812:ApplyDescriptionClientServer(v1819);end);if v2570 then local v3916=0;while true do if (v3916==0) then v894(v1814,v1815);pcall(function() v1819:Destroy();end);v3916=4 -3 ;end if ((3 -2)==v3916) then return true;end end end break;end end end local v1820=pcall(function() v1812:ApplyDescription(v1819);end);v894(v1814,v1815);pcall(function() v1819:Destroy();end);return v1820;end local function v896(v1821) if  not v884.active then return false;end local v1822=tonumber(v1821);if  not v1822 then return false;end local v1823=v878.Character;local v1824=v1823 and v1823:FindFirstChildOfClass("Humanoid") ;if  not v1824 then return false;end v884.applyToken=v884.applyToken + (1212 -(1114 + 97)) ;local v1826=v884.applyToken;local v1827=v891(v1822);if  not v1827 then return false;end if ((v1826~=v884.applyToken) or  not v884.active) then return false;end local v1828=false;for v2233=1 -0 ,3 do v1828=v895(v1824,v1827);if v1828 then break;end if (v2233<(1916 -(279 + 1634))) then task.wait(1280.12 -(1213 + 67) );end end if v1828 then v884.currentUserId=v1822;end return v1828;end local function v897(v1829) local v1830=0;local v1831;while true do if (0==v1830) then if  not v884.active then return false;end v1831=resolveTargetToUserId(v1829);v1830=1;end if (v1830==(192 -(65 + 126))) then if  not v1831 then return false;end v884.targetInput=v1829;v1830=2;end if (v1830==2) then return v896(v1831);end end end local function v898() local v1832=0;while true do if (v1832==0) then if v884.currentUserId then return v896(v884.currentUserId);end return v897(v884.targetInput or v764.target );end end end local function v899() local v1833=0 + 0 ;while true do if (0==v1833) then v884.currentUserId=nil;return v897(v764.target);end end end local function v900() local v1834=1085 -(189 + 896) ;while true do if (v1834==(1 + 1)) then v886();if (v786 and (v786.__EmoteMimicState==v884)) then v786.__EmoteMimicState=nil;end break;end if (v1834==(1963 -(1872 + 91))) then if  not v884.active then return;end v884.active=false;v1834=2 -1 ;end if (v1834==(1 + 0)) then v884.applyToken=v884.applyToken + (3 -2) ;v885();v1834=2 + 0 ;end end end v884.cleanup=v900;if v884.settings.autoApplyOnRespawn then local v2234=v878.CharacterAdded:Connect(function(v2572) local v2573=0 + 0 ;local v2574;local v2575;while true do if (v2573==(7 -5)) then if ( not v2575 or (v2574~=v884.applyToken) or  not v884.active) then return;end task.spawn(function() local v3722={0.2 -0 ,0.45,0.8 + 0 };for v3917,v3918 in ipairs(v3722) do if ( not v884.active or (v2574~=v884.applyToken) or  not v2572.Parent) then return;end task.wait(v3918);if ( not v884.active or (v2574~=v884.applyToken) or  not v2572.Parent) then return;end if v898() then break;end end task.wait(0.9 -0 );if ( not v884.active or (v2574~=v884.applyToken) or  not v2572.Parent) then return;end v898();end);break;end if (v2573==0) then if  not v884.active then return;end v884.applyToken=v884.applyToken + (1535 -(553 + 981)) ;v2573=1;end if (v2573==1) then v2574=v884.applyToken;v2575=v2572:WaitForChild("Humanoid",10);v2573=2;end end end);table.insert(v884.connections,v2234);end if v786 then local v2235=0 + 0 ;while true do if (v2235==(0 + 0)) then v786.EmoteMimic={SetTarget=v897,SetTargetUserId=v896,Reapply=v898,UseDefaultTarget=v899,Cleanup=v900};v786.CloneEmotesFromTarget=v897;v2235=1 + 0 ;end if (v2235==1) then v786.CloneEmotesFromUserId=v896;v786.EmoteMimicCleanup=v900;break;end end end task.defer(function() local v1835=0;while true do if (v1835==(0 -0)) then if  not v884.active then return;end v897(v764.target);break;end end end);local function v902(v1836) if (v1836==nil) then return false;end local v1837=false;local v1838=v786 and v786.OutfitCopy ;if (v1838 and (type(v1838.SetTarget)=="function")) then local v2576=0 -0 ;local v2577;while true do if (v2576==0) then v2577=pcall(function() v1838.SetTarget(v1836);end);v1837=v2577;break;end end elseif (v786 and (type(v786.CopySetUserId)=="function")) then local v3174=pcall(function() v786.CopySetUserId(v1836);end);v1837=v3174;end task.defer(function() local v2236=1897 -(1320 + 577) ;while true do if (v2236==0) then if animState.active then mimicAnimationsFromTarget(v1836);end if v884.active then v897(v1836);end break;end end end);return v1837;end local function v903() local v1839=849 -(667 + 182) ;while true do if (v1839==(1288 -(1115 + 173))) then pcall(v857);pcall(animCleanup);v1839=1;end if (v1839==1) then pcall(v900);break;end end end if v786 then local v2237=0;while true do if (v2237==(0 -0)) then v786.SwitchTargetSafe=v902;v786.SetTargetSafe=v902;v2237=1 + 0 ;end if (v2237==1) then v786.FullComboCleanup=v903;v786.CloneFullCleanup=v903;break;end end end task.defer(function() local v1840=1755 -(1375 + 380) ;while true do if ((0 + 0)==v1840) then if  not animState.active then return;end if animState.pinnedTargetUserId then mimicAnimationsFromUserId(animState.pinnedTargetUserId);elseif animState.lastSourceUserId then mimicAnimationsFromUserId(animState.lastSourceUserId);elseif (animState.lastTargetInput~=nil) then mimicAnimationsFromTarget(animState.lastTargetInput);else mimicAnimationsFromTarget(v764.target);end break;end end end);if animState.settings.autoApplyOnRespawn then local v2238=26 -(12 + 14) ;local v2239;while true do if (v2238==(0 -0)) then v2239=v878.CharacterAdded:Connect(function(v3555) if  not animState.active then return;end animState.applyToken=animState.applyToken + (2 -1) ;local v3557=animState.applyToken;pruneStaleCharacterAnimationState(v3555);local v3558=v3555:WaitForChild("Humanoid",25 -15 );if ( not v3558 or (v3557~=animState.applyToken) or  not animState.active) then return;end task.wait(0.15);if ((v3557~=animState.applyToken) or  not animState.active or  not v3555.Parent) then return;end task.spawn(function() local v3723=0 -0 ;local v3724;while true do if (v3723==0) then v3724=0.25;for v4295=1 -0 ,5 -1  do local v4296=731 -(354 + 377) ;while true do if ((4 -3)==v4296) then if (animState.lastSourceUserId and mimicAnimationsFromUserId(animState.lastSourceUserId,true)) then return;end if ((animState.lastTargetInput~=nil) and mimicAnimationsFromTarget(animState.lastTargetInput)) then return;end v4296=5 -3 ;end if (2==v4296) then task.wait(v3724);if ( not animState.active or (v3557~=animState.applyToken)) then return;end v4296=3;end if (v4296==0) then if ( not animState.active or (v3557~=animState.applyToken) or  not v3555.Parent) then return;end if (animState.pinnedTargetUserId and mimicAnimationsFromUserId(animState.pinnedTargetUserId,true)) then return;end v4296=1;end if ((1985 -(263 + 1719))==v4296) then v3724=math.min(v3724 * (1 + 1) ,361 -(335 + 24) );break;end end end break;end end end);end);table.insert(animState.connections,v2239);break;end end end end
+]=]
+
+local function TryLoadEmulatedGunHandler()
+	if EmulatedGunHandlerAttempted then
+		return EmulatedGunHandler;
+	end;
+	EmulatedGunHandlerAttempted = true;
+
+	if type(loadstring) ~= 'function' then
+		return nil;
+	end;
+
+	if type(GunhandlerSource) ~= 'string' or GunhandlerSource == '' then
+		return nil;
+	end;
+
+	local chunk, compileErr = loadstring(GunhandlerSource, '@embedded dumped gunhandler.lua');
+	if not chunk then
+		warn('cider error: gunhandler emulation failed;', compileErr);
+		return nil;
+	end;
+
+	local fakeScript = {
+		CanShoot = function()
+			return CanShoot;
+		end,
+	};
+
+	local fakeEnv = setmetatable({
+		script = fakeScript,
+		require = function(target)
+			if target == fakeScript.CanShoot then
+				return CanShoot;
+			end;
+			return require(target);
+		end,
+	}, {
+		__index = function(_, key)
+			return getfenv()[key];
+		end,
+		__newindex = function(_, key, value)
+			getfenv()[key] = value;
+		end,
+	});
+
+	setfenv(chunk, fakeEnv);
+
+	local okExec, result = pcall(chunk);
+	if not okExec or type(result) ~= 'table' or type(result.shoot) ~= 'function' or type(result.getAim) ~= 'function' then
+		warn('cider error: gunhandler emulation failed;', result);
+		return nil;
+	end;
+
+	EmulatedGunHandler = result;
+	shared.__cider_emulated_gunhandler = true;
+	return EmulatedGunHandler;
+end;
+
+do
+	local hookFn = hookfunction or (getgenv and getgenv().hookfunction);
+	if hookFn and not shared.__cider_require_gunhandler_hooked then
+		local oldRequire;
+		oldRequire = hookFn(require, function(target)
+			local ModulesFolder = ReplicatedStorage:FindFirstChild('Modules');
+			local GunHandlerModule = ModulesFolder and ModulesFolder:FindFirstChild('GunHandler');
+			if GunHandlerModule and target == GunHandlerModule then
+				local Emu = TryLoadEmulatedGunHandler();
+				if Emu then
+					shared.__cider_require_gunhandler_source = 'emulated';
+					return Emu;
+				end;
+			end;
+			return oldRequire(target);
+		end);
+		shared.__cider_require_gunhandler_hooked = true;
+	end;
+end;
+
+AutoWeapons = {
+	['[SMG]'] = true,
+	['[Rifle]'] = true,
+	['[Shotgun]'] = true, 
+	['[AK47]'] = true,
+	['[AR]'] = true,
+	['[Drum-Shotgun]'] = true,
+	['[DrumGun]'] = true,
+	['[LMG]'] = true,
+	['[P90]'] = true,
+	['[SilencerAR]'] = true,
+};
+
+BurstWeapons = {
+	['[AUG]'] = true,
+};
+
+ShootRayParams = RaycastParamsNew();
+ShootRayParams.FilterType = EnumExclude;
+ShootRayParams.IgnoreWater = true;
+
+CanShootCheck = function(Character, IsAutoShoot)
+	if not Character then return false end;
+	local Humanoid = Character:FindFirstChild('Humanoid');
+	if not Humanoid or Humanoid.Health <= 0 or Humanoid:GetState() == EnumDead then return false end;
+	local BodyEffects = Character:FindFirstChild('BodyEffects');
+	if not BodyEffects then return false end;
+	local Tool = Character:FindFirstChildOfClass('Tool');
+	if not Tool or not Tool:FindFirstChild('Handle') or not Tool:FindFirstChild('Ammo') then return false end;
+	if Tool.Ammo.Value <= 0 then return false end;
+	if Character:FindFirstChild('FULLY_LOADED_CHAR') == nil then return false end;
+	if Character:FindFirstChild('FORCEFIELD') then return false end;
+	if Character:FindFirstChild('GRABBING_CONSTRAINT') then return false end;
+	if Character:FindFirstChild('Christmas_Sock') then return false end;
+	if BodyEffects:FindFirstChild('Cuff') and BodyEffects.Cuff.Value then return false end;
+	if BodyEffects:FindFirstChild('Attacking') and BodyEffects.Attacking.Value then return false end;
+	if BodyEffects:FindFirstChild('K.O') and BodyEffects['K.O'].Value then return false end;
+	if BodyEffects:FindFirstChild('Grabbed') and BodyEffects.Grabbed.Value then return false end;
+	if BodyEffects:FindFirstChild('Reload') and BodyEffects.Reload.Value then return false end;
+	if BodyEffects:FindFirstChild('Dead') and BodyEffects.Dead.Value then return false end;
+	if BodyEffects:FindFirstChild('Block') then return false end;
+	if not IsAutoShoot and Tool:GetAttribute('Cooldown') then return false end;
+	local LastShot = Character:GetAttribute('LastGunShot');
+	local IsShotgun = Tool.Name == '[Shotgun]' or Tool.Name == '[Double-Barrel SG]' or Tool.Name == 'TacticalShotgun' or Tool.Name == 'Drum-Shotgun';
+	if LastShot ~= Tool.Name and Character:GetAttribute('ShotgunDebounce') then return false end;
+	return true;
+end;
+
+CanShoot = function(Character)
+	if not CanShootCheck(Character) then return false end;
+	local Tool = Character:FindFirstChildOfClass('Tool');
+	local IsShotgun = Tool.Name == '[Shotgun]' or Tool.Name == '[Double-Barrel SG]' or Tool.Name == 'TacticalShotgun' or Tool.Name == 'Drum-Shotgun';
+	if IsShotgun and not Character:GetAttribute('ShotgunDebounce') then
+		Character:SetAttribute('ShotgunDebounce', true);
+		task.delay(0.65, function()
+			Character:SetAttribute('ShotgunDebounce', nil);
+		end);
+	end;
+	Character:SetAttribute('LastGunShot', Tool.Name);
+	return true;
+end;
+
+GetMuzzlePosition = function(Tool)
+	local Handle = Tool:FindFirstChild('Handle');
+	if not Handle then return nil end;
+	local Offset = MuzzleOffsets[Tool.Name] or CFrameNew(0, 0.4, 1.8);
+	local FallbackPos = (Handle.CFrame * Offset).Position;
+	local Default = Tool:FindFirstChild('Default');
+	if Default then
+		local Mesh = Default:FindFirstChild('Mesh');
+		if Mesh then
+			local Muzzle = Mesh:FindFirstChild('Muzzle');
+			if Muzzle then return Muzzle.WorldPosition end;
+		end;
+	end;
+
+	local HandleMuzzle = Handle:FindFirstChild('Muzzle');
+	if HandleMuzzle then return HandleMuzzle.WorldPosition end;
+
+	return FallbackPos;
+end;
+
+local GetCursorViewportPosition = function()
+	local TopLeftInset = GuiService:GetGuiInset();
+	return UserInputService:GetMouseLocation() - TopLeftInset;
+end;
+
+GetClosestPointOnPart = function(Part, Scale, MousePos)
+	local CurrentCamera = Workspace.CurrentCamera;
+	MousePos = MousePos or GetCursorViewportPosition();
+	local Ray = CurrentCamera:ViewportPointToRay(MousePos.X, MousePos.Y);
+	local DirectionLengthSquared = Ray.Direction:Dot(Ray.Direction);
+	local RayDistance = DirectionLengthSquared > 0 and Ray.Direction:Dot(Part.Position - Ray.Origin) / DirectionLengthSquared or 0;
+	local Intersection = Ray.Origin + Ray.Direction * MathMax(RayDistance, 0);
+	local LocalPos = Part.CFrame:PointToObjectSpace(Intersection);
+	local Half = (Part.Size * (Scale or 1)) / 2;
+	return Part.CFrame * Vector3New(
+		MathClamp(LocalPos.X, -Half.X, Half.X),
+		MathClamp(LocalPos.Y, -Half.Y, Half.Y),
+		MathClamp(LocalPos.Z, -Half.Z, Half.Z)
+	);
+end;
+
+GetClosestPartToCursor = function(Character, UseClosestPoint, PointScale)
+	local CurrentCamera = Workspace.CurrentCamera;
+	local MousePosition = GetCursorViewportPosition();
+	local Closest = nil;
+	local ClosestPosition = nil;
+	local BestDist = MathHuge;
+	for _, Part in next, Character:GetChildren() do
+		if not Part:IsA('BasePart') then continue end;
+		local WorldPosition = UseClosestPoint and GetClosestPointOnPart(Part, PointScale, MousePosition) or Part.Position;
+		local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(WorldPosition);
+		if not OnScreen or ScreenPos.Z <= 0 then continue end;
+		local Dist = (MousePosition - Vector2New(ScreenPos.X, ScreenPos.Y)).Magnitude;
+		if Dist < BestDist then
+			BestDist = Dist;
+			Closest = Part;
+			ClosestPosition = WorldPosition;
+		end;
+	end;
+	return Closest, ClosestPosition;
+end;
+
+local ResolveHitPosition = function(TargetChar, FeatureCfg)
+	local HitPartCfg = FeatureCfg['Target Part'];
+	local PartName = (type(HitPartCfg) == 'table' and HitPartCfg['Part']) or HitPartCfg or 'HumanoidRootPart';
+	local ClosestPointCfg = (type(HitPartCfg) == 'table' and HitPartCfg['Closest Point']) or FeatureCfg['Closest Point'];
+	local ClosestPoint = type(ClosestPointCfg) == 'table' and ClosestPointCfg['Enabled'] == true;
+	local PointScale = nil;
+	local NormalizedPartName = string.lower(tostring(PartName));
+
+	if type(ClosestPointCfg) == 'table' and string.lower(tostring(ClosestPointCfg['Mode'])) == 'scaled' then
+		PointScale = 1 - (MathClamp(ClosestPointCfg['Scale'] or 0, 0, 100) / 100);
+	end;
+
+	if NormalizedPartName == 'closest point' then
+		ClosestPoint = true;
+		PartName = 'Head';
+	elseif NormalizedPartName == 'closest part' then
+		ClosestPoint = false;
+		PartName = 'Closest';
+	end;
+
+	local Part;
+	local Pos;
+	if PartName == 'Closest' then
+		Part, Pos = GetClosestPartToCursor(TargetChar, ClosestPoint, PointScale);
+	else
+		Part = TargetChar:FindFirstChild(PartName);
+	end;
+
+	if Part then
+		Pos = Pos or (ClosestPoint and GetClosestPointOnPart(Part, PointScale) or Part.Position);
+		return Pos, Part;
+	end;
+
+	local Fallback = TargetChar:FindFirstChild('HumanoidRootPart');
+	if Fallback then
+		local Pos = ClosestPoint and GetClosestPointOnPart(Fallback, PointScale) or Fallback.Position;
+		return Pos, Fallback;
+	end;
+	return nil, nil;
+end;
+
+local IsInside3DFOV = nil;
+
+local GetAimPosition = function(MuzzlePos, Range)
+	local SilentCfg = GetConfig()['Silent Aim'];
+	if SilentCfg['Enabled'] and State.Targets.Silent and PassesConditions(State.Targets.Silent, 'Silent Aim') then
+		local Target = State.Targets.Silent;
+		local TargetChar = Target.Character;
+		if TargetChar then
+			local HumanoidRootPart = TargetChar:FindFirstChild('HumanoidRootPart');
+			if HumanoidRootPart then
+				local CurrentCamera = Workspace.CurrentCamera;
+				local MaxRange = SilentCfg['Max Range'];
+				if MaxRange and MaxRange < MathHuge then
+					local WorldDist = (CurrentCamera.CFrame.Position - HumanoidRootPart.Position).Magnitude;
+					if WorldDist > MaxRange then return Mouse.Hit.Position end;
+				end;
+				local OffscreenCfg = SilentCfg['Offscreen Targeting'];
+				local AllowOffscreen = OffscreenCfg and OffscreenCfg['Enabled'];
+				local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position);
+				local IsUsable = AllowOffscreen or (OnScreen and ScreenPos.Z > 1);
+				if IsInside3DFOV and not IsInside3DFOV(HumanoidRootPart.Position, 'Silent Aim') then
+					IsUsable = false;
+				end;
+				if IsUsable then
+					local PassFOV = AllowOffscreen;
+					if not AllowOffscreen then
+						local SilentFOVCfg = GetConfig()['Main']['FOV']['Silent'];
+						if string.lower(tostring(SilentFOVCfg['Options'] or '2D')) == '3d' then
+							PassFOV = true;
+						elseif not SilentFOVCfg['Visualize']['Enabled'] then
+							PassFOV = true;
+						else
+							local MousePosition = UserInputService:GetMouseLocation();
+							local ViewportY = CurrentCamera.ViewportSize.Y;
+							local CamFOV = CurrentCamera.FieldOfView;
+							local ScaleFactor = (HumanoidRootPart.Size.Y * ViewportY) / (ScreenPos.Z * 2) * 80 / CamFOV;
+							local W = (SilentFOVCfg['Width'] and (SilentFOVCfg['Width'][1] or 150) or 150) * ScaleFactor;
+							local H = (SilentFOVCfg['Height'] and (SilentFOVCfg['Height'][1] or 150) or 150) * ScaleFactor;
+							local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition;
+							PassFOV = MathAbs(Delta.X) <= W / 2 and MathAbs(Delta.Y) <= H / 2;
+						end;
+					end;
+
+					if PassFOV then
+						local TargetPos, _ = ResolveHitPosition(TargetChar, SilentCfg);
+						if not TargetPos then TargetPos = HumanoidRootPart.Position end;
+
+						local CharacterTool = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass('Tool');
+						local FutureCfg = SilentCfg['Future'];
+						if FutureCfg and FutureCfg['Enabled'] ~= false then
+							TargetPos = ApplyFuture(TargetPos, Target, CharacterTool and CharacterTool.Name, FutureCfg);
+						else
+							TargetPos = ApplyPrediction(TargetPos, Target, SilentCfg);
+						end;
+						return TargetPos;
+					end;
+				end;
+			end;
+		end;
+	end;
+	return Mouse.Hit.Position;
+end;
+
+local DefaultBeamColor = Color3.new(1, 0.545098, 0.14902);
+
+local SoundsPlaying = {};
+local IsAimed = false;
+
+ScopedWeapons = {
+	'[Shotgun]', '[Drum-Shotgun]', '[Rifle]', '[TacticalShotgun]',
+	'[AR]', '[AUG]', '[AK47]', '[LMG]', '[SilencerAR]',
+};
+
+CustomBulletHoleRotations = {
+	['SoulII'] = Vector3New(-90, 0, 0),
+	['Sushi'] = 'Position',
+	['XMAS'] = Vector3New(180, 0, 0),
+	['Gift'] = Vector3New(180, 0, 0),
+	['Jellyfish'] = Vector3New(180, 0, 0),
+	['Halloween23'] = Vector3New(180, 0, 0),
+	['Wild West'] = Vector3New(180, 0, 0),
+	['Cat'] = Vector3New(180, 0, 0),
+	['Ninja'] = Vector3New(180, 0, 0),
+	['Void'] = Vector3New(180, 0, 0),
+	['Ice'] = Vector3New(180, 0, 0),
+	['Beary'] = { CFrameNew(0, 0, -0.45), Vector3New(180, 0, 0) },
+	['XMAS24'] = Vector3New(-90, 0, 0),
+	['Heartbreak'] = 'Position',
+	['Blaze'] = 'Position',
+	['Short Cake'] = 'Position',
+	['Shrimp'] = Vector3New(-90, 0, 0),
+	['Arcane'] = Vector3New(-90, 0, 0),
+	['PrestigeCandyCane'] = 'Position',
+	['Duck'] = 'Position',
+	['Flower'] = Vector3New(180, 0, 0),
+	['Car'] = Vector3New(180, 0, 0),
+	['Music'] = Vector3New(180, 0, 0),
+	['Brainrot'] = { CFrameNew(0, 0, -0.25), Vector3New(0, 0, 0) },
+};
+
+UndeadBeamColors = {
+	Color3.fromRGB(248, 147, 255),
+	Color3.fromRGB(255, 160, 64),
+	Color3.fromRGB(76, 255, 82),
+	Color3.fromRGB(110, 149, 255),
+};
+
+function DoMuzzleEmit(MuzzleSource, ShooterCharacter)
+	Spawn(function()
+		Xpcall(function()
+			if not ShooterCharacter then return end;
+			local Tool = ShooterCharacter:FindFirstChildOfClass('Tool');
+			if not Tool then return end;
+			local ToolHandle = Tool:FindFirstChild('Handle');
+			if not ToolHandle then return end;
+			local MuzzleAtt = (Tool:FindFirstChild('Default') and Tool.Default:FindFirstChild('Mesh') and Tool.Default.Mesh:FindFirstChild('Muzzle')) or ToolHandle:FindFirstChild('Muzzle');
+			if not MuzzleAtt then return end;
+			if ToolHandle:GetAttribute('Emitted') then return end;
+			ToolHandle:SetAttribute('Emitted', true);
+			Delay(0.05, function()
+				if ToolHandle then ToolHandle:SetAttribute('Emitted', nil) end;
+			end);
+			for _, Emitter in next, MuzzleSource:GetChildren() do
+				if Emitter:IsA('ParticleEmitter') then
+					local Clone = Emitter:Clone();
+					Clone.Parent = MuzzleAtt;
+					Clone.Enabled = true;
+					Clone:Emit(Clone:GetAttribute('EmitCount') or 1);
+					Clone.Enabled = false;
+					game.Debris:AddItem(Clone, 2);
+				end;
+			end;
+		end, ErrHandler);
+	end);
+end;
+
+CachedGunBeam = ReplicatedStorage:FindFirstChild('GunBeam');
+CachedAnimChar = nil;
+CachedShootAnim = nil;
+CachedAimShootAnim = nil;
+
+function Animate(Gun)
+	if not Gun then return end;
+	local Character = LocalPlayer.Character;
+	if not Character or not Character:FindFirstChild('Humanoid') or not Character.Humanoid:FindFirstChild('Animator') then return end;
+	if not CachedAnimations then CachedAnimations = ReplicatedStorage:FindFirstChild('Animations') or ReplicatedStorage:FindFirstChild('ClientAnimations') end;
+	if not CachedAnimations then return end;
+	local GunCombat = CachedAnimations:FindFirstChild('GunCombat');
+	if not GunCombat then return end;
+	local Animator = Character.Humanoid.Animator;
+	if CachedAnimChar ~= Character then
+		CachedAnimChar = Character;
+		CachedShootAnim = Animator:LoadAnimation(GunCombat.Shoot);
+		CachedAimShootAnim = Animator:LoadAnimation(GunCombat.AimShoot);
+	end;
+	if CachedShootAnim then CachedShootAnim:Stop(0) end;
+	if CachedAimShootAnim then CachedAimShootAnim:Stop(0) end;
+	if IsAimed or table.find(ScopedWeapons, Gun.Name) then
+		CachedAimShootAnim:Play();
+	else
+		CachedShootAnim:Play();
+	end;
+end;
+
+ShowPellet = function(Shooter, Handle, ForcedOrigin, AimPosition, Range, BeamColor, SkipVisual)
+	BeamColor = BeamColor or DefaultBeamColor;
+	local Direction = (AimPosition - ForcedOrigin).Unit;
+
+	ShootRayParams.FilterDescendantsInstances = BuildFilter(ShootFilter, Shooter);
+
+	local RayResult = Workspace:Raycast(ForcedOrigin, Direction * Range, ShootRayParams);
+	local HitPosition = RayResult and RayResult.Position or (ForcedOrigin + Direction * Range);
+	local HitNormal = RayResult and RayResult.Normal or nil;
+	local HitInstance = RayResult and RayResult.Instance or nil;
+
+	if SkipVisual then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	local ToolName = Handle and Handle.Parent and Handle.Parent.Name or '';
+	local SkinName = nil;
+	Pcall(function()
+		SkinName = Handle:GetAttribute('SkinName');
+	end);
+	if not SkinName or SkinName == '' then
+		Pcall(function()
+			local Decoded = HttpService:JSONDecode(LocalPlayer.DataFolder.Information.EquipSkins.Value);
+			SkinName = Decoded and Decoded[ToolName] or nil;
+		end);
+	end;
+	if not SkinName or SkinName == '' then
+		SkinName = 'Default';
+	end;
+
+	local SkinAssets = CachedSkinAssets;
+	local BulletPart = Instance.new('Part');
+	BulletPart.Name = 'BULLET_RAYS';
+	BulletPart.Anchored = true;
+	BulletPart.CanCollide = false;
+	BulletPart.CanTouch = false;
+	BulletPart.CanQuery = false;
+	BulletPart.Size = Vector3New(0, 0, 0);
+	BulletPart.Transparency = 1;
+	BulletPart.CFrame = CFrameNew(ForcedOrigin, HitPosition);
+	BulletPart.Parent = (CachedIgnored and CachedIgnored:FindFirstChild('Siren') and CachedIgnored.Siren:FindFirstChild('Radius') and CachedIgnored.Siren.Radius) or CachedIgnored or Workspace;
+
+	local GunBeamTemplate = CachedGunBeam;
+	local LeftBeamTemplate = nil;
+	local ImpactTemplate = nil;
+	local IsDefaultBeam = false;
+
+	if SkinAssets and SkinAssets:FindFirstChild('GunBeam') and SkinAssets.GunBeam:FindFirstChild(SkinName) then
+		local SkinBeamFolder = SkinAssets.GunBeam[SkinName];
+		if SkinBeamFolder:FindFirstChildOfClass('Beam') then
+			if SkinBeamFolder:FindFirstChild('GunBeam') and SkinBeamFolder:FindFirstChild('LeftGunBeam') then
+				GunBeamTemplate = SkinBeamFolder:FindFirstChild('GunBeam');
+				LeftBeamTemplate = SkinBeamFolder:FindFirstChild('LeftGunBeam');
+			else
+				GunBeamTemplate = SkinBeamFolder:FindFirstChildOfClass('Beam');
+			end;
+			if SkinBeamFolder:FindFirstChild('Impact') then
+				ImpactTemplate = SkinBeamFolder.Impact;
+			end;
+		elseif SkinBeamFolder:FindFirstChildWhichIsA('BasePart') then
+			local PartBeam = SkinBeamFolder:FindFirstChildWhichIsA('BasePart');
+			if PartBeam:FindFirstChild('Different_GunBeam') then
+				local DiffFolder = PartBeam.Different_GunBeam;
+				if DiffFolder:FindFirstChild(ToolName) then
+					local WeaponBeam = DiffFolder[ToolName];
+					if WeaponBeam:FindFirstChildWhichIsA('BasePart') then
+						GunBeamTemplate = WeaponBeam:FindFirstChildWhichIsA('BasePart');
+						if GunBeamTemplate:FindFirstChild('Impact') then
+							ImpactTemplate = GunBeamTemplate.Impact;
+						end;
+					elseif WeaponBeam:FindFirstChildOfClass('Beam') then
+						GunBeamTemplate = WeaponBeam:FindFirstChildOfClass('Beam');
+						if WeaponBeam:FindFirstChild('Impact') then
+							ImpactTemplate = WeaponBeam.Impact;
+						end;
+					else
+						GunBeamTemplate = CachedGunBeam;
+						IsDefaultBeam = true;
+					end;
+				end;
+			else
+				GunBeamTemplate = PartBeam;
+				if PartBeam:FindFirstChild('Impact') then
+					ImpactTemplate = PartBeam.Impact;
+				end;
+			end;
+		else
+			GunBeamTemplate = CachedGunBeam;
+			IsDefaultBeam = true;
+		end;
+	else
+		if not GunBeamTemplate and SkinAssets then
+			local GunBeamFolder = SkinAssets:FindFirstChild('GunBeam');
+			if GunBeamFolder then
+				local DefaultFolder = GunBeamFolder:FindFirstChild('Default');
+				if DefaultFolder then
+					local BeamObj = DefaultFolder:FindFirstChildOfClass('Beam');
+					if BeamObj then GunBeamTemplate = BeamObj end;
+				end;
+			end;
+		end;
+		IsDefaultBeam = true;
+	end;
+
+	local ClonedBeam = GunBeamTemplate and GunBeamTemplate:Clone() or nil;
+	local BeamDistance = (HitPosition - ForcedOrigin).Magnitude;
+	local TravelTime = BeamDistance / 725;
+	if not ClonedBeam then
+		game.Debris:AddItem(BulletPart, 0.5);
+	elseif ClonedBeam:IsA('Beam') then
+		game.Debris:AddItem(BulletPart, 0.5);
+	else
+		game.Debris:AddItem(BulletPart, TravelTime + 5);
+	end;
+
+	if ClonedBeam then
+		local StartAttachment = Instance.new('Attachment');
+		StartAttachment.Position = Vector3New(0, 0, 0);
+		StartAttachment.Parent = BulletPart;
+		local EndAttachment = Instance.new('Attachment');
+		EndAttachment.Position = Vector3New(0, 0, -BeamDistance);
+		EndAttachment.Parent = BulletPart;
+
+		if ClonedBeam:IsA('Beam') then
+			if IsDefaultBeam and BeamColor then
+				ClonedBeam.Color = ColorSequence.new(BeamColor);
+			end;
+			ClonedBeam.Attachment0 = StartAttachment;
+			ClonedBeam.Attachment1 = EndAttachment;
+			ClonedBeam.Parent = BulletPart;
+		elseif ClonedBeam:IsA('BasePart') then
+			ClonedBeam.Anchored = true;
+			ClonedBeam.CanCollide = false;
+			ClonedBeam.CanQuery = false;
+			ClonedBeam.CFrame = CFrameNew(ForcedOrigin, HitPosition);
+			local BeamEndCFrame = ClonedBeam.CFrame * CFrameNew(0, 0, -BeamDistance);
+			ClonedBeam.Parent = BulletPart.Parent;
+			if ClonedBeam:GetAttribute('SpecialEffects') then
+				for _, BeamDescendant in next, ClonedBeam:GetDescendants() do
+					if BeamDescendant:IsA('Trail') and BeamDescendant:GetAttribute('ColorRandom') then
+						local RandomColorSeq = BeamDescendant:GetAttribute('ColorRandom');
+						BeamDescendant.Color = ColorSequence.new(Color3.new(RandomColorSeq.X, RandomColorSeq.Y, RandomColorSeq.Z):Lerp(Color3.new(1, 1, 1), MathRandom()));
+					end;
+				end;
+			end;
+			if SkinName == 'Undead' and ToolName == '[Revolver]' then
+				local RandColor = UndeadBeamColors[MathRandom(1, #UndeadBeamColors)];
+				local Trail = ClonedBeam:FindFirstChildOfClass('Trail');
+				if Trail then
+					Trail.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, RandColor), ColorSequenceKeypoint.new(1, RandColor) });
+				end;
+			end;
+			Spawn(function()
+				local InitialTween = TweenService:Create(ClonedBeam, TweenInfo.new(0.05, Enum.EasingStyle.Linear), {
+					['CFrame'] = ClonedBeam.CFrame * CFrameNew(0, 0, -0.1),
+				});
+				InitialTween:Play();
+				Wait(0.05);
+				if InitialTween.PlaybackState ~= Enum.PlaybackState.Completed then
+					InitialTween:Pause();
+				end;
+				local TravelTween = TweenService:Create(ClonedBeam, TweenInfo.new(TravelTime, Enum.EasingStyle.Linear), {
+					['CFrame'] = BeamEndCFrame,
+				});
+				TravelTween:Play();
+				Wait(TravelTime);
+				if ClonedBeam:FindFirstChild('Impact') and (HitInstance and HitNormal and not HitInstance.Parent:FindFirstChild('Humanoid')) then
+					if TravelTween.PlaybackState ~= Enum.PlaybackState.Completed then
+						Wait(0.05);
+					end;
+					if not ClonedBeam:FindFirstChild('NoNormal') then
+						ClonedBeam.CFrame = CFrameNew(HitPosition, HitPosition - HitNormal);
+					end;
+					for _, ImpactChild in next, ClonedBeam.Impact:GetChildren() do
+						if ImpactChild:IsA('ParticleEmitter') then
+							ImpactChild:Emit(ImpactChild:GetAttribute('EmitCount') or 1);
+						end;
+					end;
+				else
+					for _, BeamChild in next, ClonedBeam:GetChildren() do
+						if BeamChild:IsA('BasePart') then
+							BeamChild.Transparency = 1;
+						end;
+					end;
+				end;
+				if ClonedBeam then
+					for _, Desc in next, ClonedBeam:GetDescendants() do
+						if Desc:IsA('ParticleEmitter') then Desc.Enabled = false end;
+					end;
+				end;
+			end);
+		end;
+
+		if LeftBeamTemplate then
+			local SecondaryMesh = nil;
+			local ToolModel = Handle and Handle.Parent;
+			if ToolModel then
+				local Default = ToolModel:FindFirstChild('Default');
+				if Default then
+					local Mesh = Default:FindFirstChild('Mesh');
+					if Mesh then
+						for _, Child in next, Mesh:GetChildren() do
+							if Child:IsA('BasePart') and Child:GetAttribute('SecondaryMesh') then
+								SecondaryMesh = Child;
+							end;
+						end;
+					end;
+				end;
+			end;
+			if SecondaryMesh then
+				local LeftMuzzle = SecondaryMesh:FindFirstChild('LeftMuzzle') or SecondaryMesh:FindFirstChildOfClass('Attachment');
+				if LeftMuzzle then
+					local LeftMuzzlePos = LeftMuzzle.WorldPosition;
+					local LeftBeamDist = (HitPosition - LeftMuzzlePos).Magnitude;
+					local LeftTravelTime = LeftBeamDist / 725;
+					local LeftPart = Instance.new('Part');
+					LeftPart.Name = 'BULLET_RAYS';
+					LeftPart.Size = Vector3New(0, 0, 0);
+					LeftPart.Transparency = 1;
+					LeftPart.CanCollide = false;
+					LeftPart.CanTouch = false;
+					LeftPart.CanQuery = false;
+					LeftPart.Anchored = true;
+					LeftPart.CFrame = CFrameNew(LeftMuzzlePos, HitPosition);
+					LeftPart.Parent = BulletPart.Parent;
+					local LeftClone = LeftBeamTemplate:Clone();
+					if LeftClone:IsA('Beam') then
+						local LAtt0 = Instance.new('Attachment');
+						LAtt0.Position = Vector3New(0, 0, 0);
+						LAtt0.Parent = LeftPart;
+						local LAtt1 = Instance.new('Attachment');
+						LAtt1.Position = Vector3New(0, 0, -LeftBeamDist);
+						LAtt1.Parent = LeftPart;
+						if IsDefaultBeam and BeamColor then
+							LeftClone.Color = ColorSequence.new(BeamColor);
+						end;
+						LeftClone.Attachment0 = LAtt0;
+						LeftClone.Attachment1 = LAtt1;
+						LeftClone.Parent = LeftPart;
+						game.Debris:AddItem(LeftPart, 0.5);
+					elseif LeftClone:IsA('BasePart') then
+						LeftClone.Anchored = true;
+						LeftClone.CanCollide = false;
+						LeftClone.CanQuery = false;
+						LeftClone.CFrame = CFrameNew(LeftMuzzlePos, HitPosition);
+						local LeftEndCFrame = LeftClone.CFrame * CFrameNew(0, 0, -LeftBeamDist);
+						LeftClone.Parent = LeftPart.Parent;
+						game.Debris:AddItem(LeftPart, LeftTravelTime + 5);
+						Spawn(function()
+							local LTw = TweenService:Create(LeftClone, TweenInfo.new(LeftTravelTime, Enum.EasingStyle.Linear), {
+								['CFrame'] = LeftEndCFrame,
+							});
+							LTw:Play();
+							Wait(LeftTravelTime);
+							if LeftClone then
+								for _, Desc in next, LeftClone:GetDescendants() do
+									if Desc:IsA('ParticleEmitter') then Desc.Enabled = false end;
+								end;
+							end;
+						end);
+					end;
+					Spawn(function()
+						for _, Child in next, LeftMuzzle:GetChildren() do
+							if Child:IsA('ParticleEmitter') then
+								Child:Emit(Child:GetAttribute('EmitCount') or 1);
+							end;
+						end;
+					end);
+				end;
+			end;
+		end;
+
+		Spawn(function()
+			if RayResult and ImpactTemplate then
+				Xpcall(function()
+					if HitInstance and not HitInstance.Parent:FindFirstChildOfClass('Humanoid') then
+						local BulletHole = Instance.new('Part');
+						Delay(5, function() if BulletHole then BulletHole:Destroy() end end);
+						BulletHole.Transparency = 1;
+						BulletHole.Name = 'BULLETHOLE';
+						BulletHole.Size = Vector3New(0.83, 0.731, 0.001);
+						BulletHole.Anchored = true;
+						BulletHole.CanCollide = false;
+						BulletHole.CanTouch = false;
+						BulletHole.CanQuery = false;
+						local ImpactClone = ImpactTemplate:Clone();
+						ImpactClone.Parent = BulletHole;
+						local NormalOffset = HitNormal and (HitNormal * 0.1) or Vector3New(0, 0, 0);
+						BulletHole.Position = HitPosition + NormalOffset;
+						BulletHole.CFrame = CFrameNew(HitPosition + NormalOffset, HitPosition + (HitNormal or Vector3New(0, 1, 0)));
+						local CustomRot = CustomBulletHoleRotations[SkinName];
+						if CustomRot then
+							if typeof(CustomRot) == 'string' then
+								if CustomRot == 'Position' then
+									ImpactClone.Position = BulletHole.Position;
+								else
+									ImpactClone.CFrame = BulletHole.CFrame;
+								end;
+							elseif typeof(CustomRot) == 'table' then
+								ImpactClone.CFrame = ImpactClone.CFrame * CustomRot[1] * CFrame.Angles(MathRad(CustomRot[2].X), MathRad(CustomRot[2].Y), MathRad(CustomRot[2].Z));
+							else
+								ImpactClone.CFrame = ImpactClone.CFrame * CFrame.Angles(MathRad(CustomRot.X), MathRad(CustomRot.Y), MathRad(CustomRot.Z));
+							end;
+						elseif ImpactClone:IsA('Part') then
+							ImpactClone.CFrame = BulletHole.CFrame;
+						end;
+						BulletHole.Parent = BulletPart.Parent;
+						for _, Desc in next, BulletHole:GetDescendants() do
+							if Desc:IsA('ParticleEmitter') then
+								Desc:Emit(Desc:GetAttribute('EmitCount') or 1);
+							end;
+						end;
+					end;
+				end, ErrHandler);
+			end;
+		end);
+	end;
+
+	local function PlayGunSound(SoundHandle, ShouldClone)
+		local ShootSound = SoundHandle:FindFirstChild('ShootSound');
+		if not ShootSound then return end;
+		if SkinName and SkinName ~= 'Default' and SkinAssets then
+			local GunShootSounds = SkinAssets:FindFirstChild('GunShootSounds');
+			if GunShootSounds then
+				local WeaponFolder = GunShootSounds:FindFirstChild(ToolName);
+				if WeaponFolder then
+					local SoundValue = WeaponFolder:FindFirstChild(SkinName);
+					if SoundValue and SoundValue:IsA('StringValue') and SoundValue.Value ~= '' then
+						ShootSound.SoundId = SoundValue.Value;
+					end;
+				end;
+			end;
+		end;
+		local SeqSFX = ShootSound:GetAttribute('SequenceSFX');
+		if SeqSFX then
+			if ShootSound:GetAttribute('CurrentSequence') == nil then
+				ShootSound:SetAttribute('CurrentSequence', 1);
+			else
+				ShootSound:SetAttribute('CurrentSequence', ShootSound:GetAttribute('CurrentSequence') + 1);
+			end;
+			local Seq = ShootSound:GetAttribute('CurrentSequence');
+			local Ids = {};
+			for Id in string.gmatch(SeqSFX, '%d+') do
+				table.insert(Ids, Id);
+			end;
+			if #Ids > 0 then
+				ShootSound.SoundId = 'rbxassetid://' .. Ids[Seq % #Ids + 1];
+			end;
+		end;
+		if ShouldClone then
+			local Clone = ShootSound:Clone();
+			Clone.Name = '\0';
+			Clone.Parent = SoundHandle;
+			Clone:Play();
+			Clone.Ended:Once(function()
+				if Clone and Clone.Parent then Clone:Destroy() end;
+			end);
+		else
+			ShootSound:Play();
+		end;
+	end;
+
+	local IsShotgunType = ShotgunWeapons[ToolName] or false;
+	if IsShotgunType then
+		if not Handle:GetAttribute('PlayingSound') then
+			Handle:SetAttribute('PlayingSound', true);
+			Delay(0.075, function()
+				if Handle and Handle.Parent then Handle:SetAttribute('PlayingSound', nil) end;
+			end);
+			Spawn(function()
+				if not SoundsPlaying[Handle] then
+					PlayGunSound(Handle, true);
+					SoundsPlaying[Handle] = true;
+					Delay(0.021, function() SoundsPlaying[Handle] = nil end);
+				end;
+			end);
+		end;
+	elseif SkinName == 'Toilet' then
+		local ToiletSounds = { 125391056005695, 132466522418892, 129999172684348 };
+		local SoundObj = Instance.new('Sound');
+		SoundObj.Name = 'ShootSound';
+		SoundObj.SoundId = 'rbxassetid://' .. ToiletSounds[MathRandom(1, #ToiletSounds)];
+		SoundObj.Parent = Handle;
+		SoundObj.Ended:Once(function() SoundObj:Destroy() end);
+		SoundObj:Play();
+	else
+		Spawn(function()
+			if not SoundsPlaying[Handle] then
+				PlayGunSound(Handle, true);
+				SoundsPlaying[Handle] = true;
+				Delay(0.021, function() SoundsPlaying[Handle] = nil end);
+			end;
+		end);
+	end;
+
+	local SkinMuzzleUsed = false;
+	Spawn(function()
+		if not SkinAssets then return end;
+		local MuzzleParticles = SkinAssets:FindFirstChild('GunSkinMuzzleParticle');
+		if not MuzzleParticles then return end;
+		local WeaponMuzzle = MuzzleParticles:FindFirstChild(ToolName);
+		if WeaponMuzzle then
+			local MuzzleFolder = WeaponMuzzle:FindFirstChild('Muzzle');
+			if MuzzleFolder then
+				DoMuzzleEmit(MuzzleFolder, Shooter);
+			else
+				DoMuzzleEmit(WeaponMuzzle, Shooter);
+			end;
+			SkinMuzzleUsed = true;
+		else
+			local SkinMuzzle = MuzzleParticles:FindFirstChild(SkinName);
+			if SkinMuzzle then
+				local MuzzleFolder = SkinMuzzle:FindFirstChild('Muzzle');
+				if MuzzleFolder then
+					local DiffGunMuzzle = MuzzleFolder:FindFirstChild('Different_GunMuzzle');
+					if DiffGunMuzzle and DiffGunMuzzle:FindFirstChild(ToolName) then
+						DoMuzzleEmit(DiffGunMuzzle[ToolName], Shooter);
+					else
+						DoMuzzleEmit(MuzzleFolder, Shooter);
+					end;
+					SkinMuzzleUsed = true;
+				else
+					local SingleEmitter = SkinMuzzle:FindFirstChildOfClass('ParticleEmitter');
+					if SingleEmitter then
+						local MuzzleAtt = nil;
+						local ToolModel = Handle.Parent;
+						if ToolModel then
+							local Default = ToolModel:FindFirstChild('Default');
+							if Default then
+								local Mesh = Default:FindFirstChild('Mesh');
+								if Mesh then MuzzleAtt = Mesh:FindFirstChild('Muzzle') end;
+							end;
+						end;
+						if not MuzzleAtt then MuzzleAtt = Handle:FindFirstChild('Muzzle') end;
+						if MuzzleAtt then
+							local Clone = SingleEmitter:Clone();
+							Clone.Rotation = NumberRange.new(MathRandom(-180, 180));
+							Clone.RotSpeed = NumberRange.new(MathRandom(-90, 90));
+							Clone.Parent = MuzzleAtt;
+							Clone:Emit(1);
+							SkinMuzzleUsed = true;
+						end;
+					end;
+				end;
+			end;
+		end;
+	end);
+
+	Xpcall(function()
+		local ShootBBGUI = Handle.Parent.Handle:FindFirstChild('ShootBBGUI');
+		if ShootBBGUI then
+			ShootBBGUI.Enabled = not SkinMuzzleUsed;
+		end;
+	end, ErrHandler);
+
+	local Light = Instance.new('PointLight');
+	Light.Brightness = 0.5;
+	Light.Range = 15;
+	Light.Shadows = false;
+	Light.Color = Color3.new(1, 1, 1);
+	Light.Parent = BulletPart;
+	local LightTween = TweenService:Create(Light, TweenInfo.new(0.5, Enum.EasingStyle.Bounce, Enum.EasingDirection.In), { Range = 0 });
+	LightTween:Play();
+	local LightConn;
+	LightConn = LightTween.Completed:Connect(function()
+		if Light then Light:Destroy() end;
+		LightConn:Disconnect();
+	end);
+
+	local BodyEffects = Shooter:FindFirstChild('BodyEffects');
+	if BodyEffects then
+		local Movement = BodyEffects:FindFirstChild('Movement');
+		if Movement then
+			local ReduceWalk = Instance.new('IntValue');
+			ReduceWalk.Name = 'ReduceWalk';
+			ReduceWalk.Value = 5;
+			ReduceWalk.Parent = Movement;
+			local ShootCooldown = Handle.Parent and Handle.Parent:FindFirstChild('ShootingCooldown');
+			local Duration = ShootCooldown and tonumber(ShootCooldown.Value) or 0.3;
+			Delay(Duration, function()
+				if ReduceWalk and ReduceWalk.Parent then ReduceWalk:Destroy() end;
+			end);
+		end;
+	end;
+
+	Spawn(function()
+		Animate(Handle.Parent);
+	end);
+
+	return HitPosition, HitInstance, HitNormal;
+end;
+
+function GetDoubleTapCount(ToolName)
+	local DTCfg = GetConfig()['Modifications']['Double Tap'];
+	if not DTCfg['Enabled'] then return 1 end;
+	if DTCfg['Mode'] ~= 'Always' and not State.DoubleTapActive then return 1 end;
+
+	local WeaponConfigs = DTCfg['Weapon Configs'];
+	if WeaponConfigs and WeaponConfigs['Enabled'] then
+		local WClass = GetWeaponClass(ToolName);
+		local WConfig = WeaponConfigs[WClass];
+		if WConfig and not WConfig['Enabled'] then
+			return 1;
+		end;
+	end;
+
+	return 2; 
+end;
+
+local DamageModifierLib = nil;
+do
+	local DamageModifier = {}
+
+	DamageModifier.DefaultConfig = {
+		Enabled = true,
+		Weapons = {
+			Shotguns = {
+				Enabled = true,
+				Mode = 'half',
+			},
+			Pistols = {
+				Enabled = true,
+				Mode = 'full',
+			},
+			Others = {
+				Enabled = true,
+				Mode = 'full',
+			},
+		},
+	}
+
+	DamageModifier.ShotgunWeapons = {
+		['[Double-Barrel SG]'] = true,
+		['[TacticalShotgun]'] = true,
+		['[Tactical Shotgun]'] = true,
+		['[Tactical-Shotgun]'] = true,
+		['[Shotgun]'] = true,
+		['[Drum-Shotgun]'] = true,
+	}
+
+	DamageModifier.PistolWeapons = {
+		['[Revolver]'] = true,
+		['[Silencer]'] = true,
+		['[Glock]'] = true,
+		['[Deagle]'] = true,
+	}
+
+	function DamageModifier.GetWeaponClass(toolName)
+		if DamageModifier.ShotgunWeapons[toolName] then
+			return 'Shotguns'
+		end
+
+		if DamageModifier.PistolWeapons[toolName] then
+			return 'Pistols'
+		end
+
+		return 'Others'
+	end
+
+	function DamageModifier.GetOverridePart(character, mode)
+		if not character then
+			return nil
+		end
+
+		if mode == 'full' then
+			return character:FindFirstChild('Head')
+		end
+
+		if mode == 'half' then
+			return character:FindFirstChild('HumanoidRootPart')
+		end
+		
+		if mode == 'min' then
+			return character:FindFirstChild('Right Leg') or character:FindFirstChild('RightLeg')
+		end
+
+		return nil
+	end
+
+	function DamageModifier.GetConfig(config)
+		return config or DamageModifier.DefaultConfig
+	end
+
+	function DamageModifier.Apply(toolName, hitPosition, hitInstance, hitNormal, config, getWeaponClass)
+		config = DamageModifier.GetConfig(config)
+
+		if not config or not config.Enabled or not hitInstance or not hitInstance.Parent then
+			return hitPosition, hitInstance, hitNormal
+		end
+
+		local weapons = config.Weapons
+		if not weapons then
+			return hitPosition, hitInstance, hitNormal
+		end
+
+		local resolveWeaponClass = getWeaponClass or DamageModifier.GetWeaponClass
+		local weaponClass = resolveWeaponClass(toolName)
+		local weaponConfig = weapons and weapons[weaponClass]
+		if not weaponConfig or not weaponConfig.Enabled then
+			return hitPosition, hitInstance, hitNormal
+		end
+
+		local character = hitInstance:FindFirstAncestorOfClass('Model')
+		if not character or not character:FindFirstChildOfClass('Humanoid') then
+			return hitPosition, hitInstance, hitNormal
+		end
+
+		local override = DamageModifier.GetOverridePart(character, weaponConfig.Mode)
+		if not override then
+			return hitPosition, hitInstance, hitNormal
+		end
+
+		return hitPosition, override, hitNormal
+	end
+
+	DamageModifierLib = DamageModifier
+end;
+
+function ApplyDamageModifierHit(ToolName, HitPosition, HitInstance, HitNormal)
+	local DmgCfg = GetConfig()['Modifications']['Das Hood']['Damage Modifier'];
+	if DamageModifierLib and type(DamageModifierLib.Apply) == 'function' then
+		return DamageModifierLib.Apply(ToolName, HitPosition, HitInstance, HitNormal, DmgCfg, GetWeaponClass);
+	end;
+
+	if not DmgCfg or not DmgCfg['Enabled'] or not HitInstance or not HitInstance.Parent then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	local Weapons = DmgCfg['Weapons'];
+	if not Weapons then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	local WeaponClass = GetWeaponClass(ToolName);
+	local WeaponCfg = Weapons[WeaponClass];
+	if not WeaponCfg or not WeaponCfg['Enabled'] then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	local Character = HitInstance:FindFirstAncestorOfClass('Model');
+	if not Character or not Character:FindFirstChildOfClass('Humanoid') then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	local Override = nil;
+	if WeaponCfg['Mode'] == 'full' then
+		Override = Character:FindFirstChild('Head');
+	elseif WeaponCfg['Mode'] == 'half' then
+		Override = Character:FindFirstChild('HumanoidRootPart');
+	elseif WeaponCfg['Mode'] == 'min' then
+		Override = Character:FindFirstChild('Right Leg') or Character:FindFirstChild('RightLeg');
+	end;
+
+	if not Override then
+		return HitPosition, HitInstance, HitNormal;
+	end;
+
+	return HitPosition, Override, HitNormal;
+end;
+
+EmulateGunFire = function(Tool)
+	local Character = LocalPlayer.Character;
+	if not Character then return end;
+	if _G.GUN_COMBAT_TOGGLE then return end;
+	if not CanShoot(Character) then return end;
+
+	local Handle = Tool:FindFirstChild('Handle');
+	if not Handle then return end;
+	local Ammo = Tool:FindFirstChild('Ammo');
+	if not Ammo or Ammo.Value <= 0 then
+		local NoAmmo = Handle:FindFirstChild('NoAmmo');
+		if NoAmmo then NoAmmo:Play() end;
+		return;
+	end;
+	local Range = Tool:FindFirstChild('Range');
+	local RangeValue = Range and Range.Value or 200;
+
+	local RemoteEvent = Tool:FindFirstChild('RemoteEvent');
+	local ToolRemote = RemoteEvent or { FireServer = function() end };
+
+	local MuzzlePos = GetMuzzlePosition(Tool);
+	if not MuzzlePos then return end;
+	local IsShotgun = ShotgunWeapons[Tool.Name] or false;
+
+		ShootRayParams.FilterDescendantsInstances = BuildFilter(ShootFilter, Character);
+
+		ToolRemote:FireServer('Shoot');
+
+		local DoubleTapCount = GetDoubleTapCount(Tool.Name);
+		for _dt = 1, DoubleTapCount do
+			if IsShotgun then
+				local ServerTime = Workspace:GetServerTimeNow();
+				local SpreadMult = 1;
+				local SpreadCfg = GetConfig()['Modifications']['Spread Modifications'];
+				if SpreadCfg['Enabled'] then
+					SpreadMult = SpreadCfg['Value'] or 1;
+					local Rand = SpreadCfg['Randomizer'];
+					if Rand and Rand['Enabled'] then
+						local Min = Rand['Min'] or 1;
+						local Max = Rand['Max'] or 1;
+						local Alpha = MathRandom();
+						SpreadMult = SpreadMult * (Min + (Max - Min) * Alpha);
+					end;
+				end;
+				for PelletIndex = 1, 5 do
+					local SpreadX = (MathRandom() > 0.5 and MathRandom() * 0.05 or -MathRandom() * 0.05) * SpreadMult;
+					local SpreadY = (MathRandom() > 0.5 and MathRandom() * 0.1 or -MathRandom() * 0.1) * SpreadMult;
+					local SpreadZ = (MathRandom() > 0.5 and MathRandom() * 0.05 or -MathRandom() * 0.05) * SpreadMult;
+					local Spread = Vector3New(SpreadX, SpreadY, SpreadZ);
+
+					local AimPos = GetAimPosition(MuzzlePos, RangeValue);
+					local AimDir = (AimPos - MuzzlePos).Unit + Spread;
+					local AimPosition = MuzzlePos + AimDir * RangeValue;
+
+					local HitPosition, HitInstance, HitNormal;
+					if _dt == 1 then
+						HitPosition, HitInstance, HitNormal = ShowPellet(Character, Handle, MuzzlePos, AimPosition, RangeValue);
+					end;
+					if not HitPosition then
+						local Direction = AimDir * RangeValue;
+						local RayResult = Workspace:Raycast(MuzzlePos, Direction, ShootRayParams);
+						HitPosition = RayResult and RayResult.Position or (MuzzlePos + Direction);
+						HitInstance = RayResult and RayResult.Instance or nil;
+						HitNormal = RayResult and RayResult.Normal or Vector3New(0, 1, 0);
+					end;
+					HitPosition, HitInstance, HitNormal = ApplyDamageModifierHit(Tool.Name, HitPosition, HitInstance, HitNormal);
+
+					ReplicatedStorage.MainEvent:FireServer('ShootGun', Handle, MuzzlePos, HitPosition, HitInstance, HitNormal, ServerTime);
+				end;
+			else
+				local AimPos = GetAimPosition(MuzzlePos, RangeValue);
+				local AimPosition = MuzzlePos + (AimPos - MuzzlePos).Unit * RangeValue;
+
+				local HitPosition, HitInstance, HitNormal;
+				if _dt == 1 then
+					HitPosition, HitInstance, HitNormal = ShowPellet(Character, Handle, MuzzlePos, AimPosition, RangeValue);
+				end;
+				if not HitPosition then
+					local Direction = (AimPos - MuzzlePos).Unit * RangeValue;
+					local RayResult = Workspace:Raycast(MuzzlePos, Direction, ShootRayParams);
+					HitPosition = RayResult and RayResult.Position or (MuzzlePos + Direction);
+					HitInstance = RayResult and RayResult.Instance or nil;
+					HitNormal = RayResult and RayResult.Normal or Vector3New(0, 1, 0);
+				end;
+				HitPosition, HitInstance, HitNormal = ApplyDamageModifierHit(Tool.Name, HitPosition, HitInstance, HitNormal);
+
+				ReplicatedStorage.MainEvent:FireServer('ShootGun', Handle, MuzzlePos, HitPosition, HitInstance, HitNormal);
+			end;
+		end;
+
+		ToolRemote:FireServer();
+end;
+
+CachedMainEvent = nil;
+
+HookedTools = {};
+function HookGunActivation(Character)
+	if not Character then return end;
+	Character.ChildAdded:Connect(function(Child)
+		if not Child:IsA('Tool') then return end;
+		if not MuzzleOffsets[Child.Name] then return end;
+		if HookedTools[Child] then return end;
+		HookedTools[Child] = true;
+		local LastFire = 0;
+
+		local function GetCooldown()
+			return GetToolFireDelay(Child);
+		end;
+		local IsAuto = AutoWeapons[Child.Name] or false;
+		local IsBurst = BurstWeapons[Child.Name] or false;
+
+		Child.Activated:Connect(function()
+			State.IsShooting = true;
+			local Cooldown = GetCooldown();
+			if IsAuto then
+				if Tick() - LastFire < Cooldown + 0.0095 then return end;
+				LastFire = Tick();
+				local Firing = true;
+				Spawn(function()
+					while Firing and Child.Parent == Character do
+						EmulateGunFire(Child);
+						Wait(Cooldown + 0.0095);
+						LastFire = Tick();
+					end;
+				end);
+				Child.Deactivated:Wait();
+				Firing = false;
+				State.IsShooting = false;
+			elseif IsBurst then
+				if GetConfig()['Modifications']['Delay Changer']['Enabled'] then
+					if Tick() - LastFire < Cooldown + 0.0095 then return end;
+					LastFire = Tick();
+					local Firing = true;
+					Spawn(function()
+						while Firing and Child.Parent == Character do
+							EmulateGunFire(Child);
+							Wait(Cooldown + 0.0095);
+							LastFire = Tick();
+						end;
+					end);
+					Child.Deactivated:Wait();
+					Firing = false;
+					State.IsShooting = false;
+				else
+					local Tolerance = 0.3;
+					Pcall(function()
+						local TC = Child:FindFirstChild('ToleranceCooldown');
+						if TC then Tolerance = TC.Value end;
+					end);
+					if Tick() - LastFire < Tolerance then return end;
+					LastFire = Tick();
+					local BurstCount = 3;
+					Xpcall(function()
+						local Ammo = Child:FindFirstChild('Ammo');
+						if Ammo then BurstCount = MathMin(BurstCount, Ammo.Value) end;
+					end, ErrHandler);
+					Spawn(function()
+						for _ = 1, BurstCount do
+							EmulateGunFire(Child);
+							Wait(Cooldown + 0.0095);
+						end;
+					end);
+				end;
+			else
+				if Tick() - LastFire < Cooldown + 0.0095 then return end;
+				LastFire = Tick();
+				EmulateGunFire(Child);
+				State.IsShooting = false;
+			end;
+		end);
+		Child.Deactivated:Connect(function()
+			State.IsShooting = false;
+		end);
+	end);
+end;
+
+IsInside3DFOV = function(Position, FeatureName)
+	local FOVRoot = GetConfig()['Main']['FOV'];
+	local FOVKey = FeatureName == 'Silent Aim' and 'Silent' or FeatureName;
+	local FeatureFOV = FOVRoot and FOVRoot[FOVKey];
+	local FOV3D = FeatureFOV and FeatureFOV['3D'];
+	if not FeatureFOV or string.lower(tostring(FeatureFOV['Options'] or '2D')) ~= '3d' or not FOV3D then return true end;
+
+	local CurrentCamera = Workspace.CurrentCamera;
+	local MousePosition = GetCursorViewportPosition();
+	local Ray = CurrentCamera:ViewportPointToRay(MousePosition.X, MousePosition.Y);
+	local AlongRay = (Position - Ray.Origin):Dot(Ray.Direction);
+	local Depth = MathMax(tonumber(FOV3D['Depth']) or 10, 0);
+	if AlongRay <= 0 or AlongRay > Depth then return false end;
+
+	local ClosestOnRay = Ray.Origin + Ray.Direction * AlongRay;
+	local Delta = CurrentCamera.CFrame:VectorToObjectSpace(Position - ClosestOnRay);
+	local Width = MathMax(tonumber(FOV3D['Width']) or 6, 0);
+	local Height = MathMax(tonumber(FOV3D['Height']) or 6, 0);
+	return MathAbs(Delta.X) <= Width / 2 and MathAbs(Delta.Y) <= Height / 2;
+end;
+
+GetClosestPlayerToCursor = function(MaxRange, AllowOffscreen, ChecksKey, FeatureName)
+	local CurrentCamera = Workspace.CurrentCamera;
+	local MousePosition = GetCursorViewportPosition();
+	local CamPos = CurrentCamera.CFrame.Position;
+	local CamLook = CurrentCamera.CFrame.LookVector;
+	local Closest = nil;
+	local ClosestDist = MathHuge;
+
+	for _, Player in next, Players:GetPlayers() do
+		if Player == LocalPlayer then continue end;
+		if not PassesConditions(Player, ChecksKey) then continue end;
+
+		local Character = Player.Character;
+		if not Character then continue end;
+		local HumanoidRootPart = Character:FindFirstChild('HumanoidRootPart');
+		if not HumanoidRootPart then continue end;
+		if FeatureName and not IsInside3DFOV(HumanoidRootPart.Position, FeatureName) then continue end;
+
+		if MaxRange and MaxRange < MathHuge then
+			local WorldDist = (CamPos - HumanoidRootPart.Position).Magnitude;
+			if WorldDist > MaxRange then continue end;
+		end;
+
+		local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position);
+
+		if AllowOffscreen then
+			local ToTarget = (HumanoidRootPart.Position - CamPos).Unit;
+			local Dot = CamLook:Dot(ToTarget);
+			if Dot <= 0 then continue end;
+			local Magnitude;
+			if OnScreen and ScreenPos.Z > 0 then
+				Magnitude = (Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition).Magnitude;
+			else
+				Magnitude = (1 - Dot) * 10000;
+			end;
+			if Magnitude < ClosestDist then
+				Closest = Player;
+				ClosestDist = Magnitude;
+			end;
+		else
+			if not OnScreen then continue end;
+			if ScreenPos.Z <= 0 then continue end;
+			local Magnitude = (Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition).Magnitude;
+			if Magnitude < ClosestDist then
+				Closest = Player;
+				ClosestDist = Magnitude;
+			end;
+		end;
+	end;
+	return Closest;
+end;
+
+function ActivateTool()
+	local Character = LocalPlayer.Character;
+	if not Character then return end;
+	local Tool = Character:FindFirstChildOfClass('Tool');
+	if Tool and Tool:IsDescendantOf(Character) and Tool.Name ~= '[Knife]' then
+		Tool:Activate();
+	end;
+end;
+
+local RageFire;
+
+function TriggerShot(Cooldown, Tool, Handle, ToolName, Origin, AimPosition, GunRange)
+	local Now = DateTime.now().UnixTimestampMillis;
+	if Now - State.LastTriggerShot >= Cooldown * 1000 then
+		State.LastTriggerShot = Now;
+		local AimOffset = AimPosition - Origin;
+		local AimDistance = AimOffset.Magnitude;
+		if AimDistance <= 0 then return end;
+		local Direction = AimOffset / AimDistance;
+		local SpreadCfg = GetConfig()['Modifications']['Spread Modifications'];
+		local SpreadConfig = SpreadCfg['Enabled'] and SpreadCfg or nil;
+		local DoubleTapCount = GetDoubleTapCount(ToolName);
+		for _ = 1, DoubleTapCount do
+			RageFire(Tool, Handle, ToolName, Origin, Direction, GunRange, SpreadConfig);
+		end;
+	end;
+end;
+
+RunTriggerbot = function()
+	local TriggerCfg = GetConfig()['Triggerbot'];
+	if not TriggerCfg['Enabled'] then return end;
+	if not State.TriggerState then return end;
+
+	local Target = State.Targets.Triggerbot;
+	local TargetChar = Target and Target.Character;
+	if not TargetChar then return end;
+
+	local Character = LocalPlayer.Character;
+	if not Character then return end;
+	local Tool = Character:FindFirstChildOfClass('Tool');
+	if not Tool or not Tool:FindFirstChild('Ammo') or Tool.Name == '[Knife]' then return end;
+	if not State.CanTriggerbotShoot then return end;
+
+	local Humanoid = Character:FindFirstChild('Humanoid');
+	if not Humanoid or Humanoid.Health <= 0 then return end;
+	local BodyEffects = Character:FindFirstChild('BodyEffects');
+	if not BodyEffects then return end;
+	if BodyEffects:FindFirstChild('K.O') and BodyEffects['K.O'].Value then return end;
+	if BodyEffects:FindFirstChild('Reload') and BodyEffects.Reload.Value then return end;
+	if BodyEffects:FindFirstChild('Dead') and BodyEffects.Dead.Value then return end;
+
+	if not PassesConditions(Target, 'Triggerbot') then return end;
+
+	local SelfHRP = Character:FindFirstChild('HumanoidRootPart');
+	local TargetHRP = TargetChar:FindFirstChild('HumanoidRootPart');
+	if not SelfHRP or not TargetHRP then return end;
+
+	local TargetDist = (SelfHRP.Position - TargetHRP.Position).Magnitude;
+	local TrigMaxRange = TriggerCfg['Max Range'] or MathHuge;
+	if TargetDist > TrigMaxRange then return end;
+
+	local Handle = Tool:FindFirstChild('Handle');
+	if not Handle then return end;
+	local ToolName = Tool.Name;
+
+	local RangeChild = Tool:FindFirstChild('Range');
+	local GunRange = RangeChild and RangeChild.Value or 200;
+
+	if TriggerCfg['Limit To Weapon Range'] then
+		local RangeOrigin = GetMuzzlePosition(Tool) or SelfHRP.Position;
+		if (RangeOrigin - TargetHRP.Position).Magnitude > GunRange then return end;
+	end;
+
+	local CurrentCamera = Workspace.CurrentCamera;
+	local ViewportY = CurrentCamera.ViewportSize.Y;
+	local CamFOV = CurrentCamera.FieldOfView;
+
+	local AimPos = TargetHRP.Position;
+	local PredCfg = TriggerCfg['Prediction'];
+	if PredCfg and PredCfg['Enabled'] == true then
+		local Vel = GetDeltaVelocity(TargetHRP);
+		AimPos = AimPos + Vector3New(Vel.X * (PredCfg['X'] or 0.13), Vel.Y * (PredCfg['Y'] or 0.13), Vel.Z * (PredCfg['Z'] or 0.13));
+	end;
+
+	local OffscreenTrigCfg = TriggerCfg['Offscreen Targeting'];
+	local TrigAllowOffscreen = OffscreenTrigCfg and OffscreenTrigCfg['Enabled'];
+
+	local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(AimPos);
+	if not OnScreen and not TrigAllowOffscreen then return end;
+	if not IsInside3DFOV(AimPos, 'Triggerbot') then return end;
+
+	local HitCheck = TriggerCfg['Trigger Mode'] or 'FOV';
+	local ShouldFire = false;
+
+	local TrigFOV = GetConfig()['Main']['FOV']['Triggerbot'];
+	if string.lower(tostring(TrigFOV['Options'] or '2D')) == '3d' then
+		ShouldFire = true;
+	elseif TrigAllowOffscreen then
+		ShouldFire = true;
+	elseif HitCheck == 'Player' then
+		local Mouse = LocalPlayer:GetMouse();
+		local MouseTarget = Mouse.Target;
+		ShouldFire = MouseTarget and MouseTarget:IsDescendantOf(TargetChar);
+	else
+		local MouseLoc = UserInputService:GetMouseLocation();
+		local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MouseLoc;
+		local Depth = ScreenPos.Z;
+		if Depth <= 1 then return end;
+		local ScaleFactor = (TargetHRP.Size.Y * ViewportY) / (Depth * 2) * 80 / CamFOV;
+		local TrigShape = false;
+		if TrigShape == 'Circle' then
+			local R = 9e9 * ScaleFactor;
+			ShouldFire = not TrigFOV['Visualize']['Enabled'] or (Delta.X * Delta.X + Delta.Y * Delta.Y <= R * R);
+		else
+			local ScaledW = (TrigFOV['Width'] and (TrigFOV['Width'][1] or 9e9) or 9e9) * ScaleFactor;
+			local ScaledH = (TrigFOV['Height'] and (TrigFOV['Height'][1] or 9e9) or 9e9) * ScaleFactor;
+			ShouldFire = not TrigFOV['Visualize']['Enabled'] or (MathAbs(Delta.X) <= ScaledW / 2 and MathAbs(Delta.Y) <= ScaledH / 2);
+		end;
+	end;
+
+	if ShouldFire then
+		local Origin = GetMuzzlePosition(Tool) or SelfHRP.Position;
+		if not CachedMainEvent then CachedMainEvent = ReplicatedStorage:FindFirstChild('MainEvent') end;
+		if not CachedMainEvent then return end;
+		local TriggerDelay = TriggerCfg['Delay'] or 0;
+		local WeaponDelay = GetToolFireDelay(Tool);
+		local EffectiveDelay = MathMax(TriggerDelay, WeaponDelay);
+		TriggerShot(EffectiveDelay, Tool, Handle, ToolName, Origin, AimPos, GunRange);
+	end;
+end;
+
+SilentTargetLocked = false;
+
+UtilityUI = Instance.new('ScreenGui');
+UtilityUI.Name = 'ciderui';
+UtilityUI.IgnoreGuiInset = true;
+UtilityUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling;
+UtilityUI.Parent = CoreGui;
+
+function CreateSquare()
+	local Obj = {
+		_Size = Vector2New(0, 0),
+		_Position = Vector2New(0, 0),
+		_Color = Color3.new(1, 1, 1),
+		_Visible = false,
+		_Filled = false,
+		_Thickness = 1,
+		_Transparency = 1,
+	};
+	local Frame = Instance.new('Frame');
+	Frame.BorderSizePixel = 0;
+	Frame.BackgroundTransparency = 1;
+	Frame.BackgroundColor3 = Obj._Color;
+	Frame.Visible = Obj._Visible;
+	Frame.Parent = UtilityUI;
+	local Stroke = Instance.new('UIStroke');
+	Stroke.Thickness = Obj._Thickness;
+	Stroke.Enabled = true;
+	Stroke.LineJoinMode = Enum.LineJoinMode.Miter;
+	Stroke.Parent = Frame;
+	local Corner = Instance.new('UICorner');
+	Corner.CornerRadius = UDim.new(0, 0);
+	Corner.Parent = Frame;
+	local Proxy = {};
+	local Meta = {
+		__newindex = function(_, Key, Value)
+			if Key == 'Size' then
+				Obj._Size = Value;
+				Frame.Size = UDim2.fromOffset(Value.X, Value.Y);
+			elseif Key == 'Round' then
+				Obj._Round = Value;
+				Corner.CornerRadius = Value and UDim.new(1, 0) or UDim.new(0, 0);
+			elseif Key == 'Position' then
+				Obj._Position = Value;
+				Frame.Position = UDim2.fromOffset(Value.X, Value.Y);
+			elseif Key == 'Color' then
+				Obj._Color = Value;
+				Frame.BackgroundColor3 = Value;
+				Stroke.Color = Value;
+			elseif Key == 'Visible' then
+				Obj._Visible = Value;
+				Frame.Visible = Value;
+			elseif Key == 'Filled' then
+				Obj._Filled = Value;
+				Frame.BackgroundTransparency = Value and MathClamp(1 - Obj._Transparency, 0, 1) or 1;
+				Stroke.Enabled = not Value;
+			elseif Key == 'Thickness' then
+				Obj._Thickness = Value;
+				Stroke.Thickness = MathClamp(Value, 0.6, 0x7FFFFFFF);
+			elseif Key == 'Transparency' then
+				Obj._Transparency = Value;
+				local Alpha = MathClamp(1 - Value, 0, 1);
+				Frame.BackgroundTransparency = Obj._Filled and Alpha or 1;
+				Stroke.Transparency = Alpha;
+			end;
+		end,
+		__index = function(_, Key)
+			if Key == 'Remove' or Key == 'Destroy' then
+				return function() Frame:Destroy() end;
+			elseif Key == 'Size' then return Obj._Size;
+			elseif Key == 'Round' then return Obj._Round;
+			elseif Key == 'Position' then return Obj._Position;
+			elseif Key == 'Color' then return Obj._Color;
+			elseif Key == 'Visible' then return Obj._Visible;
+			elseif Key == 'Filled' then return Obj._Filled;
+			elseif Key == 'Thickness' then return Obj._Thickness;
+			elseif Key == 'Transparency' then return Obj._Transparency;
+			end;
+			return nil;
+		end,
+	};
+	return setmetatable(Proxy, Meta);
+end;
+
+function CreateLine()
+	local Obj = {
+		_From = Vector2New(0, 0),
+		_To = Vector2New(0, 0),
+		_Color = Color3.new(1, 1, 1),
+		_Visible = false,
+		_Thickness = 1,
+		_Transparency = 1,
+	};
+	local Frame = Instance.new('Frame');
+	Frame.AnchorPoint = Vector2New(0.5, 0.5);
+	Frame.BorderSizePixel = 0;
+	Frame.BackgroundColor3 = Obj._Color;
+	Frame.Visible = Obj._Visible;
+	Frame.BackgroundTransparency = 0;
+	Frame.Size = UDim2.new();
+	Frame.Parent = UtilityUI;
+	local function UpdateLine()
+		local Dir = Obj._To - Obj._From;
+		local Center = (Obj._To + Obj._From) / 2;
+		local Mag = Dir.Magnitude;
+		local Theta = MathDeg(MathAtan2(Dir.Y, Dir.X));
+		Frame.Position = UDim2.fromOffset(Center.X, Center.Y);
+		Frame.Rotation = Theta;
+		Frame.Size = UDim2.fromOffset(Mag, Obj._Thickness);
+	end;
+	local Proxy = {};
+	local Meta = {
+		__newindex = function(_, Key, Value)
+			if Key == 'From' then
+				Obj._From = Value;
+				UpdateLine();
+			elseif Key == 'To' then
+				Obj._To = Value;
+				UpdateLine();
+			elseif Key == 'Color' then
+				Obj._Color = Value;
+				Frame.BackgroundColor3 = Value;
+			elseif Key == 'Visible' then
+				Obj._Visible = Value;
+				Frame.Visible = Value;
+			elseif Key == 'Thickness' then
+				Obj._Thickness = Value;
+				UpdateLine();
+			elseif Key == 'Transparency' then
+				Obj._Transparency = Value;
+				Frame.BackgroundTransparency = MathClamp(1 - Value, 0, 1);
+			end;
+		end,
+		__index = function(_, Key)
+			if Key == 'Remove' or Key == 'Destroy' then
+				return function() Frame:Destroy() end;
+			elseif Key == 'From' then return Obj._From;
+			elseif Key == 'To' then return Obj._To;
+			elseif Key == 'Color' then return Obj._Color;
+			elseif Key == 'Visible' then return Obj._Visible;
+			elseif Key == 'Thickness' then return Obj._Thickness;
+			elseif Key == 'Transparency' then return Obj._Transparency;
+			end;
+			return nil;
+		end,
+	};
+	return setmetatable(Proxy, Meta);
+end;
+
+SilentFOVBox = CreateSquare();
+SilentFOVBox.Visible = false;
+SilentFOVBox.Filled = false;
+SilentFOVBox.Thickness = 1;
+SilentFOVBox.Transparency = 1;
+
+TriggerFOVBox = CreateSquare();
+TriggerFOVBox.Visible = false;
+TriggerFOVBox.Filled = false;
+TriggerFOVBox.Thickness = 1;
+TriggerFOVBox.Transparency = 1;
+
+AimbotFOVBox = CreateSquare();
+AimbotFOVBox.Visible = false;
+AimbotFOVBox.Filled = false;
+AimbotFOVBox.Thickness = 1;
+AimbotFOVBox.Transparency = 1;
+
+local Create3DFOVBox = function()
+	local Lines = {};
+	for _ = 1, 12 do
+		local Line = CreateLine();
+		Line.Visible = false;
+		Line.Thickness = 1;
+		Line.Transparency = 1;
+		Lines[#Lines + 1] = Line;
+	end;
+	return Lines;
+end;
+
+local Hide3DFOVBox = function(Lines)
+	for _, Line in next, Lines do
+		Line.Visible = false;
+	end;
+end;
+
+local Update3DFOVBox = function(Lines, FOVCfg, Color)
+	local FOV3D = FOVCfg and FOVCfg['3D'];
+	if not FOVCfg or not FOVCfg['Visualize']['Enabled'] or string.lower(tostring(FOVCfg['Options'] or '2D')) ~= '3d' or not FOV3D then
+		Hide3DFOVBox(Lines);
+		return;
+	end;
+
+	local CurrentCamera = Workspace.CurrentCamera;
+	local MousePosition = GetCursorViewportPosition();
+	local Ray = CurrentCamera:ViewportPointToRay(MousePosition.X, MousePosition.Y);
+	local Right = CurrentCamera.CFrame.RightVector;
+	local Up = CurrentCamera.CFrame.UpVector;
+	local Width = MathMax(tonumber(FOV3D['Width']) or 6, 0);
+	local Height = MathMax(tonumber(FOV3D['Height']) or 6, 0);
+	local Depth = MathMax(tonumber(FOV3D['Depth']) or 10, 0);
+	local Near = MathMin(MathMax(Width, Height, 1), Depth);
+	local Centers = {
+		Ray.Origin + Ray.Direction * Near,
+		Ray.Origin + Ray.Direction * Depth,
+	};
+	local Corners = {};
+	for _, Center in ipairs(Centers) do
+		local HalfWidth = Right * (Width / 2);
+		local HalfHeight = Up * (Height / 2);
+		Corners[#Corners + 1] = Center - HalfWidth - HalfHeight;
+		Corners[#Corners + 1] = Center + HalfWidth - HalfHeight;
+		Corners[#Corners + 1] = Center + HalfWidth + HalfHeight;
+		Corners[#Corners + 1] = Center - HalfWidth + HalfHeight;
+	end;
+
+	local Projected = {};
+	for Index, Corner in ipairs(Corners) do
+		local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(Corner);
+		if not OnScreen or ScreenPos.Z <= 0 then
+			Hide3DFOVBox(Lines);
+			return;
+		end;
+		Projected[Index] = Vector2New(ScreenPos.X, ScreenPos.Y);
+	end;
+
+	local Edges = {
+		{1, 2}, {2, 3}, {3, 4}, {4, 1},
+		{5, 6}, {6, 7}, {7, 8}, {8, 5},
+		{1, 5}, {2, 6}, {3, 7}, {4, 8},
+	};
+	for Index, Edge in ipairs(Edges) do
+		local Line = Lines[Index];
+		Line.From = Projected[Edge[1]];
+		Line.To = Projected[Edge[2]];
+		Line.Color = Color;
+		Line.Visible = true;
+	end;
+end;
+
+Silent3DFOVBox = Create3DFOVBox();
+Trigger3DFOVBox = Create3DFOVBox();
+Aimbot3DFOVBox = Create3DFOVBox();
+
+
+SilentFOVOutColor = Color3.fromRGB(255, 255, 255);
+SilentFOVInColor = Color3.fromRGB(255, 200, 0);
+TriggerFOVOutColor = Color3.fromRGB(255, 255, 255);
+TriggerFOVInColor = Color3.fromRGB(255, 200, 0);
+AimbotFOVOutColor = Color3.fromRGB(255, 255, 255);
+AimbotFOVInColor = Color3.fromRGB(255, 200, 0);
+
+SilentTargetLine = CreateLine();
+SilentTargetLine.Visible = false;
+SilentTargetLine.Thickness = 0.5;
+SilentTargetLine.Transparency = 1;
+SilentTargetLine.Parent = DrawingGui;
+
+OffscreenSilentLine = CreateLine();
+OffscreenSilentLine.Visible = false;
+OffscreenSilentLine.Thickness = 0.5;
+OffscreenSilentLine.Transparency = 1;
+
+-- CamLock hedef tracer çizgisi
+CamLockTracerLine = CreateLine();
+CamLockTracerLine.Visible = false;
+CamLockTracerLine.Thickness = 1;
+CamLockTracerLine.Transparency = 1;
+
+function CreateTextLabel()
+	local Obj = {
+		_Text = '',
+		_Size = 13,
+		_Position = Vector2New(0, 0),
+		_Color = Color3.new(1, 1, 1),
+		_Visible = false,
+		_Center = false,
+		_Outline = true,
+		_OutlineColor = Color3.new(0, 0, 0),
+		_Transparency = 1,
+		_FontFace = nil,
+	};
+
+	local Label = Instance.new('TextLabel');
+	Label.AnchorPoint = Vector2New(0.5, 0.5);
+	Label.BorderSizePixel = 0;
+	Label.BackgroundTransparency = 1;
+	Label.RichText = true;
+	Label.Font = Enum.Font.SourceSansBold;
+	Label.TextSize = Obj._Size;
+	Label.TextColor3 = Obj._Color;
+	Label.Visible = Obj._Visible;
+	Label.Text = '';
+	Label.Parent = UtilityUI;
+
+	local Stroke = Instance.new('UIStroke');
+	Stroke.Thickness = 1;
+	Stroke.Color = Obj._OutlineColor;
+	Stroke.Enabled = Obj._Outline;
+	Stroke.Parent = Label;
+
+	local function UpdatePosition()
+		local Bounds = Label.TextBounds;
+		local OffsetX = Obj._Center and 0 or (Bounds.X / 2);
+		Label.Position = UDim2.fromOffset(Obj._Position.X + OffsetX, Obj._Position.Y + Bounds.Y / 2);
+	end;
+
+	Label:GetPropertyChangedSignal('TextBounds'):Connect(UpdatePosition);
+
+	local Proxy = {};
+	local Meta = {
+		__newindex = function(_, Key, Value)
+			if Key == 'Text' then
+				Obj._Text = Value;
+				Label.Text = Value;
+			elseif Key == 'Size' then
+				Obj._Size = Value;
+				Label.TextSize = Value;
+			elseif Key == 'Position' then
+				Obj._Position = Value;
+				UpdatePosition();
+			elseif Key == 'Color' then
+				Obj._Color = Value;
+				Label.TextColor3 = Value;
+			elseif Key == 'Visible' then
+				Obj._Visible = Value;
+				Label.Visible = Value;
+			elseif Key == 'Center' then
+				Obj._Center = Value;
+				UpdatePosition();
+			elseif Key == 'Outline' then
+				Obj._Outline = Value;
+				Stroke.Enabled = Value;
+			elseif Key == 'OutlineColor' then
+				Obj._OutlineColor = Value;
+				Stroke.Color = Value;
+			elseif Key == 'Transparency' then
+				Obj._Transparency = Value;
+				local Alpha = MathClamp(1 - Value, 0, 1);
+				Label.TextTransparency = Alpha;
+				Stroke.Transparency = Alpha;
+			elseif Key == 'Font' then
+				Label.Font = Value;
+			elseif Key == 'FontFace' then
+				Obj._FontFace = Value;
+				Label.FontFace = Value;
+			elseif Key == 'StrokeThickness' then
+				Stroke.Thickness = Value;
+			elseif Key == 'StrokeTransparency' then
+				Stroke.Transparency = Value;
+			end;
+		end,
+		__index = function(_, Key)
+			if Key == 'TextBounds' then
+				return Label.TextBounds;
+			elseif Key == 'Label' then
+				return Label;
+			elseif Key == 'Stroke' then
+				return Stroke;
+			elseif Key == 'Remove' or Key == 'Destroy' then
+				return function()
+					Label:Destroy();
+				end;
+			elseif Key == 'Text' then return Obj._Text;
+			elseif Key == 'Size' then return Obj._Size;
+			elseif Key == 'Position' then return Obj._Position;
+			elseif Key == 'Color' then return Obj._Color;
+			elseif Key == 'FontFace' then return Obj._FontFace;
+			elseif Key == 'Visible' then return Obj._Visible;
+			elseif Key == 'Center' then return Obj._Center;
+			elseif Key == 'Outline' then return Obj._Outline;
+			elseif Key == 'Transparency' then return Obj._Transparency;
+			end;
+			return nil;
+		end,
+	};
+	return setmetatable(Proxy, Meta);
+end;
+
+NameESPDrawings = {};
+HealthBarDrawings = {};
+HealthBarValueCache = {};
+
+function GetHealthBarArmor(Player)
+	local Character = Player and Player.Character;
+	local BodyEffects = Character and Character:FindFirstChild('BodyEffects');
+	local ArmorObject = BodyEffects and (
+		BodyEffects:FindFirstChild('Armor')
+		or BodyEffects:FindFirstChild('Armour')
+		or BodyEffects:FindFirstChild('Defense')
+	);
+	if ArmorObject and tonumber(ArmorObject.Value) then
+		return tonumber(ArmorObject.Value), true;
+	end;
+	local Leaderstats = Player and Player:FindFirstChild('leaderstats');
+	local LeaderArmor = Leaderstats and (
+		Leaderstats:FindFirstChild('Armor')
+		or Leaderstats:FindFirstChild('Armour')
+		or Leaderstats:FindFirstChild('Defense')
+		or Leaderstats:FindFirstChild('Vest')
+	);
+	if LeaderArmor and tonumber(LeaderArmor.Value) then
+		return tonumber(LeaderArmor.Value), true;
+	end;
+	return 0, false;
+end;
+
+function GetStableHealthBarValues(Player, Humanoid)
+	local Now = Clock();
+	local Cache = HealthBarValueCache[Player];
+	if not Cache or Cache.Character ~= Player.Character then
+		Cache = {
+			Character = Player.Character,
+			Health = tonumber(Humanoid.Health) or 0,
+			MaxHealth = tonumber(Humanoid.MaxHealth) or 100,
+			Armor = 0,
+			ZeroSince = nil,
+			ArmorMissingSince = nil,
+		};
+		HealthBarValueCache[Player] = Cache;
+	end;
+
+	local RawMaxHealth = tonumber(Humanoid.MaxHealth);
+	if RawMaxHealth and RawMaxHealth > 0 and RawMaxHealth == RawMaxHealth then
+		Cache.MaxHealth = RawMaxHealth;
+	end;
+	local MaxHealth = Cache.MaxHealth > 0 and Cache.MaxHealth or 100;
+
+	local RawHealth = tonumber(Humanoid.Health);
+	local IsDead = Humanoid:GetState() == EnumDead or not Humanoid.Parent;
+	if RawHealth and RawHealth == RawHealth and RawHealth > 0 then
+		Cache.Health = MathClamp(RawHealth, 0, MaxHealth);
+		Cache.ZeroSince = nil;
+	elseif IsDead then
+		Cache.Health = 0;
+		Cache.ZeroSince = Now;
+	else
+		Cache.ZeroSince = nil;
+	end;
+
+	local RawArmor, HasArmorValue = GetHealthBarArmor(Player);
+	if HasArmorValue then
+		Cache.Armor = MathMax(tonumber(RawArmor) or 0, 0);
+		Cache.ArmorMissingSince = nil;
+	else
+		Cache.ArmorMissingSince = Cache.ArmorMissingSince or Now;
+		if Now - Cache.ArmorMissingSince >= 0.3 then
+			Cache.Armor = 0;
+		end;
+	end;
+
+	return Cache.Health, MaxHealth, Cache.Armor, IsDead;
+end;
+
+function RemoveHealthBarSet(Set)
+	if not Set then return end;
+	for _, Sq in next, Set do
+		pcall(function() Sq:Remove() end);
+	end;
+end;
+
+function HideHealthBarSet(Set)
+	if not Set then return end;
+	for _, Sq in next, Set do
+		Sq.Visible = false;
+	end;
+end;
+
+function Cleanup()
+	RestoreWalkSpeedState(State);
+	for i = #_Conns, 1, -1 do
+		local Conn = _Conns[i];
+		_Conns[i] = nil;
+		if Conn and Conn.Connected then
+			pcall(function()
+				Conn:Disconnect();
+			end);
+		end;
+	end;
+	pcall(function() RunService:UnbindFromRenderStep('ciderrage') end);
+	if UtilityUI and UtilityUI.Parent then
+		pcall(function()
+			UtilityUI:Destroy();
+		end);
+	end;
+	for _, Draw in next, NameESPDrawings do
+		pcall(function()
+			Draw:Remove();
+		end);
+	end;
+	for Player in next, NameESPDrawings do
+		NameESPDrawings[Player] = nil;
+	end;
+	for _, Set in next, HealthBarDrawings do
+		RemoveHealthBarSet(Set);
+	end;
+	for Player in next, HealthBarDrawings do
+		HealthBarDrawings[Player] = nil;
+	end;
+	for Player in next, HealthBarValueCache do
+		HealthBarValueCache[Player] = nil;
+	end;
+end;
+
+getgenv().cidercc_cleanup = Cleanup;
+
+function CleanNameESP()
+	for Player, Draw in next, NameESPDrawings do
+		if not Player.Parent then
+			Draw:Remove();
+			NameESPDrawings[Player] = nil;
+		end;
+	end;
+	for Player, Set in next, HealthBarDrawings do
+		if not Player.Parent then
+			RemoveHealthBarSet(Set);
+			HealthBarDrawings[Player] = nil;
+			HealthBarValueCache[Player] = nil;
+		end;
+	end;
+end;
+
+TrackConn(Players.PlayerRemoving:Connect(function(Player)
+	if State.Future.LastTarget == Player then
+		State.Future.LastTarget = nil;
+		State.Future.LastWeaponClass = nil;
+		State.Future.CurrentValues = nil;
+	end;
+	local Draw = NameESPDrawings[Player];
+	if Draw then
+		Draw:Remove();
+		NameESPDrawings[Player] = nil;
+	end;
+	local Set = HealthBarDrawings[Player];
+	if Set then
+		RemoveHealthBarSet(Set);
+		HealthBarDrawings[Player] = nil;
+	end;
+	HealthBarValueCache[Player] = nil;
+end));
+
+PanelTitle = CreateTextLabel();
+PanelTitle.Visible = false;
+PanelTitle.Size = 18;
+PanelTitle.Outline = true;
+PanelTitle.Center = true;
+PanelTitle.Font = Enum.Font.GothamMedium;
+PanelTitle.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+PanelTitle.StrokeThickness = 0.7;
+PanelTitle.StrokeTransparency = 0;
+
+PanelLabels = {};
+for i = 1, 14 do
+	local Label = CreateTextLabel();
+	Label.Visible = false;
+	Label.Size = 12;
+	Label.Outline = true;
+	Label.Center = true;
+	Label.Font = Enum.Font.GothamMedium;
+	Label.FontFace = Font.new('rbxasset://fonts/families/GothamSSm.json', Enum.FontWeight.SemiBold, Enum.FontStyle.Normal);
+	Label.StrokeThickness = 0.7;
+	Label.StrokeTransparency = 0;
+	PanelLabels[i] = Label;
+end;
+
+BrandHealthBarObject = nil;
+BrandHealthBarScanAt = 0;
+
+GetBrandHealthBarAnchor = function(ViewportSize)
+	local Object = BrandHealthBarObject;
+	if Object and Object.Parent and Object.Visible then
+		local Size = Object.AbsoluteSize;
+		local Position = Object.AbsolutePosition;
+		if Size.X > 40 and Size.Y > 0 then
+			return Position.X + Size.X / 2, ViewportSize.Y - 100;
+		end;
+	end;
+
+	local Now = Clock();
+	if Now - BrandHealthBarScanAt < 0.75 then
+		return ViewportSize.X * 0.625, ViewportSize.Y - 100;
+	end;
+	BrandHealthBarScanAt = Now;
+
+	local PlayerGui = LocalPlayer:FindFirstChildOfClass('PlayerGui');
+	local Best = nil;
+	local BestScore = -MathHuge;
+	if PlayerGui then
+		for _, GuiObject in next, PlayerGui:GetDescendants() do
+			if not GuiObject:IsA('GuiObject') or not GuiObject.Visible then continue end;
+			local Name = string.lower(GuiObject.Name);
+			local Text = '';
+			if GuiObject:IsA('TextLabel') or GuiObject:IsA('TextButton') then
+				Text = string.lower(GuiObject.Text or '');
+			end;
+			local IsHealth = Name == 'hp'
+				or string.find(Name, 'health', 1, true)
+				or Text == 'health'
+				or Text == 'hp';
+			if not IsHealth then continue end;
+
+			local Size = GuiObject.AbsoluteSize;
+			local Position = GuiObject.AbsolutePosition;
+			if Size.X < 40 or Size.Y <= 0 or Position.Y < ViewportSize.Y * 0.55 then continue end;
+
+			local Score = Position.Y + Size.X;
+			if Name == 'hp' or Name == 'health' then Score = Score + 500 end;
+			if Score > BestScore then
+				BestScore = Score;
+				Best = GuiObject;
+			end;
+		end;
+	end;
+
+	BrandHealthBarObject = Best;
+	if Best then
+		local Size = Best.AbsoluteSize;
+		local Position = Best.AbsolutePosition;
+		return Position.X + Size.X / 2, ViewportSize.Y - 100;
+	end;
+	return ViewportSize.X * 0.625, ViewportSize.Y - 100;
+end;
+
+TriggerTargetLocked = false;
+AimbotTargetLocked = false;
+
+AntiFutureVisDot = CreateSquare();
+AntiFutureVisDot.Visible = false;
+AntiFutureVisDot.Color = Color3.fromRGB(255, 80, 80);
+AntiFutureVisDot.Filled = true;
+AntiFutureVisDot.Size = Vector2New(8, 8);
+
+AntiFutureVisLabel = CreateTextLabel();
+AntiFutureVisLabel.Visible = false;
+AntiFutureVisLabel.Size = 11;
+AntiFutureVisLabel.Outline = true;
+AntiFutureVisLabel.Center = true;
+AntiFutureVisLabel.Font = Enum.Font.SourceSansBold;
+AntiFutureVisLabel.FontFace = Font.new('rbxasset://fonts/families/LegacyArial.json', Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+
+TrackConn(UserInputService.InputBegan:Connect(function(Input, GameProcessed)
+	if not GameProcessed or Input.UserInputType == Enum.UserInputType.MouseButton2 then
+		if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+			IsAimed = true;
+		end;
+	end;
+end));
+TrackConn(UserInputService.InputEnded:Connect(function(Input)
+	if Input.UserInputType == Enum.UserInputType.MouseButton2 then
+		IsAimed = false;
+	end;
+end));
+
+local function MatchesTriggerBinding(Input, Binding)
+	if type(Binding) ~= 'table' then return false end;
+	local Key = Binding['Key'];
+	if Key == nil then return false end;
+
+	local KeyName = Tostring(Key);
+	local LowerKey = KeyName:lower();
+	local Mode = Tostring(Binding['Mode'] or ''):lower();
+	local IsMouse = Mode == 'mouse' or LowerKey:sub(1, 5) == 'mouse' or LowerKey:find('mousebutton', 1, true) ~= nil;
+
+	if IsMouse then
+		local Aliases = {
+			mouse1 = 'mousebutton1',
+			mouse2 = 'mousebutton2',
+			mouse3 = 'mousebutton3',
+			leftmouse = 'mousebutton1',
+			rightmouse = 'mousebutton2',
+			middlemouse = 'mousebutton3',
+		};
+		LowerKey = Aliases[LowerKey] or LowerKey;
+		local InputName = Tostring(Input.UserInputType):match('([^%.]+)$');
+		return InputName ~= nil and InputName:lower() == LowerKey;
+	end;
+
+	local KeyCodeName = Tostring(Input.KeyCode):match('([^%.]+)$');
+	return KeyCodeName ~= nil and KeyCodeName:lower() == LowerKey;
+end;
+
+TrackConn(UserInputService.InputBegan:Connect(function(Input, Processed)
+	local SilentAimCfg = GetConfig()['Silent Aim'];
+	local TriggerCfg = GetConfig()['Triggerbot'];
+	local TrigKeybind = TriggerCfg['Bind'];
+	local TrigMatch = MatchesTriggerBinding(Input, TrigKeybind);
+
+	if TrigMatch then
+		local BindType = Tostring(TrigKeybind['Type'] or 'Hold'):lower();
+		if BindType == 'toggle' then
+			State.TriggerState = not State.TriggerState;
+		elseif BindType == 'hold' then
+			State.TriggerState = true;
+		end;
+	end;
+
+	if Processed then return end;
+	if GetConfig()['Main']['Checks']['Silent Aim']['Typing'] and IsTyping() then return end;
+
+	if SilentAimCfg['Enabled'] and GetConfig()['Main']['Silent Aim']['Selection'] == 'Target' then
+		local TargetKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Target'];
+		if TargetKey then
+			local Match = false;
+			Pcall(function()
+				if Input.KeyCode == Enum.KeyCode[TargetKey:upper()] then Match = true end;
+			end);
+			if not Match then
+				Pcall(function()
+					if Input.UserInputType == Enum.UserInputType[TargetKey] then Match = true end;
+				end);
+			end;
+			if Match then
+				SilentTargetLocked = not SilentTargetLocked;
+				if SilentTargetLocked then
+					local OffCfg = GetConfig()['Silent Aim']['Offscreen Targeting'];
+					State.Targets.Silent = GetClosestPlayerToCursor(GetConfig()['Silent Aim']['Max Range'], OffCfg and OffCfg['Enabled'], 'Targeting', 'Silent Aim');
+				else
+					State.Targets.Silent = nil;
+				end;
+			end;
+		end;
+	end;
+
+	if TriggerCfg['Enabled'] and GetConfig()['Main']['Triggerbot']['Selection'] == 'Target' then
+		local TargetKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Target'];
+		if TargetKey then
+			local Match = false;
+			Pcall(function()
+				if Input.KeyCode == Enum.KeyCode[TargetKey:upper()] then Match = true end;
+			end);
+			if not Match then
+				Pcall(function()
+					if Input.UserInputType == Enum.UserInputType[TargetKey] then Match = true end;
+				end);
+			end;
+			if Match then
+				TriggerTargetLocked = not TriggerTargetLocked;
+				if TriggerTargetLocked then
+					local OffCfg = GetConfig()['Triggerbot']['Offscreen Targeting'];
+					State.Targets.Triggerbot = GetClosestPlayerToCursor(GetConfig()['Triggerbot']['Max Range'], OffCfg and OffCfg['Enabled'], 'Targeting', 'Triggerbot');
+				else
+					State.Targets.Triggerbot = nil;
+				end;
+			end;
+		end;
+	end;
+
+	local AimbotKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Aimbot'];
+	if AimbotKey then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[AimbotKey:upper()] then Match = true end;
+		end);
+		if not Match then
+			Pcall(function()
+				if Input.UserInputType == Enum.UserInputType[AimbotKey] then Match = true end;
+			end);
+		end;
+		if Match then
+			local AimbotCfg = GetConfig()['Aimbot'];
+			local Mode = AimbotCfg['Mode'] or 'Toggle';
+			if Mode == 'Hold' then
+				AimbotTargetLocked = true;
+				State.Targets.Aimbot = GetClosestPlayerToCursor(GetConfig()['Aimbot']['Max Range'], nil, 'Targeting', 'Aimbot');
+			else
+				AimbotTargetLocked = not AimbotTargetLocked;
+				if AimbotTargetLocked then
+					State.Targets.Aimbot = GetClosestPlayerToCursor(GetConfig()['Aimbot']['Max Range'], nil, 'Targeting', 'Aimbot');
+				else
+					State.Targets.Aimbot = nil;
+				end;
+			end;
+		end;
+	end;
+
+	local WalkSpeedKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Walk Speed'];
+	if WalkSpeedKey then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[WalkSpeedKey:upper()] then Match = true end;
+		end);
+		if Match then
+			State.SpeedModificationsActive = not State.SpeedModificationsActive;
+			if not State.SpeedModificationsActive then
+				RestoreWalkSpeedState(State);
+			end;
+		end;
+	end;
+
+	local JumpToggleKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Jump Power'];
+	if JumpToggleKey then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[JumpToggleKey:upper()] then Match = true end;
+		end);
+		if Match then
+			State.JumpModificationsActive = not State.JumpModificationsActive;
+		end;
+	end;
+
+	local DoubleTapCfg = GetConfig()['Modifications']['Double Tap'];
+	local DoubleTapKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Double Tap'];
+	if DoubleTapCfg['Enabled'] and DoubleTapCfg['Mode'] ~= 'Always' and DoubleTapKey then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[DoubleTapKey:upper()] then Match = true end;
+		end);
+		if Match then
+			State.DoubleTapActive = not State.DoubleTapActive;
+		end;
+	end;
+
+	local ESPToggleKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['ESP'];
+	if ESPToggleKey then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[ESPToggleKey:upper()] then Match = true end;
+		end);
+		if Match then
+			GetConfig()['Name ESP']['Enabled'] = not GetConfig()['Name ESP']['Enabled'];
+		end;
+	end;
+
+	local SorterKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Sorter'];
+	if SorterKey and GetConfig()['Utilities']['Inventory Sorter']['Enabled'] then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[SorterKey:upper()] then Match = true end;
+		end);
+		if Match then
+			Spawn(function()
+				State.SorterActive = true;
+				local Character = LocalPlayer.Character;
+				if not Character then
+					State.SorterActive = false;
+					return;
+				end;
+				local Backpack = LocalPlayer:FindFirstChildOfClass('Backpack');
+				if not Backpack then
+					State.SorterActive = false;
+					return;
+				end;
+				local GunOrder = GetConfig()['Utilities']['Inventory Sorter']['Order'];
+				local OrderV = 10 - #GunOrder;
+				local FakeFolder = Instance.new('Folder');
+				FakeFolder.Name = 'SorterTemp';
+				FakeFolder.Parent = Workspace;
+				for _, v in next, Backpack:GetChildren() do
+					if v:IsA('Tool') then
+						v.Parent = FakeFolder;
+					end;
+				end;
+				for _, Name in next, GunOrder do
+					local Gun = FakeFolder:FindFirstChild(Name);
+					if Gun then
+						Gun.Parent = Backpack;
+						Wait(0.05);
+					else
+						OrderV = OrderV + 1;
+					end;
+				end;
+				for _, v in next, FakeFolder:GetChildren() do
+					if v:FindFirstChild('Drink') or v:FindFirstChild('Eat') then
+						v.Parent = Backpack;
+						OrderV = OrderV - 1;
+					end;
+				end;
+				if OrderV > 0 then
+					for _ = 1, OrderV do
+						local PlaceHolder = Instance.new('Tool');
+						PlaceHolder.Name = '';
+						PlaceHolder.ToolTip = 'PlaceHolder';
+						PlaceHolder.GripPos = Vector3New(0, 1, 0);
+						PlaceHolder.RequiresHandle = false;
+						PlaceHolder.Parent = Backpack;
+					end;
+				end;
+				for _, v in next, FakeFolder:GetChildren() do
+					if v:IsA('Tool') then
+						v.Parent = Backpack;
+					end;
+				end;
+				for _, v in next, Backpack:GetChildren() do
+					if v.Name == '' then
+						v:Destroy();
+					end;
+				end;
+				FakeFolder:Destroy();
+				Wait(0.5);
+				State.SorterActive = false;
+			end);
+		end;
+	end;
+
+	if Input.KeyCode == Enum.KeyCode.LeftControl then
+		State.CanTriggerbotShoot = false;
+	end;
+
+	local AntiFutureCfg = GetConfig()['Anti Future'];
+	local AntiFutureKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Anti Future'];
+	if AntiFutureKey and AntiFutureCfg['Enabled'] then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[AntiFutureKey:upper()] then Match = true end;
+		end);
+		if Match then
+			RunAntiFutureToggle();
+		end;
+	end;
+
+	local PanicGroundCfg = GetConfig()['Panic Ground'];
+	local PanicGroundKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Panic Ground'];
+	if PanicGroundKey and PanicGroundCfg and PanicGroundCfg['Enabled'] then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[PanicGroundKey:upper()] then Match = true end;
+		end);
+		if Match then
+			RunPanicGround();
+		end;
+	end;
+
+	-- CamLock keybind handler
+	local CamLockCfg = GetConfig()['CamLock'];
+	local CamLockKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['CamLock'];
+	if CamLockKey and CamLockCfg and CamLockCfg['Enabled'] then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[CamLockKey:upper()] then Match = true end;
+		end);
+		if Match then
+			local CamMode = CamLockCfg['Mode'] or 'Hold';
+			if CamMode == 'Toggle' then
+				if State.CamLock.Active then
+					State.CamLock.Active = false;
+					State.CamLock.Target = nil;
+				else
+					-- acquire closest target same way aimbot does
+					local Closest = GetClosestPlayerToCursor(nil, false, 'Target', 'Aimbot');
+					if Closest then
+						State.CamLock.Target = Closest;
+						State.CamLock.Active = true;
+					end;
+				end;
+			else -- Hold mode: activate on press, deactivate on release (handled in InputEnded)
+				local Closest = GetClosestPlayerToCursor(nil, false, 'Target', 'Aimbot');
+				if Closest then
+					State.CamLock.Target = Closest;
+					State.CamLock.Active = true;
+				end;
+			end;
+		end;
+	end;
+end));
+
+TrackConn(UserInputService.InputEnded:Connect(function(Input)
+	local AimbotCfg = GetConfig()['Aimbot'];
+	if AimbotCfg['Mode'] == 'Hold' then
+		local AimbotKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['Aimbot'];
+		if AimbotKey then
+			local Match = false;
+			Pcall(function()
+				if Input.KeyCode == Enum.KeyCode[AimbotKey:upper()] then Match = true end;
+			end);
+			if not Match then
+				Pcall(function()
+					if Input.UserInputType == Enum.UserInputType[AimbotKey] then Match = true end;
+				end);
+			end;
+			if Match then
+				AimbotTargetLocked = false;
+				State.Targets.Aimbot = nil;
+			end;
+		end;
+	end;
+
+	local TriggerCfg = GetConfig()['Triggerbot'];
+	local TrigKeybindRel = TriggerCfg['Bind'];
+	if TrigKeybindRel and Tostring(TrigKeybindRel['Type'] or 'Hold'):lower() == 'hold' and MatchesTriggerBinding(Input, TrigKeybindRel) then
+		State.TriggerState = false;
+	end;
+
+	if Input.KeyCode == Enum.KeyCode.LeftControl then
+		State.CanTriggerbotShoot = true;
+	end;
+
+	-- CamLock hold release
+	local CamLockCfg = GetConfig()['CamLock'];
+	local CamLockKey = GetConfig()['Main']['Binds'] and GetConfig()['Main']['Binds']['CamLock'];
+	if CamLockKey and CamLockCfg and CamLockCfg['Enabled'] and (CamLockCfg['Mode'] or 'Hold') == 'Hold' then
+		local Match = false;
+		Pcall(function()
+			if Input.KeyCode == Enum.KeyCode[CamLockKey:upper()] then Match = true end;
+		end);
+		if Match then
+			State.CamLock.Active = false;
+			State.CamLock.Target = nil;
+		end;
+	end;
+end));
+
+
+
+TrackConn(RunService.Heartbeat:Connect(function()
+	Config = shared.Cider or Config;
+	UpdatePositionCache();
+	CachedIgnored = Workspace:FindFirstChild('Ignored');
+	CachedBush = Workspace:FindFirstChild('Bush');
+end));
+
+TrackConn(RunService.Heartbeat:Connect(function()
+	local PanicGroundCfg = GetConfig()['Panic Ground'];
+	local AutoCfg = PanicGroundCfg and PanicGroundCfg['Auto'];
+	if not PanicGroundCfg or not PanicGroundCfg['Enabled'] or not AutoCfg or not AutoCfg['Enabled'] then
+		State.PanicGround.AutoTriggered = false;
+		return;
+	end;
+
+	local Character = LocalPlayer.Character;
+	local Humanoid = Character and Character:FindFirstChildOfClass('Humanoid');
+	if not Humanoid or Humanoid.Health <= 0 then
+		State.PanicGround.AutoTriggered = false;
+		return;
+	end;
+
+	local Threshold = AutoCfg['Health Amount'] or 25;
+	if Humanoid.Health <= Threshold then
+		if not State.PanicGround.AutoTriggered then
+			State.PanicGround.AutoTriggered = true;
+			RunPanicGround();
+		end;
+	else
+		State.PanicGround.AutoTriggered = false;
+	end;
+end));
+
+TrackConn(RunService.PreRender:Connect(function()
+	local SilentAimCfg = GetConfig()['Silent Aim'];
+	local TriggerCfg = GetConfig()['Triggerbot'];
+	local AimbotCfg = GetConfig()['Aimbot'];
+	local CurrentCamera = Workspace.CurrentCamera;
+	local ViewportY = CurrentCamera.ViewportSize.Y;
+	local CamFOV = CurrentCamera.FieldOfView;
+	local MousePosition = GetCursorViewportPosition();
+
+	local SilentOffscreen = SilentAimCfg['Offscreen Targeting'] and SilentAimCfg['Offscreen Targeting']['Enabled'];
+	local TriggerOffscreen = TriggerCfg['Offscreen Targeting'] and TriggerCfg['Offscreen Targeting']['Enabled'];
+
+	local ClosestPlayer = GetClosestPlayerToCursor(nil, nil, 'Automatic');
+
+	if SilentAimCfg['Enabled'] and GetConfig()['Main']['Silent Aim']['Selection'] == 'Automatic' then
+		State.Targets.Silent = GetClosestPlayerToCursor(SilentAimCfg['Max Range'], SilentOffscreen, 'Automatic', 'Silent Aim');
+	end;
+
+	if TriggerCfg['Enabled'] and GetConfig()['Main']['Triggerbot']['Selection'] == 'Automatic' then
+		State.Targets.Triggerbot = GetClosestPlayerToCursor(TriggerCfg['Max Range'], TriggerOffscreen, 'Automatic', 'Triggerbot');
+	end;
+
+	local SilentTarget = State.Targets.Silent;
+	local SilentDisplay = SilentTarget;
+	local SilentFOVCfg = GetConfig()['Main']['FOV']['Silent'];
+	local SilentUses3DFOV = string.lower(tostring(SilentFOVCfg['Options'] or '2D')) == '3d';
+	Update3DFOVBox(Silent3DFOVBox, SilentFOVCfg, SilentFOVCfg['Visualize']['Color'] or SilentFOVOutColor);
+	if not SilentDisplay and SilentFOVCfg['Visualize']['Enabled'] then
+		SilentDisplay = ClosestPlayer;
+	end;
+	local ViewportX = CurrentCamera.ViewportSize.X;
+	if not SilentUses3DFOV and SilentFOVCfg['Visualize']['Enabled'] and SilentDisplay then
+		local Char = SilentDisplay.Character;
+		local Root = Char and Char:FindFirstChild('HumanoidRootPart');
+		if Root and IsVisible(Root.Position, SilentDisplay) then
+			local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(Root.Position);
+			if OnScreen and ScreenPos.Z > 1 then
+				local ScaleFactor = (Root.Size.Y * ViewportY) / (ScreenPos.Z * 2) * 80 / CamFOV;
+				local IsCircle = false;
+				local FovSize = SilentFOVCfg;
+				local W, H;
+				if IsCircle then
+					local R = MathMin(5 * ScaleFactor, ViewportX * 2);
+					W = R; H = R;
+				else
+					local WidthVal = FovSize['Width'] and (FovSize['Width'][1] or 150) or 150;
+					local HeightVal = FovSize['Height'] and (FovSize['Height'][1] or 150) or 150;
+					W = MathMin(WidthVal * ScaleFactor, ViewportX * 2);
+					H = MathMin(HeightVal * ScaleFactor, ViewportY * 2);
+				end;
+
+				SilentFOVBox.Round = IsCircle;
+				SilentFOVBox.Size = Vector2New(MathFloor(W + 0.5), MathFloor(H + 0.5));
+				SilentFOVBox.Position = Vector2New(MathFloor(ScreenPos.X - W / 2 + 0.5), MathFloor(ScreenPos.Y - H / 2 + 0.5));
+
+				local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition;
+				local InBox;
+				if IsCircle then
+					InBox = (Delta.X * Delta.X + Delta.Y * Delta.Y) <= (W / 2) * (W / 2);
+				else
+					InBox = MathAbs(Delta.X) <= W / 2 and MathAbs(Delta.Y) <= H / 2;
+				end;
+				SilentFOVBox.Color = InBox and SilentFOVInColor or SilentFOVOutColor;
+				SilentFOVBox.Visible = SilentFOVCfg['Visualize']['Enabled'];
+			else
+				SilentFOVBox.Visible = false;
+			end;
+		else
+			SilentFOVBox.Visible = false;
+		end;
+	else
+		SilentFOVBox.Visible = false;
+	end;
+
+	local LineCfg = SilentAimCfg['Target Tracer'];
+	local OffSilentCfg = SilentAimCfg['Offscreen Targeting'];
+	local SilentAllowOffscreen = OffSilentCfg and OffSilentCfg['Enabled'];
+	if LineCfg and LineCfg['Enabled'] and SilentTarget then
+		local Char = SilentTarget.Character;
+		local Root = Char and Char:FindFirstChild('Head');
+		if Root then
+			local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(Root.Position);
+			local Thickness = LineCfg['Thickness'] or 0.5;
+			if OnScreen and ScreenPos.Z > 0 then
+				SilentTargetLine.From = Vector2New(MousePosition.X, MousePosition.Y);
+				SilentTargetLine.To = Vector2New(ScreenPos.X, ScreenPos.Y);
+				SilentTargetLine.Color = LineCfg['Color'] or Color3.fromRGB(255, 255, 255);
+				SilentTargetLine.Thickness = Thickness;
+				SilentTargetLine.Visible = true;
+				OffscreenSilentLine.Visible = false;
+			elseif SilentAllowOffscreen then
+				local HRP = Char:FindFirstChild('HumanoidRootPart') or Root;
+				local Dir = (HRP.Position - CurrentCamera.CFrame.Position).Unit;
+				local CamRight = CurrentCamera.CFrame.RightVector;
+				local CamUp = CurrentCamera.CFrame.UpVector;
+				local RightDot = Dir:Dot(CamRight);
+				local UpDot = Dir:Dot(CamUp);
+				local EdgeDir = Vector2New(RightDot, -UpDot).Unit;
+				local HalfW = ViewportX / 2 - 10;
+				local HalfH = ViewportY / 2 - 10;
+				local Scale = MathMin(HalfW / MathAbs(EdgeDir.X + 0.0001), HalfH / MathAbs(EdgeDir.Y + 0.0001));
+				local EdgePoint = Vector2New(ViewportX / 2, ViewportY / 2) + EdgeDir * Scale;
+				SilentTargetLine.Visible = false;
+				OffscreenSilentLine.From = MousePosition;
+				OffscreenSilentLine.To = EdgePoint;
+				OffscreenSilentLine.Color = LineCfg['Color'] or Color3.fromRGB(255, 255, 255);
+				OffscreenSilentLine.Thickness = Thickness;
+				OffscreenSilentLine.Visible = true;
+			else
+				SilentTargetLine.Visible = false;
+				OffscreenSilentLine.Visible = false;
+			end;
+		else
+			SilentTargetLine.Visible = false;
+			OffscreenSilentLine.Visible = false;
+		end;
+	else
+		SilentTargetLine.Visible = false;
+		OffscreenSilentLine.Visible = false;
+	end;
+
+	-- CamLock hedef tracer: Q kilitlenince headden çizgi
+	do
+		local CLCfg = GetConfig()['CamLock'];
+		local CLTracerCfg = CLCfg and CLCfg['Tracer'];
+		if CLTracerCfg and CLTracerCfg['Enabled'] and State.CamLock.Active and State.CamLock.Target then
+			local CLTarget = State.CamLock.Target;
+			local CLChar = CLTarget.Character;
+			local CLHead = CLChar and CLChar:FindFirstChild('Head');
+			if CLHead then
+				local HeadScreen, OnScreen = CurrentCamera:WorldToViewportPoint(CLHead.Position);
+				if OnScreen and HeadScreen.Z > 0 then
+					local FromMode = CLTracerCfg['From'] or 'Center';
+					local FromPt;
+					if FromMode == 'Bottom' then
+						FromPt = Vector2New(ViewportX / 2, ViewportY);
+					else
+						FromPt = Vector2New(ViewportX / 2, ViewportY / 2);
+					end;
+					CamLockTracerLine.From = FromPt;
+					CamLockTracerLine.To = Vector2New(HeadScreen.X, HeadScreen.Y);
+					CamLockTracerLine.Color = CLTracerCfg['Color'] or Color3.fromRGB(255, 80, 80);
+					CamLockTracerLine.Thickness = CLTracerCfg['Thickness'] or 1;
+					CamLockTracerLine.Visible = true;
+				else
+					CamLockTracerLine.Visible = false;
+				end;
+			else
+				CamLockTracerLine.Visible = false;
+			end;
+		else
+			CamLockTracerLine.Visible = false;
+		end;
+	end;
+
+	local TrigTarget = State.Targets.Triggerbot;
+	local TrigDisplay = TrigTarget;
+	local TriggerFOVCfg = GetConfig()['Main']['FOV']['Triggerbot'];
+	local TriggerUses3DFOV = string.lower(tostring(TriggerFOVCfg['Options'] or '2D')) == '3d';
+	Update3DFOVBox(Trigger3DFOVBox, TriggerFOVCfg, TriggerFOVCfg['Visualize']['Color'] or TriggerFOVOutColor);
+	if not TrigDisplay and TriggerFOVCfg['Visualize']['Enabled'] then
+		TrigDisplay = ClosestPlayer;
+	end;
+	if not TriggerUses3DFOV and TriggerFOVCfg['Visualize']['Enabled'] and TrigDisplay then
+		local Char = TrigDisplay.Character;
+		local Root = Char and Char:FindFirstChild('HumanoidRootPart');
+		if Root and IsVisible(Root.Position, TrigDisplay) then
+			local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(Root.Position);
+			if OnScreen and ScreenPos.Z > 1 then
+				local ScaleFactor = (Root.Size.Y * ViewportY) / (ScreenPos.Z * 2) * 80 / CamFOV;
+				local IsCircle = false;
+				local FovSize = TriggerFOVCfg;
+				local W, H;
+				if IsCircle then
+					local R = MathMin(9e9 * ScaleFactor, ViewportX * 2);
+					W = R; H = R;
+				else
+					local WidthVal = FovSize['Width'] and (FovSize['Width'][1] or 9e9) or 9e9;
+					local HeightVal = FovSize['Height'] and (FovSize['Height'][1] or 9e9) or 9e9;
+					W = MathMin(WidthVal * ScaleFactor, ViewportX * 2);
+					H = MathMin(HeightVal * ScaleFactor, ViewportY * 2);
+				end;
+
+				TriggerFOVBox.Round = IsCircle;
+				TriggerFOVBox.Size = Vector2New(MathFloor(W + 0.5), MathFloor(H + 0.5));
+				TriggerFOVBox.Position = Vector2New(MathFloor(ScreenPos.X - W / 2 + 0.5), MathFloor(ScreenPos.Y - H / 2 + 0.5));
+
+				local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition;
+				local InBox;
+				if IsCircle then
+					InBox = (Delta.X * Delta.X + Delta.Y * Delta.Y) <= (W / 2) * (W / 2);
+				else
+					InBox = MathAbs(Delta.X) <= W / 2 and MathAbs(Delta.Y) <= H / 2;
+				end;
+				TriggerFOVBox.Color = InBox and TriggerFOVInColor or TriggerFOVOutColor;
+				TriggerFOVBox.Visible = TriggerFOVCfg['Visualize']['Enabled'];
+			else
+				TriggerFOVBox.Visible = false;
+			end;
+		else
+			TriggerFOVBox.Visible = false;
+		end;
+	else
+		TriggerFOVBox.Visible = false;
+	end;
+
+	local AimbotTarget = State.Targets.Aimbot;
+	local AimbotDisplay = AimbotTarget;
+	local AimbotFOVCfg = GetConfig()['Main']['FOV']['Aimbot'];
+	local AimbotUses3DFOV = string.lower(tostring(AimbotFOVCfg['Options'] or '2D')) == '3d';
+	Update3DFOVBox(Aimbot3DFOVBox, AimbotFOVCfg, AimbotFOVCfg['Visualize']['Color'] or AimbotFOVOutColor);
+	if not AimbotDisplay and AimbotFOVCfg['Visualize']['Enabled'] then
+		AimbotDisplay = ClosestPlayer;
+	end;
+	if not AimbotUses3DFOV and AimbotFOVCfg['Visualize']['Enabled'] and AimbotDisplay then
+		local Char = AimbotDisplay.Character;
+		local Root = Char and Char:FindFirstChild('HumanoidRootPart');
+		if Root and IsVisible(Root.Position, AimbotDisplay) then
+			local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(Root.Position);
+			if OnScreen and ScreenPos.Z > 1 then
+				local ScaleFactor = (Root.Size.Y * ViewportY) / (ScreenPos.Z * 2) * 80 / CamFOV;
+				local IsCircle = false;
+				local FovSize = AimbotFOVCfg;
+				local W, H;
+				if IsCircle then
+					local R = MathMin(9e9 * ScaleFactor, ViewportX * 2);
+					W = R; H = R;
+				else
+					local WidthVal = FovSize['Width'] and (FovSize['Width'][1] or 9e9) or 9e9;
+					local HeightVal = FovSize['Height'] and (FovSize['Height'][1] or 9e9) or 9e9;
+					W = MathMin(WidthVal * ScaleFactor, ViewportX * 2);
+					H = MathMin(HeightVal * ScaleFactor, ViewportY * 2);
+				end;
+
+				AimbotFOVBox.Round = IsCircle;
+				AimbotFOVBox.Size = Vector2New(MathFloor(W + 0.5), MathFloor(H + 0.5));
+				AimbotFOVBox.Position = Vector2New(MathFloor(ScreenPos.X - W / 2 + 0.5), MathFloor(ScreenPos.Y - H / 2 + 0.5));
+
+				local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition;
+				local InBox;
+				if IsCircle then
+					InBox = (Delta.X * Delta.X + Delta.Y * Delta.Y) <= (W / 2) * (W / 2);
+				else
+					InBox = MathAbs(Delta.X) <= W / 2 and MathAbs(Delta.Y) <= H / 2;
+				end;
+				AimbotFOVBox.Color = InBox and AimbotFOVInColor or AimbotFOVOutColor;
+				AimbotFOVBox.Visible = AimbotFOVCfg['Visualize']['Enabled'];
+			else
+				AimbotFOVBox.Visible = false;
+			end;
+		else
+			AimbotFOVBox.Visible = false;
+		end;
+	else
+		AimbotFOVBox.Visible = false;
+	end;
+
+	local ESPCfg = GetConfig()['Name ESP'];
+	if ESPCfg['Enabled'] then
+		local ESPColor = ESPCfg['Color'] or Color3.fromRGB(180, 180, 180);
+		local ESPTargetColor = ESPCfg['Target Color'] or Color3.fromRGB(255, 200, 0);
+		local ESPSize = ESPCfg['Text Size'] or 13;
+		local SuppressTriggerHighlight = SilentAimCfg['Enabled'] and GetConfig()['Main']['Silent Aim']['Selection'] == 'Target';
+		for _, Player in next, Players:GetPlayers() do
+			if Player == LocalPlayer then continue end;
+			local Character = Player.Character;
+			if not Character then
+				if NameESPDrawings[Player] then NameESPDrawings[Player].Visible = false end;
+				continue;
+			end;
+			local HumanoidRootPart = Character:FindFirstChild('HumanoidRootPart');
+			if not HumanoidRootPart then
+				if NameESPDrawings[Player] then NameESPDrawings[Player].Visible = false end;
+				continue;
+			end;
+
+
+
+			local ESPPos = HumanoidRootPart.Position - Vector3New(0, 3, 0);
+			local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(ESPPos);
+			if not OnScreen then
+				if NameESPDrawings[Player] then NameESPDrawings[Player].Visible = false end;
+				continue;
+			end;
+			if not NameESPDrawings[Player] then
+				local Draw = CreateTextLabel();
+				Draw.Outline = true;
+				Draw.Center = true;
+				NameESPDrawings[Player] = Draw;
+			end;
+			local Draw = NameESPDrawings[Player];
+			local IsTarget = (Player == State.Targets.Silent or Player == State.Targets.Aimbot or (not SuppressTriggerHighlight and Player == State.Targets.Triggerbot) or (State.CamLock.Active and Player == State.CamLock.Target));
+			Draw.Text = Player.DisplayName;
+			Draw.Size = ESPSize;
+			Draw.Color = IsTarget and ESPTargetColor or ESPColor;
+			Draw.Position = Vector2New(MathFloor(ScreenPos.X + 0.5), MathFloor(ScreenPos.Y + 0.5));
+			Draw.Visible = true;
+		end;
+	else
+		for _, Draw in next, NameESPDrawings do
+			Draw.Visible = false;
+		end;
+	end;
+
+	local HBCfg = GetConfig()['Health Bar'];
+	if HBCfg and HBCfg['Enabled'] then
+		local HBPos = HBCfg['Position'] or 'Bottom';
+		local ShowArmor = HBCfg['Show Armor'];
+		local HealthColor = HBCfg['Health Color'] or Color3.fromRGB(85, 255, 255);
+		local ArmorColor = HBCfg['Armor Color'] or Color3.fromRGB(120, 185, 255);
+
+		local TargetPlayer = State.Targets.Silent or State.Targets.Aimbot or State.Targets.Triggerbot or (State.CamLock.Active and State.CamLock.Target);
+
+		for Player, Set in next, HealthBarDrawings do
+			if Player ~= TargetPlayer then
+				HideHealthBarSet(Set);
+			end;
+		end;
+
+		local Character = TargetPlayer and TargetPlayer.Character;
+		local HumanoidRootPart = Character and Character:FindFirstChild('HumanoidRootPart');
+		local Humanoid = Character and Character:FindFirstChildOfClass('Humanoid');
+
+		if TargetPlayer and HumanoidRootPart and Humanoid then
+			local TopScreen, TopOn = CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position + Vector3New(0, 3, 0));
+			local BottomScreen, BottomOn = CurrentCamera:WorldToViewportPoint(HumanoidRootPart.Position - Vector3New(0, 3.5, 0));
+
+			if TopOn or BottomOn then
+				if not HealthBarDrawings[TargetPlayer] then
+					local Set = {};
+					for _, Key in next, {'HealthBack', 'HealthFill', 'ArmorBack', 'ArmorFill'} do
+						local Sq = CreateSquare();
+						Sq.Filled = true;
+						Sq.Visible = false;
+						Set[Key] = Sq;
+					end;
+					HealthBarDrawings[TargetPlayer] = Set;
+				end;
+				local Set = HealthBarDrawings[TargetPlayer];
+
+				local HealthValue, MaxHealth, ArmorVal, IsDead = GetStableHealthBarValues(TargetPlayer, Humanoid);
+				local HealthFrac = MathClamp(HealthValue / MaxHealth, 0, 1);
+				local ArmorFrac = MathClamp(ArmorVal / 100, 0, 1);
+				local DrawArmor = ShowArmor and ArmorVal > 0;
+
+				Set.HealthBack.Color = Color3.fromRGB(8, 8, 12);
+				Set.HealthFill.Color = HealthColor;
+				Set.ArmorBack.Color = Color3.fromRGB(8, 8, 12);
+				Set.ArmorFill.Color = ArmorColor;
+
+				local CenterX = (TopScreen.X + BottomScreen.X) / 2;
+				local BarLen = 66;
+				local TrackHeight = 2;
+				local Border = 1;
+				local Gap = 1;
+				local ESPCfgHB = GetConfig()['Name ESP'];
+				local ESPTextSize = ESPCfgHB['Text Size'] or 13;
+				local TrackWidth = BarLen + Border * 2;
+				local TrackX = MathFloor(CenterX - TrackWidth / 2 + 0.5);
+				local FeetY = MathMax(TopScreen.Y, BottomScreen.Y);
+				local TrackY;
+				if HBPos == 'Top' then
+					TrackY = MathFloor(MathMin(TopScreen.Y, BottomScreen.Y) - (TrackHeight + Border * 2) - 4 + 0.5);
+				elseif ESPCfgHB['Enabled'] then
+					local NameDraw = NameESPDrawings[TargetPlayer];
+					local NameY = NameDraw and NameDraw.Position.Y or FeetY;
+					local NameHeight = NameDraw and NameDraw.TextBounds.Y or ESPTextSize;
+					TrackY = MathFloor(NameY + MathMax(NameHeight, ESPTextSize) + 2 + 0.5);
+				else
+					TrackY = MathFloor(FeetY + 3 + 0.5);
+				end;
+
+				local HealthBackY = TrackY;
+				local HealthFillY = HealthBackY + Border;
+				local ArmorBackY = HealthBackY + TrackHeight + Border * 2 + Gap;
+				local ArmorFillY = ArmorBackY + Border;
+
+				Set.HealthBack.Size = Vector2New(TrackWidth, TrackHeight + Border * 2);
+				Set.HealthBack.Position = Vector2New(TrackX, HealthBackY);
+				Set.HealthFill.Size = Vector2New(MathFloor(BarLen * HealthFrac + 0.5), TrackHeight);
+				Set.HealthFill.Position = Vector2New(TrackX + Border, HealthFillY);
+
+				Set.ArmorBack.Size = Vector2New(TrackWidth, TrackHeight + Border * 2);
+				Set.ArmorBack.Position = Vector2New(TrackX, ArmorBackY);
+				Set.ArmorFill.Size = Vector2New(MathFloor(BarLen * ArmorFrac + 0.5), TrackHeight);
+				Set.ArmorFill.Position = Vector2New(TrackX + Border, ArmorFillY);
+
+				local ShowHealth = HealthFrac > 0 and not IsDead;
+				Set.HealthBack.Visible = ShowHealth;
+				Set.HealthFill.Visible = ShowHealth;
+				Set.ArmorBack.Visible = DrawArmor and not IsDead;
+				Set.ArmorFill.Visible = DrawArmor and ArmorFrac > 0 and not IsDead;
+			else
+				HideHealthBarSet(HealthBarDrawings[TargetPlayer]);
+			end;
+		end;
+	else
+		for _, Set in next, HealthBarDrawings do
+			HideHealthBarSet(Set);
+		end;
+	end;
+
+	local PanelCfg = GetConfig()['Main']['Brand'];
+	if PanelCfg['Enabled'] then
+		local PColors = PanelCfg;
+		local AccentColor = PanelCfg['Accent'] or Color3.fromRGB(255, 200, 0);
+		local ViewportSize = CurrentCamera.ViewportSize;
+		local VW, VH = ViewportSize.X, ViewportSize.Y;
+
+		local Scale = MathClamp(MathMin(VW / 1920, VH / 1080), 0.55, 1.35);
+
+		local TitleSize = MathFloor(15 * Scale + 0.5);
+		local LabelSize = MathFloor(12 * Scale + 0.5);
+		local LineH = MathFloor(14 * Scale + 0.5);
+		local TitleGap = MathFloor(18 * Scale + 0.5);
+
+		local ActiveLabels = 0;
+		if SilentAimCfg['Enabled'] and State.Toggles.SilentAim and State.Targets.Silent then
+			ActiveLabels = ActiveLabels + 1;
+			if State.Targets.Silent and State.Targets.Silent.Character then
+				ActiveLabels = ActiveLabels + 1;
+			end;
+		end;
+		if AimbotCfg['Enabled'] and AimbotTargetLocked then ActiveLabels = ActiveLabels + 1 end;
+		if TriggerCfg['Enabled'] and State.TriggerState and State.Targets.Triggerbot then ActiveLabels = ActiveLabels + 1 end;
+		if SilentAimCfg['Enabled'] and State.Targets.Silent and SilentAimCfg['Auto Shoot'] and SilentAimCfg['Auto Shoot']['Enabled'] then ActiveLabels = ActiveLabels + 1 end;
+		if GetConfig()['Movement']['Speed Modifications']['Enabled'] and State.SpeedModificationsActive then ActiveLabels = ActiveLabels + 1 end;
+		if State.SorterActive then ActiveLabels = ActiveLabels + 1 end;
+		if GetConfig()['Modifications']['Double Tap']['Enabled'] and (GetConfig()['Modifications']['Double Tap']['Mode'] == 'Always' or State.DoubleTapActive) then ActiveLabels = ActiveLabels + 1 end;
+		if GetConfig()['Anti Future']['Enabled'] and State.AntiFuture.Active then ActiveLabels = ActiveLabels + 1 end;
+		if GetConfig()['Movement']['Jump Modifications']['Enabled'] and State.JumpModificationsActive then ActiveLabels = ActiveLabels + 1 end;
+		local TotalH = TitleGap + ActiveLabels * LineH;
+
+		local HealthCenterX, HealthTopY = GetBrandHealthBarAnchor(ViewportSize);
+		local BaseX = HealthCenterX;
+		local BaseY = HealthTopY - TotalH - MathFloor(7 * Scale + 0.5);
+
+		local HalfTitleW = MathFloor(PanelTitle.TextBounds.X / 2 + 0.5);
+		local MinX = HalfTitleW + 4;
+		local MaxX = VW - HalfTitleW - 4;
+		BaseX = MathClamp(MathFloor(BaseX + 0.5), MinX, MaxX);
+		BaseY = MathClamp(MathFloor(BaseY + 0.5), 6, VH - TotalH - 6);
+
+		PanelTitle.Size = TitleSize;
+		for i = 1, #PanelLabels do
+			PanelLabels[i].Size = LabelSize;
+		end;
+
+		PanelTitle.Text = string.format('<font color="rgb(255, 255, 255)">placid</font><font color="rgb(%d, %d, %d)">.cc</font>', MathFloor(AccentColor.R * 255 + 0.5), MathFloor(AccentColor.G * 255 + 0.5), MathFloor(AccentColor.B * 255 + 0.5));
+		PanelTitle.Position = Vector2New(BaseX, BaseY);
+		PanelTitle.Visible = true;
+
+		local OffsetY = BaseY + TitleGap;
+		local LabelIdx = 0;
+
+		if SilentAimCfg['Enabled'] and State.Toggles.SilentAim and State.Targets.Silent then
+			local STarget = State.Targets.Silent;
+			local FC = PColors['Feature'];
+
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local TName = STarget and STarget.DisplayName or 'none';
+				local TC = STarget and AccentColor or PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">silent aim</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(TC.R * 255 + 0.5), MathFloor(TC.G * 255 + 0.5), MathFloor(TC.B * 255 + 0.5), TName);
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+
+			if STarget and STarget.Character then
+				LabelIdx = LabelIdx + 1;
+				local HL = PanelLabels[LabelIdx];
+				if HL then
+					local HP, Armor = 0, 0;
+					local Hum = STarget.Character:FindFirstChildOfClass('Humanoid');
+					if Hum then HP = MathFloor(Hum.Health + 0.5) end;
+					local BE = STarget.Character:FindFirstChild('BodyEffects');
+					if BE then
+						local AV = BE:FindFirstChild('Armor') or BE:FindFirstChild('Armour') or BE:FindFirstChild('Defense');
+						if AV and AV.Value and AV.Value > 0 then Armor = MathFloor(AV.Value + 0.5) end;
+					end;
+					if Armor == 0 and STarget then
+						local LS = STarget:FindFirstChild('leaderstats');
+						if LS then
+							local AV = LS:FindFirstChild('Armor') or LS:FindFirstChild('Armour') or LS:FindFirstChild('Defense') or LS:FindFirstChild('Vest');
+							if AV and AV.Value then Armor = MathFloor(AV.Value + 0.5) end;
+						end;
+					end;
+					local HealthStr = string.format('<font color="rgb(%d, %d, %d)">health</font> <font color="rgb(85, 255, 85)">&gt; %d</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), HP);
+					if Armor > 0 then
+						HealthStr = HealthStr .. string.format(' / <font color="rgb(85, 170, 255)">%d</font>', Armor);
+					end;
+					HL.Text = HealthStr;
+					HL.Color = Color3.new(1, 1, 1);
+					HL.Position = Vector2New(BaseX, OffsetY);
+					HL.Visible = true;
+					OffsetY = OffsetY + LineH;
+				end;
+			end;
+		end;
+
+		if AimbotCfg['Enabled'] and AimbotTargetLocked then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local ATarget = State.Targets.Aimbot;
+				local TName = ATarget and ATarget.DisplayName or 'none';
+				local FC = PColors['Feature'];
+				local TC = ATarget and AccentColor or PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">aimbot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(TC.R * 255 + 0.5), MathFloor(TC.G * 255 + 0.5), MathFloor(TC.B * 255 + 0.5), TName);
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		if TriggerCfg['Enabled'] and State.TriggerState and State.Targets.Triggerbot then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local TTarget = State.Targets.Triggerbot;
+				local TName = TTarget and TTarget.DisplayName or 'none';
+				local FC = PColors['Feature'];
+				local TC = TTarget and AccentColor or PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">triggerbot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(TC.R * 255 + 0.5), MathFloor(TC.G * 255 + 0.5), MathFloor(TC.B * 255 + 0.5), TName);
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		if SilentAimCfg['Enabled'] and State.Targets.Silent and SilentAimCfg['Auto Shoot'] and SilentAimCfg['Auto Shoot']['Enabled'] then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				local Status = State.AutoShootStatus or 'idle';
+				local SC = AccentColor;
+				local StatusLower = string.lower(Status);
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">auto shoot</font> <font color="rgb(%d, %d, %d)">&gt; %s</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(SC.R * 255 + 0.5), MathFloor(SC.G * 255 + 0.5), MathFloor(SC.B * 255 + 0.5), StatusLower);
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		if GetConfig()['Movement']['Speed Modifications']['Enabled'] and State.SpeedModificationsActive then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">speed</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5));
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+
+		if State.SorterActive then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">sorter</font> <font color="rgb(%d, %d, %d)">&gt; active</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(AccentColor.R * 255 + 0.5), MathFloor(AccentColor.G * 255 + 0.5), MathFloor(AccentColor.B * 255 + 0.5));
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		if GetConfig()['Modifications']['Double Tap']['Enabled'] and (GetConfig()['Modifications']['Double Tap']['Mode'] == 'Always' or State.DoubleTapActive) then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">double tap</font> <font color="rgb(%d, %d, %d)">&gt; active</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5), MathFloor(AccentColor.R * 255 + 0.5), MathFloor(AccentColor.G * 255 + 0.5), MathFloor(AccentColor.B * 255 + 0.5));
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		if GetConfig()['Anti Future']['Enabled'] and State.AntiFuture.Active then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				local TC = AccentColor;
+				local AntiFutureCfg = GetConfig()['Anti Future'];
+				local AntiFutureOptions = AntiFutureCfg['Options'] or {};
+				local str = AntiFutureOptions['Strength'] or 400;
+				local airOnly = AntiFutureOptions['Air Only'] and ' (air)' or '';
+				L.Text = string.format(
+					'<font color="rgb(%d, %d, %d)">anti future</font> <font color="rgb(%d, %d, %d)">&gt; %d%s</font>',
+					MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5),
+					MathFloor(TC.R * 255 + 0.5), MathFloor(TC.G * 255 + 0.5), MathFloor(TC.B * 255 + 0.5),
+					str, airOnly
+				);
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+
+
+		if GetConfig()['Movement']['Jump Modifications']['Enabled'] and State.JumpModificationsActive then
+			LabelIdx = LabelIdx + 1;
+			local L = PanelLabels[LabelIdx];
+			if L then
+				local FC = PColors['Feature'];
+				L.Text = string.format('<font color="rgb(%d, %d, %d)">jump</font>', MathFloor(FC.R * 255 + 0.5), MathFloor(FC.G * 255 + 0.5), MathFloor(FC.B * 255 + 0.5));
+				L.Color = Color3.new(1, 1, 1);
+				L.Position = Vector2New(BaseX, OffsetY);
+				L.Visible = true;
+				OffsetY = OffsetY + LineH;
+			end;
+		end;
+
+		for i = LabelIdx + 1, #PanelLabels do
+			PanelLabels[i].Visible = false;
+		end;
+	else
+		PanelTitle.Visible = false;
+		for _, L in next, PanelLabels do L.Visible = false end;
+	end;
+
+	do
+		local AntiFutureCfg = GetConfig()['Anti Future'];
+		local afActive = State.AntiFuture.Active;
+		local afVis = AntiFutureCfg['Visualize Server'];
+		local basePos = State.AntiFuture.LastServerPosition;
+		local spoofVel = State.AntiFuture.LastSpoofedVelocity;
+		local spoofTime = State.AntiFuture.LastSpoofTime;
+		local showDot = afActive and afVis and basePos ~= nil;
+
+		if showDot then
+			local hrp = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild('HumanoidRootPart');
+
+			local ghostPos;
+			if spoofVel ~= nil and spoofTime ~= nil then
+				local dt = MathClamp(Clock() - spoofTime, 0, 0.05);
+				ghostPos = basePos + spoofVel * dt;
+			else
+				ghostPos = basePos;
+			end;
+
+			local screenPos, onScreen = CurrentCamera:WorldToViewportPoint(ghostPos);
+
+			if onScreen and screenPos.Z > 0.5 then
+				local sx, sy = screenPos.X, screenPos.Y;
+				local dist = hrp and MathFloor((ghostPos - hrp.Position).Magnitude + 0.5) or 0;
+
+				local dotSize = 8;
+				AntiFutureVisDot.Size = Vector2New(dotSize, dotSize);
+				AntiFutureVisDot.Position = Vector2New(sx - dotSize / 2, sy - dotSize / 2);
+				AntiFutureVisDot.Color = Color3.fromRGB(255, 80, 80);
+				AntiFutureVisDot.Visible = true;
+
+				AntiFutureVisLabel.Text = string.format(
+					'<font color="rgb(255,80,80)">server</font> <font color="rgb(150,150,150)">%d studs</font>',
+					dist
+				);
+				AntiFutureVisLabel.Position = Vector2New(sx, sy + dotSize + 6);
+				AntiFutureVisLabel.Visible = true;
+			else
+				AntiFutureVisDot.Visible = false;
+				AntiFutureVisLabel.Visible = false;
+			end;
+		else
+			AntiFutureVisDot.Visible = false;
+			AntiFutureVisLabel.Visible = false;
+		end;
+	end;
+
+	RunTriggerbot();
+
+	if AimbotCfg['Enabled'] and AimbotTarget and PassesConditions(AimbotTarget, 'Aimbot') then
+		local TargetChar = AimbotTarget.Character;
+		if TargetChar then
+			local HumanoidRootPart = TargetChar:FindFirstChild('HumanoidRootPart');
+			if HumanoidRootPart then
+				local Distance = (HumanoidRootPart.Position - CurrentCamera.CFrame.Position).Magnitude;
+				if Distance <= (AimbotCfg['Max Range'] or 750) and IsInside3DFOV(HumanoidRootPart.Position, 'Aimbot') then
+					local TargetPos, _ = ResolveHitPosition(TargetChar, AimbotCfg);
+					if not TargetPos then TargetPos = HumanoidRootPart.Position end;
+					TargetPos = ApplyPrediction(TargetPos, AimbotTarget, AimbotCfg);
+
+					local CamPos = CurrentCamera.CFrame.Position;
+					local DesiredCFrame = CFrameNew(CamPos, TargetPos);
+
+					local SmoothCfg = AimbotCfg['Smoothing'];
+					if SmoothCfg and SmoothCfg['Enabled'] then
+						local BaseAlphaX = SmoothCfg['X'] or 0.14;
+						local BaseAlphaY = SmoothCfg['Y'] or 0.14;
+						local BaseAlphaZ = SmoothCfg['Z'] or 0.14;
+
+						-- distance-adaptive alpha: close = snappier, far = smoother
+						local AlphaX, AlphaY, AlphaZ;
+						if SmoothCfg['DistanceAdaptive'] then
+							local MinA = SmoothCfg['MinAlpha'] or 0.06;
+							local MaxA = SmoothCfg['MaxAlpha'] or 0.28;
+							local MaxDist = AimbotCfg['Max Range'] or 750;
+							-- t=0 at max range, t=1 at distance=0 → closer = higher alpha
+							local t = MathClamp(1 - (Distance / MaxDist), 0, 1);
+							local AdaptAlpha = MinA + (MaxA - MinA) * t;
+							AlphaX = AdaptAlpha;
+							AlphaY = AdaptAlpha;
+							AlphaZ = AdaptAlpha;
+						else
+							AlphaX = BaseAlphaX;
+							AlphaY = BaseAlphaY;
+							AlphaZ = BaseAlphaZ;
+						end;
+
+						local EasingCfg = SmoothCfg['Easing'];
+						local EasingStyle = EasingCfg and Enum.EasingStyle[EasingCfg['In'] or 'Sine'] or Enum.EasingStyle.Sine;
+						local EasingDir = EasingCfg and Enum.EasingDirection[EasingCfg['Out'] or 'Out'] or Enum.EasingDirection.Out;
+
+						local CurDir = CurrentCamera.CFrame.LookVector;
+						local TgtDir = DesiredCFrame.LookVector;
+						local SmoothedDir = Vector3New(
+							CurDir.X + (TgtDir.X - CurDir.X) * TweenService:GetValue(AlphaX, EasingStyle, EasingDir),
+							CurDir.Y + (TgtDir.Y - CurDir.Y) * TweenService:GetValue(AlphaY, EasingStyle, EasingDir),
+							CurDir.Z + (TgtDir.Z - CurDir.Z) * TweenService:GetValue(AlphaZ, EasingStyle, EasingDir)
+						);
+						CurrentCamera.CFrame = CFrameNew(CamPos, CamPos + SmoothedDir);
+					else
+						CurrentCamera.CFrame = DesiredCFrame;
+					end;
+				end;
+			end;
+		end;
+	end;
+
+	-- CamLock: hard camera lock to target, independent of aimbot FOV
+	local CamLockCfg = GetConfig()['CamLock'];
+	if CamLockCfg and CamLockCfg['Enabled'] and State.CamLock.Active then
+		local CamTarget = State.CamLock.Target;
+		if CamTarget and CamTarget.Character then
+			local TargetChar = CamTarget.Character;
+			local PartName = CamLockCfg['Target Part'] or 'Head';
+			local TargetPart = TargetChar:FindFirstChild(PartName) or TargetChar:FindFirstChild('HumanoidRootPart');
+			if TargetPart and PassesConditions(CamTarget, 'Aimbot') then
+				local TargetPos = TargetPart.Position;
+
+				-- apply prediction if enabled
+				local PredCfg = CamLockCfg['Prediction'];
+				if PredCfg and PredCfg['Enabled'] then
+					local Vel = GetDeltaVelocity(CamTarget);
+					local Vals = PredCfg['Values'] or {};
+					TargetPos = TargetPos + Vel * Vector3New(
+						Vals['X'] or 0.06,
+						Vals['Y'] or 0.06,
+						Vals['Z'] or 0.06
+					);
+				end;
+
+				local CamPos = CurrentCamera.CFrame.Position;
+				local SmoothCfg = CamLockCfg['Smoothing'];
+
+				if SmoothCfg and SmoothCfg['Enabled'] then
+					local BaseSpeed = SmoothCfg['Speed'] or 0.18;
+					local FinalAlpha = BaseSpeed;
+
+					if SmoothCfg['DistanceScale'] then
+						local MinA = SmoothCfg['MinSpeed'] or 0.08;
+						local MaxA = SmoothCfg['MaxSpeed'] or 0.28;
+						local Dist = (TargetPos - CamPos).Magnitude;
+						-- t=1 close, t=0 far (normalize against 200 stud reference)
+						local t = MathClamp(1 - (Dist / 200), 0, 1);
+						FinalAlpha = MinA + (MaxA - MinA) * t;
+					end;
+
+					local CurDir = CurrentCamera.CFrame.LookVector;
+					local TgtDir = (TargetPos - CamPos).Unit;
+					local SmoothedDir = Vector3New(
+						CurDir.X + (TgtDir.X - CurDir.X) * FinalAlpha,
+						CurDir.Y + (TgtDir.Y - CurDir.Y) * FinalAlpha,
+						CurDir.Z + (TgtDir.Z - CurDir.Z) * FinalAlpha
+					);
+					CurrentCamera.CFrame = CFrameNew(CamPos, CamPos + SmoothedDir);
+				else
+					CurrentCamera.CFrame = CFrameNew(CamPos, TargetPos);
+				end;
+			else
+				-- target died/knocked/etc - clear camlock
+				State.CamLock.Target = nil;
+				State.CamLock.Active = false;
+			end;
+		else
+			State.CamLock.Target = nil;
+			State.CamLock.Active = false;
+		end;
+	end;
+end));
+
+RageFire = function(Child, Handle, ToolName, Origin, Direction, GunRange, SpreadCfg)
+	if ShotgunWeapons[ToolName] then
+		local ServerTime = Workspace:GetServerTimeNow();
+		local SpreadMult = 1;
+		if SpreadCfg then
+			SpreadMult = SpreadCfg['Value'] or 1;
+			local Rand = SpreadCfg['Randomizer'];
+			if Rand and Rand['Enabled'] then
+				local Min = Rand['Min'] or 1;
+				local Max = Rand['Max'] or 1;
+				local Alpha = MathRandom();
+				SpreadMult = SpreadMult * (Min + (Max - Min) * Alpha);
+			end;
+		end;
+		for PelletIndex = 1, 5 do
+			local SpreadX = (MathRandom() > 0.5 and MathRandom() * 0.05 or -MathRandom() * 0.05) * SpreadMult;
+			local SpreadY = (MathRandom() > 0.5 and MathRandom() * 0.1 or -MathRandom() * 0.1) * SpreadMult;
+			local SpreadZ = (MathRandom() > 0.5 and MathRandom() * 0.05 or -MathRandom() * 0.05) * SpreadMult;
+			local AimDir = Direction + Vector3New(SpreadX, SpreadY, SpreadZ);
+			local AimPosition = Origin + AimDir * GunRange;
+			local HitPosition, HitInstance, HitNormal = ShowPellet(LocalPlayer.Character, Handle, Origin, AimPosition, GunRange);
+			HitPosition, HitInstance, HitNormal = ApplyDamageModifierHit(ToolName, HitPosition, HitInstance, HitNormal);
+			CachedMainEvent:FireServer('ShootGun', Handle, Origin, HitPosition, HitInstance, HitNormal, ServerTime);
+		end;
+	else
+		local AimPosition = Origin + Direction * GunRange;
+		local HitPosition, HitInstance, HitNormal = ShowPellet(LocalPlayer.Character, Handle, Origin, AimPosition, GunRange);
+		HitPosition, HitInstance, HitNormal = ApplyDamageModifierHit(ToolName, HitPosition, HitInstance, HitNormal);
+		CachedMainEvent:FireServer('ShootGun', Handle, Origin, HitPosition, HitInstance, HitNormal);
+	end;
+end;
+
+local RageCore = function()
+	local SilentAimCfg = GetConfig()['Silent Aim'];
+	local RageCfg = SilentAimCfg['Auto Shoot'];
+	if not RageCfg or not RageCfg['Enabled'] or not SilentAimCfg['Enabled'] then
+		State.AutoShootStatus = 'Disabled';
+		return;
+	end;
+
+	local Target = State.Targets.Silent;
+	if not Target then
+		State.AutoShootStatus = 'No Target';
+		return;
+	end;
+
+	local Character = LocalPlayer.Character;
+	if not Character then
+		State.AutoShootStatus = 'No Character';
+		return;
+	end;
+
+	local Tool = Character:FindFirstChildOfClass('Tool');
+	if not Tool or not Tool:FindFirstChild('Ammo') or Tool.Name == '[Knife]' then
+		State.AutoShootStatus = 'No Gun';
+		return;
+	end;
+
+	if not PassesConditions(Target, 'Silent Aim') then
+		State.AutoShootStatus = 'Conditions';
+		return;
+	end;
+
+	local TargetChar = Target.Character;
+	local TargetHRP = TargetChar and TargetChar:FindFirstChild('HumanoidRootPart');
+	if not TargetHRP then
+		State.AutoShootStatus = 'No Target';
+		return;
+	end;
+
+	local SelfHRP = Character:FindFirstChild('HumanoidRootPart');
+	if not SelfHRP then return end;
+
+	local RangeVal = Tool:FindFirstChild('Range');
+	local GunRange = RangeVal and RangeVal.Value or 200;
+	local ReachOrigin = GetMuzzlePosition(Tool) or SelfHRP.Position;
+	if (ReachOrigin - TargetHRP.Position).Magnitude > GunRange then
+		State.AutoShootStatus = 'Out of Range';
+		return;
+	end;
+
+	if RageCfg['Wall Check'] and not IsVisible(TargetHRP.Position, Target) then
+		State.AutoShootStatus = 'Blocked';
+		return;
+	end;
+
+	local OffscreenCfg = SilentAimCfg['Offscreen Targeting'];
+	local AllowOffscreen = OffscreenCfg and OffscreenCfg['Enabled'];
+	local CurrentCamera = Workspace.CurrentCamera;
+	local ScreenPos, OnScreen = CurrentCamera:WorldToViewportPoint(TargetHRP.Position);
+	if not AllowOffscreen then
+		if not (OnScreen and ScreenPos.Z > 1) then
+			State.AutoShootStatus = 'Blocked';
+			return;
+		end;
+		local SilentFOVCfg = GetConfig()['Main']['FOV'] and GetConfig()['Main']['FOV']['Silent'];
+		if SilentFOVCfg and (SilentFOVCfg['Width'] or SilentFOVCfg['Height']) then
+			local MousePosition = UserInputService:GetMouseLocation();
+			local ViewportY = CurrentCamera.ViewportSize.Y;
+			local CamFOV = CurrentCamera.FieldOfView;
+			local ScaleFactor = (TargetHRP.Size.Y * ViewportY) / (ScreenPos.Z * 2) * 80 / CamFOV;
+			local W = ((SilentFOVCfg['Width'] and SilentFOVCfg['Width'][2]) or 9e9) * ScaleFactor;
+			local H = ((SilentFOVCfg['Height'] and SilentFOVCfg['Height'][2]) or 9e9) * ScaleFactor;
+			local Delta = Vector2New(ScreenPos.X, ScreenPos.Y) - MousePosition;
+			if not (MathAbs(Delta.X) <= W / 2 and MathAbs(Delta.Y) <= H / 2) then
+				State.AutoShootStatus = 'Blocked';
+				return;
+			end;
+		end;
+	end;
+
+	State.AutoShootStatus = 'Shooting';
+	Tool:Activate();
+end;
+
+
+RunService:BindToRenderStep('ciderrage', 1, RageCore);
+TrackConn(RunService.RenderStepped:Connect(RageCore));
+TrackConn(RunService.Stepped:Connect(RageCore));
+TrackConn(RunService.Heartbeat:Connect(RageCore));
+
+if CurrentGame.Name == 'Da Hood' then
+	if LocalPlayer.Character then HookGunActivation(LocalPlayer.Character) end;
+	TrackConn(LocalPlayer.CharacterAdded:Connect(HookGunActivation));
+end;
+
+do
+	local DasHoodCfg = GetConfig()['Modifications']['Das Hood'];
+	local InfRangeCfg = DasHoodCfg['Inf Range'];
+	local WallbangCfg = DasHoodCfg['Wallbang'];
+
+	if InfRangeCfg['Enabled'] then
+		task.spawn(function()
+		local MainEvent = ReplicatedStorage:FindFirstChild('MainEvent') or ReplicatedStorage:WaitForChild('MainEvent', 10);
+		if MainEvent then
+			TrackConn(RunService.Heartbeat:Connect(function()
+				local Character = LocalPlayer.Character;
+				if Character then
+					for _, Tool in next, Character:GetChildren() do
+						if Tool:IsA('Tool') then
+							local R = Tool:FindFirstChild('Range');
+							if R then R.Value = 999999 end;
+						end;
+					end;
+				end;
+				local Backpack = LocalPlayer:FindFirstChild('Backpack');
+				if Backpack then
+					for _, Tool in next, Backpack:GetChildren() do
+						if Tool:IsA('Tool') then
+							local R = Tool:FindFirstChild('Range');
+							if R then R.Value = 999999 end;
+						end;
+					end;
+				end;
+			end));
+
+			local hookMM = hookmetamethod or (getgenv and getgenv().hookmetamethod);
+			if hookMM then
+				local oldNC;
+				oldNC = hookMM(game, '__namecall', function(self, ...)
+					local method = getnamecallmethod();
+					local args = {...};
+					if self == MainEvent and method == 'FireServer' and args[1] == 'ShootGun' then
+						if args[6] and type(args[6]) == 'number' then
+							args[6] = 10;
+						end;
+						if args[3] and args[5] then
+							local Dir = (args[3] - args[5]).Unit;
+							args[3] = args[5] + Dir * 10;
+						end;
+						if args[2] and args[4] and args[5] then
+							local Tool = args[2].Parent;
+							if Tool then
+								args[4], args[5], args[6] = ApplyDamageModifierHit(Tool.Name, args[4], args[5], args[6]);
+							end;
+						end;
+					end;
+					if args[1] == 'CHECKER_4' then return nil end;
+					return oldNC(self, Unpack(args));
+				end);
+			end;
+		end;
+		end);
+	end;
+
+	if WallbangCfg['Enabled'] then
+		local function DoWallbang()
+			local IgnoredFolder = Workspace:FindFirstChild('Ignored');
+			if not IgnoredFolder then
+				IgnoredFolder = Instance.new('Folder');
+				IgnoredFolder.Name = 'Ignored';
+				IgnoredFolder.Parent = Workspace;
+			end;
+			local Map = Workspace:FindFirstChild('MAP') or Workspace:FindFirstChild('Map');
+			if Map and Map.Parent ~= IgnoredFolder then
+				Map.Parent = IgnoredFolder;
+			end;
+		end;
+		DoWallbang();
+		TrackConn(RunService.Heartbeat:Connect(function()
+			if GetConfig()['Modifications']['Das Hood']['Wallbang']['Enabled'] then
+				DoWallbang();
+			end;
+		end));
+	end;
+
+end;
+
+if CurrentGame.Name ~= 'Da Hood' and type(hookfunction) == 'function' then
+	local SpreadModCfg = GetConfig()['Modifications']['Spread Modifications'];
+	if SpreadModCfg['Enabled'] then
+		local SpreadAngles = SpreadModCfg['Spread Angles'];
+		local oldRandom;
+		oldRandom = hookfunction(math.random, function(...)
+			local args = {...};
+			if checkcaller() then return oldRandom(...) end;
+			if (#args == 0) or
+			   (args[1] == -0.05 and args[2] == 0.05) or
+			   (args[1] == -0.1 and args[2] == 0.1) or
+			   (args[1] == -0.05) or
+			   (args[1] == -0.1) then
+				local Cfg = GetConfig()['Modifications']['Spread Modifications'];
+				if not Cfg['Enabled'] or (SpreadAngles and SpreadAngles['Enabled']) then
+					return oldRandom(...);
+				end;
+				local Spread = MathClamp((Cfg['Value'] or 0) / 100, 0, 1);
+				local n = #args;
+				if Spread == 0 then
+					if n == 0 then return 0
+					elseif n == 1 then return 0
+					else return (args[1] + args[2]) / 2
+					end;
+				end;
+				local Raw = oldRandom(...);
+				if n == 0 then
+					return (Raw - 0.5) * Spread + 0.5;
+				elseif n == 1 then
+					return Raw * Spread;
+				else
+					local Mid = (args[1] + args[2]) / 2;
+					return Mid + (Raw - Mid) * Spread;
+				end;
+			end;
+			return oldRandom(...);
+		end);
+	end;
+end;
+
+do
+	local RangeEnhCfg = GetConfig()['Modifications']['Misc Gun Modifications']['Range Enhancer'];
+	if RangeEnhCfg and RangeEnhCfg['Enabled'] then
+		local function ResolveRangeGunHandler(PreferredModule)
+			local Emu = TryLoadEmulatedGunHandler();
+			if Emu and type(Emu.shoot) == 'function' and type(Emu.getAim) == 'function' then
+				return Emu, 'emulated';
+			end;
+
+			if PreferredModule then
+				local ok, GunHandler = pcall(require, PreferredModule);
+				if ok and type(GunHandler) == 'table' and type(GunHandler.shoot) == 'function' and type(GunHandler.getAim) == 'function' then
+					return GunHandler, 'require';
+				end;
+			end;
+
+			return nil, 'missing';
+		end;
+
+		local function ApplyRangeToTool(Tool)
+			if not Tool or not Tool:IsA('Tool') then return end;
+			local RangeValueObj = Tool:FindFirstChild('Range');
+			if not RangeValueObj then return end;
+
+			local BaseRange = Tool:GetAttribute('__CiderBaseRange');
+			if type(BaseRange) ~= 'number' then
+				BaseRange = RangeValueObj.Value;
+				Tool:SetAttribute('__CiderBaseRange', BaseRange);
+			end;
+
+			local CurrentCfg = GetConfig()['Modifications']['Misc Gun Modifications']['Range Enhancer'];
+			local ExtraRange = (CurrentCfg and CurrentCfg['Enabled'] and CurrentCfg['Value']) or 0;
+			RangeValueObj.Value = BaseRange + ExtraRange;
+		end;
+
+		local function SyncRangeTools()
+			local Character = LocalPlayer.Character;
+			if Character then
+				for _, Tool in next, Character:GetChildren() do
+					ApplyRangeToTool(Tool);
+				end;
+			end;
+
+			local Backpack = LocalPlayer:FindFirstChild('Backpack');
+			if Backpack then
+				for _, Tool in next, Backpack:GetChildren() do
+					ApplyRangeToTool(Tool);
+				end;
+			end;
+		end;
+
+		task.spawn(function()
+		local ModulesFolder = ReplicatedStorage:FindFirstChild('Modules') or ReplicatedStorage:WaitForChild('Modules', 5);
+		local ok, GunModule = pcall(function()
+			return ModulesFolder and ModulesFolder:WaitForChild('GunHandler', 5);
+		end);
+		if ok and GunModule then
+			local GunHandler, ResolveSource = ResolveRangeGunHandler(GunModule);
+			shared.__cider_range_gunhandler_source = ResolveSource;
+			if GunHandler then
+				if GunHandler.shoot and type(GunHandler.shoot) == 'function' and not GunHandler.__CiderRangeWrapped then
+					local origShoot = GunHandler.shoot;
+					GunHandler.shoot = function(args)
+						local CurrentCfg = GetConfig()['Modifications']['Misc Gun Modifications']['Range Enhancer'];
+						local EnhVal = (CurrentCfg and CurrentCfg['Enabled'] and CurrentCfg['Value']) or 0;
+						if args and args.Range then
+							args.Range = args.Range + EnhVal;
+						end;
+						return origShoot(args);
+					end;
+					GunHandler.__CiderRangeWrapped = true;
+				end;
+				if GunHandler.getAim and type(GunHandler.getAim) == 'function' and not GunHandler.__CiderRangeAimWrapped then
+					local origGetAim = GunHandler.getAim;
+					GunHandler.getAim = function(hit, dist)
+						local CurrentCfg = GetConfig()['Modifications']['Misc Gun Modifications']['Range Enhancer'];
+						local EnhVal = (CurrentCfg and CurrentCfg['Enabled'] and CurrentCfg['Value']) or 0;
+						return origGetAim(hit, dist + EnhVal);
+					end;
+					GunHandler.__CiderRangeAimWrapped = true;
+				end;
+			end;
+		end;
+		end);
+
+		task.spawn(function()
+			SyncRangeTools();
+			TrackConn(RunService.Heartbeat:Connect(function()
+				SyncRangeTools();
+			end));
+			TrackConn(LocalPlayer.CharacterAdded:Connect(function()
+				task.wait(1);
+				SyncRangeTools();
+			end));
+		end);
+
+		if RangeEnhCfg['Use Hooks'] and getgc and islclosure and getfunctionhash and debug then
+			task.spawn(function()
+				local EnhVal = (GetConfig()['Modifications']['Misc Gun Modifications']['Range Enhancer']['Value']) or 12;
+				for _, obj in getgc() do
+					if type(obj) == 'function' and islclosure(obj) then
+						if getfunctionhash(obj) == 'f01a12bbf0fe1944cdca10883eb444581d9a6bbd8f40472dbf23b6b39fd412f21769d9bfccef6b899f802bae846d2bb3' then
+							local uv = debug.getupvalue(obj, 10);
+							if uv then uv.Value = EnhVal end;
+							debug.setupvalue(obj, 2, 0);
+							debug.setconstant(obj, 26, 0);
+							debug.setconstant(obj, 27, 0);
+						end;
+					end;
+				end;
+			end);
+		end;
+	end;
+end;
+
+if CurrentGame.Hooks == "Raycast" then
+	local hookmetamethod = hookmetamethod or (getgenv and getgenv().hookmetamethod);
+	if hookmetamethod then
+		local old;
+		old = hookmetamethod(game, "__namecall", function(self, ...)
+			local args = {...};
+			local method = getnamecallmethod();
+			if not checkcaller() and method == "Raycast" and self == Workspace then
+				local SilentAimCfg = GetConfig()['Silent Aim'];
+				if SilentAimCfg['Enabled'] and State.Targets.Silent and PassesConditions(State.Targets.Silent, 'Silent Aim') then
+					local MuzzlePos = args[1];
+					local Direction = args[2];
+					local Range = Direction.Magnitude;
+					
+					local TargetPos = GetAimPosition(MuzzlePos, Range);
+					if TargetPos ~= Mouse.Hit.Position then
+						args[2] = (TargetPos - MuzzlePos).Unit * Range;
+						return old(self, Unpack(args));
+					end;
+				end;
+			end;
+			return old(self, Unpack(args));
+		end);
+	else
+		warn("game not supported!");
+	end;
+end;
+
+local function SetupAntiFall(Character)
+	if not Character then return end;
+	local Humanoid = Character:FindFirstChildOfClass('Humanoid') or Character:WaitForChild('Humanoid', 10);
+	if not Humanoid then return end;
+	TrackConn(Humanoid.StateChanged:Connect(function(_, NewState)
+		if not GetConfig()['Movement']['Anti Trip'] then return end;
+		if NewState == EnumFallingDown or NewState == EnumRagdoll then
+			Humanoid:ChangeState(EnumGettingUp);
+		end;
+	end));
+end;
+if LocalPlayer.Character then SetupAntiFall(LocalPlayer.Character) end;
+TrackConn(LocalPlayer.CharacterAdded:Connect(SetupAntiFall));
+
+local function HealthHitDetection(Character)
+	if not Character then return end;
+	local Humanoid = Character:FindFirstChildOfClass('Humanoid') or Character:WaitForChild('Humanoid', 10);
+	if not Humanoid then return end;
+	local LastHealth = Humanoid.Health;
+	TrackConn(Humanoid.HealthChanged:Connect(function(NewHealth)
+		if NewHealth < LastHealth then
+			TriggerAntiFutureBoost();
+		end;
+		LastHealth = NewHealth;
+	end));
+end;
+if LocalPlayer.Character then HealthHitDetection(LocalPlayer.Character) end;
+TrackConn(LocalPlayer.CharacterAdded:Connect(HealthHitDetection));
+
+do
+	local ANIM_PRESETS = {
+		['Ninja'] = { Idle = 'rbxassetid://656118341', Run = 'rbxassetid://656118852', Walk = 'rbxassetid://656121766', Jump = 'rbxassetid://656117878', Fall = 'rbxassetid://10921159222', Climb = 'rbxassetid://656114359', Swim = 'rbxassetid://10921161002', SwimIdle = 'rbxassetid://10922757002' },
+		['Robot'] = { Idle = 'rbxassetid://616089559', Run = 'rbxassetid://616091570', Walk = 'rbxassetid://616095330', Jump = 'rbxassetid://616090535', Fall = 'rbxassetid://616092998', Climb = 'rbxassetid://616086039', Swim = 'rbxassetid://10921253142', SwimIdle = 'rbxassetid://10921253767' },
+		['Default'] = { Idle = 'rbxassetid://507766666', Run = 'rbxassetid://10921261968', Walk = 'rbxassetid://10921269718', Jump = 'rbxassetid://10921263860', Fall = 'rbxassetid://10921262864', Climb = 'rbxassetid://10921257536', Swim = 'rbxassetid://10921264784', SwimIdle = 'rbxassetid://10921265698' },
+		['Custom'] = { Idle = 'rbxassetid://92080889861410', Run = 'rbxassetid://16738337225', Walk = 'rbxassetid://16738340646', Jump = 'rbxassetid://104325245285198', Fall = 'rbxassetid://616003713', Climb = 'rbxassetid://18537363391', Swim = 'rbxassetid://133308483266208', SwimIdle = 'rbxassetid://109346520324160' },
+		['Levitate'] = { Idle = 'rbxassetid://616008087', Run = 'rbxassetid://616010382', Walk = 'rbxassetid://616013216', Jump = 'rbxassetid://616008936', Fall = 'rbxassetid://616005863', Climb = 'rbxassetid://616003713', Swim = 'rbxassetid://10921139478', SwimIdle = 'rbxassetid://10921138209' },
+		['Mage'] = { Idle = 'rbxassetid://707855907', Run = 'rbxassetid://707861613', Walk = 'rbxassetid://707897309', Jump = 'rbxassetid://707853694', Fall = 'rbxassetid://707829716', Climb = 'rbxassetid://707826056', Swim = 'rbxassetid://10921150788', SwimIdle = 'rbxassetid://10921151661' },
+		['Stylish'] = { Idle = 'rbxassetid://616138447', Run = 'rbxassetid://616140816', Walk = 'rbxassetid://616146177', Jump = 'rbxassetid://616139451', Fall = 'rbxassetid://616134815', Climb = 'rbxassetid://616133594', Swim = 'rbxassetid://10921281000', SwimIdle = 'rbxassetid://10921281964' },
+		['Hero'] = { Idle = 'rbxassetid://616113536', Run = 'rbxassetid://616117076', Walk = 'rbxassetid://616122287', Jump = 'rbxassetid://616115533', Fall = 'rbxassetid://616108001', Climb = 'rbxassetid://616104706', Swim = 'rbxassetid://10921295495', SwimIdle = 'rbxassetid://10921297391' },
+		['Toy'] = { Idle = 'rbxassetid://782845736', Run = 'rbxassetid://782842708', Walk = 'rbxassetid://782843345', Jump = 'rbxassetid://782847020', Fall = 'rbxassetid://782846423', Climb = 'rbxassetid://782843869', Swim = 'rbxassetid://10921309319', SwimIdle = 'rbxassetid://10921310341' },
+		['Astronaut'] = { Idle = 'rbxassetid://891633237', Run = 'rbxassetid://891636393', Walk = 'rbxassetid://891667138', Jump = 'rbxassetid://891627522', Fall = 'rbxassetid://891617961', Climb = 'rbxassetid://891609353', Swim = 'rbxassetid://10921044000', SwimIdle = 'rbxassetid://10921045006' },
+		['Bubbly'] = { Idle = 'rbxassetid://910009958', Run = 'rbxassetid://910025107', Walk = 'rbxassetid://910034870', Jump = 'rbxassetid://910016857', Fall = 'rbxassetid://910001910', Climb = 'rbxassetid://742636889', Swim = 'rbxassetid://10921063569', SwimIdle = 'rbxassetid://10922582160' },
+		['Cartoony'] = { Idle = 'rbxassetid://742638445', Run = 'rbxassetid://742638842', Walk = 'rbxassetid://742640026', Jump = 'rbxassetid://742637942', Fall = 'rbxassetid://742637151', Climb = 'rbxassetid://742636889', Swim = 'rbxassetid://10921079380', SwimIdle = 'rbxassetid://10921081059' },
+		['Elder'] = { Idle = 'rbxassetid://845400520', Run = 'rbxassetid://845386501', Walk = 'rbxassetid://845403856', Jump = 'rbxassetid://845398858', Fall = 'rbxassetid://845396048', Climb = 'rbxassetid://845392038', Swim = 'rbxassetid://10921108971', SwimIdle = 'rbxassetid://10921110146' },
+		['Ghost'] = { Idle = 'rbxassetid://616008087', Run = 'rbxassetid://616013216', Walk = 'rbxassetid://616013216', Jump = 'rbxassetid://616008936', Fall = 'rbxassetid://616005863', Climb = 'rbxassetid://616156119', Swim = 'rbxassetid://133308483266208', SwimIdle = 'rbxassetid://109346520324160' },
+		['Knight'] = { Idle = 'rbxassetid://657568135', Run = 'rbxassetid://657564596', Walk = 'rbxassetid://657552124', Jump = 'rbxassetid://658409194', Fall = 'rbxassetid://657600338', Climb = 'rbxassetid://658360781', Swim = 'rbxassetid://10921125160', SwimIdle = 'rbxassetid://10921125935' },
+		['Vampire'] = { Idle = 'rbxassetid://1083450166', Run = 'rbxassetid://1083462077', Walk = 'rbxassetid://1083473930', Jump = 'rbxassetid://1083455352', Fall = 'rbxassetid://1083443587', Climb = 'rbxassetid://1083439238', Swim = 'rbxassetid://10921324408', SwimIdle = 'rbxassetid://10921325443' },
+		['Werewolf'] = { Idle = 'rbxassetid://1083214717', Run = 'rbxassetid://1083216690', Walk = 'rbxassetid://1083178339', Jump = 'rbxassetid://1083218792', Fall = 'rbxassetid://1083189019', Climb = 'rbxassetid://1083182000', Swim = 'rbxassetid://10921340419', SwimIdle = 'rbxassetid://10921341319' },
+		['Zombie'] = { Idle = 'rbxassetid://616160636', Run = 'rbxassetid://616163682', Walk = 'rbxassetid://616168032', Jump = 'rbxassetid://616161997', Fall = 'rbxassetid://616157476', Climb = 'rbxassetid://616156119', Swim = 'rbxassetid://10921352344', SwimIdle = 'rbxassetid://10921353442' },
+		['Bold'] = { Idle = 'rbxassetid://16738334710', Run = 'rbxassetid://16738337225', Walk = 'rbxassetid://16738340646', Jump = 'rbxassetid://16738336650', Fall = 'rbxassetid://16738333171', Climb = 'rbxassetid://16738332169', Swim = 'rbxassetid://16738339158', SwimIdle = 'rbxassetid://16738339817' },
+		['Adidas'] = { Idle = 'rbxassetid://18537371272', Run = 'rbxassetid://18537384940', Walk = 'rbxassetid://18537392113', Jump = 'rbxassetid://18537380791', Fall = 'rbxassetid://18537367238', Climb = 'rbxassetid://18537363391', Swim = 'rbxassetid://18537389531', SwimIdle = 'rbxassetid://18537387180' },
+		['Catwalk'] = { Idle = 'rbxassetid://94970088341563', Run = 'rbxassetid://81024476153754', Walk = 'rbxassetid://109168724482748', Jump = 'rbxassetid://116936326516985', Fall = 'rbxassetid://119377220967554', Climb = 'rbxassetid://92294537340807', Swim = 'rbxassetid://134591743181628', SwimIdle = 'rbxassetid://98854111361360' },
+		['Walmart'] = { Idle = 'rbxassetid://18747063918', Run = 'rbxassetid://18747070484', Walk = 'rbxassetid://18747074203', Jump = 'rbxassetid://18747069148', Fall = 'rbxassetid://18747062535', Climb = 'rbxassetid://18747060903', Swim = 'rbxassetid://18747073181', SwimIdle = 'rbxassetid://18747071682' },
+		['Wicked'] = { Idle = 'rbxassetid://76049494037641', Run = 'rbxassetid://72301599441680', Walk = 'rbxassetid://92072849924640', Jump = 'rbxassetid://104325245285198', Fall = 'rbxassetid://121152442762481', Climb = 'rbxassetid://131326830509784', Swim = 'rbxassetid://99384245425157', SwimIdle = 'rbxassetid://113199415118199' },
+		['NFL'] = { Idle = 'rbxassetid://74451233229259', Run = 'rbxassetid://117333533048078', Walk = 'rbxassetid://110358958299415', Jump = 'rbxassetid://119846112151352', Fall = 'rbxassetid://129773241321032', Climb = 'rbxassetid://134630013742019', Swim = 'rbxassetid://132697394189921', SwimIdle = 'rbxassetid://79090109939093' },
+		['Pirate'] = { Idle = 'rbxassetid://750782770', Run = 'rbxassetid://750783738', Walk = 'rbxassetid://750785693', Jump = 'rbxassetid://750782230', Fall = 'rbxassetid://750780242', Climb = 'rbxassetid://750779899', Swim = 'rbxassetid://750784579', SwimIdle = 'rbxassetid://750785176' },
+		['Adidas2'] = { Idle = 'rbxassetid://102357151005774', Run = 'rbxassetid://82598234841035', Walk = 'rbxassetid://122150855457006', Jump = 'rbxassetid://75290611992385', Fall = 'rbxassetid://98600215928904', Climb = 'rbxassetid://88763136693023', Swim = 'rbxassetid://133308483266208', SwimIdle = 'rbxassetid://109346520324160' },
+		['Animals'] = { Idle = 'rbxassetid://102357151005774', Run = 'rbxassetid://87721497492370', Walk = 'rbxassetid://122150855457006', Jump = 'rbxassetid://75290611992385', Fall = 'rbxassetid://98600215928904', Climb = 'rbxassetid://88763136693023', Swim = 'rbxassetid://133308483266208', SwimIdle = 'rbxassetid://109346520324160' },
+		['Aura'] = { Idle = 'rbxassetid://114191137265065', Run = 'rbxassetid://118320322718866', Walk = 'rbxassetid://83842218823011', Jump = 'rbxassetid://109996626521204', Fall = 'rbxassetid://95603166884636', Climb = 'rbxassetid://97824616490448', Swim = 'rbxassetid://134530128383903', SwimIdle = 'rbxassetid://94922130551805' },
+		['Wicked2'] = { Idle = 'rbxassetid://132238900951109', Run = 'rbxassetid://135515454877967', Walk = 'rbxassetid://73718308412641', Jump = 'rbxassetid://78508480717326', Fall = 'rbxassetid://78147885297412', Climb = 'rbxassetid://129447497744818', Swim = 'rbxassetid://110657013921774', SwimIdle = 'rbxassetid://129183123083281' },
+		['Unboxed'] = { Idle = 'rbxassetid://138183121662404', Run = 'rbxassetid://134824450619865', Walk = 'rbxassetid://90478085024465', Jump = 'rbxassetid://121454505477205', Fall = 'rbxassetid://94788218468396', Climb = 'rbxassetid://121145883950231', Swim = 'rbxassetid://105962919001086', SwimIdle = 'rbxassetid://129126268464847' },
+		['Ud'] = { Idle = 'rbxassetid://3303162549', Run = 'rbxassetid://3236836670', Walk = 'rbxassetid://3303162967', Jump = 'rbxassetid://10921263860', Fall = 'rbxassetid://10921262864', Climb = 'rbxassetid://10921257536', Swim = 'rbxassetid://10921264784', SwimIdle = 'rbxassetid://10921265698' },
+		['Toilet'] = { Idle = 'rbxassetid://4417978624', Run = 'rbxassetid://4417979645', Walk = 'rbxassetid://10921269718', Jump = 'rbxassetid://10921263860', Fall = 'rbxassetid://10921262864', Climb = 'rbxassetid://10921257536', Swim = 'rbxassetid://10921264784', SwimIdle = 'rbxassetid://10921265698' },
+		['Gm'] = { Idle = 'rbxassetid://96439737641086', Run = 'rbxassetid://101925097435036', Walk = 'rbxassetid://85809016093530', Jump = 'rbxassetid://74159004634379', Fall = 'rbxassetid://98070939608691', Climb = 'rbxassetid://108236155509584', Swim = 'rbxassetid://83003487432457', SwimIdle = 'rbxassetid://112946194103503' },
+		['Kat'] = { Idle = 'rbxassetid://72329200359275', Run = 'rbxassetid://73117360545482', Walk = 'rbxassetid://99182913548783', Jump = 'rbxassetid://103632305262747', Fall = 'rbxassetid://127802717128367', Climb = 'rbxassetid://106213237973858', Swim = 'rbxassetid://134148268480210', SwimIdle = 'rbxassetid://138619485942849' },
+		['Oldschool'] = { Idle = 'rbxassetid://10921232093', Run = 'rbxassetid://10921240218', Walk = 'rbxassetid://10921244891', Jump = 'rbxassetid://10921242013', Fall = 'rbxassetid://10921241244', Climb = 'rbxassetid://10921229866', Swim = 'rbxassetid://10921243048', SwimIdle = 'rbxassetid://10921244018' },
+	};
+
+	local ANIM_FOLDER_MAP = {
+		['Idle'] = { Folder = 'idle',     Children = { 'Animation1', 'Animation2' } },
+		['Run'] = { Folder = 'run',      Children = { 'RunAnim' } },
+		['Walk'] = { Folder = 'walk',     Children = { 'WalkAnim' } },
+		['Jump'] = { Folder = 'jump',     Children = { 'JumpAnim' } },
+		['Fall'] = { Folder = 'fall',     Children = { 'FallAnim' } },
+		['Climb'] = { Folder = 'climb',    Children = { 'ClimbAnim' } },
+		['Swim'] = { Folder = 'swim',     Children = { 'Swim' } },
+		['SwimIdle'] = { Folder = 'swimidle', Children = { 'SwimIdleAnim' } },
+	};
+
+	local function ResolveAnimId(preset, slot)
+		if not preset then return nil end;
+		if preset:sub(1, 13) == 'rbxassetid://' or preset:match('^%d+$') then
+			return 'rbxassetid://' .. preset:match('%d+');
+		end;
+		local pack = ANIM_PRESETS[preset];
+		if not pack then return nil end;
+		local id = pack[slot];
+		if not id then return nil end;
+		if id:sub(1, 13) == 'rbxassetid://' then return id end;
+		return 'rbxassetid://' .. id;
+	end;
+
+	local function ApplyAnimChanger(Character, Force)
+		local AnimCfg = GetConfig()['Utilities']['Animation Changer'];
+		if not Force and not AnimCfg['Enabled'] then return end;
+		local Animate = Character:FindFirstChild('Animate');
+		if not Animate then return end;
+		local Humanoid = Character:FindFirstChildOfClass('Humanoid');
+		if not Humanoid then return end;
+
+		local AnimSlots = AnimCfg['Animations'] or {};
+		for CfgSlot, FolderInfo in next, ANIM_FOLDER_MAP do
+			local Preset = AnimSlots[CfgSlot];
+			if not Preset then continue end;
+			local Id = ResolveAnimId(Preset, CfgSlot);
+			if not Id then continue end;
+			local Folder = Animate:FindFirstChild(FolderInfo.Folder);
+			if not Folder then continue end;
+			for _, ChildName in next, FolderInfo.Children do
+				local Anim = Folder:FindFirstChild(ChildName);
+				if Anim and Anim:IsA('Animation') then
+					Anim.AnimationId = Id;
+				end;
+			end;
+		end;
+
+		for _, Track in next, Humanoid:GetPlayingAnimationTracks() do
+			pcall(function() Track:Stop(0) end);
+		end;
+		pcall(function()
+			local AnimateScript = Character:FindFirstChild('Animate');
+			if AnimateScript then
+				AnimateScript.Disabled = true;
+				AnimateScript.Disabled = false;
+			end;
+		end);
+	end;
+
+	shared.__CiderApplyAnimationChanger = ApplyAnimChanger;
+
+	local AnimCfg = GetConfig()['Utilities']['Animation Changer'];
+	if AnimCfg['Enabled'] then
+		if LocalPlayer.Character then
+			task.delay(0.5, function() ApplyAnimChanger(LocalPlayer.Character) end);
+		end;
+		TrackConn(LocalPlayer.CharacterAdded:Connect(function(Character)
+			task.delay(1, function() ApplyAnimChanger(Character) end);
+		end));
+	end;
+end;
+
+do
+	local HitboxCfg = GetConfig()['Utilities']['Hitbox Expander'];
+	if HitboxCfg['Enabled'] then
+		local function RestoreHitbox(HRP)
+			if not HRP then return end;
+			HRP.Size = Vector3New(2, 2, 1);
+			HRP.Transparency = 1;
+			HRP.Material = Enum.Material.Plastic;
+			HRP.BrickColor = BrickColor.new('Medium stone grey');
+		end;
+
+		TrackConn(RunService.Heartbeat:Connect(function()
+			local Cfg = GetConfig()['Utilities']['Hitbox Expander'];
+			if not Cfg['Enabled'] then
+				for _, Player in next, Players:GetPlayers() do
+					if Player == LocalPlayer then continue end;
+					local Character = Player.Character;
+					local HRP = Character and Character:FindFirstChild('HumanoidRootPart');
+					if HRP then
+						RestoreHitbox(HRP);
+					end;
+				end;
+				return;
+			end;
+			local Size = Cfg['Size'] or 8;
+			local TargetOnly = Cfg['Target Only'];
+			local Visualize = Cfg['Visualize'];
+			local CurrentTarget = TargetOnly and (State.Targets.Silent or State.Targets.Triggerbot or State.Targets.Aimbot);
+			for _, Player in next, Players:GetPlayers() do
+				if Player == LocalPlayer then continue end;
+				local Character = Player.Character;
+				if not Character then continue end;
+				local HRP = Character:FindFirstChild('HumanoidRootPart');
+				if not HRP then continue end;
+				if TargetOnly and CurrentTarget ~= Player then
+					RestoreHitbox(HRP);
+					continue;
+				end;
+				HRP.Size = Vector3New(Size, Size, Size);
+				HRP.CanCollide = false;
+				if Visualize then
+					HRP.Transparency = 0.5;
+					HRP.BrickColor = BrickColor.new('Really black');
+					HRP.Material = Enum.Material.SmoothPlastic;
+				else
+					HRP.Transparency = 1;
+					HRP.Material = Enum.Material.Plastic;
+					HRP.BrickColor = BrickColor.new('Medium stone grey');
+				end;
+			end;
+		end));
+	end;
+end;
+
+local function GetMovementKey(Character, Humanoid, Cfg)
+	local Tool = Character and Character:FindFirstChildOfClass('Tool');
+	local IsKnife = false;
+	local IsReload = false;
+	if Tool then
+		local Name = Tool.Name;
+		local Lower = string.lower(Name);
+		IsKnife = (Name == '[Knife]') or (Lower:find('knife') ~= nil);
+		local Ammo = Tool:FindFirstChild('Ammo');
+		if Ammo and Ammo.Value == 0 then
+			IsReload = true;
+		else
+			local Reloading = Tool:FindFirstChild('Reloading');
+			if Reloading and Reloading.Value then IsReload = true end;
+		end;
+	end;
+	local BodyEffects = Character and Character:FindFirstChild('BodyEffects');
+	if BodyEffects then
+		local Reload = BodyEffects:FindFirstChild('Reload');
+		if Reload and Reload.Value == true then IsReload = true end;
+	end;
+	local Threshold = 25;
+	local IsLowHealth = Humanoid and Humanoid.Health > 0 and Humanoid.Health <= Threshold;
+	local Desired = 'Normal';
+	if IsKnife then
+		Desired = 'Knife';
+	elseif IsLowHealth then
+		Desired = 'Low Health';
+	elseif IsReload then
+		Desired = 'Reload';
+	elseif State.IsShooting then
+		Desired = 'Shooting';
+	end;
+	local Conditions = (Cfg and Cfg['Conditions']) or {};
+	local Entry = Conditions[Desired];
+	if Entry and Entry['Enabled'] == false then
+		return 'Normal';
+	end;
+	return Desired;
+end;
+
+local function SetupNoJumpCooldown(Character)
+	if not Character then return end;
+	local Humanoid = Character:FindFirstChildOfClass('Humanoid');
+	if not Humanoid then return end;
+	local DefaultJumpPower = Humanoid.JumpPower;
+	TrackConn(Humanoid:GetPropertyChangedSignal('JumpPower'):Connect(function()
+		if not GetConfig()['Movement']['No Jump Cooldown'] then return end;
+		if Humanoid.JumpPower == 0 then
+			local JumpModCfg = GetConfig()['Movement']['Jump Modifications'];
+			if JumpModCfg['Enabled'] and State.JumpModificationsActive and not JumpModCfg['Spiderman Mode'] then
+				local Key = GetMovementKey(Character, Humanoid, JumpModCfg);
+				local Conditions = JumpModCfg['Conditions'] or {};
+				local Entry = Conditions[Key];
+				local Mult = (Entry and Entry['Enabled'] ~= false and Entry['Multiplier']) or 1;
+				local Values = JumpModCfg['Values'] or JumpModCfg;
+				local Base = (JumpModCfg['Mode'] == 'Multiplier') and ((Values['Multiplier'] or 1) * 100) or (Values['Number'] or 50);
+				Humanoid.JumpPower = Base * Mult;
+			else
+				Humanoid.JumpPower = DefaultJumpPower;
+			end;
+		end;
+	end));
+end;
+
+if LocalPlayer.Character then SetupNoJumpCooldown(LocalPlayer.Character) end;
+TrackConn(LocalPlayer.CharacterAdded:Connect(SetupNoJumpCooldown));
+
+TrackConn(RunService.RenderStepped:Connect(function()
+	local Character = LocalPlayer.Character;
+	local Humanoid = Character and Character:FindFirstChildOfClass('Humanoid');
+	if not Humanoid then return end;
+
+	local SpeedModCfg = GetConfig()['Movement']['Speed Modifications'];
+	if State.SpeedModificationHumanoid ~= Humanoid then
+		RestoreWalkSpeedState(State);
+	end;
+	if not SpeedModCfg['Enabled'] or not State.SpeedModificationsActive then
+		RestoreWalkSpeedState(State);
+		return;
+	end;
+
+	if not State.SpeedModificationHumanoid then
+		State.SpeedModificationHumanoid = Humanoid;
+		State.OriginalWalkSpeed = Humanoid.WalkSpeed;
+	end;
+
+	local Key = GetMovementKey(Character, Humanoid, SpeedModCfg);
+	local Conditions = SpeedModCfg['Conditions'] or {};
+	local Entry = Conditions[Key];
+	local Mult = (Entry and Entry['Enabled'] ~= false and Entry['Multiplier']) or 1;
+	local Values = SpeedModCfg['Values'] or SpeedModCfg;
+	if SpeedModCfg['Mode'] == 'Multiplier' then
+		Humanoid.WalkSpeed = ((Values['Multiplier'] or 1) * 100) * Mult;
+	else
+		Humanoid.WalkSpeed = (Values['Number'] or 16) * Mult;
+	end;
+end));
+
+local function SetupJumpModifications(Character)
+	if not Character then return end;
+	local Humanoid = Character:FindFirstChildOfClass('Humanoid') or Character:WaitForChild('Humanoid', 10);
+	if not Humanoid then return end;
+	local DefaultJumpPower = Humanoid.JumpPower;
+
+	local WallCheckParams = RaycastParamsNew();
+	WallCheckParams.FilterType = EnumExclude;
+	WallCheckParams.FilterDescendantsInstances = {Character};
+
+	local function IsNearWall(RootPart)
+		local Origin = RootPart.Position;
+		local CF = RootPart.CFrame;
+		local Directions = { CF.LookVector, -CF.LookVector, CF.RightVector, -CF.RightVector, (CF.LookVector + CF.RightVector).Unit, (CF.LookVector - CF.RightVector).Unit, (-CF.LookVector + CF.RightVector).Unit, (-CF.LookVector - CF.RightVector).Unit };
+		for _, Dir in next, Directions do
+			if Workspace:Raycast(Origin, Dir * 5, WallCheckParams) then return true end;
+		end;
+		return false;
+	end;
+
+	local function GetJumpValue()
+		local JumpModCfg = GetConfig()['Movement']['Jump Modifications'];
+		local Key = GetMovementKey(Character, Humanoid, JumpModCfg);
+		local Conditions = JumpModCfg['Conditions'] or {};
+		local Entry = Conditions[Key];
+		local Mult = (Entry and Entry['Enabled'] ~= false and Entry['Multiplier']) or 1;
+		local Values = JumpModCfg['Values'] or JumpModCfg;
+		if JumpModCfg['Mode'] == 'Multiplier' then
+			return ((Values['Multiplier'] or 1) * 100) * Mult;
+		else
+			return (Values['Number'] or 50) * Mult;
+		end;
+	end;
+
+	local JumpConn;
+	local JumpWasBoosted = false;
+	JumpConn = TrackConn(RunService.RenderStepped:Connect(function()
+		if not Character.Parent then JumpConn:Disconnect(); return end;
+		local JumpModCfg = GetConfig()['Movement']['Jump Modifications'];
+		if not JumpModCfg['Enabled'] or not State.JumpModificationsActive or JumpModCfg['Spiderman Mode'] then
+			if JumpWasBoosted then
+				Humanoid.JumpPower = DefaultJumpPower;
+				JumpWasBoosted = false;
+			end;
+			return;
+		end;
+		Humanoid.UseJumpPower = true;
+		Humanoid.JumpPower = GetJumpValue();
+		JumpWasBoosted = true;
+	end));
+
+	local RequestConn;
+	local LastWallJump = 0;
+	RequestConn = TrackConn(UserInputService.JumpRequest:Connect(function()
+		if not Character.Parent then RequestConn:Disconnect(); return end;
+		local JumpModCfg = GetConfig()['Movement']['Jump Modifications'];
+		if not JumpModCfg['Enabled'] or not State.JumpModificationsActive or not JumpModCfg['Spiderman Mode'] then return end;
+		local RootPart = Character:FindFirstChild('HumanoidRootPart');
+		if not RootPart then return end;
+		if Humanoid.FloorMaterial ~= EnumAir then return end;
+		if (Tick() - LastWallJump) < 0.3 then return end;
+		if not IsNearWall(RootPart) then return end;
+		LastWallJump = Tick();
+		Humanoid.UseJumpPower = true;
+		Humanoid.JumpPower = GetJumpValue();
+		Humanoid:ChangeState(EnumJumping);
+		local ResetConn;
+		ResetConn = TrackConn(Humanoid.StateChanged:Connect(function(_, NewState)
+			if NewState == EnumFreefall or NewState == EnumLanded then
+				ResetConn:Disconnect();
+				Humanoid.JumpPower = DefaultJumpPower;
+			end;
+		end));
+	end));
+end;
+
+if LocalPlayer.Character then SetupJumpModifications(LocalPlayer.Character) end;
+TrackConn(LocalPlayer.CharacterAdded:Connect(SetupJumpModifications));
+
+do
+	local function GetSkinChangerCfg() return GetConfig()['Utilities']['Skin Changer'] end;
+	if type(getgenv) == 'function' then
+		local prevApplied = getgenv().__scAppliedSkins;
+		if prevApplied then
+			for _, entry in next, prevApplied do
+				if entry and entry.Connections then
+					for _, c in next, entry.Connections do
+						pcall(function() if c.Connected then c:Disconnect() end end);
+					end;
+				end;
+			end;
+		end;
+		local prevKnife = getgenv().__scKnifeData;
+		if prevKnife then
+			for _, data in next, prevKnife do
+				if data and data.conns then
+					for _, c in next, data.conns do
+						pcall(function() if c.Connected then c:Disconnect() end end);
+					end;
+				end;
+			end;
+		end;
+	end;
+	local AppliedSkins = {};
+	local KnifeData = {};
+	local InitialGunSkinRefreshDone = {};
+	local PendingSkinReprocess = {};
+	if type(getgenv) == 'function' then
+		getgenv().__scAppliedSkins = AppliedSkins;
+		getgenv().__scKnifeData = KnifeData;
+	end;
+	local ToolRegistry = {};
+	local SkinAssets = CachedSkinAssets;
+	local SkinModules = ReplicatedStorage:FindFirstChild('SkinModules');
+	local SkinData = nil;
+	local ApplySkinToTool;
+	local RemoveSkinFromTool;
+	task.spawn(function()
+		if not SkinModules then
+			local ok, found = pcall(function()
+				return ReplicatedStorage:WaitForChild('SkinModules', 3);
+			end);
+			if ok and found then SkinModules = found; end;
+		end;
+		if SkinModules and typeof(SkinModules) == 'Instance' and SkinModules:IsA('ModuleScript') then
+			local ok, result = pcall(require, SkinModules);
+			if ok and type(result) == 'table' then
+				SkinData = result;
+				return;
+			end;
+		end;
+		local httpFn = (type(game.HttpGet) == 'function' and function(url) return game:HttpGet(url) end)
+			or (type(getgenv) == 'function' and getgenv().http_request and function(url)
+				local res = getgenv().http_request({ Url = url, Method = 'GET' });
+				return res and res.Body;
+			end)
+			or (type(getgenv) == 'function' and getgenv().request and function(url)
+				local res = getgenv().request({ Url = url, Method = 'GET' });
+				return res and res.Body;
+			end);
+		if httpFn then
+			local ok, body = pcall(httpFn, 'https://pastebin.com/raw/0uZ107WE');
+			if ok and body then
+				local fn = loadstring(body);
+				if fn then
+					local ok2, result = pcall(fn);
+					if ok2 and type(result) == 'table' then
+						SkinData = result;
+					elseif ok2 and shared.skin_modules and next(shared.skin_modules) then
+						SkinData = shared.skin_modules;
+					end;
+				end;
+			end;
+		end;
+
+		task.wait(0.5);
+		if SkinData then
+			local SkinCfg = GetSkinChangerCfg();
+			if SkinCfg and SkinCfg['Enabled'] then
+				local Skins = SkinCfg['Skins'];
+				local function reapplyContainer(Container)
+					if not Container then return; end;
+					for _, Tool in next, Container:GetChildren() do
+						if Tool:IsA('Tool') then
+							local SkinName = Skins[Tool.Name];
+							if not SkinName then
+								local stripped = Tool.Name:gsub('%[', ''):gsub('%]', '');
+								SkinName = Skins['[' .. stripped .. ']'];
+							end;
+							if SkinName and SkinName ~= '' and SkinName ~= 'None' then
+								pcall(function() RemoveSkinFromTool(Tool) end);
+								ToolRegistry[Tool] = nil;
+								pcall(function() ProcessTool(Tool) end);
+							end;
+						end;
+					end;
+				end;
+				pcall(function() reapplyContainer(LocalPlayer.Character) end);
+				pcall(function() reapplyContainer(LocalPlayer:FindFirstChild('Backpack')) end);
+			end;
+		end;
+	end);
+
+	local function IsKnifeSkin(name)
+		local n = name:gsub(' ', '');
+		return n == 'GoldenAgeTanto' or n == 'GPO-Knife' or n == 'GPO-KnifePrestige' or n == 'Heaven'
+			or n == 'LoveKukri' or n == 'PurpleDagger' or n == 'BlueDagger' or n == 'GreenDagger' or n == 'RedDagger';
+	end;
+
+	local function CleanKnife(Tool)
+		local data = KnifeData[Tool];
+		if data then
+			if data.conns then
+				for _, c in next, data.conns do
+					if c then c:Disconnect() end;
+				end;
+				data.conns = nil;
+			end;
+			if data.track then
+				data.track:Stop();
+				data.track:Destroy();
+				data.track = nil;
+			end;
+			if data.welds then
+				for _, w in next, data.welds do
+					if w then w:Destroy() end;
+				end;
+			end;
+			if data.sounds then
+				for _, s in next, data.sounds do
+					if s and s.Parent then s:Destroy() end;
+				end;
+			end;
+		end;
+		local mesh = Tool:FindFirstChild('Default');
+		if mesh then
+			for _, v in next, mesh:GetChildren() do
+				if v.Name == 'Handle.R' or v:IsA('Model') or (v:IsA('BasePart') and v.Name ~= 'Default') then
+					v:Destroy();
+				end;
+			end;
+			mesh.Transparency = 0;
+		end;
+		for _, v in next, Tool:GetChildren() do
+			if (v:IsA('Model') or v:IsA('MeshPart')) and v ~= mesh and v.Name ~= 'Handle' then
+				v:Destroy();
+			end;
+		end;
+		KnifeData[Tool] = nil;
+	end;
+
+	local function ApplyKnife(Character, Tool, SkinName)
+		if not IsKnifeSkin(SkinName) then return end;
+		if Tool.Parent ~= Character then return end;
+		local Humanoid = Character:FindFirstChild('Humanoid');
+		local rhand = Character:FindFirstChild('RightHand');
+		if not Humanoid or not rhand then return end;
+
+		local existing = KnifeData[Tool];
+		if existing and existing.welds and #existing.welds > 0 then
+			local handleR = Tool:FindFirstChild('Default') and Tool:FindFirstChild('Default'):FindFirstChild('Handle.R');
+			if handleR and handleR.Parent then
+				local m6d = handleR:FindFirstChildOfClass('Motor6D');
+				if m6d then
+					m6d.Part0 = rhand;
+				end;
+				local defMesh = Tool:FindFirstChild('Default');
+				if defMesh then
+					defMesh.Transparency = 1;
+					for _, v in next, defMesh:GetChildren() do
+						if (v:IsA('Model') or v:IsA('MeshPart')) and v.Name ~= SkinName then
+							v:Destroy();
+						end;
+					end;
+				end;
+				for _, v in next, Tool:GetChildren() do
+					if (v:IsA('Model') or v:IsA('MeshPart')) and v ~= defMesh and v.Name ~= 'Handle' and v.Name ~= SkinName then
+						v:Destroy();
+					end;
+				end;
+				local Animator = Humanoid:FindFirstChildOfClass('Animator');
+				if Animator then
+					local n = SkinName:gsub(' ', '');
+					local animId, sndId;
+					if n == 'GoldenAgeTanto' then
+						animId, sndId = 'rbxassetid://13473404819', 'rbxassetid://5917819099';
+					elseif n == 'GPO-Knife' or n == 'GPO-KnifePrestige' then
+						animId, sndId = 'rbxassetid://14014278925', 'rbxassetid://4604390759';
+					elseif n == 'Heaven' then
+						animId, sndId = 'rbxassetid://14500266726', 'rbxassetid://14489860007';
+					elseif n == 'PurpleDagger' then
+						animId, sndId = 'rbxassetid://17824999722', 'rbxassetid://17822743153';
+					elseif n == 'BlueDagger' then
+						animId, sndId = 'rbxassetid://17824995184', 'rbxassetid://17822737046';
+					elseif n == 'GreenDagger' then
+						animId, sndId = 'rbxassetid://17825004320', 'rbxassetid://17822741762';
+					elseif n == 'RedDagger' then
+						animId, sndId = 'rbxassetid://17825008844', 'rbxassetid://17822952417';
+					end;
+					if animId then
+						if existing.track then
+							existing.track:Stop();
+							existing.track:Destroy();
+							existing.track = nil;
+						end;
+						local anim = Instance.new('Animation');
+						anim.AnimationId = animId;
+						local track = Animator:LoadAnimation(anim);
+						track.Looped = false;
+						track:Play();
+						existing.track = track;
+						anim:Destroy();
+						track.Ended:Once(function()
+							if existing.track == track then existing.track = nil end;
+							track:Destroy();
+						end);
+					end;
+					if sndId then
+						local snd = Instance.new('Sound');
+						snd.SoundId = sndId;
+						snd.Parent = Workspace;
+						snd:Play();
+						table.insert(existing.sounds, snd);
+						snd.Ended:Connect(function()
+							snd:Destroy();
+						end);
+					end;
+				end;
+				return;
+			end;
+		end;
+
+		CleanKnife(Tool);
+		KnifeData[Tool] = { track = nil, welds = {}, sounds = {} };
+		local data = KnifeData[Tool];
+		local mesh = Tool:FindFirstChild('Default');
+		if not mesh then return end;
+		mesh.Transparency = 1;
+		local knives = SkinModules and SkinModules:FindFirstChild('Knives');
+		if not knives then return end;
+		local skinmodel = knives:FindFirstChild(SkinName);
+		if not skinmodel then return end;
+		local clone = skinmodel:Clone();
+		clone.Name = SkinName;
+		local handr = Instance.new('Part');
+		handr.Name = 'Handle.R';
+		handr.Transparency = 1;
+		handr.CanCollide = false;
+		handr.Anchored = false;
+		handr.Size = Vector3New(0.001, 0.001, 0.001);
+		handr.Massless = true;
+		handr.Parent = mesh;
+		local m6d = Instance.new('Motor6D');
+		m6d.Name = 'Handle.R';
+		m6d.Part0 = rhand;
+		m6d.Part1 = handr;
+		m6d.Parent = handr;
+
+		local offset, animId, sndId;
+		local n = SkinName:gsub(' ', '');
+
+		if n == 'GoldenAgeTanto' then
+			offset = CFrameNew(0, -0.20, -1.2) * CFrame.Angles(MathRad(90), MathRad(263.7), MathRad(180));
+			animId = 'rbxassetid://13473404819';
+			sndId = 'rbxassetid://5917819099';
+		elseif n == 'GPO-Knife' or n == 'GPO-KnifePrestige' then
+			offset = CFrameNew(0, -0.32, -1.07) * CFrame.Angles(MathRad(90), MathRad(-97.4), MathRad(90));
+			animId = 'rbxassetid://14014278925';
+			sndId = 'rbxassetid://4604390759';
+		elseif n == 'Heaven' then
+			offset = CFrameNew(-0.02, -0.82, 0.20) * CFrame.Angles(MathRad(64.42), MathRad(3.79), MathRad(0));
+			animId = 'rbxassetid://14500266726';
+			sndId = 'rbxassetid://14489860007';
+		elseif n == 'LoveKukri' then
+			offset = CFrameNew(-0.14, 0.14, -1.62) * CFrame.Angles(MathRad(-90), MathRad(180), MathRad(-4.97));
+		elseif n == 'PurpleDagger' then
+			offset = CFrameNew(-0.13, -0.24, -1.80) * CFrame.Angles(MathRad(89.05), MathRad(96.63), MathRad(180));
+			animId = 'rbxassetid://17824999722';
+			sndId = 'rbxassetid://17822743153';
+		elseif n == 'BlueDagger' then
+			offset = CFrameNew(-0.13, -0.24, -1.80) * CFrame.Angles(MathRad(89.05), MathRad(96.63), MathRad(180));
+			animId = 'rbxassetid://17824995184';
+			sndId = 'rbxassetid://17822737046';
+		elseif n == 'GreenDagger' then
+			offset = CFrameNew(-0.13, -0.24, -1.07) * CFrame.Angles(MathRad(89.05), MathRad(96.63), MathRad(180));
+			animId = 'rbxassetid://17825004320';
+			sndId = 'rbxassetid://17822741762';
+		elseif n == 'RedDagger' then
+			offset = CFrameNew(-0.13, -0.24, -1.07) * CFrame.Angles(MathRad(89.05), MathRad(96.63), MathRad(180));
+			animId = 'rbxassetid://17825008844';
+			sndId = 'rbxassetid://17822952417';
+		end;
+
+		if not offset then return end;
+
+		if clone:IsA('Model') then
+			if not clone.PrimaryPart then
+				for _, c in next, clone:GetChildren() do
+					if c:IsA('BasePart') then
+						clone.PrimaryPart = c;
+						break;
+					end;
+				end;
+			end;
+			if clone.PrimaryPart then
+				for _, p in next, clone:GetDescendants() do
+					if p:IsA('BasePart') then
+						p.CanCollide = false;
+						p.Massless = true;
+						p.Anchored = false;
+						local w = Instance.new('Weld');
+						w.Part0 = handr;
+						w.Part1 = p;
+						w.C0 = offset;
+						w.C1 = p.CFrame:ToObjectSpace(clone.PrimaryPart.CFrame);
+						w.Parent = p;
+						table.insert(data.welds, w);
+					end;
+				end;
+			end;
+			clone.Parent = mesh;
+		elseif clone:IsA('BasePart') then
+			clone.CanCollide = false;
+			clone.Massless = true;
+			clone.Anchored = false;
+			clone.Parent = mesh;
+			local w = Instance.new('Weld');
+			w.Part0 = handr;
+			w.Part1 = clone;
+			w.C0 = offset;
+			w.Parent = clone;
+			table.insert(data.welds, w);
+		end;
+
+		local Animator = Humanoid:FindFirstChildOfClass('Animator');
+		if not Animator then
+			Animator = Instance.new('Animator');
+			Animator.Parent = Humanoid;
+		end;
+		if animId then
+			local anim = Instance.new('Animation');
+			anim.AnimationId = animId;
+			local track = Animator:LoadAnimation(anim);
+			track.Looped = false;
+			track:Play();
+			data.track = track;
+			anim:Destroy();
+			track.Ended:Once(function()
+				if data.track == track then
+					data.track = nil;
+				end;
+				track:Destroy();
+			end);
+		end;
+		if sndId then
+			local snd = Instance.new('Sound');
+			snd.SoundId = sndId;
+			snd.Parent = Workspace;
+			snd:Play();
+			table.insert(data.sounds, snd);
+			snd.Ended:Connect(function()
+				snd:Destroy();
+			end);
+		end;
+		data.conns = data.conns or {};
+		local function StripKnifeIntruders()
+			if KnifeData[Tool] ~= data then return end;
+			if mesh and mesh.Parent then
+				mesh.Transparency = 1;
+				for _, v in next, mesh:GetChildren() do
+					if (v:IsA('Model') or v:IsA('MeshPart')) and v.Name ~= SkinName then
+						v:Destroy();
+					end;
+				end;
+			end;
+			for _, v in next, Tool:GetChildren() do
+				if (v:IsA('Model') or v:IsA('MeshPart')) and v ~= mesh and v.Name ~= 'Handle' and v.Name ~= SkinName then
+					v:Destroy();
+				end;
+			end;
+		end;
+		local kc1 = Tool.ChildAdded:Connect(function(c)
+			if (c:IsA('Model') or c:IsA('MeshPart')) and c ~= mesh and c.Name ~= 'Handle' and c.Name ~= SkinName then
+				task.defer(StripKnifeIntruders);
+			end;
+		end);
+		table.insert(data.conns, kc1);
+		if mesh then
+			local kc2 = mesh.ChildAdded:Connect(function(c)
+				if (c:IsA('Model') or c:IsA('MeshPart')) and c.Name ~= SkinName then
+					task.defer(StripKnifeIntruders);
+				end;
+			end);
+			table.insert(data.conns, kc2);
+			local kc3 = mesh:GetPropertyChangedSignal('Transparency'):Connect(function()
+				if KnifeData[Tool] == data and mesh.Transparency ~= 1 then
+					mesh.Transparency = 1;
+				end;
+			end);
+			table.insert(data.conns, kc3);
+		end;
+	end;
+
+	local function LoadSkinData()
+		if SkinData then return SkinData end;
+		if SkinModules and typeof(SkinModules) == 'Instance' and SkinModules:IsA('ModuleScript') then
+			local ok, result = pcall(require, SkinModules);
+			if ok and type(result) == 'table' then SkinData = result; end;
+		end;
+		if not SkinData and shared.skin_modules and next(shared.skin_modules) then
+			SkinData = shared.skin_modules;
+		end;
+		if SkinData then
+			for Tool, SkinName in next, PendingSkinReprocess do
+				if Tool and Tool.Parent and SkinName and SkinName ~= '' and SkinName ~= 'None' then
+					task.defer(function()
+						ToolRegistry[Tool] = nil;
+						ProcessTool(Tool);
+					end);
+				end;
+				PendingSkinReprocess[Tool] = nil;
+			end;
+		end;
+		return SkinData;
+	end;
+
+	local function GetSkinInfo(weaponName, skinName)
+		local data = LoadSkinData();
+		if not data then return nil end;
+		local weaponSkins = data[weaponName];
+		if not weaponSkins then
+			local bracketName = '[' .. weaponName:gsub('%[', ''):gsub('%]', '') .. ']';
+			weaponSkins = data[bracketName];
+		end;
+		if not weaponSkins then return nil end;
+		local info = weaponSkins[skinName];
+		if not info then
+			info = weaponSkins[skinName:gsub('-', ' ')];
+		end;
+		if not info then
+			info = weaponSkins[skinName:gsub('-', '')];
+		end;
+		return info;
+	end;
+
+	local function FindSourceMesh(skinName, meshRef, isKnife)
+		if not SkinModules or typeof(SkinModules) ~= 'Instance' then return nil end;
+		if isKnife then
+			local cleanSkin = skinName:lower():gsub(' ', '');
+			local KnivesFolder = SkinModules:FindFirstChild('Knives');
+			if KnivesFolder then
+				for _, child in next, KnivesFolder:GetChildren() do
+					if child:IsA('MeshPart') then
+						local cleanName = child.Name:lower():gsub(' ', '');
+						if child.Name == skinName or cleanName == cleanSkin then
+							return child;
+						end;
+					elseif child:IsA('Folder') or child:IsA('Model') then
+						local cleanName = child.Name:lower():gsub(' ', '');
+						if child.Name == skinName or cleanName == cleanSkin then
+							for _, sub in next, child:GetChildren() do
+								if sub:IsA('MeshPart') then
+									return sub;
+								end;
+							end;
+						end;
+					end;
+				end;
+			end;
+			if SkinAssets then
+				local KnifeFolder = SkinAssets:FindFirstChild('KnifeMeshes') or SkinAssets:FindFirstChild('Knives');
+				if KnifeFolder then
+					for _, child in next, KnifeFolder:GetChildren() do
+						if child:IsA('MeshPart') then
+							local cleanName = child.Name:lower():gsub(' ', '');
+							if child.Name == skinName or cleanName == cleanSkin then
+								return child;
+							end;
+						elseif child:IsA('Folder') or child:IsA('Model') then
+							local cleanName = child.Name:lower():gsub(' ', '');
+							if child.Name == skinName or cleanName == cleanSkin then
+								for _, sub in next, child:GetChildren() do
+									if sub:IsA('MeshPart') then
+										return sub;
+									end;
+								end;
+							end;
+						end;
+					end;
+				end;
+			end;
+			return nil;
+		end;
+		local MeshesFolder = SkinModules:FindFirstChild('Meshes');
+		if not MeshesFolder then return nil end;
+		local folderNames = { skinName, skinName:gsub(' ', ''), skinName:gsub(' ', '_') };
+		for _, folderName in next, folderNames do
+			local skinFolder = MeshesFolder:FindFirstChild(folderName);
+			if skinFolder then
+				if meshRef then
+					for _, child in next, skinFolder:GetChildren() do
+						if child:IsA('MeshPart') then
+							local cleanChild = child.Name:lower():gsub(' ', ''):gsub('-', '');
+							local cleanRef = meshRef:lower():gsub(' ', ''):gsub('-', '');
+							if child.Name == meshRef or cleanChild == cleanRef then
+								return child;
+							end;
+						end;
+					end;
+				end;
+				for _, child in next, skinFolder:GetChildren() do
+					if child:IsA('MeshPart') then
+						return child;
+					end;
+				end;
+			end;
+		end;
+		if SkinAssets then
+			local GunMeshes = SkinAssets:FindFirstChild('GunMeshes');
+			if GunMeshes then
+				for _, folderName in next, folderNames do
+					local skinFolder = GunMeshes:FindFirstChild(folderName);
+					if skinFolder then
+						for _, child in next, skinFolder:GetChildren() do
+							if child:IsA('MeshPart') then
+								return child;
+							end;
+						end;
+					end;
+				end;
+			end;
+		end;
+		return nil;
+	end;
+
+	local function GetShootSound(weaponName, skinName)
+		if not SkinAssets then return nil end;
+		local GunShootSounds = SkinAssets:FindFirstChild('GunShootSounds');
+		if not GunShootSounds then return nil end;
+		local WeaponFolder = GunShootSounds:FindFirstChild(weaponName);
+		if not WeaponFolder then return nil end;
+		local SoundValue = WeaponFolder:FindFirstChild(skinName);
+		if SoundValue and SoundValue:IsA('StringValue') then
+			return SoundValue.Value;
+		end;
+		return nil;
+	end;
+
+	local ApplySkinToTool;
+	local RemoveSkinFromTool;
+
+	local function FindShootSoundInstance(Tool)
+		if not Tool then return nil end;
+		for _, child in next, Tool:GetDescendants() do
+			if child:IsA('Sound') and (child.Name == 'Shoot' or child.Name == 'ShootSound') then
+				return child;
+			end;
+		end;
+		return nil;
+	end;
+
+	local function BindShootSoundForSkin(Tool)
+		local skinData = AppliedSkins[Tool];
+		if not skinData then return end;
+		local shootSound = FindShootSoundInstance(Tool);
+		if not shootSound then return end;
+		if not skinData.ShootSoundOriginals then
+			skinData.ShootSoundOriginals = {};
+		end;
+		if skinData.ShootSoundOriginals[shootSound] == nil then
+			skinData.ShootSoundOriginals[shootSound] = shootSound.SoundId;
+		end;
+		skinData.ShootSound = shootSound;
+		local soundId = GetShootSound(Tool.Name, skinData.SkinName);
+		if soundId and soundId ~= '' then
+			shootSound.SoundId = soundId;
+		end;
+	end;
+
+	local function StripForeignGunMeshes(Tool, default, Handle)
+		if not Tool or not default then return end;
+		local function IsOurs(nm)
+			return #nm == 0 or nm == '\0';
+		end;
+		for _, child in next, Tool:GetChildren() do
+			if child:IsA('MeshPart') and child ~= default and child ~= Handle and not IsOurs(child.Name) then
+				child:Destroy();
+			end;
+		end;
+		for _, child in next, default:GetChildren() do
+			if child:IsA('MeshPart') and not IsOurs(child.Name) then
+				child:Destroy();
+			end;
+		end;
+	end;
+
+	local function ReapplyGunSkinState(Tool)
+		local skinData = AppliedSkins[Tool];
+		if not skinData then return end;
+		local default = skinData.Default;
+		if not default or not default.Parent then return end;
+		local Handle = Tool and Tool:FindFirstChild('Handle');
+		StripForeignGunMeshes(Tool, default, Handle);
+		if skinData.HideDefault then
+			if default.Transparency ~= 1 then
+				default.Transparency = 1;
+			end;
+		else
+			if skinData.DesiredTransparency ~= nil and default.Transparency ~= skinData.DesiredTransparency then
+				default.Transparency = skinData.DesiredTransparency;
+			end;
+			if skinData.DesiredTextureID ~= nil and default.TextureID ~= skinData.DesiredTextureID then
+				default.TextureID = skinData.DesiredTextureID;
+			end;
+		end;
+	end;
+
+	RemoveSkinFromTool = function(Tool)
+		if not Tool or not AppliedSkins[Tool] then return end;
+		CleanKnife(Tool);
+		local original = AppliedSkins[Tool];
+		if original.Connections then
+			for _, connection in next, original.Connections do
+				if connection and connection.Connected then
+					connection:Disconnect();
+				end;
+			end;
+		end;
+		for _, child in next, original.ClonedChildren or {} do
+			if child and child.Parent then
+				child:Destroy();
+			end;
+		end;
+		if original.Default and original.Default.Parent then
+			for _, child in next, original.Default:GetChildren() do
+				if child.Name == '\0' then
+					child:Destroy();
+				end;
+			end;
+			original.Default.Transparency = original.OriginalTransparency or 0;
+			original.Default.TextureID = original.OriginalTextureID or '';
+		end;
+		if original.ShootSoundOriginals then
+			for sound, soundId in next, original.ShootSoundOriginals do
+				if sound and sound.Parent and soundId then
+					sound.SoundId = soundId;
+				end;
+			end;
+		elseif original.ShootSound and original.OriginalShootSoundId then
+			original.ShootSound.SoundId = original.OriginalShootSoundId;
+		end;
+		local Handle = Tool:FindFirstChild('Handle');
+		if Handle then
+			Handle:SetAttribute('SkinName', original.OriginalSkinName or '');
+		end;
+		AppliedSkins[Tool] = nil;
+	end;
+
+	local function ScheduleInitialGunRefresh(Tool, SkinName)
+		if not Tool or InitialGunSkinRefreshDone[Tool] then return end;
+		InitialGunSkinRefreshDone[Tool] = true;
+		task.delay(0.35, function()
+			local skinData = AppliedSkins[Tool];
+			if not skinData or skinData.SkinName ~= SkinName then
+				return;
+			end;
+			RemoveSkinFromTool(Tool);
+			ApplySkinToTool(Tool, SkinName);
+		end);
+	end;
+
+	ApplySkinToTool = function(Tool, SkinName)
+		if not Tool then return end;
+		if AppliedSkins[Tool] and AppliedSkins[Tool].SkinName == SkinName then return end;
+		local Handle = Tool:FindFirstChild('Handle');
+		if not Handle then return end;
+		local default = Tool:FindFirstChild('Default');
+		if not default or not default:IsA('MeshPart') then
+			default = Handle:FindFirstChildOfClass('MeshPart');
+			if not default then
+				for _, child in next, Tool:GetDescendants() do
+					if child:IsA('MeshPart') then
+						default = child;
+						break;
+					end;
+				end;
+			end;
+		end;
+		if not default then return end;
+		local ShootSound = FindShootSoundInstance(Tool);
+		if AppliedSkins[Tool] then
+			RemoveSkinFromTool(Tool);
+		end;
+		AppliedSkins[Tool] = {
+			SkinName = SkinName,
+			OriginalTextureID = default.TextureID,
+			OriginalTransparency = default.Transparency,
+			OriginalSkinName = Handle:GetAttribute('SkinName') or '',
+			Default = default,
+			ShootSound = ShootSound,
+			OriginalShootSoundId = ShootSound and ShootSound.SoundId or nil,
+			ShootSoundOriginals = ShootSound and { [ShootSound] = ShootSound.SoundId } or {},
+			ClonedChildren = {},
+			Connections = {},
+			DesiredTextureID = default.TextureID,
+			DesiredTransparency = default.Transparency,
+			HideDefault = false,
+		};
+		Handle:SetAttribute('SkinName', SkinName);
+		local attrConn = Handle:GetAttributeChangedSignal('SkinName'):Connect(function()
+			if Handle:GetAttribute('SkinName') ~= SkinName then
+				Handle:SetAttribute('SkinName', SkinName);
+			end;
+		end);
+		table.insert(AppliedSkins[Tool].Connections, attrConn);
+		local isKnife = Tool.Name:lower():find('knife') ~= nil or Tool.Name == '[Knife]';
+		local weaponName = Tool.Name:lower():sub(2, -2);
+		local skinInfo = GetSkinInfo(Tool.Name, SkinName);
+		local textureOnlySkin = not isKnife and skinInfo and type(skinInfo.TextureID) == 'string' and skinInfo.TextureID ~= '';
+		if not isKnife and not skinInfo then
+			PendingSkinReprocess[Tool] = SkinName;
+			task.defer(LoadSkinData);
+			BindShootSoundForSkin(Tool);
+			return;
+		end;
+		if not isKnife then
+			for _, child in next, Tool:GetChildren() do
+				if child:IsA('MeshPart') and child ~= default and child ~= Handle then
+					child:Destroy();
+				end;
+			end;
+			for _, child in next, default:GetChildren() do
+				if child:IsA('MeshPart') then
+					child:Destroy();
+				end;
+			end;
+			default.Transparency = AppliedSkins[Tool].OriginalTransparency or 0;
+			default.TextureID = AppliedSkins[Tool].OriginalTextureID or '';
+		end;
+		local mesh = nil;
+		if not isKnife and skinInfo and skinInfo.TextureID and not textureOnlySkin then
+			local tv = skinInfo.TextureID;
+			if typeof(tv) == 'Instance' then
+				if tv:IsA('MeshPart') then
+					mesh = tv;
+				elseif tv:IsA('Model') or tv:IsA('Folder') then
+					mesh = tv:GetChildren();
+				end;
+			end;
+		end;
+		if not isKnife and not mesh and not textureOnlySkin and SkinModules and typeof(SkinModules) == 'Instance' then
+			local MeshesFolder = SkinModules:FindFirstChild('Meshes');
+			if MeshesFolder then
+				local skinFolder = MeshesFolder:FindFirstChild(SkinName)
+					or MeshesFolder:FindFirstChild(SkinName:gsub(' ', ''))
+					or MeshesFolder:FindFirstChild(SkinName:gsub(' ', '_'))
+					or MeshesFolder:FindFirstChild(SkinName:gsub('-', ' '))
+					or MeshesFolder:FindFirstChild(SkinName:gsub('-', ''));
+				if skinFolder then
+					if skinFolder:IsA('MeshPart') then
+						mesh = skinFolder;
+					else
+						mesh = skinFolder:GetChildren();
+					end;
+				end;
+			end;
+			if not mesh then
+				local GunModels = SkinModules:FindFirstChild('GunModels');
+				if GunModels then
+					local model = GunModels:FindFirstChild(SkinName)
+						or GunModels:FindFirstChild('[' .. SkinName .. ']')
+						or GunModels:FindFirstChild(SkinName:gsub('-', ' '))
+						or GunModels:FindFirstChild(SkinName:gsub('-', ''));
+					if model then
+						if model:IsA('MeshPart') then
+							mesh = model;
+						elseif model:IsA('Model') then
+							mesh = model:FindFirstChildOfClass('MeshPart');
+						end;
+					end;
+				end;
+			end;
+		end;
+		local skinMesh = nil;
+		if mesh and not isKnife then
+			if typeof(mesh) == 'Instance' and mesh:IsA('MeshPart') then
+				skinMesh = mesh;
+			elseif type(mesh) == 'table' then
+				for _, child in next, mesh do
+					if typeof(child) == 'Instance' and child:IsA('MeshPart') then
+						local lowered = child.Name:lower();
+						if lowered:find('rpg') and weaponName == 'rpg' then
+							skinMesh = child; break;
+						elseif lowered:find('aug') and weaponName == 'aug' then
+							skinMesh = child; break;
+						elseif lowered:find('tac') and weaponName == 'tacticalshotgun' then
+							skinMesh = child; break;
+						elseif lowered:find('rev') and weaponName == 'revolver' then
+							skinMesh = child; break;
+						elseif (lowered:find('db') or lowered:find('double')) and (weaponName == 'double-barrel sg' or weaponName == 'double-barrelsg') then
+							skinMesh = child; break;
+						elseif lowered:find('rifle') and weaponName == 'rifle' then
+							skinMesh = child; break;
+						elseif lowered:find('flame') and weaponName == 'flamethrower' then
+							skinMesh = child; break;
+						end;
+					end;
+				end;
+				if not skinMesh then
+					for _, child in next, mesh do
+						if typeof(child) == 'Instance' and child:IsA('MeshPart') then
+							skinMesh = child;
+							break;
+						end;
+					end;
+				end;
+			end;
+		end;
+		local hidDefault = false;
+		if skinMesh and not isKnife then
+			local newFake = skinMesh:Clone();
+			newFake.Anchored = false;
+			newFake.CanCollide = false;
+			newFake.CFrame = default.CFrame;
+			local skinCFrame = (skinInfo and skinInfo.CFrame and typeof(skinInfo.CFrame) == 'CFrame') and skinInfo.CFrame or CFrame.new();
+			local weld = Instance.new('Weld');
+			weld.Part0 = newFake;
+			weld.Part1 = default;
+			weld.C0 = skinCFrame:Inverse();
+			weld.Name = '\0';
+			weld.Parent = newFake;
+			newFake.Name = '\0';
+			newFake.Parent = Tool;
+			default.Transparency = 1;
+			hidDefault = true;
+			if AppliedSkins[Tool] then
+				AppliedSkins[Tool].HideDefault = true;
+				AppliedSkins[Tool].DesiredTransparency = 1;
+				AppliedSkins[Tool].DesiredTextureID = AppliedSkins[Tool].OriginalTextureID or '';
+				table.insert(AppliedSkins[Tool].ClonedChildren, newFake);
+			end;
+		elseif not isKnife and skinInfo then
+			local textureValue = skinInfo.TextureID;
+			if textureValue then
+				if typeof(textureValue) == 'Instance' and textureValue:IsA('MeshPart') then
+					local clone = textureValue:Clone();
+					clone.Anchored = false;
+					clone.CanCollide = false;
+					clone.CFrame = default.CFrame;
+					clone.Name = '\0';
+					clone.Parent = Tool;
+					local skinCFrame = (skinInfo.CFrame and typeof(skinInfo.CFrame) == 'CFrame') and skinInfo.CFrame or CFrame.new();
+					local weld = Instance.new('Weld');
+					weld.Part0 = clone;
+					weld.Part1 = default;
+					weld.C0 = skinCFrame:Inverse();
+					weld.Name = '\0';
+					weld.Parent = clone;
+					default.Transparency = 1;
+					hidDefault = true;
+					if AppliedSkins[Tool] then
+						AppliedSkins[Tool].HideDefault = true;
+						AppliedSkins[Tool].DesiredTransparency = 1;
+						AppliedSkins[Tool].DesiredTextureID = AppliedSkins[Tool].OriginalTextureID or '';
+						table.insert(AppliedSkins[Tool].ClonedChildren, clone);
+					end;
+				elseif type(textureValue) == 'string' then
+					default.TextureID = textureValue;
+					default.Transparency = 0;
+					if AppliedSkins[Tool] then
+						AppliedSkins[Tool].HideDefault = false;
+						AppliedSkins[Tool].DesiredTransparency = 0;
+						AppliedSkins[Tool].DesiredTextureID = textureValue;
+					end;
+				end;
+			end;
+		end;
+		if not isKnife and AppliedSkins[Tool] then
+			local function StripIntruders()
+				if not AppliedSkins[Tool] then return end;
+				ReapplyGunSkinState(Tool);
+			end;
+			local function IsOurs(nm)
+				return #nm == 0 or nm == '\0';
+			end;
+			local addConn = Tool.ChildAdded:Connect(function(c)
+				if c:IsA('MeshPart') and not IsOurs(c.Name) and c ~= default and c ~= Handle then
+					task.defer(StripIntruders);
+				end;
+			end);
+			table.insert(AppliedSkins[Tool].Connections, addConn);
+			local defAddConn = default.ChildAdded:Connect(function(c)
+				if c:IsA('MeshPart') and not IsOurs(c.Name) then
+					task.defer(StripIntruders);
+				end;
+			end);
+			table.insert(AppliedSkins[Tool].Connections, defAddConn);
+			if hidDefault then
+				local transConn = default:GetPropertyChangedSignal('Transparency'):Connect(function()
+					if AppliedSkins[Tool] and default.Transparency ~= 1 then
+						default.Transparency = 1;
+					end;
+				end);
+				table.insert(AppliedSkins[Tool].Connections, transConn);
+			else
+				local transConn = default:GetPropertyChangedSignal('Transparency'):Connect(function()
+					local skinData = AppliedSkins[Tool];
+					if skinData and skinData.DesiredTransparency ~= nil and default.Transparency ~= skinData.DesiredTransparency then
+						default.Transparency = skinData.DesiredTransparency;
+					end;
+				end);
+				table.insert(AppliedSkins[Tool].Connections, transConn);
+			end;
+			local textureConn = default:GetPropertyChangedSignal('TextureID'):Connect(function()
+				if AppliedSkins[Tool] and default.TextureID ~= AppliedSkins[Tool].DesiredTextureID then
+					default.TextureID = AppliedSkins[Tool].DesiredTextureID or '';
+				end;
+			end);
+			table.insert(AppliedSkins[Tool].Connections, textureConn);
+			task.defer(StripIntruders);
+			task.delay(0.1, function()
+				if AppliedSkins[Tool] then
+					ReapplyGunSkinState(Tool);
+				end;
+			end);
+			task.delay(0.35, function()
+				if AppliedSkins[Tool] then
+					ReapplyGunSkinState(Tool);
+				end;
+			end);
+		end;
+		for _, child in next, Handle:GetChildren() do
+			if #child.Name == 0 then
+				child:Destroy();
+			end;
+		end;
+		if SkinAssets then
+			local GunHandleParticle = SkinAssets:FindFirstChild('GunHandleParticle');
+			if GunHandleParticle then
+				local particleFolder = GunHandleParticle:FindFirstChild(SkinName)
+					or GunHandleParticle:FindFirstChild(SkinName:gsub('-', ' '))
+					or GunHandleParticle:FindFirstChild(SkinName:gsub('-', ''));
+				if particleFolder then
+					local emitter = particleFolder:FindFirstChildOfClass('ParticleEmitter');
+					if emitter then
+						local clonedParticle = emitter:Clone();
+						clonedParticle.Parent = Handle;
+						clonedParticle.Name = '\0';
+						table.insert(AppliedSkins[Tool].ClonedChildren, clonedParticle);
+					end;
+				end;
+			end;
+		end;
+		if isKnife and SkinAssets then
+			local SkinScripts = SkinAssets:FindFirstChild('SkinScripts');
+			if SkinScripts then
+				for _, folder in next, SkinScripts:GetChildren() do
+					if folder.Name:lower():gsub(' ', '') == SkinName:lower():gsub(' ', '') then
+						local sound = folder:FindFirstChildOfClass('Sound');
+						if sound then
+							local cloned = sound:Clone();
+							cloned.Name = '\0';
+							cloned.Parent = Handle;
+							cloned:Play();
+							game.Debris:AddItem(cloned, 3);
+						end;
+						for _, obj in next, folder:GetDescendants() do
+							if obj:IsA('Sound') or obj:IsA('StringValue') then
+								local objLower = obj.Name:lower():gsub(' ', '');
+								if objLower == 'equipsfx' or objLower == 'sfx' or objLower == 'equip' or objLower == 'tantoequip' then
+									AppliedSkins[Tool].KnifeEquipSound = obj:IsA('Sound') and obj.SoundId or obj.Value;
+								elseif objLower == 'attacksfx' or objLower == 'attack' then
+									AppliedSkins[Tool].KnifeAttackSound = obj:IsA('Sound') and obj.SoundId or obj.Value;
+								end;
+							end;
+						end;
+						break;
+					end;
+				end;
+			end;
+			local SkinScriptsStorage = SkinAssets:FindFirstChild('SkinScriptsStorage');
+			if SkinScriptsStorage then
+				for _, folder in next, SkinScriptsStorage:GetChildren() do
+					if folder.Name:lower():gsub(' ', '') == SkinName:lower():gsub(' ', '') then
+						for _, anim in next, folder:GetDescendants() do
+							if anim:IsA('Animation') then
+								local animLower = anim.Name:lower():gsub(' ', '');
+								if animLower == 'knife' or animLower == 'equipknife' or animLower == 'knifeequip' or animLower == 'tantoequip' then
+									AppliedSkins[Tool].KnifeEquipAnim = anim;
+									break;
+								end;
+							end;
+						end;
+						break;
+					end;
+				end;
+			end;
+			local KnifeSkinAnimation = SkinAssets:FindFirstChild('KnifeSkinAnimation');
+			if KnifeSkinAnimation then
+				for _, folder in next, KnifeSkinAnimation:GetChildren() do
+					if folder.Name:lower():gsub(' ', '') == SkinName:lower():gsub(' ', '') then
+						for _, anim in next, folder:GetDescendants() do
+							if anim:IsA('Animation') then
+								AppliedSkins[Tool].KnifeAttackAnim = anim;
+								break;
+							end;
+						end;
+						break;
+					end;
+				end;
+			end;
+		end;
+		if isKnife and SkinName:lower():gsub(' ', '') == 'goldenagetanto' then
+			if not AppliedSkins[Tool].KnifeEquipAnim then
+				local anim = Instance.new('Animation');
+				anim.AnimationId = 'rbxassetid://13473404819';
+				AppliedSkins[Tool].KnifeEquipAnim = anim;
+			else
+				AppliedSkins[Tool].KnifeEquipAnim.AnimationId = 'rbxassetid://13473404819';
+			end;
+		end;
+		if isKnife and (SkinName:lower():gsub(' ', '') == 'gpoknife' or SkinName:lower():gsub(' ', '') == 'gpoknifeprestige') then
+			if not AppliedSkins[Tool].KnifeEquipAnim then
+				local anim = Instance.new('Animation');
+				anim.AnimationId = 'rbxassetid://102007904524177';
+				AppliedSkins[Tool].KnifeEquipAnim = anim;
+			else
+				AppliedSkins[Tool].KnifeEquipAnim.AnimationId = 'rbxassetid://102007904524177';
+			end;
+		end;
+		BindShootSoundForSkin(Tool);
+		local soundConn = Tool.DescendantAdded:Connect(function(desc)
+			if desc:IsA('Sound') and (desc.Name == 'Shoot' or desc.Name == 'ShootSound') then
+				task.defer(function()
+					if AppliedSkins[Tool] and AppliedSkins[Tool].SkinName == SkinName then
+						BindShootSoundForSkin(Tool);
+					end;
+				end);
+			end;
+		end);
+		table.insert(AppliedSkins[Tool].Connections, soundConn);
+		if not isKnife then
+			ScheduleInitialGunRefresh(Tool, SkinName);
+		end;
+	end;
+
+	function ProcessTool(Tool)
+		if ToolRegistry[Tool] then return end;
+		ToolRegistry[Tool] = true;
+		local SkinChangerCfg = GetSkinChangerCfg();
+		if not SkinChangerCfg['Enabled'] then return end;
+		local Skins = SkinChangerCfg['Skins'];
+		local ConfiguredSkin = Skins[Tool.Name];
+		if not ConfiguredSkin then
+			local stripped = Tool.Name:gsub('%[', ''):gsub('%]', '');
+			ConfiguredSkin = Skins['[' .. stripped .. ']'];
+		end;
+		if not ConfiguredSkin or ConfiguredSkin == '' or ConfiguredSkin == 'None' then return end;
+		local isKnife = Tool.Name:lower():find('knife') ~= nil or Tool.Name == '[Knife]';
+		if isKnife and IsKnifeSkin(ConfiguredSkin) then
+			ApplySkinToTool(Tool, ConfiguredSkin);
+			local equipConn;
+			equipConn = Tool.Equipped:Connect(function()
+				if not AppliedSkins[Tool] then
+					if equipConn then equipConn:Disconnect() end;
+					return;
+				end;
+				local char = Tool.Parent;
+				if char ~= LocalPlayer.Character then return end;
+				ApplyKnife(char, Tool, ConfiguredSkin);
+			end);
+			if not AppliedSkins[Tool].Connections then
+				AppliedSkins[Tool].Connections = {};
+			end;
+			table.insert(AppliedSkins[Tool].Connections, equipConn);
+			if LocalPlayer.Character and Tool.Parent == LocalPlayer.Character then
+				ApplyKnife(LocalPlayer.Character, Tool, ConfiguredSkin);
+			end;
+			if AppliedSkins[Tool] and (AppliedSkins[Tool].KnifeAttackAnim or AppliedSkins[Tool].KnifeAttackSound) then
+				local attackConnection;
+				attackConnection = Tool.Activated:Connect(function()
+					local skinData = AppliedSkins[Tool];
+					if not skinData then
+						if attackConnection then attackConnection:Disconnect() end;
+						return;
+					end;
+					if skinData.KnifeAttackSound then
+						local sound = Instance.new('Sound');
+						sound.SoundId = skinData.KnifeAttackSound;
+						sound.Volume = 1;
+						sound.Parent = Tool:FindFirstChild('Handle') or Tool;
+						sound:Play();
+						game.Debris:AddItem(sound, 3);
+					end;
+					if skinData.KnifeAttackAnim then
+						local Character = LocalPlayer.Character;
+						if Character then
+							local Humanoid = Character:FindFirstChildOfClass('Humanoid');
+							if Humanoid then
+								local Animator = Humanoid:FindFirstChildOfClass('Animator');
+								if not Animator then
+									Animator = Instance.new('Animator');
+									Animator.Parent = Humanoid;
+								end;
+								local anim = Instance.new('Animation');
+								anim.AnimationId = skinData.KnifeAttackAnim.AnimationId;
+								local track = Animator:LoadAnimation(anim);
+								track.Priority = Enum.AnimationPriority.Action;
+								track:Play();
+								anim:Destroy();
+							end;
+						end;
+					end;
+				end);
+				table.insert(AppliedSkins[Tool].Connections, attackConnection);
+			end;
+		else
+			ApplySkinToTool(Tool, ConfiguredSkin);
+			Tool.Equipped:Connect(function()
+				local char = Tool.Parent;
+				if char ~= LocalPlayer.Character then return end;
+				ApplySkinToTool(Tool, ConfiguredSkin);
+			end);
+			if LocalPlayer.Character and Tool.Parent == LocalPlayer.Character then
+				ApplySkinToTool(Tool, ConfiguredSkin);
+			end;
+		end;
+	end;
+
+	function ProcessCharacter(Character)
+		if not Character then return end;
+		for _, Child in next, Character:GetChildren() do
+			if Child:IsA('Tool') then
+				ProcessTool(Child);
+			end;
+		end;
+		Character.ChildAdded:Connect(function(Child)
+			if Child:IsA('Tool') then
+				Wait(0.1);
+				ProcessTool(Child);
+			end;
+		end);
+	end;
+
+	function ProcessBackpack(Backpack)
+		if not Backpack then return end;
+		for _, Tool in next, Backpack:GetChildren() do
+			if Tool:IsA('Tool') then
+				ProcessTool(Tool);
+			end;
+		end;
+		Backpack.ChildAdded:Connect(function(Tool)
+			if Tool:IsA('Tool') then
+				Wait(0.1);
+				ProcessTool(Tool);
+			end;
+		end);
+	end;
+
+	task.spawn(LoadSkinData);
+	local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait();
+	local Backpack = LocalPlayer:FindFirstChild('Backpack') or LocalPlayer:WaitForChild('Backpack', 5);
+	ProcessCharacter(Character);
+	if Backpack then ProcessBackpack(Backpack) end;
+	LocalPlayer.CharacterAdded:Connect(function(NewCharacter)
+		Wait(0.5);
+		ProcessCharacter(NewCharacter);
+		local NewBackpack = LocalPlayer:FindFirstChild('Backpack') or LocalPlayer:WaitForChild('Backpack', 5);
+		if NewBackpack then ProcessBackpack(NewBackpack) end;
+	end);
+
+	local function GetConfiguredSkinFor(Tool)
+		local SkinChangerCfg = GetSkinChangerCfg();
+		if not SkinChangerCfg or not SkinChangerCfg['Enabled'] then return nil end;
+		local Skins = SkinChangerCfg['Skins'];
+		local ConfiguredSkin = Skins[Tool.Name];
+		if not ConfiguredSkin then
+			local stripped = Tool.Name:gsub('%[', ''):gsub('%]', '');
+			ConfiguredSkin = Skins['[' .. stripped .. ']'];
+		end;
+		if not ConfiguredSkin or ConfiguredSkin == '' or ConfiguredSkin == 'None' then return nil end;
+		return ConfiguredSkin;
+	end;
+
+	local function ReapplySkinChangerTools()
+		local function reapplyContainer(Container)
+			if not Container then return end;
+			for _, Tool in next, Container:GetChildren() do
+				if Tool:IsA('Tool') then
+
+
+
+
+					local NewSkin = GetConfiguredSkinFor(Tool);
+					local CurrentSkin = AppliedSkins[Tool] and AppliedSkins[Tool].SkinName or nil;
+					if NewSkin ~= CurrentSkin then
+						ToolRegistry[Tool] = nil;
+						InitialGunSkinRefreshDone[Tool] = nil;
+						pcall(function() RemoveSkinFromTool(Tool) end);
+						pcall(function() ProcessTool(Tool) end);
+					end;
+				end;
+			end;
+		end;
+		reapplyContainer(LocalPlayer.Character);
+		reapplyContainer(LocalPlayer:FindFirstChild('Backpack'));
+	end;
+
+	local PreviousReapplyAllSkins = ReapplyAllSkins;
+	ReapplyAllSkins = function()
+		if PreviousReapplyAllSkins then PreviousReapplyAllSkins() end;
+		ReapplySkinChangerTools();
+	end;
+end;
+
+do
+	KOConnection = nil;
+	function SetupAntiStomp(Character)
+		if KOConnection then KOConnection:Disconnect(); KOConnection = nil end;
+		local BodyEffects = Character:WaitForChild('BodyEffects', 5);
+		if not BodyEffects then return end;
+		local KO = BodyEffects:WaitForChild('K.O', 5);
+		if not KO then return end;
+		KOConnection = KO.Changed:Connect(function(Knocked)
+			local AntiStompCfg = GetConfig()['Anti Stomp'];
+			if not AntiStompCfg or not AntiStompCfg['Enabled'] then return end;
+			if not Knocked then return end;
+			local HRP = Character:FindFirstChild('HumanoidRootPart');
+			if not HRP then return end;
+			HRP.CFrame = CFrameNew(0, -2147483647, 0);
+			HRP.Velocity = Vector3New(65536, 65534, 65536);
+			local Humanoid = Character:FindFirstChildOfClass('Humanoid');
+			if Humanoid then
+				for _ = 1, 10 do
+					Humanoid.Health = 0;
+					Wait();
+				end;
+			end;
+		end);
+	end;
+	if LocalPlayer.Character then Spawn(SetupAntiStomp, LocalPlayer.Character) end;
+	LocalPlayer.CharacterAdded:Connect(SetupAntiStomp);
+end;
+
+do 
+	function GetMiscGunCfg() return GetConfig()['Modifications']['Misc Gun Modifications'] end;
+	CurrentCamera = Workspace.CurrentCamera;
+	SavedCFrame = CurrentCamera.CFrame;
+	RestorePending = false;
+
+	function QueueRestore()
+		if RestorePending then return end;
+		RestorePending = true;
+		Defer(function()
+			if RestorePending then
+				CurrentCamera.CFrame = SavedCFrame;
+				RestorePending = false;
+			end;
+		end);
+	end;
+
+	RunService.RenderStepped:Connect(function()
+		CurrentCamera = Workspace.CurrentCamera;
+		if not RestorePending then
+			SavedCFrame = CurrentCamera.CFrame;
+		end;
+	end);
+
+	local MainRemote = ReplicatedStorage:FindFirstChild('MainEvent');
+	if MainRemote and MainRemote:IsA('RemoteEvent') then
+		MainRemote.OnClientEvent:Connect(function(Packet)
+			if Packet == 'ShootingRecoil' and GetMiscGunCfg()['No Recoil'] then
+				QueueRestore();
+			end;
+		end);
+	end;
+
+	local function HookGunShot(Character)
+		local BodyEffects = Character:WaitForChild('BodyEffects', 5);
+		if not BodyEffects then return end;
+		local GunShotChanges = BodyEffects:FindFirstChild('GunShotChanges');
+		if not GunShotChanges then return end;
+		GunShotChanges.Changed:Connect(function()
+			if GetMiscGunCfg()['No Recoil'] then
+				QueueRestore();
+			end;
+		end);
+	end;
+
+	if LocalPlayer.Character then Spawn(HookGunShot, LocalPlayer.Character) end;
+	LocalPlayer.CharacterAdded:Connect(function(Char) Spawn(HookGunShot, Char) end);
+end;
+
+do
+	local CharCfg = GetConfig()['Char'] or {};
+	local CharSize = CharCfg['Body Size'] or {};
+	local CharSizeProfiles = {
+		Skinny = {
+			width = 0.52,
+			depth = 0.52,
+			height = 1.00,
+			head = 1.00,
+			proportion = 1.00,
+			bodyType = 0.00,
+		},
+		Normal = {
+			width = 1.00,
+			depth = 1.00,
+			height = 1.00,
+			head = 1.00,
+			proportion = 1.00,
+			bodyType = 0.00,
+		},
+		Fat = {
+			width = 1.50,
+			depth = 1.50,
+			height = 1.00,
+			head = 1.00,
+			proportion = 1.00,
+			bodyType = 0.00,
+		},
+	};
+	local CharSizeProfile = CharSizeProfiles[CharSize['Mode']] or CharSizeProfiles.Skinny;
+	local CONFIG = {
+		target = CharCfg['Target'] or '',
+		charchanger = {
+			enabled = CharCfg['Enabled'] == true and CharSize['Enabled'] ~= false,
+			width = CharSizeProfile.width,
+			depth = CharSizeProfile.depth,
+			height = CharSizeProfile.height,
+			head = CharSizeProfile.head,
+			proportion = CharSizeProfile.proportion,
+			bodyType = CharSizeProfile.bodyType,
+			targetScales = nil,
+			enforceIntervalSeconds = 0.8,
+		},
+	}
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local InsertService = game:GetService("InsertService")
+
+local localPlayer = Players.LocalPlayer
+local targetUserId = nil
+local appearanceChildConn = nil
+local appearanceScaleValueConns = {}
+local characterAddedConn = nil
+local standaloneAppearanceConn = nil
+local applySerial = 0
+
+local AVATAR_CACHE_TTL_SECONDS = 20
+local RESOLVED_USERID_TTL_SECONDS = 600
+local faceTextureCache = {}  
+local faceTextureCacheTime = {}  
+local descriptionCache = {}
+local appearanceModelCache = {}
+local appearanceInfoCache = {}
+local resolvedUserIdCache = {}
+local resolvedUserIdCacheTime = {}
+local CACHE_MAX_ENTRIES = {
+    faceTexture = 80,
+    description = 40,
+    appearanceModel = 24,
+    appearanceInfo = 60,
+    resolvedUserId = 120,
+    animationSet = 64,
+    emoteData = 80,
+}
+
+local okEnv, env = pcall(function() return getgenv() end)
+local stateKey = "__CopyOutfitState"
+local prevState = nil
+if okEnv and env then
+    prevState = env[stateKey]
+    if prevState and type(prevState.teardown) == "function" then
+        pcall(prevState.teardown)
+    end
+end
+local runtimeState = {
+    currentUserId = nil,
+    active = CharCfg['Enabled'] == true,
+    teardown = nil,
+    colorSnapshot = nil,
+    guiIdentity = nil,
+}
+if okEnv and env then
+    env[stateKey] = runtimeState
+end
+
+local COPY_CLASSES = { "Shirt", "Pants", "ShirtGraphic", "Accessory", "Hat", "BodyColors", "CharacterMesh" }
+local COPY_CLASS_SET = {}
+for _, cls in ipairs(COPY_CLASSES) do COPY_CLASS_SET[cls] = true end
+
+local SCALE_VALUE_NAMES = {
+    "BodyHeightScale","BodyWidthScale","BodyDepthScale",
+    "HeadScale","BodyTypeScale","BodyProportionScale",
+}
+
+local SCALE_VALUE_SET = {}
+for _, scaleName in ipairs(SCALE_VALUE_NAMES) do
+    SCALE_VALUE_SET[scaleName] = true
+end
+
+local COPY_ANIMATION_FIELDS = {
+    "ClimbAnimation","FallAnimation","IdleAnimation",
+    "JumpAnimation","RunAnimation","SwimAnimation","WalkAnimation",
+}
+
+local BODY_PART_NAMES = {
+    "Head",
+    "Torso","UpperTorso","LowerTorso",
+    "LeftArm","RightArm","LeftLeg","RightLeg",
+    "LeftUpperArm","LeftLowerArm","LeftHand",
+    "RightUpperArm","RightLowerArm","RightHand",
+    "LeftUpperLeg","LeftLowerLeg","LeftFoot",
+    "RightUpperLeg","RightLowerLeg","RightFoot",
+}
+local FRIGID_HORNS_HAT_ASSET_ID = 74891470
+local HEADLESS_HEAD_ASSET_ID = 134082579
+local KORBLOX_RIGHT_LEG_ASSET_ID = 139607718
+local KORBLOX_PARTS = {
+    RightLowerLeg = { mesh = 902942093, hidden = true },
+    RightUpperLeg = { mesh = 902942096, texture = 902843398 },
+    RightFoot = { mesh = 902942089, hidden = true },
+}
+
+local function getCharAppearanceConfig()
+    local config = GetConfig()['Char']
+    return config or CharCfg or {}
+end
+
+local function isCharAppearanceOptionEnabled(name)
+    local config = getCharAppearanceConfig()
+    local accessories = config['Accessories']
+    if type(accessories) == "table" then
+        return accessories['Enabled'] == true and accessories[name] == true
+    end
+    return config[name] == true
+end
+
+local function applyCharOptionsToDescription(description)
+    if not description then return nil end
+    if isCharAppearanceOptionEnabled('Headless') then
+        pcall(function() description.Head = HEADLESS_HEAD_ASSET_ID end)
+        pcall(function() description.Face = 0 end)
+    end
+    if isCharAppearanceOptionEnabled('Korblox') then
+        pcall(function() description.RightLeg = KORBLOX_RIGHT_LEG_ASSET_ID end)
+    end
+    if isCharAppearanceOptionEnabled('Frigid Horns') then
+        pcall(function() description.Hat = FRIGID_HORNS_HAT_ASSET_ID end)
+end
+    return description
+end
+
+local function purgeHeadFaces(head)
+    if not head then return end
+    for _, child in ipairs(head:GetChildren()) do
+        if child:IsA("Decal") then
+            child.Transparency = 1
+        end
+    end
+end
+
+local function applyConfiguredHeadless(char)
+    if not isCharAppearanceOptionEnabled('Headless') then return end
+    local head = char and char:FindFirstChild("Head")
+    if not head then return end
+    head.Transparency = 1
+    purgeHeadFaces(head)
+end
+
+local function applyConfiguredKorblox(char)
+    if not char then return end
+    local existingShell = char:FindFirstChild("PhantomShell")
+    if not isCharAppearanceOptionEnabled('Korblox') then
+        if existingShell then existingShell:Destroy() end
+        return
+    end
+
+    local humanoid = char:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+    if humanoid.RigType == Enum.HumanoidRigType.R15 then
+        if existingShell then existingShell:Destroy() end
+        for partName, data in pairs(KORBLOX_PARTS) do
+            local part = char:FindFirstChild(partName)
+            if part then
+                pcall(function() part.MeshId = "rbxassetid://" .. data.mesh end)
+                if data.texture then
+                    pcall(function() part.TextureID = "rbxassetid://" .. data.texture end)
+                end
+                if data.hidden then
+                    part.Transparency = 1
+                end
+            end
+        end
+        return
+    end
+
+    local base = char:FindFirstChild("Right Leg")
+    if not base then return end
+    base.Transparency = 1
+    if existingShell then existingShell:Destroy() end
+
+    local shell = Instance.new("Part")
+    shell.Name = "PhantomShell"
+    shell.Size = Vector3.new(1, 2, 1)
+    shell.CanCollide = false
+    shell.CanTouch = false
+    shell.Massless = true
+    shell.CFrame = base.CFrame * CFrame.new(0, 0.75, 0)
+    shell.Parent = char
+
+    local weld = Instance.new("WeldConstraint")
+    weld.Part0 = shell
+    weld.Part1 = base
+    weld.Parent = shell
+
+    local mesh = Instance.new("SpecialMesh")
+    mesh.MeshType = Enum.MeshType.FileMesh
+    mesh.MeshId = "rbxassetid://902942093"
+    mesh.TextureId = "rbxassetid://902843398"
+    mesh.Scale = Vector3.new(0.85, 1.25, 0.85)
+    mesh.Parent = shell
+end
+
+local function applyConfiguredFrigidHorns(char)
+    if not isCharAppearanceOptionEnabled('Frigid Horns') then return end
+    local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+    task.spawn(function()
+        local ok, desc = pcall(function() return humanoid:GetAppliedDescription() end)
+        if not ok or not desc then return end
+        pcall(function() desc.Hat = FRIGID_HORNS_HAT_ASSET_ID end)
+        pcall(function() humanoid:ApplyDescription(desc) end)
+    end)
+end
+
+local function applyConfiguredCharBodyOptions(char)
+    applyConfiguredHeadless(char)
+    applyConfiguredKorblox(char)
+    applyConfiguredFrigidHorns(char)
+end
+local function applyConfiguredCharAnimations(char, userId)
+    local config = getCharAppearanceConfig()
+    if config['Override Animation'] == true then
+        local applyAnimationChanger = shared.__CiderApplyAnimationChanger
+        if type(applyAnimationChanger) == "function" then
+            applyAnimationChanger(char, true)
+        end
+        return
+    end
+    if typeof(mimicAnimationsFromUserId) == "function" then
+        mimicAnimationsFromUserId(userId, true)
+    end
+end
+
+local function bindStandaloneCharBodyOptions(char)
+    if standaloneAppearanceConn then
+        standaloneAppearanceConn:Disconnect()
+        standaloneAppearanceConn = nil
+    end
+    if not char then return end
+
+    applyConfiguredCharBodyOptions(char)
+    standaloneAppearanceConn = char.DescendantAdded:Connect(function(descendant)
+        if descendant:IsA("Decal") and descendant.Parent and descendant.Parent.Name == "Head" then
+            if isCharAppearanceOptionEnabled('Headless') then
+                descendant.Transparency = 1
+            end
+            return
+        end
+
+        local name = descendant.Name
+        if name == "Head" or name == "Humanoid" or name == "Right Leg" or KORBLOX_PARTS[name] then
+            task.defer(function()
+                if char.Parent then applyConfiguredCharBodyOptions(char) end
+            end)
+        end
+    end)
+end
+
+local function applyStandaloneCharBodyOptions(char)
+    bindStandaloneCharBodyOptions(char)
+    for _, delaySeconds in ipairs({ 0.1, 0.35, 0.75, 1.5 }) do
+        task.delay(delaySeconds, function()
+            if char.Parent then applyConfiguredCharBodyOptions(char) end
+        end)
+    end
+end
+
+local function bindConfiguredHeadlessFaceWatcher(head)
+    if not head or not isCharAppearanceOptionEnabled('Headless') then return end
+    local connection = head.ChildAdded:Connect(function(child)
+        if child:IsA("Decal") then
+            child.Transparency = 1
+        end
+    end)
+    appearanceScaleValueConns[#appearanceScaleValueConns + 1] = connection
+end
+
+local function disconnectAppearanceHooks()
+    if appearanceChildConn  then appearanceChildConn:Disconnect();  appearanceChildConn = nil end
+    for i = #appearanceScaleValueConns, 1, -1 do
+        local conn = appearanceScaleValueConns[i]
+        if conn and conn.Connected then conn:Disconnect() end
+        appearanceScaleValueConns[i] = nil
+    end
+end
+
+local function isCopyClass(className)      return COPY_CLASS_SET[className] == true end
+local function shouldCloneClass(className) return isCopyClass(className) and className ~= "BodyColors" end
+local function isAccessoryClass(className) return className == "Accessory" or className == "Hat" end
+
+local function buildBasePartMap(model)
+    local out = {}
+    if not model then return out end
+    for _, child in ipairs(model:GetChildren()) do
+        if child:IsA("BasePart") then
+            out[child.Name] = child
+        end
+    end
+    return out
+end
+
+local function buildAttachmentCarrierMap(partMap)
+    local carrier = {}
+    for partName, part in pairs(partMap or {}) do
+        for _, child in ipairs(part:GetChildren()) do
+            if child:IsA("Attachment") then
+                local prev = carrier[child.Name]
+                if prev == nil then
+                    carrier[child.Name] = partName
+                elseif prev ~= partName then
+                    carrier[child.Name] = false
+                end
+            end
+        end
+    end
+    return carrier
+end
+
+countMapEntries = nil
+pruneTimestampedCache = nil
+prunePairedTimestampCache = nil
+cacheGetTimed = nil
+cacheSetTimed = nil
+cacheGetEntry = nil
+cacheSetEntry = nil
+
+local function firstDecalTextureFromHead(head)
+    if not head then return nil end
+    for _, child in ipairs(head:GetChildren()) do
+        if child:IsA("Decal") and child.Face == Enum.NormalId.Front and child.Texture ~= "" then
+            return child.Texture
+        end
+    end
+    for _, child in ipairs(head:GetChildren()) do
+        if child:IsA("Decal") and child.Texture ~= "" then return child.Texture end
+    end
+    return nil
+end
+
+local function cacheFaceTexture(userId, texture)
+    if texture and texture ~= "" then
+        cacheSetTimed(faceTextureCache, faceTextureCacheTime, userId, texture, CACHE_MAX_ENTRIES.faceTexture)
+    end
+    return texture
+end
+
+local function resolveFaceFromAssetId(assetId, userId)
+    local okAsset, assetModel = pcall(function() return InsertService:LoadAsset(assetId) end)
+    if okAsset and assetModel then
+        local foundTexture = nil
+        for _, inst in ipairs(assetModel:GetDescendants()) do
+            if inst:IsA("Decal") and inst.Texture ~= "" then
+                foundTexture = inst.Texture
+                break
+            end
+        end
+        assetModel:Destroy()
+        if foundTexture then return cacheFaceTexture(userId, foundTexture) end
+    end
+    return cacheFaceTexture(userId, "rbxassetid://" .. tostring(assetId))
+end
+
+countMapEntries = function(map)
+    local count = 0
+    for _ in pairs(map) do count = count + 1 end
+    return count
+end
+
+pruneTimestampedCache = function(cache, maxEntries, onEvict)
+    local count = countMapEntries(cache)
+    while count > maxEntries do
+        local oldestKey, oldestTs = nil, math.huge
+        for k, entry in pairs(cache) do
+            local ts = (entry and entry.timestamp) or 0
+            if ts < oldestTs then
+                oldestTs = ts
+                oldestKey = k
+            end
+        end
+        if oldestKey == nil then break end
+        local evicted = cache[oldestKey]
+        cache[oldestKey] = nil
+        if onEvict then onEvict(oldestKey, evicted) end
+        count = count - 1
+    end
+end
+
+prunePairedTimestampCache = function(valueCache, timeCache, maxEntries)
+    local count = countMapEntries(valueCache)
+    while count > maxEntries do
+        local oldestKey, oldestTs = nil, math.huge
+        for k in pairs(valueCache) do
+            local ts = timeCache[k] or 0
+            if ts < oldestTs then
+                oldestTs = ts
+                oldestKey = k
+            end
+        end
+        if oldestKey == nil then break end
+        valueCache[oldestKey] = nil
+        timeCache[oldestKey] = nil
+        count = count - 1
+    end
+end
+
+function cacheGetTimedNow(valueCache, timeCache, key, ttlSeconds)
+    local value = valueCache[key]
+    local ts = timeCache[key]
+    if value ~= nil and ts and os.clock() - ts <= ttlSeconds then
+        return value
+    end
+    if value ~= nil then valueCache[key] = nil end
+    if ts ~= nil then timeCache[key] = nil end
+    return nil
+end
+
+function cacheSetTimedNow(valueCache, timeCache, key, value, maxEntries)
+    valueCache[key] = value
+    timeCache[key] = os.clock()
+    prunePairedTimestampCache(valueCache, timeCache, maxEntries)
+    return value
+end
+
+function cacheGetEntryNow(cache, key, ttlSeconds, onExpire)
+    local entry = cache[key]
+    if not entry then return nil end
+    if os.clock() - (entry.timestamp or 0) <= ttlSeconds then return entry end
+    if onExpire then onExpire(entry) end
+    cache[key] = nil
+    return nil
+end
+
+function cacheSetEntryNow(cache, key, entry, maxEntries, onEvict)
+    cache[key] = entry
+    pruneTimestampedCache(cache, maxEntries, onEvict)
+    return entry
+end
+
+cacheGetTimed = cacheGetTimedNow
+cacheSetTimed = cacheSetTimedNow
+cacheGetEntry = cacheGetEntryNow
+cacheSetEntry = cacheSetEntryNow
+
+function getCharacterAppearanceModel(userId)
+    local entry = cacheGetEntry(appearanceModelCache, userId, AVATAR_CACHE_TTL_SECONDS, function(expired)
+        if expired and expired.model then
+            pcall(function() expired.model:Destroy() end)
+        end
+    end)
+    if entry and entry.model then
+        local okClone, clone = pcall(function() return entry.model:Clone() end)
+        if okClone and clone then return clone end
+    end
+
+    local ok, model = false, nil
+    for attempt = 1, 2 do
+        local okAttempt, result = pcall(function() return Players:GetCharacterAppearanceAsync(userId) end)
+        if okAttempt and result then
+            ok, model = true, result
+            break
+        end
+        if attempt == 1 then task.wait(0.15) end
+    end
+    if not (ok and model) then
+        return nil
+    end
+
+    local okClone, stored = pcall(function() return model:Clone() end)
+    if okClone and stored then
+        local prev = appearanceModelCache[userId]
+        if prev and prev.model then pcall(function() prev.model:Destroy() end) end
+        cacheSetEntry(appearanceModelCache, userId, { model = stored, timestamp = os.clock() }, CACHE_MAX_ENTRIES.appearanceModel, function(_, entry)
+            if entry and entry.model then
+                pcall(function() entry.model:Destroy() end)
+            end
+        end)
+    end
+    return model
+end
+
+function getTargetDescriptionCached(userId)
+    local entry = cacheGetEntry(descriptionCache, userId, AVATAR_CACHE_TTL_SECONDS, function(expired)
+        if expired and expired.desc then
+            pcall(function() expired.desc:Destroy() end)
+        end
+    end)
+    if entry and entry.desc then
+        local okClone, clone = pcall(function() return entry.desc:Clone() end)
+        if okClone and clone then return clone end
+    end
+
+    local okDesc, desc = pcall(function() return Players:GetHumanoidDescriptionFromUserId(userId) end)
+    if not okDesc or not desc then
+        return nil
+    end
+
+    local okStore, stored = pcall(function() return desc:Clone() end)
+    if okStore and stored then
+        local prev = descriptionCache[userId]
+        if prev and prev.desc then pcall(function() prev.desc:Destroy() end) end
+        cacheSetEntry(descriptionCache, userId, { desc = stored, timestamp = os.clock() }, CACHE_MAX_ENTRIES.description, function(_, entry)
+            if entry and entry.desc then
+                pcall(function() entry.desc:Destroy() end)
+            end
+        end)
+    end
+
+    local okRet, ret = pcall(function() return desc:Clone() end)
+    return (okRet and ret) or desc
+end
+
+function getCharacterAppearanceInfoCached(userId)
+    local entry = cacheGetEntry(appearanceInfoCache, userId, AVATAR_CACHE_TTL_SECONDS)
+    if entry and entry.info then return entry.info end
+
+    local ok, info = pcall(function() return Players:GetCharacterAppearanceInfoAsync(userId) end)
+    if ok and info then
+        cacheSetEntry(appearanceInfoCache, userId, { info = info, timestamp = os.clock() }, CACHE_MAX_ENTRIES.appearanceInfo)
+        return info
+    end
+    return nil
+end
+
+function clearAvatarCaches()
+    for userId, entry in pairs(descriptionCache) do
+        if entry and entry.desc then pcall(function() entry.desc:Destroy() end) end
+        descriptionCache[userId] = nil
+    end
+    for userId, entry in pairs(appearanceModelCache) do
+        if entry and entry.model then pcall(function() entry.model:Destroy() end) end
+        appearanceModelCache[userId] = nil
+    end
+    for userId in pairs(appearanceInfoCache)    do appearanceInfoCache[userId] = nil end
+    for userId in pairs(faceTextureCache)       do
+        faceTextureCache[userId] = nil
+        faceTextureCacheTime[userId] = nil
+    end
+    for cacheKey in pairs(resolvedUserIdCacheTime) do
+        resolvedUserIdCache[cacheKey] = nil
+        resolvedUserIdCacheTime[cacheKey] = nil
+    end
+end
+
+function clearCopyChildren(char)
+    for _, inst in ipairs(char:GetChildren()) do
+        if isCopyClass(inst.ClassName) then pcall(function() inst:Destroy() end) end
+    end
+end
+
+function hasAnySourceBodyPart(model)
+    for _, partName in ipairs(BODY_PART_NAMES) do
+        if model:FindFirstChild(partName) then return true end
+    end
+    return false
+end
+
+function normalizeForLookup(value)
+    local v = string.lower(tostring(value or ""))
+    v = string.gsub(v, "^@", "")
+    v = string.gsub(v, "%s+", "")
+    v = string.gsub(v, "_+", "")
+    return v
+end
+
+function findUserIdInServerByNameOrDisplay(inputText)
+    local rawInput = tostring(inputText or ""):gsub("^%s+",""):gsub("%s+$","")
+    local needleRaw = string.lower(rawInput)
+    local needleNorm = normalizeForLookup(rawInput)
+    if needleNorm == "" then return nil end
+
+    local exactNameUserId = nil
+    local exactDisplayUserId = nil
+    local exactDisplayCount = 0
+    local prefixCandidates = {}
+
+    for _, player in ipairs(Players:GetPlayers()) do
+        local nameRaw = string.lower(player.Name)
+        local displayRaw = string.lower(player.DisplayName)
+        local nameNorm = normalizeForLookup(player.Name)
+        local displayNorm= normalizeForLookup(player.DisplayName)
+
+        if nameRaw == needleRaw or nameNorm == needleNorm then
+            exactNameUserId = player.UserId
+            break
+        end
+        if displayRaw == needleRaw or displayNorm == needleNorm then
+            exactDisplayUserId = player.UserId
+            exactDisplayCount = exactDisplayCount + 1
+        end
+        local namePrefix = (needleRaw ~= "" and string.sub(nameRaw,    1, #needleRaw)    == needleRaw)
+                           or string.sub(nameNorm,    1, #needleNorm)    == needleNorm
+        local displayPrefix = (needleRaw ~= "" and string.sub(displayRaw, 1, #needleRaw)    == needleRaw)
+                           or string.sub(displayNorm, 1, #needleNorm)    == needleNorm
+        if namePrefix or displayPrefix then
+            prefixCandidates[#prefixCandidates + 1] = player.UserId
+        end
+    end
+
+    if exactNameUserId               then return exactNameUserId    end
+    if exactDisplayCount == 1        then return exactDisplayUserId end
+    if #prefixCandidates > 0         then return prefixCandidates[1] end
+    if exactDisplayUserId            then return exactDisplayUserId end
+    return nil
+end
+
+function resolveUserToId(userInput)
+    if userInput == nil then return nil end
+    if type(userInput) == "number" then return math.floor(userInput) end
+    if type(userInput) ~= "string" then return nil end
+
+    local trimmed = userInput:gsub("^%s+",""):gsub("%s+$","")
+    if trimmed == "" then return nil end
+
+    local numeric = tonumber(trimmed)
+    if numeric then return math.floor(numeric) end
+
+    local username = trimmed:gsub("^@","")
+    if username == "" then return nil end
+
+    local cacheKey = normalizeForLookup(username)
+    if cacheKey == "" then return nil end
+
+    local cachedUserId = cacheGetTimed(resolvedUserIdCache, resolvedUserIdCacheTime, cacheKey, RESOLVED_USERID_TTL_SECONDS)
+    if cachedUserId then return cachedUserId end
+
+    local inServer = findUserIdInServerByNameOrDisplay(username)
+    if inServer then
+        return cacheSetTimed(resolvedUserIdCache, resolvedUserIdCacheTime, cacheKey, inServer, CACHE_MAX_ENTRIES.resolvedUserId)
+    end
+
+    local ok, uid = pcall(function() return Players:GetUserIdFromNameAsync(username) end)
+    if ok and uid then
+        return cacheSetTimed(resolvedUserIdCache, resolvedUserIdCacheTime, cacheKey, uid, CACHE_MAX_ENTRIES.resolvedUserId)
+    end
+    return nil
+end
+
+if okEnv and env then
+    env.__ResolveUserToIdShared = resolveUserToId
+end
+
+local function getDefaultTargetUserId()
+    return resolveUserToId(CONFIG.target)
+end
+
+local guiSpoofState = {
+    active = false,
+    serial = 0,
+    identity = nil,
+    originals = setmetatable({}, { __mode = "k" }),
+    identityCache = {},
+    connections = {},
+    boundObjects = setmetatable({}, { __mode = "k" }),
+    boundRoots = setmetatable({}, { __mode = "k" }),
+}
+
+local inspectHookKey = "__CiderInspectTargetState"
+local inspectHookState = okEnv and env and env[inspectHookKey] or nil
+if type(inspectHookState) ~= "table" then
+    inspectHookState = {
+        active = false,
+        targetUserId = nil,
+        targetName = nil,
+        targetDescription = nil,
+        hookInstalled = false,
+        hookVersion = 0,
+    }
+    if okEnv and env then env[inspectHookKey] = inspectHookState end
+end
+inspectHookState.refreshing = false
+inspectHookState.lastRefresh = tonumber(inspectHookState.lastRefresh) or 0
+local refreshAvatarVisualDescription = nil
+local clearAvatarVisuals = nil
+
+local function destroyInspectDescription()
+    local description = inspectHookState.targetDescription
+    inspectHookState.targetDescription = nil
+    inspectHookState.preferDescription = false
+    if description then pcall(function() description:Destroy() end) end
+end
+
+local function clearInspectTarget()
+    inspectHookState.active = false
+    inspectHookState.targetUserId = nil
+    inspectHookState.targetName = nil
+    inspectHookState.refreshing = false
+    inspectHookState.lastRefresh = 0
+    destroyInspectDescription()
+end
+
+local function setInspectTarget(userId, targetName, targetDescription)
+    local numericUserId = tonumber(userId)
+    if not numericUserId then return end
+    local changedTarget = inspectHookState.targetUserId ~= numericUserId
+    if changedTarget then
+        pcall(function() GuiService:CloseInspectMenu() end)
+        destroyInspectDescription()
+        inspectHookState.refreshing = false
+        inspectHookState.lastRefresh = 0
+    end
+    inspectHookState.active = true
+    inspectHookState.targetUserId = numericUserId
+    if targetName ~= nil then inspectHookState.targetName = tostring(targetName) end
+    if targetDescription then
+        applyCharOptionsToDescription(targetDescription)
+        destroyInspectDescription()
+        inspectHookState.targetDescription = targetDescription
+        inspectHookState.preferDescription = true
+    end
+end
+
+local function getInspectUserId(value)
+    local numeric = tonumber(value)
+    if numeric then return numeric end
+    local okId, resolved = pcall(function() return value.Id or value.UserId end)
+    if okId then return tonumber(resolved) end
+    return nil
+end
+
+local INSPECT_HOOK_VERSION = 2
+if inspectHookState.hookVersion ~= INSPECT_HOOK_VERSION then
+    local hookMM = hookmetamethod or (okEnv and env and env.hookmetamethod)
+    local getMethod = getnamecallmethod or (okEnv and env and env.getnamecallmethod)
+    if type(hookMM) == "function" and type(getMethod) == "function" then
+        local oldNamecall = nil
+        local callback = function(self, ...)
+            local method = getMethod()
+            local state = okEnv and env and env[inspectHookKey] or inspectHookState
+            if state and state.active and self == GuiService then
+                local args = { ... }
+                if method == "InspectPlayerFromUserId" then
+                    if getInspectUserId(args[1]) == localPlayer.UserId and state.targetUserId then
+                        if state.preferDescription and state.targetDescription then
+                            local description = state.targetDescription
+                            local targetName = state.targetName or tostring(state.targetUserId)
+                            task.defer(function()
+                                pcall(function() GuiService:CloseInspectMenu() end)
+                                pcall(function()
+                                    GuiService:InspectPlayerFromHumanoidDescription(description, targetName)
+                                end)
+                            end)
+                            return nil
+                        end
+                        args[1] = state.targetUserId
+                    end
+                elseif method == "InspectPlayerFromHumanoidDescription" then
+                    local requestedName = tostring(args[2] or "")
+                    if (
+                        requestedName == localPlayer.Name
+                        or requestedName == localPlayer.DisplayName
+                    ) and state.targetDescription then
+                        args[1] = state.targetDescription
+                        args[2] = state.targetName or requestedName
+                    end
+                end
+                return oldNamecall(self, table.unpack(args))
+            end
+            return oldNamecall(self, ...)
+        end
+        local wrapped = type(newcclosure) == "function" and newcclosure(callback) or callback
+        local okHook, originalNamecall = pcall(function()
+            return hookMM(game, "__namecall", wrapped)
+        end)
+        if okHook and type(originalNamecall) == "function" then
+            oldNamecall = originalNamecall
+            inspectHookState.hookInstalled = true
+            inspectHookState.hookVersion = INSPECT_HOOK_VERSION
+        end
+    end
+end
+
+local function isLocalInspectTitle(value)
+    if type(value) ~= "string" then return false end
+    local lowered = string.lower(value)
+    local names = { localPlayer.Name, localPlayer.DisplayName }
+    for _, name in ipairs(names) do
+        local loweredName = string.lower(tostring(name or ""))
+        if loweredName ~= "" then
+            if lowered == loweredName .. "'s avatar" or lowered == loweredName .. "’s avatar" then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+local function requestTargetInspectRefresh()
+    if not inspectHookState.active or not inspectHookState.targetUserId then return end
+    local now = os.clock()
+    if inspectHookState.refreshing or now - inspectHookState.lastRefresh < 1.5 then return end
+    inspectHookState.refreshing = true
+    inspectHookState.lastRefresh = now
+    task.defer(function()
+        if not inspectHookState.active or not inspectHookState.targetUserId then
+            inspectHookState.refreshing = false
+            return
+        end
+        pcall(function() GuiService:CloseInspectMenu() end)
+        task.wait()
+        local opened = false
+        if inspectHookState.targetDescription then
+            opened = pcall(function()
+                GuiService:InspectPlayerFromHumanoidDescription(
+                    inspectHookState.targetDescription,
+                    inspectHookState.targetName or tostring(inspectHookState.targetUserId)
+                )
+            end)
+        end
+        if not opened then
+            pcall(function()
+                GuiService:InspectPlayerFromUserId(inspectHookState.targetUserId)
+            end)
+        end
+        task.delay(1.25, function()
+            inspectHookState.refreshing = false
+        end)
+    end)
+end
+
+local function refreshStandaloneInspectDescription(char)
+    if runtimeState.active then return end
+    if not isCharAppearanceOptionEnabled('Headless') and not isCharAppearanceOptionEnabled('Korblox') and not isCharAppearanceOptionEnabled('Frigid Horns') then
+        clearInspectTarget()
+        if refreshAvatarVisualDescription then refreshAvatarVisualDescription(nil) end
+        return
+    end
+
+    task.spawn(function()
+        local humanoid = char and char:FindFirstChildOfClass("Humanoid")
+        if not humanoid and char then humanoid = char:WaitForChild("Humanoid", 10) end
+        if not humanoid or not char.Parent or runtimeState.active then return end
+
+        local description = nil
+        pcall(function() description = humanoid:GetAppliedDescription() end)
+        if not description then
+            description = getTargetDescriptionCached(localPlayer.UserId)
+        end
+        if not description or runtimeState.active then return end
+
+        applyCharOptionsToDescription(description)
+        setInspectTarget(localPlayer.UserId, localPlayer.DisplayName, description)
+        if refreshAvatarVisualDescription then
+            refreshAvatarVisualDescription(description, localPlayer.UserId)
+        end
+    end)
+end
+
+local function replacePlainText(value, from, to)
+    if type(value) ~= "string" or type(from) ~= "string" or from == "" then return value end
+    local pattern = from:gsub("([^%w])", "%%%1")
+    return value:gsub(pattern, function() return tostring(to or "") end)
+end
+
+local function isIdentityWordCharacter(character)
+    return type(character) == "string" and character ~= "" and string.match(character, "[%w_]") ~= nil
+end
+
+local function replaceIdentityText(value, from, to)
+    if type(value) ~= "string" or type(from) ~= "string" or from == "" then return value, false end
+    local output = {}
+    local cursor = 1
+    local changed = false
+    local firstNeedsBoundary = isIdentityWordCharacter(string.sub(from, 1, 1))
+    local lastNeedsBoundary = isIdentityWordCharacter(string.sub(from, -1))
+    while cursor <= #value do
+        local startIndex, endIndex = string.find(value, from, cursor, true)
+        if not startIndex then
+            output[#output + 1] = string.sub(value, cursor)
+            break
+        end
+        local before = startIndex > 1 and string.sub(value, startIndex - 1, startIndex - 1) or ""
+        local after = endIndex < #value and string.sub(value, endIndex + 1, endIndex + 1) or ""
+        local validBefore = not firstNeedsBoundary or not isIdentityWordCharacter(before)
+        local validAfter = not lastNeedsBoundary or not isIdentityWordCharacter(after)
+        if validBefore and validAfter then
+            output[#output + 1] = string.sub(value, cursor, startIndex - 1)
+            output[#output + 1] = tostring(to or "")
+            cursor = endIndex + 1
+            changed = true
+        else
+            output[#output + 1] = string.sub(value, cursor, startIndex)
+            cursor = startIndex + 1
+        end
+    end
+    return table.concat(output), changed
+end
+
+local function addIdentityReplacement(list, seen, from, to)
+    if type(from) ~= "string" or from == "" or seen[from] then return end
+    seen[from] = true
+    list[#list + 1] = { from = from, to = tostring(to or "") }
+end
+
+local function buildIdentityReplacements(identity)
+    local replacements = {}
+    local seen = {}
+    local function addVariants(from, to)
+        addIdentityReplacement(replacements, seen, from, to)
+        addIdentityReplacement(replacements, seen, string.lower(from), string.lower(to))
+        addIdentityReplacement(replacements, seen, string.upper(from), string.upper(to))
+    end
+    addVariants("@" .. localPlayer.Name, "@" .. identity.username)
+    addVariants(localPlayer.DisplayName, identity.displayName)
+    addVariants(localPlayer.Name, identity.username)
+    table.sort(replacements, function(a, b) return #a.from > #b.from end)
+    return replacements
+end
+
+local function getThumbnailContent(userId, thumbnailType, thumbnailSize)
+    local ok, content = pcall(function()
+        return Players:GetUserThumbnailAsync(userId, thumbnailType, thumbnailSize)
+    end)
+    if ok and type(content) == "string" and content ~= "" then return content end
+    return nil
+end
+
+local THUMBNAIL_SPECS = {
+    { Enum.ThumbnailType.HeadShot, "Size48x48", "headshot" },
+    { Enum.ThumbnailType.HeadShot, "Size60x60", "headshot" },
+    { Enum.ThumbnailType.HeadShot, "Size100x100", "headshot" },
+    { Enum.ThumbnailType.HeadShot, "Size150x150", "headshot" },
+    { Enum.ThumbnailType.HeadShot, "Size420x420", "headshot" },
+    { Enum.ThumbnailType.AvatarBust, "Size150x150", "bust" },
+    { Enum.ThumbnailType.AvatarBust, "Size352x352", "bust" },
+    { Enum.ThumbnailType.AvatarBust, "Size420x420", "bust" },
+    { Enum.ThumbnailType.AvatarThumbnail, "Size150x150", "full" },
+    { Enum.ThumbnailType.AvatarThumbnail, "Size352x352", "full" },
+    { Enum.ThumbnailType.AvatarThumbnail, "Size420x420", "full" },
+    { Enum.ThumbnailType.AvatarThumbnail, "Size720x720", "full" },
+}
+
+local function buildThumbnailContentMap(userId)
+    local map = {}
+    for _, spec in ipairs(THUMBNAIL_SPECS) do
+        local okSize, thumbnailSize = pcall(function() return Enum.ThumbnailSize[spec[2]] end)
+        if okSize and thumbnailSize then
+            local ownContent = getThumbnailContent(localPlayer.UserId, spec[1], thumbnailSize)
+            local targetContent = getThumbnailContent(userId, spec[1], thumbnailSize)
+            if ownContent and targetContent then map[ownContent] = targetContent end
+        end
+    end
+    return map
+end
+
+do
+local avatarVisualState = {
+    serial = 0,
+    active = false,
+    userId = nil,
+    description = nil,
+    modelTemplate = nil,
+    contentKinds = {},
+    overlays = setmetatable({}, { __mode = "k" }),
+    boundImages = setmetatable({}, { __mode = "k" }),
+    boundRoots = setmetatable({}, { __mode = "k" }),
+    connections = {},
+}
+
+local function disconnectAvatarVisualConnections()
+    for i = #avatarVisualState.connections, 1, -1 do
+        local connection = avatarVisualState.connections[i]
+        avatarVisualState.connections[i] = nil
+        if connection and connection.Connected then
+            pcall(function() connection:Disconnect() end)
+        end
+    end
+    avatarVisualState.boundImages = setmetatable({}, { __mode = "k" })
+    avatarVisualState.boundRoots = setmetatable({}, { __mode = "k" })
+end
+
+local function removeAvatarVisualOverlay(image)
+    local entry = avatarVisualState.overlays[image]
+    if not entry then return end
+    avatarVisualState.overlays[image] = nil
+    if image and image.Parent then
+        pcall(function()
+            if image.ImageTransparency == 1 then
+                image.ImageTransparency = entry.imageTransparency
+            end
+        end)
+    end
+    if entry.viewport then pcall(function() entry.viewport:Destroy() end) end
+end
+
+clearAvatarVisuals = function()
+    avatarVisualState.active = false
+    avatarVisualState.serial = avatarVisualState.serial + 1
+    disconnectAvatarVisualConnections()
+    for image in pairs(avatarVisualState.overlays) do
+        removeAvatarVisualOverlay(image)
+    end
+    avatarVisualState.overlays = setmetatable({}, { __mode = "k" })
+    avatarVisualState.contentKinds = {}
+    avatarVisualState.userId = nil
+    if avatarVisualState.modelTemplate then
+        pcall(function() avatarVisualState.modelTemplate:Destroy() end)
+        avatarVisualState.modelTemplate = nil
+    end
+    if avatarVisualState.description then
+        pcall(function() avatarVisualState.description:Destroy() end)
+        avatarVisualState.description = nil
+    end
+end
+
+local function classifyAvatarVisualImage(image)
+    if not avatarVisualState.active or not image then return nil end
+    local okImage, value = pcall(function() return image.Image end)
+    if not okImage or type(value) ~= "string" or value == "" then return nil end
+
+    local kind = avatarVisualState.contentKinds[value]
+    if not kind then
+        local lowerValue = string.lower(value)
+        local localId = tostring(localPlayer.UserId)
+        local targetId = tostring(avatarVisualState.userId or "")
+        if not string.find(value, localId, 1, true) and (targetId == "" or not string.find(value, targetId, 1, true)) then
+            return nil
+        end
+        if string.find(lowerValue, "headshot", 1, true) then
+            kind = "headshot"
+        elseif string.find(lowerValue, "bust", 1, true) then
+            kind = "bust"
+        elseif string.find(lowerValue, "avatar", 1, true) or string.find(lowerValue, "thumbnail", 1, true) then
+            kind = "full"
+        end
+    end
+    if not kind then return nil end
+
+    if kind == "full" then
+        local ancestor = image
+        for _ = 1, 8 do
+            if not ancestor then break end
+            local lowerName = string.lower(ancestor.Name or "")
+            if string.find(lowerName, "playerlist", 1, true)
+                or string.find(lowerName, "player_list", 1, true)
+                or string.find(lowerName, "player list", 1, true)
+                or string.find(lowerName, "playercard", 1, true)
+                or string.find(lowerName, "playerprofile", 1, true) then
+                return nil
+            end
+            local nearby = ancestor:GetDescendants()
+            for i = 1, MathMin(#nearby, 100) do
+                local item = nearby[i]
+                if item:IsA("TextLabel") or item:IsA("TextButton") then
+                    local okText, text = pcall(function() return string.lower(item.Text or "") end)
+                    if okText and string.find(text, "in this server", 1, true) then
+                        return nil
+                    end
+                end
+            end
+            ancestor = ancestor.Parent
+        end
+    end
+    return kind
+end
+
+local function createAvatarVisualModel(description)
+    local model = nil
+    local okModel = pcall(function()
+        model = Players:CreateHumanoidModelFromDescription(description, Enum.HumanoidRigType.R15)
+    end)
+    if not okModel or not model then return nil end
+    for _, descendant in ipairs(model:GetDescendants()) do
+        if descendant:IsA("BasePart") then
+            descendant.Anchored = true
+            descendant.CanCollide = false
+            descendant.CanTouch = false
+            descendant.CanQuery = false
+        elseif descendant:IsA("Script") or descendant:IsA("LocalScript") then
+            descendant:Destroy()
+        end
+    end
+    local humanoid = model:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+    end
+    return model
+end
+
+local function getAvatarBodyFrame(model, fieldOfView)
+    local minimum = nil
+    local maximum = nil
+    for _, child in ipairs(model:GetChildren()) do
+        if child:IsA("BasePart") then
+            local half = child.Size / 2
+            local partMinimum = child.Position - half
+            local partMaximum = child.Position + half
+            minimum = minimum and Vector3New(
+                MathMin(minimum.X, partMinimum.X),
+                MathMin(minimum.Y, partMinimum.Y),
+                MathMin(minimum.Z, partMinimum.Z)
+            ) or partMinimum
+            maximum = maximum and Vector3New(
+                MathMax(maximum.X, partMaximum.X),
+                MathMax(maximum.Y, partMaximum.Y),
+                MathMax(maximum.Z, partMaximum.Z)
+            ) or partMaximum
+        end
+    end
+    if not minimum or not maximum then return nil, nil end
+
+    local size = maximum - minimum
+    local focus = (minimum + maximum) / 2
+    local bodySize = MathMax(size.Y, size.X * 1.35, 4)
+    local distance = bodySize / (2 * math.tan(MathRad(fieldOfView) / 2)) * 1.08
+    return focus, distance
+end
+
+local function frameAvatarVisualModel(viewport, model, kind)
+    local camera = Instance.new("Camera")
+    camera.FieldOfView = kind == "full" and 28 or 24
+    camera.Parent = viewport
+    viewport.CurrentCamera = camera
+
+    local focus = nil
+    local distance = nil
+    if kind == "headshot" or kind == "bust" then
+        local head = model:FindFirstChild("Head")
+        local upperTorso = model:FindFirstChild("UpperTorso") or model:FindFirstChild("Torso")
+        if head then
+            focus = head.Position + Vector3New(0, kind == "bust" and -0.35 or -0.05, 0)
+            distance = kind == "bust" and 6.2 or 4.3
+        elseif upperTorso then
+            focus = upperTorso.Position + Vector3New(0, 0.7, 0)
+            distance = 5
+        end
+    end
+
+    if not focus then
+        focus, distance = getAvatarBodyFrame(model, camera.FieldOfView)
+    end
+    if not focus then
+        local root = model:FindFirstChild("HumanoidRootPart")
+        focus = root and root.Position + Vector3New(0, 0.25, 0) or Vector3Zero
+        distance = 12
+    end
+
+    local root = model:FindFirstChild("HumanoidRootPart")
+    local front = root and root.CFrame.LookVector or Vector3New(0, 0, -1)
+    camera.CFrame = CFrameNew(focus + front * distance, focus)
+end
+
+local function applyAvatarVisualToImage(image)
+    if not avatarVisualState.active or not avatarVisualState.description or not image.Parent then return end
+    local kind = classifyAvatarVisualImage(image)
+    if not kind then
+        removeAvatarVisualOverlay(image)
+        return
+    end
+
+    local current = avatarVisualState.overlays[image]
+    if current and current.kind == kind and current.viewport and current.viewport.Parent then return end
+    removeAvatarVisualOverlay(image)
+
+    local model = nil
+    if avatarVisualState.modelTemplate then
+        pcall(function() model = avatarVisualState.modelTemplate:Clone() end)
+    end
+    if not model then return end
+
+    local viewport = Instance.new("ViewportFrame")
+    viewport.Name = "CiderAvatarVisual"
+    viewport.BackgroundTransparency = 1
+    viewport.BorderSizePixel = 0
+    viewport.Size = UDim2.fromScale(1, 1)
+    viewport.Position = UDim2.fromScale(0, 0)
+    viewport.AnchorPoint = Vector2New(0, 0)
+    viewport.ZIndex = image.ZIndex + 1
+    viewport.Active = false
+    viewport.Ambient = Color3RGB(190, 190, 190)
+    viewport.LightColor = Color3RGB(255, 255, 255)
+    viewport.LightDirection = Vector3New(-1, -1, -1)
+
+    local world = Instance.new("WorldModel")
+    world.Parent = viewport
+    model.Parent = world
+    frameAvatarVisualModel(viewport, model, kind)
+
+    local corner = image:FindFirstChildOfClass("UICorner")
+    if corner then corner:Clone().Parent = viewport end
+
+    local originalTransparency = image.ImageTransparency
+    avatarVisualState.overlays[image] = {
+        viewport = viewport,
+        imageTransparency = originalTransparency,
+        kind = kind,
+    }
+    viewport.Parent = image
+    image.ImageTransparency = 1
+end
+
+local function bindAvatarVisualImage(image)
+    if not image or avatarVisualState.boundImages[image] then return end
+    if not image:IsA("ImageLabel") and not image:IsA("ImageButton") then return end
+    avatarVisualState.boundImages[image] = true
+    local connection = image:GetPropertyChangedSignal("Image"):Connect(function()
+        if not avatarVisualState.active then return end
+        task.defer(function()
+            if image.Parent then applyAvatarVisualToImage(image) end
+        end)
+    end)
+    avatarVisualState.connections[#avatarVisualState.connections + 1] = connection
+    applyAvatarVisualToImage(image)
+end
+
+local function watchAvatarVisualRoot(root)
+    if not root or avatarVisualState.boundRoots[root] then return end
+    avatarVisualState.boundRoots[root] = true
+    local connection = root.DescendantAdded:Connect(function(instance)
+        if not avatarVisualState.active then return end
+        bindAvatarVisualImage(instance)
+    end)
+    avatarVisualState.connections[#avatarVisualState.connections + 1] = connection
+end
+
+local function scanAvatarVisualGui()
+    if not avatarVisualState.active then return end
+    local roots = { CoreGui, localPlayer:FindFirstChildOfClass("PlayerGui") }
+    for _, root in ipairs(roots) do
+        if root then
+            watchAvatarVisualRoot(root)
+            for _, instance in ipairs(root:GetDescendants()) do
+                bindAvatarVisualImage(instance)
+            end
+        end
+    end
+end
+
+refreshAvatarVisualDescription = function(description, userId)
+    clearAvatarVisuals()
+    if not description then return end
+    if not isCharAppearanceOptionEnabled('Headless') and not isCharAppearanceOptionEnabled('Korblox') and not isCharAppearanceOptionEnabled('Frigid Horns') then return end
+
+    local clonedDescription = nil
+    pcall(function() clonedDescription = description:Clone() end)
+    if not clonedDescription then return end
+
+    applyCharOptionsToDescription(clonedDescription)
+    local modelTemplate = createAvatarVisualModel(clonedDescription)
+    if not modelTemplate then
+        clonedDescription:Destroy()
+        return
+    end
+    avatarVisualState.description = clonedDescription
+    avatarVisualState.modelTemplate = modelTemplate
+    avatarVisualState.userId = tonumber(userId) or localPlayer.UserId
+    avatarVisualState.active = true
+    avatarVisualState.serial = avatarVisualState.serial + 1
+    local visualToken = avatarVisualState.serial
+
+    scanAvatarVisualGui()
+    task.spawn(function()
+        local userIds = { localPlayer.UserId }
+        if avatarVisualState.userId ~= localPlayer.UserId then
+            userIds[#userIds + 1] = avatarVisualState.userId
+        end
+        local contentKinds = {}
+        for _, thumbnailUserId in ipairs(userIds) do
+            for _, spec in ipairs(THUMBNAIL_SPECS) do
+                if not avatarVisualState.active or visualToken ~= avatarVisualState.serial then return end
+                local okSize, thumbnailSize = pcall(function() return Enum.ThumbnailSize[spec[2]] end)
+                if okSize and thumbnailSize then
+                    local content = getThumbnailContent(thumbnailUserId, spec[1], thumbnailSize)
+                    if content then contentKinds[content] = spec[3] end
+                end
+            end
+        end
+        if not avatarVisualState.active or visualToken ~= avatarVisualState.serial then return end
+        avatarVisualState.contentKinds = contentKinds
+        scanAvatarVisualGui()
+    end)
+end
+end
+
+local function getTargetIdentity(userId)
+    local cached = guiSpoofState.identityCache[userId]
+    if cached and os.clock() - cached.timestamp <= 60 then return cached.identity end
+
+    local targetPlayer = nil
+    pcall(function() targetPlayer = Players:GetPlayerByUserId(userId) end)
+    local username = targetPlayer and targetPlayer.Name or nil
+    local displayName = targetPlayer and targetPlayer.DisplayName or nil
+
+    if not username or not displayName then
+        local okUserService, userService = pcall(function() return game:GetService("UserService") end)
+        if okUserService and userService then
+            local okInfo, infos = pcall(function()
+                return userService:GetUserInfosByUserIdsAsync({ userId })
+            end)
+            local info = okInfo and type(infos) == "table" and infos[1] or nil
+            if info then
+                username = username or info.Username or info.Name
+                displayName = displayName or info.DisplayName
+            end
+        end
+    end
+
+    if not username then
+        local okName, name = pcall(function() return Players:GetNameFromUserIdAsync(userId) end)
+        if okName then username = name end
+    end
+
+    username = tostring(username or userId)
+    displayName = tostring(displayName or username)
+
+    local identity = {
+        userId = userId,
+        username = username,
+        displayName = displayName,
+        thumbnailMap = {},
+    }
+    identity.replacements = buildIdentityReplacements(identity)
+    guiSpoofState.identityCache[userId] = {
+        identity = identity,
+        timestamp = os.clock(),
+    }
+    task.spawn(function()
+        local thumbnailMap = buildThumbnailContentMap(userId)
+        local entry = guiSpoofState.identityCache[userId]
+        if entry and entry.identity == identity then
+            identity.thumbnailMap = thumbnailMap
+        end
+    end)
+    return identity
+end
+
+local function rememberGuiProperty(instance, property, originalValue, spoofedValue)
+    local properties = guiSpoofState.originals[instance]
+    if not properties then
+        properties = {}
+        guiSpoofState.originals[instance] = properties
+    end
+    local entry = properties[property]
+    if not entry then
+        entry = { original = originalValue, spoofed = spoofedValue }
+        properties[property] = entry
+    else
+        entry.spoofed = spoofedValue
+    end
+end
+
+local function disconnectGuiIdentityConnections()
+    for i = #guiSpoofState.connections, 1, -1 do
+        local connection = guiSpoofState.connections[i]
+        guiSpoofState.connections[i] = nil
+        if connection and connection.Connected then
+            pcall(function() connection:Disconnect() end)
+        end
+    end
+    guiSpoofState.boundObjects = setmetatable({}, { __mode = "k" })
+    guiSpoofState.boundRoots = setmetatable({}, { __mode = "k" })
+end
+
+local function restoreGuiIdentity()
+    guiSpoofState.active = false
+    guiSpoofState.serial = guiSpoofState.serial + 1
+    disconnectGuiIdentityConnections()
+    for instance, properties in pairs(guiSpoofState.originals) do
+        if instance then
+            for property, entry in pairs(properties) do
+                pcall(function()
+                    if instance[property] == entry.spoofed then
+                        instance[property] = entry.original
+                    end
+                end)
+            end
+        end
+    end
+    guiSpoofState.originals = setmetatable({}, { __mode = "k" })
+    guiSpoofState.identity = nil
+    runtimeState.guiIdentity = nil
+end
+
+local function spoofIdentityText(value, identity)
+    if type(value) ~= "string" or value == "" then return value end
+    local result = value
+    local applied = {}
+    for index, replacement in ipairs(identity.replacements) do
+        local token = "\1CIDER_ID_" .. tostring(index) .. "\2"
+        local replaced, changed = replaceIdentityText(result, replacement.from, token)
+        if changed then
+            result = replaced
+            applied[#applied + 1] = { token = token, value = replacement.to }
+        end
+    end
+    for _, replacement in ipairs(applied) do
+        result = replacePlainText(result, replacement.token, replacement.value)
+    end
+    return result
+end
+
+local function spoofIdentityImage(value, identity)
+    if type(value) ~= "string" or value == "" then return value end
+    local mapped = identity.thumbnailMap[value]
+    if mapped then return mapped end
+    local lowerValue = string.lower(value)
+    local localId = tostring(localPlayer.UserId)
+    if not string.find(value, localId, 1, true) then return value end
+    if not (
+        string.find(lowerValue, "rbxthumb", 1, true)
+        or string.find(lowerValue, "thumbnail", 1, true)
+        or string.find(lowerValue, "headshot", 1, true)
+        or string.find(lowerValue, "avatar", 1, true)
+        or string.find(lowerValue, "userid", 1, true)
+        or string.find(lowerValue, "userids", 1, true)
+    ) then
+        return value
+    end
+    return replacePlainText(value, localId, tostring(identity.userId))
+end
+
+local function applyIdentityToGuiObject(instance, identity)
+    if not instance then return end
+    if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
+        local okText, currentText = pcall(function() return instance.Text end)
+        if okText then
+            if isLocalInspectTitle(currentText) then requestTargetInspectRefresh() end
+            local spoofedText = spoofIdentityText(currentText, identity)
+            if spoofedText ~= currentText then
+                local okSet = pcall(function() instance.Text = spoofedText end)
+                if okSet then rememberGuiProperty(instance, "Text", currentText, spoofedText) end
+            end
+        end
+    elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
+        local okImage, currentImage = pcall(function() return instance.Image end)
+        if okImage then
+            local spoofedImage = spoofIdentityImage(currentImage, identity)
+            if spoofedImage ~= currentImage then
+                local okSet = pcall(function() instance.Image = spoofedImage end)
+                if okSet then rememberGuiProperty(instance, "Image", currentImage, spoofedImage) end
+            end
+        end
+    end
+end
+
+local function bindIdentityGuiObject(instance, identity)
+    if not instance or guiSpoofState.boundObjects[instance] then return end
+    local property = nil
+    if instance:IsA("TextLabel") or instance:IsA("TextButton") or instance:IsA("TextBox") then
+        property = "Text"
+    elseif instance:IsA("ImageLabel") or instance:IsA("ImageButton") then
+        property = "Image"
+    end
+    if not property then return end
+    local okConnection, connection = pcall(function()
+        return instance:GetPropertyChangedSignal(property):Connect(function()
+            if not guiSpoofState.active or guiSpoofState.identity ~= identity then return end
+            applyIdentityToGuiObject(instance, identity)
+        end)
+    end)
+    if okConnection and connection then
+        guiSpoofState.boundObjects[instance] = true
+        guiSpoofState.connections[#guiSpoofState.connections + 1] = connection
+    end
+end
+
+local function watchIdentityRoot(root, identity)
+    if not root or guiSpoofState.boundRoots[root] then return end
+    local okConnection, connection = pcall(function()
+        return root.DescendantAdded:Connect(function(instance)
+            if not guiSpoofState.active or guiSpoofState.identity ~= identity then return end
+            bindIdentityGuiObject(instance, identity)
+            applyIdentityToGuiObject(instance, identity)
+        end)
+    end)
+    if okConnection and connection then
+        guiSpoofState.boundRoots[root] = true
+        guiSpoofState.connections[#guiSpoofState.connections + 1] = connection
+    end
+end
+
+local function scanIdentityGui(identity)
+    local roots = { CoreGui, localPlayer:FindFirstChildOfClass("PlayerGui") }
+    for _, root in ipairs(roots) do
+        if root then
+            watchIdentityRoot(root, identity)
+            applyIdentityToGuiObject(root, identity)
+            local okDescendants, descendants = pcall(function() return root:GetDescendants() end)
+            if okDescendants then
+                for _, instance in ipairs(descendants) do
+                    bindIdentityGuiObject(instance, identity)
+                    applyIdentityToGuiObject(instance, identity)
+                end
+            end
+        end
+    end
+end
+
+local function startGuiIdentity(userId, applyToken)
+    restoreGuiIdentity()
+    clearAvatarVisuals()
+    setInspectTarget(userId)
+    guiSpoofState.active = true
+    guiSpoofState.serial = guiSpoofState.serial + 1
+    local guiToken = guiSpoofState.serial
+    task.spawn(function()
+        local identity = getTargetIdentity(userId)
+        if not guiSpoofState.active or guiToken ~= guiSpoofState.serial then return end
+        if not runtimeState.active or applyToken ~= applySerial then return end
+        guiSpoofState.identity = identity
+        runtimeState.guiIdentity = identity
+        setInspectTarget(userId, identity.displayName)
+        task.spawn(function()
+            local targetDescription = getTargetDescriptionCached(userId)
+            if not guiSpoofState.active or guiToken ~= guiSpoofState.serial then
+                if targetDescription then pcall(function() targetDescription:Destroy() end) end
+                return
+            end
+            if targetDescription then
+                setInspectTarget(userId, identity.displayName, targetDescription)
+                refreshAvatarVisualDescription(targetDescription, userId)
+            end
+        end)
+        while guiSpoofState.active and guiToken == guiSpoofState.serial and runtimeState.active and applyToken == applySerial do
+            scanIdentityGui(identity)
+            task.wait(2)
+        end
+    end)
+end
+
+local function destroyColorSnapshot(snapshot)
+    if not snapshot then return end
+    if snapshot.bodyColors then
+        pcall(function() snapshot.bodyColors:Destroy() end)
+        snapshot.bodyColors = nil
+    end
+end
+
+local function teardown()
+    local previousSnapshot = runtimeState.colorSnapshot
+    runtimeState.active = false
+    applySerial = applySerial + 1
+    runtimeState.currentUserId = nil
+    destroyColorSnapshot(previousSnapshot)
+    runtimeState.colorSnapshot = nil
+    targetUserId = nil
+    disconnectAppearanceHooks()
+    restoreGuiIdentity()
+    clearInspectTarget()
+    clearAvatarVisuals()
+    if characterAddedConn then characterAddedConn:Disconnect(); characterAddedConn = nil end
+    if standaloneAppearanceConn then standaloneAppearanceConn:Disconnect(); standaloneAppearanceConn = nil end
+    clearAvatarCaches()
+    
+
+    if typeof(animCleanup) == "function" then
+        animCleanup()
+    end
+
+    if okEnv and env then
+        if env.__CopyOutfitColorSnapshot and env.__CopyOutfitColorSnapshot ~= previousSnapshot then
+            destroyColorSnapshot(env.__CopyOutfitColorSnapshot)
+        end
+        env.__CopyOutfitColorSnapshot = nil
+        if env[stateKey] == runtimeState then env[stateKey] = nil end
+    end
+end
+runtimeState.teardown = teardown
+
+local function snapshotCharacterColors(char)
+    if not char then return nil end
+    local snapshot = { bodyColors = nil, partColors = {} }
+    local bc = char:FindFirstChildOfClass("BodyColors")
+    if bc then snapshot.bodyColors = bc:Clone() end
+    for _, child in ipairs(char:GetChildren()) do
+        if child:IsA("BasePart") then
+            snapshot.partColors[child.Name] = child.BrickColor
+        end
+    end
+    return snapshot
+end
+
+local function publishColorSnapshot(char)
+    destroyColorSnapshot(runtimeState.colorSnapshot)
+    local snapshot = snapshotCharacterColors(char)
+    runtimeState.colorSnapshot = snapshot
+    if okEnv and env then env.__CopyOutfitColorSnapshot = snapshot end
+end
+
+local function isApplyStillCurrent(applyToken)
+    return runtimeState.active and applyToken == applySerial
+end
+
+local function applyFaceTexture(char, texture)
+    local head = char:FindFirstChild("Head")
+    if not head then return end
+    if isCharAppearanceOptionEnabled('Headless') then
+        head.Transparency = 1
+        purgeHeadFaces(head)
+        return
+    end
+
+
+	
+    for _, child in ipairs(head:GetChildren()) do
+        if child:IsA("Decal") and (child.Name == "face" or child.Face == Enum.NormalId.Front) then
+            child:Destroy()
+        end
+    end
+
+
+	
+    if head:IsA("MeshPart") then
+        pcall(function() head.TextureID = "" end)
+    end
+    local mesh = head:FindFirstChildOfClass("SpecialMesh")
+    if mesh then
+        pcall(function() mesh.TextureId = "" end)
+    end
+    local sa = head:FindFirstChildOfClass("SurfaceAppearance")
+    if sa then
+        pcall(function() sa:Destroy() end)
+    end
+
+    if not texture or texture == "" then 
+        texture = "rbxassetid://0" 
+    end
+
+    local decal = Instance.new("Decal")
+    decal.Name = "face"
+    decal.Face = Enum.NormalId.Front
+    decal.Texture = texture
+    decal.Parent = head
+end
+
+local function resolveFaceTexture(userId, appearanceModel, targetDesc)
+    local cached = cacheGetTimed(faceTextureCache, faceTextureCacheTime, userId, AVATAR_CACHE_TTL_SECONDS)
+    if cached then return cached end
+
+    local appearanceHead = appearanceModel and appearanceModel:FindFirstChild("Head")
+    local direct = firstDecalTextureFromHead(appearanceHead)
+    if direct then return cacheFaceTexture(userId, direct) end
+
+    if targetDesc and targetDesc.Face and targetDesc.Face ~= 0 then
+        return resolveFaceFromAssetId(targetDesc.Face, userId)
+    end
+
+    local info = getCharacterAppearanceInfoCached(userId)
+    if info and info.assets then
+        for _, asset in ipairs(info.assets) do
+            if asset.assetType and asset.assetType.id == 18 and asset.id then
+                return resolveFaceFromAssetId(asset.id, userId)
+            end
+        end
+    end
+
+    local okModel, tempModel = pcall(function() return Players:CreateHumanoidModelFromUserId(userId) end)
+    if okModel and tempModel then
+        local tempHead = tempModel:FindFirstChild("Head")
+        local tempTexture = firstDecalTextureFromHead(tempHead)
+        tempModel:Destroy()
+        if tempTexture then return cacheFaceTexture(userId, tempTexture) end
+    end
+
+    return nil
+end
+
+local function buildSourcePartSizeMap(srcModel)
+    local sizes = {}
+    for _, part in ipairs(srcModel:GetChildren()) do
+        if part:IsA("BasePart") then sizes[part.Name] = part.Size end
+    end
+    return sizes
+end
+
+local function scaleAccessoryOnce(acc, char, sourcePartSizeMap, charPartMap, attachmentCarrierMap)
+    local handle = acc:FindFirstChild("Handle")
+    if not handle or not handle:IsA("BasePart") then return end
+
+    local matchedPartName = nil
+    for _, hChild in ipairs(handle:GetChildren()) do
+        if hChild:IsA("Attachment") then
+            local carrier = attachmentCarrierMap and attachmentCarrierMap[hChild.Name] or nil
+            if type(carrier) == "string" then
+                matchedPartName = carrier
+                break
+            end
+            if carrier == false then
+                local scanMap = charPartMap or buildBasePartMap(char)
+                for partName, bodyPart in pairs(scanMap) do
+                    if bodyPart and bodyPart:IsA("BasePart") and bodyPart:FindFirstChild(hChild.Name) then
+                        matchedPartName = partName
+                        break
+                    end
+                end
+            end
+        end
+        if matchedPartName then break end
+    end
+
+    if not handle:GetAttribute("_cpBaseSizeX") then
+        handle:SetAttribute("_cpBaseSizeX", handle.Size.X)
+        handle:SetAttribute("_cpBaseSizeY", handle.Size.Y)
+        handle:SetAttribute("_cpBaseSizeZ", handle.Size.Z)
+        for _, hChild in ipairs(handle:GetChildren()) do
+            if hChild:IsA("Attachment") then
+                hChild:SetAttribute("_cpBasePosX", hChild.Position.X)
+                hChild:SetAttribute("_cpBasePosY", hChild.Position.Y)
+                hChild:SetAttribute("_cpBasePosZ", hChild.Position.Z)
+            end
+        end
+        local sm0 = handle:FindFirstChildOfClass("SpecialMesh")
+        if sm0 then
+            sm0:SetAttribute("_cpBaseScaleX", sm0.Scale.X)
+            sm0:SetAttribute("_cpBaseScaleY", sm0.Scale.Y)
+            sm0:SetAttribute("_cpBaseScaleZ", sm0.Scale.Z)
+        end
+    end
+
+    local scale = nil
+    if matchedPartName then
+        local srcSize = sourcePartSizeMap[matchedPartName]
+        local dstPart = char:FindFirstChild(matchedPartName)
+        if srcSize and dstPart and dstPart:IsA("BasePart") then
+            local sx = math.max(srcSize.X, 0.001)
+            local sy = math.max(srcSize.Y, 0.001)
+            local sz = math.max(srcSize.Z, 0.001)
+            scale = (dstPart.Size.X/sx + dstPart.Size.Y/sy + dstPart.Size.Z/sz) / 3
+        end
+    end
+
+    local function applyScale(s)
+        local bx = handle:GetAttribute("_cpBaseSizeX")
+        local by = handle:GetAttribute("_cpBaseSizeY")
+        local bz = handle:GetAttribute("_cpBaseSizeZ")
+        if bx and by and bz then
+            pcall(function() handle.Size = Vector3.new(bx*s, by*s, bz*s) end)
+        end
+        for _, hChild in ipairs(handle:GetChildren()) do
+            if hChild:IsA("Attachment") then
+                local apx = hChild:GetAttribute("_cpBasePosX")
+                local apy = hChild:GetAttribute("_cpBasePosY")
+                local apz = hChild:GetAttribute("_cpBasePosZ")
+                if apx and apy and apz then
+                    pcall(function() hChild.Position = Vector3.new(apx*s, apy*s, apz*s) end)
+                end
+            end
+        end
+        local sm = handle:FindFirstChildOfClass("SpecialMesh")
+        if sm then
+            local msx = sm:GetAttribute("_cpBaseScaleX")
+            local msy = sm:GetAttribute("_cpBaseScaleY")
+            local msz = sm:GetAttribute("_cpBaseScaleZ")
+            pcall(function()
+                if msx and msy and msz then
+                    sm.Scale = Vector3.new(msx*s, msy*s, msz*s)
+                else
+                    sm.Scale = sm.Scale * s
+                end
+            end)
+        end
+    end
+
+    if scale and math.abs(scale - 1) > 0.01 then
+        applyScale(scale)
+    else
+        applyScale(1)
+    end
+end
+
+local function scaleAllAccessories(char, sourcePartSizeMap, charPartMap, attachmentCarrierMap)
+    for _, child in ipairs(char:GetChildren()) do
+        if isAccessoryClass(child.ClassName) then
+            scaleAccessoryOnce(child, char, sourcePartSizeMap, charPartMap, attachmentCarrierMap)
+        end
+    end
+end
+
+local function applyBodyFromDescription(targetDesc, char)
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if not hum or not targetDesc then return false end
+    for _, fieldName in ipairs(COPY_ANIMATION_FIELDS) do
+        pcall(function() targetDesc[fieldName] = 0 end)
+    end
+    local okApply = pcall(function() hum:ApplyDescription(targetDesc) end)
+    return okApply
+end
+
+local function toColor3(value)
+    local kind = typeof(value)
+    if kind == "Color3"    then return value end
+    if kind == "BrickColor"then return value.Color end
+    if kind == "number"    then
+        local ok, brick = pcall(function() return BrickColor.new(value) end)
+        if ok and brick then return brick.Color end
+    end
+    return nil
+end
+
+local function enforceSkinColorFromDescription(targetDesc, char, sourceModel, preferredSnapshot)
+    if not char then return end
+    local bodyColors = char:FindFirstChildOfClass("BodyColors")
+    if not bodyColors then
+        bodyColors = Instance.new("BodyColors")
+        bodyColors.Parent = char
+    end
+
+    local preferredBodyColors = preferredSnapshot and preferredSnapshot.bodyColors or nil
+    local sourceBodyColors = sourceModel and sourceModel:FindFirstChildOfClass("BodyColors")
+
+    local headColor = (preferredBodyColors and preferredBodyColors.HeadColor3)      or (targetDesc and toColor3(targetDesc.HeadColor))      or (sourceBodyColors and sourceBodyColors.HeadColor3)
+    local leftArmColor = (preferredBodyColors and preferredBodyColors.LeftArmColor3)   or (targetDesc and toColor3(targetDesc.LeftArmColor))   or (sourceBodyColors and sourceBodyColors.LeftArmColor3)
+    local rightArmColor = (preferredBodyColors and preferredBodyColors.RightArmColor3)  or (targetDesc and toColor3(targetDesc.RightArmColor))  or (sourceBodyColors and sourceBodyColors.RightArmColor3)
+    local torsoColor = (preferredBodyColors and preferredBodyColors.TorsoColor3)     or (targetDesc and toColor3(targetDesc.TorsoColor))     or (sourceBodyColors and sourceBodyColors.TorsoColor3)
+    local leftLegColor = (preferredBodyColors and preferredBodyColors.LeftLegColor3)   or (targetDesc and toColor3(targetDesc.LeftLegColor))   or (sourceBodyColors and sourceBodyColors.LeftLegColor3)
+    local rightLegColor = (preferredBodyColors and preferredBodyColors.RightLegColor3)  or (targetDesc and toColor3(targetDesc.RightLegColor))  or (sourceBodyColors and sourceBodyColors.RightLegColor3)
+
+    local preferredPartColors = preferredSnapshot and preferredSnapshot.partColors or nil
+    local function pickPartColor(partName, fallbackColor)
+        if preferredPartColors then
+            local preferred = toColor3(preferredPartColors[partName])
+            if preferred then return preferred end
+        end
+        return fallbackColor
+    end
+
+    if headColor     then bodyColors.HeadColor3 = headColor     end
+    if leftArmColor  then bodyColors.LeftArmColor3 = leftArmColor  end
+    if rightArmColor then bodyColors.RightArmColor3 = rightArmColor end
+    if torsoColor    then bodyColors.TorsoColor3 = torsoColor    end
+    if leftLegColor  then bodyColors.LeftLegColor3 = leftLegColor  end
+    if rightLegColor then bodyColors.RightLegColor3 = rightLegColor end
+
+    local partColorMap = {
+        Head = pickPartColor("Head", headColor),
+        LeftArm = pickPartColor("LeftArm", leftArmColor),      RightArm = pickPartColor("RightArm", rightArmColor),
+        ["Left Arm"] = pickPartColor("Left Arm", leftArmColor),    ["Right Arm"] = pickPartColor("Right Arm", rightArmColor),
+        LeftUpperArm = pickPartColor("LeftUpperArm", leftArmColor), LeftLowerArm = pickPartColor("LeftLowerArm", leftArmColor), LeftHand = pickPartColor("LeftHand", leftArmColor),
+        RightUpperArm = pickPartColor("RightUpperArm", rightArmColor), RightLowerArm = pickPartColor("RightLowerArm", rightArmColor), RightHand = pickPartColor("RightHand", rightArmColor),
+        Torso = pickPartColor("Torso", torsoColor),          UpperTorso = pickPartColor("UpperTorso", torsoColor),    LowerTorso = pickPartColor("LowerTorso", torsoColor),
+        LeftLeg = pickPartColor("LeftLeg", leftLegColor),      LeftUpperLeg = pickPartColor("LeftUpperLeg", leftLegColor), LeftLowerLeg = pickPartColor("LeftLowerLeg", leftLegColor), LeftFoot = pickPartColor("LeftFoot", leftLegColor),
+        ["Left Leg"] = pickPartColor("Left Leg", leftLegColor),    ["Right Leg"] = pickPartColor("Right Leg", rightLegColor),
+        RightLeg = pickPartColor("RightLeg", rightLegColor),    RightUpperLeg = pickPartColor("RightUpperLeg", rightLegColor), RightLowerLeg = pickPartColor("RightLowerLeg", rightLegColor),RightFoot = pickPartColor("RightFoot", rightLegColor),
+    }
+    for partName, color3 in pairs(partColorMap) do
+        if color3 then
+            local part = char:FindFirstChild(partName)
+            if part and part:IsA("BasePart") then
+                pcall(function() part.Color = color3 end)
+            end
+        end
+    end
+end
+
+
+local pqzlwt = 0
+local apply
+
+local function getTargetBodyScales(userId, targetDesc)
+    local scales = {
+        width = targetDesc and targetDesc.WidthScale or 1,
+        depth = targetDesc and targetDesc.DepthScale or 1,
+        height = targetDesc and targetDesc.HeightScale or 1,
+        head = targetDesc and targetDesc.HeadScale or 1,
+        proportion = targetDesc and targetDesc.ProportionScale or 0,
+        bodyType = targetDesc and targetDesc.BodyTypeScale or 0,
+    }
+
+    local okPlayer, targetPlayer = pcall(function() return Players:GetPlayerByUserId(userId) end)
+    local targetCharacter = okPlayer and targetPlayer and targetPlayer.Character
+    local targetHumanoid = targetCharacter and targetCharacter:FindFirstChildOfClass("Humanoid")
+    if not targetHumanoid then return scales end
+
+    local okDesc, liveDesc = pcall(function() return targetHumanoid:GetAppliedDescription() end)
+    local function readScale(name, field, fallback)
+        local valueObject = targetHumanoid:FindFirstChild(name)
+        if valueObject and valueObject:IsA("NumberValue") then return valueObject.Value end
+        if okDesc and liveDesc then
+            local okValue, value = pcall(function() return liveDesc[field] end)
+            if okValue and type(value) == "number" then return value end
+        end
+        return fallback
+    end
+
+    scales.width = readScale("BodyWidthScale", "WidthScale", scales.width)
+    scales.depth = readScale("BodyDepthScale", "DepthScale", scales.depth)
+    scales.height = readScale("BodyHeightScale", "HeightScale", scales.height)
+    scales.head = readScale("HeadScale", "HeadScale", scales.head)
+    scales.proportion = readScale("BodyProportionScale", "ProportionScale", scales.proportion)
+    scales.bodyType = readScale("BodyTypeScale", "BodyTypeScale", scales.bodyType)
+    return scales
+end
+
+local function kfdkdl(character)
+    local cfg = CONFIG and CONFIG.charchanger
+    if not cfg then return end
+    if not character or not character.Parent then return end
+    local hum = character:FindFirstChildOfClass("Humanoid")
+    if not hum then return end
+
+    local scaleValues = cfg.enabled and cfg or cfg.targetScales
+    if not scaleValues then return end
+
+    local map = {
+        BodyWidthScale = scaleValues.width,
+        BodyDepthScale = scaleValues.depth,
+        BodyHeightScale = scaleValues.height,
+        HeadScale = scaleValues.head,
+        BodyProportionScale = scaleValues.proportion,
+        BodyTypeScale = scaleValues.bodyType,
+    }
+    for name, value in pairs(map) do
+        if type(value) == "number" then
+            local nv = hum:FindFirstChild(name)
+            if nv and nv:IsA("NumberValue") then
+                if math.abs(nv.Value - value) > 0.001 then
+                    pcall(function() nv.Value = value end)
+                end
+            end
+        end
+    end
+end
+
+local function xmvnrp(character)
+    pqzlwt = pqzlwt + 1
+    local myToken = pqzlwt
+    local cfg = CONFIG and CONFIG.charchanger
+    local interval = (cfg and tonumber(cfg.enforceIntervalSeconds)) or 0.8
+    task.spawn(function()
+        while myToken == pqzlwt do
+            task.wait(interval)
+            if myToken ~= pqzlwt then return end
+            local curChar = localPlayer.Character
+            if not curChar or not curChar.Parent then
+                character = nil
+            else
+                character = curChar
+            end
+            if character then
+                kfdkdl(character)
+            end
+        end
+    end)
+end
+
+if okEnv and env then
+    env.nxhbtc = {
+        Set = function(opts)
+            if type(opts) ~= "table" then return end
+            for k, v in pairs(opts) do
+                if CONFIG.charchanger[k] ~= nil then CONFIG.charchanger[k] = v end
+            end
+            if opts.enabled ~= nil then
+                shared.Cider['Char']['Body Size']['Enabled'] = opts.enabled == true
+            end
+            kfdkdl(localPlayer.Character)
+        end,
+        Enable = function()
+            CONFIG.charchanger.enabled = true
+            shared.Cider['Char']['Body Size']['Enabled'] = true
+            kfdkdl(localPlayer.Character)
+            xmvnrp(localPlayer.Character)
+            
+            local uid = runtimeState.currentUserId or targetUserId or getDefaultTargetUserId()
+            if uid then apply(uid) end
+        end,
+        Disable = function()
+            CONFIG.charchanger.enabled = false
+            shared.Cider['Char']['Body Size']['Enabled'] = false
+            pqzlwt = pqzlwt + 1
+            local uid = runtimeState.currentUserId or targetUserId or getDefaultTargetUserId()
+            if uid then apply(uid) end
+        end,
+        Reapply = function()
+            kfdkdl(localPlayer.Character)
+            local uid = runtimeState.currentUserId or targetUserId or getDefaultTargetUserId()
+            if uid then apply(uid) end
+        end,
+    }
+end
+
+local function applyAppearance(userId, char, applyToken)
+    if not isApplyStillCurrent(applyToken) then return end
+
+    local model = getCharacterAppearanceModel(userId)
+    if not model then return end
+
+    if not isApplyStillCurrent(applyToken) then model:Destroy(); return end
+
+    clearCopyChildren(char)
+
+    local sourceModel = model
+    local humModel = nil
+    local bodyModel = nil
+    local hasHead = sourceModel:FindFirstChild("Head") ~= nil
+    local hasAnyPart = hasAnySourceBodyPart(sourceModel)
+
+    if not hasHead or not hasAnyPart then
+        local ok, created = pcall(function() return Players:CreateHumanoidModelFromUserId(userId) end)
+        if ok and created then
+            humModel = created
+            sourceModel = humModel
+        end
+    end
+
+    if not isApplyStillCurrent(applyToken) then
+        if humModel then humModel:Destroy() end
+        model:Destroy(); return
+    end
+
+    local targetDesc = applyCharOptionsToDescription(getTargetDescriptionCached(userId))
+    CONFIG.charchanger.targetScales = getTargetBodyScales(userId, targetDesc)
+
+    local bodyApplied = applyBodyFromDescription(targetDesc, char)
+    task.wait()
+
+    local postDescriptionColorSnapshot = nil
+    if bodyApplied then
+        postDescriptionColorSnapshot = snapshotCharacterColors(char)
+    end
+
+    local delayedSkinSnapshot = nil
+    if postDescriptionColorSnapshot and postDescriptionColorSnapshot.bodyColors then
+        delayedSkinSnapshot = {
+            bodyColors = postDescriptionColorSnapshot.bodyColors:Clone(),
+            partColors = {},
+        }
+        for partName, brickColor in pairs(postDescriptionColorSnapshot.partColors or {}) do
+            delayedSkinSnapshot.partColors[partName] = brickColor
+        end
+    end
+
+    if not isApplyStillCurrent(applyToken) then
+        destroyColorSnapshot(postDescriptionColorSnapshot)
+        destroyColorSnapshot(delayedSkinSnapshot)
+        if bodyModel then bodyModel:Destroy() end
+        if humModel then humModel:Destroy() end
+        model:Destroy(); return
+    end
+
+    if bodyApplied and not bodyModel then
+        local okBody, createdBody = pcall(function() return Players:CreateHumanoidModelFromUserId(userId) end)
+        if okBody and createdBody then
+            bodyModel = createdBody
+        end
+    end
+
+    local bodySourceModel = bodyModel or sourceModel
+    local desiredFaceTexture = resolveFaceTexture(userId, bodySourceModel, targetDesc)
+    local sourcePartSizeMap = buildSourcePartSizeMap(bodySourceModel)
+    local charPartMap = buildBasePartMap(char)
+    local attachmentCarrierMap = buildAttachmentCarrierMap(charPartMap)
+
+    for _, partName in ipairs(BODY_PART_NAMES) do
+        if bodyApplied then
+            if partName == "Head" then
+                applyFaceTexture(char, desiredFaceTexture)
+            end
+        else
+            local src = bodySourceModel:FindFirstChild(partName) or sourceModel:FindFirstChild(partName)
+            local dest = char:FindFirstChild(partName)
+            if src and dest then
+                dest.Transparency = src.Transparency
+
+                local sm = src:FindFirstChildOfClass("SpecialMesh")
+                local dm = dest:FindFirstChildOfClass("SpecialMesh")
+                if sm then
+                    if not dm then
+                        dm = sm:Clone(); dm.Parent = dest
+                    else
+                        dm.MeshId = sm.MeshId; dm.TextureId = sm.TextureId
+                        dm.Scale = sm.Scale;  dm.Offset = sm.Offset
+                    end
+                elseif dm then
+                    dm:Destroy()
+                end
+
+                pcall(function()
+                    if src:IsA("MeshPart") and dest:IsA("MeshPart") then
+                        dest.MeshId = src.MeshId
+                        dest.TextureID = src.TextureID
+                    end
+                end)
+
+                for _, att in ipairs(src:GetChildren()) do
+                    if att:IsA("Attachment") then
+                        local existing = dest:FindFirstChild(att.Name)
+                        if existing then
+                            existing.Position = att.Position
+                            existing.Orientation = att.Orientation
+                        else
+                            att:Clone().Parent = dest
+                        end
+                    end
+                end
+
+                if partName == "Head" then
+                    applyFaceTexture(char, desiredFaceTexture)
+                end
+            end
+        end
+    end
+
+    if not isApplyStillCurrent(applyToken) then
+        destroyColorSnapshot(postDescriptionColorSnapshot)
+        if bodyModel then bodyModel:Destroy() end
+        if humModel then humModel:Destroy() end
+        model:Destroy(); return
+    end
+
+    for _, inst in ipairs(sourceModel:GetChildren()) do
+        if shouldCloneClass(inst.ClassName) then
+            if bodyApplied and inst.ClassName == "CharacterMesh" then
+            else
+            local clone = inst:Clone()
+            clone.Parent = char
+            if isAccessoryClass(clone.ClassName) then
+                scaleAccessoryOnce(clone, char, sourcePartSizeMap, charPartMap, attachmentCarrierMap)
+            end
+            end
+        end
+    end
+
+    local rigRefreshToken = 0
+    local function requestRigAndFaceRefresh(delaySeconds)
+        rigRefreshToken = rigRefreshToken + 1
+        local token = rigRefreshToken
+        task.delay(delaySeconds or 0, function()
+            if token ~= rigRefreshToken then return end
+            if not isApplyStillCurrent(applyToken) then return end
+            if not char.Parent then return end
+            local h = char:FindFirstChildOfClass("Humanoid")
+            if h then pcall(function() h:BuildRigFromAttachments() end) end
+            applyFaceTexture(char, desiredFaceTexture)
+            applyConfiguredCharBodyOptions(char)
+             
+            applyConfiguredCharAnimations(char, userId)
+        end)
+    end
+
+    local hum = char:FindFirstChildOfClass("Humanoid")
+    if hum then pcall(function() hum:BuildRigFromAttachments() end) end
+
+    if not isApplyStillCurrent(applyToken) then
+        destroyColorSnapshot(postDescriptionColorSnapshot)
+        destroyColorSnapshot(delayedSkinSnapshot)
+        if bodyModel then bodyModel:Destroy() end
+        if humModel then humModel:Destroy() end
+        model:Destroy(); return
+    end
+
+    enforceSkinColorFromDescription(targetDesc, char, bodySourceModel, postDescriptionColorSnapshot)
+    destroyColorSnapshot(postDescriptionColorSnapshot)
+    applyFaceTexture(char, desiredFaceTexture)
+    applyConfiguredCharBodyOptions(char)
+    publishColorSnapshot(char)
+
+   
+    kfdkdl(char)
+
+    task.defer(function()
+        local retryDelays = { 0.1, 0.28, 0.55 }
+        for _, dt in ipairs(retryDelays) do
+            task.wait(dt)
+            if not isApplyStillCurrent(applyToken) then
+                destroyColorSnapshot(delayedSkinSnapshot)
+                return
+            end
+            if not char.Parent then
+                destroyColorSnapshot(delayedSkinSnapshot)
+                return
+            end
+            if delayedSkinSnapshot then
+                if delayedSkinSnapshot.bodyColors then
+                    local okClone, bcClone = pcall(function() return delayedSkinSnapshot.bodyColors:Clone() end)
+                    if okClone and bcClone then
+                        pcall(function()
+                            local currentBC = char:FindFirstChildOfClass("BodyColors")
+                            if currentBC then currentBC:Destroy() end
+                            bcClone.Parent = char
+                        end)
+                    end
+                end
+                for partName, brickColor in pairs(delayedSkinSnapshot.partColors or {}) do
+                    local part = char:FindFirstChild(partName)
+                    if part and part:IsA("BasePart") and brickColor then
+                        pcall(function() part.BrickColor = brickColor end)
+                    end
+                end
+                enforceSkinColorFromDescription(nil, char, nil, delayedSkinSnapshot)
+            else
+                enforceSkinColorFromDescription(targetDesc, char, nil, nil)
+            end
+
+            kfdkdl(char)
+            applyConfiguredCharBodyOptions(char)
+        end
+        destroyColorSnapshot(delayedSkinSnapshot)
+    end)
+
+    disconnectAppearanceHooks()
+    appearanceChildConn = char.ChildAdded:Connect(function(child)
+        if isAccessoryClass(child.ClassName) then
+            task.defer(function()
+                if not isApplyStillCurrent(applyToken) then return end
+                if not char.Parent then return end
+                local livePartMap = buildBasePartMap(char)
+                local liveCarrierMap = buildAttachmentCarrierMap(livePartMap)
+                scaleAccessoryOnce(child, char, sourcePartSizeMap, livePartMap, liveCarrierMap)
+                requestRigAndFaceRefresh(0.03)
+            end)
+        elseif child.Name == "Head" or child:IsA("Decal") then
+            if child.Name == "Head" then
+                bindConfiguredHeadlessFaceWatcher(child)
+            end
+            requestRigAndFaceRefresh(0.02)
+        end
+    end)
+
+    bindConfiguredHeadlessFaceWatcher(char:FindFirstChild("Head"))
+
+    task.spawn(function()
+        local pulseDelays = { 0.05, 0.12, 0.24, 0.4, 0.65, 0.95 }
+        for _, dt in ipairs(pulseDelays) do
+            task.wait(dt)
+            if not isApplyStillCurrent(applyToken) then return end
+            if not char.Parent then return end
+            requestRigAndFaceRefresh(0.02)
+        end
+    end)
+
+    local scaleRefreshScheduled = false
+    local scaleRefreshQueued = false
+    local function scheduleScaleRefresh()
+        if scaleRefreshScheduled then
+            scaleRefreshQueued = true
+            return
+        end
+        scaleRefreshScheduled = true
+        task.delay(0.03, function()
+            scaleRefreshScheduled = false
+            if not isApplyStillCurrent(applyToken) then disconnectAppearanceHooks(); return end
+            if not char.Parent then disconnectAppearanceHooks(); return end
+            local livePartMap = buildBasePartMap(char)
+            local liveCarrierMap = buildAttachmentCarrierMap(livePartMap)
+            scaleAllAccessories(char, sourcePartSizeMap, livePartMap, liveCarrierMap)
+            requestRigAndFaceRefresh(0.02)
+            if scaleRefreshQueued then
+                scaleRefreshQueued = false
+                scheduleScaleRefresh()
+            end
+        end)
+    end
+
+    local function onScaleValueChanged()
+        scheduleScaleRefresh()
+    end
+
+    local hScale = char:FindFirstChildOfClass("Humanoid")
+    if hScale then
+        local function tryBindScaleValue(nv)
+            if not nv or not nv:IsA("NumberValue") then return end
+            if not SCALE_VALUE_SET[nv.Name] then return end
+            local conn = nv:GetPropertyChangedSignal("Value"):Connect(onScaleValueChanged)
+            appearanceScaleValueConns[#appearanceScaleValueConns + 1] = conn
+        end
+
+        for _, child in ipairs(hScale:GetChildren()) do
+            tryBindScaleValue(child)
+        end
+
+        local childAddedConn = hScale.ChildAdded:Connect(function(child)
+            tryBindScaleValue(child)
+        end)
+        appearanceScaleValueConns[#appearanceScaleValueConns + 1] = childAddedConn
+    end
+
+    task.delay(0.2, onScaleValueChanged)
+
+    if bodyModel then bodyModel:Destroy() end
+    if humModel then humModel:Destroy() end
+    model:Destroy()
+end
+
+local function cleanupForSwitch(char)
+    disconnectAppearanceHooks()
+    if not char then return end
+    clearCopyChildren(char)
+end
+
+local function syncTargetEmotes(userId, thisApply)
+    local retryDelays = { 0, 0.45, 1.25, 3 }
+    local synced = false
+    for _, retryDelay in ipairs(retryDelays) do
+        task.delay(retryDelay, function()
+            if synced or not runtimeState.active or thisApply ~= applySerial then return end
+            local emoteApi = env and env.EmoteMimic
+            if emoteApi and type(emoteApi.SetTargetUserId) == "function" then
+                local ok, applied = pcall(function() return emoteApi.SetTargetUserId(userId) end)
+                if ok and applied then synced = true end
+            end
+        end)
+    end
+end
+
+apply = function(userId)
+    if not runtimeState.active then return end
+    if not shared.Cider['Char']['Enabled'] then return end
+    
+    local char = localPlayer.Character
+    if not char then return end
+
+    applySerial = applySerial + 1
+    local thisApply = applySerial
+    targetUserId = userId
+    runtimeState.currentUserId = userId
+
+    cleanupForSwitch(char)
+    startGuiIdentity(userId, thisApply)
+
+    task.spawn(function()
+        if not runtimeState.active then return end
+        if thisApply ~= applySerial then return end
+        applyAppearance(userId, char, thisApply)
+        syncTargetEmotes(userId, thisApply)
+        
+
+        applyConfiguredCharAnimations(char, userId)
+
+        task.delay(1, function()
+            if thisApply == applySerial and runtimeState.active and char.Parent then
+                applyConfiguredCharAnimations(char, userId)
+            end
+        end)
+        task.delay(3, function()
+            if thisApply == applySerial and runtimeState.active and char.Parent then
+                applyConfiguredCharAnimations(char, userId)
+            end
+        end)
+    end)
+end
+
+if okEnv and env then
+    local function setTarget(newTarget)
+        local uid = resolveUserToId(newTarget)
+        if not uid then return end
+        targetUserId = uid
+        runtimeState.currentUserId = uid
+        apply(uid)
+    end
+    local function reapplyTarget()
+        local uid = runtimeState.currentUserId or targetUserId or getDefaultTargetUserId()
+        if uid then apply(uid) end
+    end
+    local function useDefaultTarget()
+        runtimeState.currentUserId = nil
+        targetUserId = nil
+        local uid = getDefaultTargetUserId()
+        if uid then apply(uid) end
+    end
+    env.OutfitCopy = {
+        SetTarget = setTarget,
+        SetTargetUserId = setTarget,
+        SetTargetUsername = setTarget,
+        Reapply = reapplyTarget,
+        UseDefaultTarget = useDefaultTarget,
+        Cleanup = teardown,
+    }
+    env.CopySetUserId = setTarget
+    env.CopyReapplyOutfit = reapplyTarget
+    env.CopyUseDefaultTarget = useDefaultTarget
+    env.CopyOutfitCleanup = teardown
+end
+
+characterAddedConn = localPlayer.CharacterAdded:Connect(function(char)
+    applyStandaloneCharBodyOptions(char)
+    task.delay(1.5, function()
+        if char.Parent then refreshStandaloneInspectDescription(char) end
+    end)
+    if not runtimeState.active then return end
+    local respawnToken = applySerial
+    disconnectAppearanceHooks()
+    local uid = runtimeState.currentUserId or targetUserId or getDefaultTargetUserId()
+    if not uid then return end
+    local hum = char:WaitForChild("Humanoid", 10)
+    if not hum then return end
+    task.wait(0.5)
+    if not runtimeState.active or respawnToken ~= applySerial or not char.Parent then return end
+    apply(uid)
+
+    kfdkdl(char)
+    xmvnrp(char)
+end)
+
+if localPlayer.Character then
+    applyStandaloneCharBodyOptions(localPlayer.Character)
+    local hum = localPlayer.Character:WaitForChild("Humanoid", 10)
+    if hum then
+        applyConfiguredCharBodyOptions(localPlayer.Character)
+        refreshStandaloneInspectDescription(localPlayer.Character)
+        local startupUserId = runtimeState.currentUserId or getDefaultTargetUserId()
+        if startupUserId then apply(startupUserId) end
+        kfdkdl(localPlayer.Character)
+        xmvnrp(localPlayer.Character)
+    end
+end
+
+local LOCAL_PLAYER = localPlayer
+
+local R15_FALLBACK_ANIMATIONS = {
+    climb = "rbxassetid://507765644",
+    fall = "rbxassetid://507765000",
+    jump = "rbxassetid://507765000",
+    run = "rbxassetid://913376220",
+    walk = "rbxassetid://913402848",
+    swim = "rbxassetid://913384386",
+    idle1 = "rbxassetid://507766388",
+    idle2 = "rbxassetid://507766666",
+}
+
+local SLOT_SPECS = {
+    { folder = "climb", fallback = R15_FALLBACK_ANIMATIONS.climb },
+    { folder = "fall",  fallback = R15_FALLBACK_ANIMATIONS.fall  },
+    { folder = "jump",  fallback = R15_FALLBACK_ANIMATIONS.jump  },
+    { folder = "run",   fallback = R15_FALLBACK_ANIMATIONS.run   },
+    { folder = "walk",  fallback = R15_FALLBACK_ANIMATIONS.walk  },
+    { folder = "swim",  fallback = R15_FALLBACK_ANIMATIONS.swim  },
+}
+
+if env and env.__AnimationMimicState and env.__AnimationMimicState.cleanup then
+    pcall(env.__AnimationMimicState.cleanup)
+end
+
+animState = {
+    connections = {},
+    originalByCharacter = {},
+    directControllerByChar = {},
+    lastTargetInput = CONFIG.target,
+    pinnedTargetUserId = nil,
+    lastSourceUserId = nil,
+    applyToken = 0,
+    animationSetCache = {},
+    active = CharCfg['Enabled'] == true and CharCfg['Override Animation'] ~= true,
+    settings = {
+        autoApplyOnRespawn = true,
+        useFallbackWhenMissing = true,
+        useDirectTrackFallback = true,
+        cacheTtlSeconds = 22,
+        minLiveCoverage = 1,
+        replicateDescriptionToOthers = false,
+        invalidateAnimationCacheOnTargetSwitch = false,
+    },
+}
+if env then env.__AnimationMimicState = animState end
+
+function normalizeAnimationId(rawId)
+    if rawId == nil then return nil end
+    local numeric = tostring(rawId):match("%d+")
+    if not numeric then return nil end
+    if (tonumber(numeric) or 0) <= 0 then return nil end
+    return "rbxassetid://" .. numeric
+end
+
+function numericIdFromContentId(rawId)
+    if not rawId then return nil end
+    local numeric = tostring(rawId):match("%d+")
+    return numeric and tonumber(numeric) or nil
+end
+
+FALLBACK_ANIMATION_NUMERIC_IDS = {
+    climb = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.climb),
+    fall = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.fall),
+    jump = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.jump),
+    run = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.run),
+    walk = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.walk),
+    swim = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.swim),
+    idle1 = numericIdFromContentId(R15_FALLBACK_ANIMATIONS.idle1),
+}
+
+function getLocalRigType()
+    local character = LOCAL_PLAYER.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    return humanoid and humanoid.RigType or Enum.HumanoidRigType.R15
+end
+
+function isCharacterR15(character)
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    return humanoid ~= nil and humanoid.RigType == Enum.HumanoidRigType.R15
+end
+
+function normalizeAvatarType(rawType)
+    if rawType == nil then return nil end
+    local s = tostring(rawType):upper()
+    if s:find("R15") or s == "2" then return "R15" end
+    if s:find("R6")  or s == "1" then return "R6"  end
+    return nil
+end
+
+function getUserAvatarType(userId)
+    local info = getCharacterAppearanceInfoCached(userId)
+    return normalizeAvatarType(info and (info.playerAvatarType or info.PlayerAvatarType))
+end
+
+function resolveTargetToUserId(target)
+    return resolveUserToId(target)
+end
+
+function rememberOriginal(character, animationObject)
+    if not character or not animationObject then return end
+    if not animState.originalByCharacter[character] then
+        animState.originalByCharacter[character] = {}
+    end
+    if animState.originalByCharacter[character][animationObject] == nil then
+        animState.originalByCharacter[character][animationObject] = animationObject.AnimationId
+    end
+end
+
+function resetCharacterAnimations(character)
+    local saved = animState.originalByCharacter[character]
+    if not saved then return false end
+    for animationObject, originalId in pairs(saved) do
+        if animationObject and animationObject.Parent then
+            animationObject.AnimationId = originalId
+        end
+    end
+    animState.originalByCharacter[character] = nil
+    return true
+end
+
+function extractFolderAnimationData(animate, folderName)
+    local folder = animate and animate:FindFirstChild(folderName)
+    if not folder then return nil end
+    local data = { byName = {}, ordered = {}, first = nil }
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Animation") then
+            local id = normalizeAnimationId(child.AnimationId)
+            if id then
+                if not data.first then data.first = id end
+                data.byName[child.Name] = id
+                data.ordered[#data.ordered + 1] = id
+            end
+        end
+    end
+    return data
+end
+
+function buildAnimationSetFromAnimate(animate)
+    if not animate then return nil end
+    return {
+        climb = extractFolderAnimationData(animate, "climb"),
+        fall = extractFolderAnimationData(animate, "fall"),
+        jump = extractFolderAnimationData(animate, "jump"),
+        run = extractFolderAnimationData(animate, "run"),
+        walk = extractFolderAnimationData(animate, "walk"),
+        swim = extractFolderAnimationData(animate, "swim"),
+        idle = extractFolderAnimationData(animate, "idle"),
+    }
+end
+
+function resolveIdFromFolderData(folderData, childName, index)
+    local chosen
+    if folderData then
+        chosen = folderData.byName[childName] or folderData.ordered[index] or folderData.first
+    end
+    return normalizeAnimationId(chosen)
+end
+
+function resolveIdFromFolderDataWithFallback(folderData, childName, index, fallbackId)
+    if animState.settings.useFallbackWhenMissing then
+        return resolveIdFromFolderData(folderData, childName, index) or normalizeAnimationId(fallbackId)
+    end
+    return resolveIdFromFolderData(folderData, childName, index)
+end
+
+function makeSingleAnimationData(name, rawId)
+    local cleaned = normalizeAnimationId(rawId)
+    if not cleaned then return nil end
+    return { byName = { [name] = cleaned }, ordered = { cleaned }, first = cleaned }
+end
+
+function makeIdleAnimationData(rawIdleId)
+    local cleaned = normalizeAnimationId(rawIdleId)
+    if not cleaned then return nil end
+    return {
+        byName = { Animation1 = cleaned, Animation2 = cleaned },
+        ordered = { cleaned, cleaned },
+        first = cleaned,
+    }
+end
+
+ANIM_KEYS = { "climb","fall","jump","run","walk","swim","idle" }
+
+function hasAnimationFolderData(fd)
+    return fd ~= nil and fd.first ~= nil
+end
+
+function countAnimationSetCoverage(animationSet)
+    if not animationSet then return 0 end
+    local covered = 0
+    for _, k in ipairs(ANIM_KEYS) do
+        if hasAnimationFolderData(animationSet[k]) then covered = covered + 1 end
+    end
+    return covered
+end
+
+function getCachedAnimationSet(userId)
+    local entry = cacheGetEntry(animState.animationSetCache, userId, animState.settings.cacheTtlSeconds)
+    if not entry then return nil end
+    return entry.set
+end
+
+function setCachedAnimationSet(userId, set)
+    if not userId or not set then return end
+    cacheSetEntry(animState.animationSetCache, userId, { set = set, timestamp = os.clock() }, CACHE_MAX_ENTRIES.animationSet)
+end
+
+function getAnimationSetFromLivePlayer(userId)
+    local ok, player = pcall(function() return Players:GetPlayerByUserId(userId) end)
+    if not ok or not player then return nil end
+    local character = player.Character
+    if not character then return nil end
+    local animate = character:FindFirstChild("Animate")
+    if not animate then return nil end
+    local set = buildAnimationSetFromAnimate(animate)
+    return (countAnimationSetCoverage(set) > 0) and set or nil
+end
+
+function getAnimationSetFromDescription(userId)
+    local desc = getTargetDescriptionCached(userId)
+    if not desc then return nil end
+    return {
+        climb = makeSingleAnimationData("ClimbAnim", desc.ClimbAnimation),
+        fall = makeSingleAnimationData("FallAnim",  desc.FallAnimation),
+        jump = makeSingleAnimationData("JumpAnim",  desc.JumpAnimation),
+        run = makeSingleAnimationData("RunAnim",   desc.RunAnimation),
+        walk = makeSingleAnimationData("WalkAnim",  desc.WalkAnimation),
+        swim = makeSingleAnimationData("Swim",      desc.SwimAnimation),
+        idle = makeIdleAnimationData(desc.IdleAnimation),
+    }
+end
+
+function getAnimationSetFromTempRig(userId)
+    local rigType = getLocalRigType()
+    local ok, rig = pcall(function() return Players:CreateHumanoidModelFromUserId(userId, rigType) end)
+    if not ok or not rig then
+        return nil
+    end
+    rig.Name = "AnimationMimicTempRig"
+    local animate = rig:FindFirstChild("Animate") or rig:WaitForChild("Animate", 5)
+    if not animate then rig:Destroy(); return nil end
+    local set = buildAnimationSetFromAnimate(animate)
+    rig:Destroy()
+    return set
+end
+
+function getAnimationSetFromUserId(userId)
+    local cached = getCachedAnimationSet(userId)
+    if cached then return cached end
+
+    local fromLive = getAnimationSetFromLivePlayer(userId)
+    local liveCoverage = countAnimationSetCoverage(fromLive)
+    if liveCoverage >= (animState.settings.minLiveCoverage or 1) and liveCoverage > 0 then
+        setCachedAnimationSet(userId, fromLive)
+        return fromLive
+    end
+
+    local fromDesc = getAnimationSetFromDescription(userId)
+    local fromRig = getAnimationSetFromTempRig(userId)
+
+    local function pickBetter(currentBest, candidate)
+        if not candidate then return currentBest end
+        local coverage = countAnimationSetCoverage(candidate.set)
+        if coverage <= 0 then return currentBest end
+        if not currentBest then
+            return { set = candidate.set, coverage = coverage, priority = candidate.priority }
+        end
+        if coverage > currentBest.coverage then
+            return { set = candidate.set, coverage = coverage, priority = candidate.priority }
+        end
+        if coverage == currentBest.coverage and candidate.priority > currentBest.priority then
+            return { set = candidate.set, coverage = coverage, priority = candidate.priority }
+        end
+        return currentBest
+    end
+
+    local best = nil
+    best = pickBetter(best, { set = fromLive, priority = 3 })
+    best = pickBetter(best, { set = fromRig,  priority = 2 })
+    best = pickBetter(best, { set = fromDesc, priority = 1 })
+
+    if not best or not best.set then return nil end
+    setCachedAnimationSet(userId, best.set)
+    return best.set
+end
+
+function getAnimationSetFromUserIdWithRetry(userId, attempts)
+    attempts = attempts or 2
+    for i = 1, attempts do
+        local set = getAnimationSetFromUserId(userId)
+        if set then return set end
+        if i < attempts then task.wait(0.12) end
+    end
+    return nil
+end
+
+function applyAnimationSetToDescriptionFields(desc, animationSet)
+    if not desc or not animationSet then return false end
+    local function resolveNumeric(folder, childName, idx, fb)
+        return numericIdFromContentId(resolveIdFromFolderDataWithFallback(animationSet[folder], childName, idx, fb))
+    end
+    desc.ClimbAnimation = resolveNumeric("climb","ClimbAnim",1,R15_FALLBACK_ANIMATIONS.climb) or FALLBACK_ANIMATION_NUMERIC_IDS.climb
+    desc.FallAnimation = resolveNumeric("fall", "FallAnim", 1,R15_FALLBACK_ANIMATIONS.fall)  or FALLBACK_ANIMATION_NUMERIC_IDS.fall
+    desc.JumpAnimation = resolveNumeric("jump", "JumpAnim", 1,R15_FALLBACK_ANIMATIONS.jump)  or FALLBACK_ANIMATION_NUMERIC_IDS.jump
+    desc.RunAnimation = resolveNumeric("run",  "RunAnim",  1,R15_FALLBACK_ANIMATIONS.run)   or FALLBACK_ANIMATION_NUMERIC_IDS.run
+    desc.WalkAnimation = resolveNumeric("walk", "WalkAnim", 1,R15_FALLBACK_ANIMATIONS.walk)  or FALLBACK_ANIMATION_NUMERIC_IDS.walk
+    desc.SwimAnimation = resolveNumeric("swim", "Swim",     1,R15_FALLBACK_ANIMATIONS.swim)  or FALLBACK_ANIMATION_NUMERIC_IDS.swim
+    desc.IdleAnimation = resolveNumeric("idle", "Animation1",1,R15_FALLBACK_ANIMATIONS.idle1) or FALLBACK_ANIMATION_NUMERIC_IDS.idle1
+    return true
+end
+
+function getCurrentScaleValues(humanoid)
+    if not humanoid then return nil end
+    local function readSV(name, fallback)
+        local nv = humanoid:FindFirstChild(name)
+        return (nv and nv:IsA("NumberValue") and nv.Value) or fallback
+    end
+    local okDesc, desc = pcall(function() return humanoid:GetAppliedDescription() end)
+    return {
+        height = readSV("BodyHeightScale",  okDesc and desc and desc.HeightScale     or 1),
+        width = readSV("BodyWidthScale",   okDesc and desc and desc.WidthScale      or 1),
+        depth = readSV("BodyDepthScale",   okDesc and desc and desc.DepthScale      or 1),
+        head = readSV("HeadScale",        okDesc and desc and desc.HeadScale       or 1),
+        bodyType = readSV("BodyTypeScale",    okDesc and desc and desc.BodyTypeScale   or 0),
+        proportion = readSV("BodyProportionScale", okDesc and desc and desc.ProportionScale or 0),
+    }
+end
+
+local destroyBodyColorSnapshot = destroyColorSnapshot
+
+function restoreCharacterColors(character, snapshot)
+    if not character or not snapshot then return end
+    if snapshot.bodyColors then
+        local src = snapshot.bodyColors
+        local ok, clone = pcall(function() return src:Clone() end)
+        if ok and clone then
+            local current = character:FindFirstChildOfClass("BodyColors")
+            if current then pcall(function() current:Destroy() end) end
+            local applied = pcall(function() clone.Parent = character end)
+            if not applied then
+                pcall(function() clone:Destroy() end)
+                task.defer(function()
+                    task.wait(0.12)
+                    if not character.Parent then return end
+                    local ok2, clone2 = pcall(function() return src:Clone() end)
+                    if not ok2 or not clone2 then return end
+                    pcall(function()
+                        local bc = character:FindFirstChildOfClass("BodyColors")
+                        if bc then bc:Destroy() end
+                        clone2.Parent = character
+                    end)
+                end)
+            end
+        end
+    end
+    for _, child in ipairs(character:GetChildren()) do
+        if child:IsA("BasePart") then
+            local saved = snapshot.partColors[child.Name]
+            if saved then child.BrickColor = saved end
+        end
+    end
+end
+
+function replicateAnimationStateForOthers(character, animationSet)
+    if not animState.settings.replicateDescriptionToOthers then return true end
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return false end
+    local liveColorSnapshot = snapshotCharacterColors(character)
+    local scales = getCurrentScaleValues(humanoid)
+    local ok, currentDesc = pcall(function() return humanoid:GetAppliedDescription() end)
+    if not ok or not currentDesc then
+        destroyBodyColorSnapshot(liveColorSnapshot)
+        return false
+    end
+    if scales then
+        currentDesc.HeightScale = scales.height
+        currentDesc.WidthScale = scales.width
+        currentDesc.DepthScale = scales.depth
+        currentDesc.HeadScale = scales.head
+        currentDesc.BodyTypeScale = scales.bodyType
+        currentDesc.ProportionScale = scales.proportion
+    end
+    if not applyAnimationSetToDescriptionFields(currentDesc, animationSet) then
+        destroyBodyColorSnapshot(liveColorSnapshot)
+        return false
+    end
+    if humanoid.ApplyDescriptionClientServer then
+        local okCS = pcall(function() humanoid:ApplyDescriptionClientServer(currentDesc) end)
+        if okCS then
+            restoreCharacterColors(character, liveColorSnapshot)
+            task.defer(function()
+                task.wait(0.08)
+                restoreCharacterColors(character, liveColorSnapshot)
+                destroyBodyColorSnapshot(liveColorSnapshot)
+            end)
+            return true
+        end
+    end
+    destroyBodyColorSnapshot(liveColorSnapshot)
+    return false
+end
+
+function applyAnimationSetViaDescription(humanoid, animationSet)
+    if not humanoid or not animationSet then return false end
+    local ok, currentDesc = pcall(function() return humanoid:GetAppliedDescription() end)
+    if not ok or not currentDesc then return false end
+    if not applyAnimationSetToDescriptionFields(currentDesc, animationSet) then return false end
+    if humanoid.ApplyDescriptionClientServer then
+        local okCS = pcall(function() humanoid:ApplyDescriptionClientServer(currentDesc) end)
+        if okCS then return true end
+    end
+    local okApply = pcall(function() humanoid:ApplyDescription(currentDesc) end)
+    return okApply
+end
+
+function stopDirectController(character)
+    if not character then return end
+    local controller = animState.directControllerByChar[character]
+    if not controller then return end
+    if controller.connection and controller.connection.Connected then
+        controller.connection:Disconnect()
+    end
+    if controller.tracks then
+        for _, track in pairs(controller.tracks) do
+            pcall(function() track:Stop(0.08) end)
+        end
+    end
+    if controller.animations then
+        for _, animation in pairs(controller.animations) do
+            pcall(function() animation:Destroy() end)
+        end
+    end
+    animState.directControllerByChar[character] = nil
+end
+
+function stopAllDirectControllers()
+    local chars = {}
+    for c in pairs(animState.directControllerByChar) do chars[#chars+1] = c end
+    for _, c in ipairs(chars) do stopDirectController(c) end
+    animState.directControllerByChar = {}
+end
+
+function pruneStaleCharacterAnimationState(currentCharacter)
+    for character in pairs(animState.originalByCharacter) do
+        if character ~= currentCharacter and (not character.Parent or character ~= LOCAL_PLAYER.Character) then
+            resetCharacterAnimations(character)
+            animState.originalByCharacter[character] = nil
+        end
+    end
+
+    for character in pairs(animState.directControllerByChar) do
+        if character ~= currentCharacter and (not character.Parent or character ~= LOCAL_PLAYER.Character) then
+            stopDirectController(character)
+        end
+    end
+end
+
+function startDirectController(character, animationSet)
+    if not animState.settings.useDirectTrackFallback then return false end
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid or not animationSet then return false end
+
+    stopDirectController(character)
+
+    local animator = humanoid:FindFirstChildOfClass("Animator")
+    if not animator then
+        local ok, a = pcall(function() return Instance.new("Animator") end)
+        if ok and a then a.Parent = humanoid; animator = a end
+    end
+    if not animator then return false end
+
+    local function getAnimId(folder, childName, idx, fb)
+        return resolveIdFromFolderDataWithFallback(animationSet[folder], childName, idx, fb)
+    end
+    local idMap = {
+        idle = getAnimId("idle",  "Animation1", 1, R15_FALLBACK_ANIMATIONS.idle1),
+        run = getAnimId("run",   "RunAnim",    1, R15_FALLBACK_ANIMATIONS.run),
+        walk = getAnimId("walk",  "WalkAnim",   1, R15_FALLBACK_ANIMATIONS.walk),
+        jump = getAnimId("jump",  "JumpAnim",   1, R15_FALLBACK_ANIMATIONS.jump),
+        fall = getAnimId("fall",  "FallAnim",   1, R15_FALLBACK_ANIMATIONS.fall),
+        climb = getAnimId("climb", "ClimbAnim",  1, R15_FALLBACK_ANIMATIONS.climb),
+        swim = getAnimId("swim",  "Swim",       1, R15_FALLBACK_ANIMATIONS.swim),
+    }
+
+    local tracks, animations = {}, {}
+    local createdAny = false
+    for stateName, animId in pairs(idMap) do
+        if animId then
+            local animation = Instance.new("Animation")
+            animation.Name = "Mimic_" .. stateName
+            animation.AnimationId = animId
+            animations[stateName] = animation
+            local okT, track = pcall(function() return animator:LoadAnimation(animation) end)
+            if okT and track then
+                track.Priority = (stateName == "idle") and Enum.AnimationPriority.Idle or Enum.AnimationPriority.Movement
+                track.Looped = (stateName ~= "jump" and stateName ~= "fall")
+                tracks[stateName] = track
+                createdAny = true
+            end
+        end
+    end
+
+    if not createdAny then
+        for _, a in pairs(animations) do pcall(function() a:Destroy() end) end
+        return false
+    end
+
+    local controller = { tracks = tracks, animations = animations, connection = nil, active = nil, nextUpdateAt = 0 }
+    animState.directControllerByChar[character] = controller
+
+    local function playState(nextState)
+        if controller.active == nextState then
+            local t = controller.tracks[nextState]
+            if t and not t.IsPlaying then pcall(function() t:Play(0.08,1,1) end) end
+            return
+        end
+        controller.active = nextState
+        for name, track in pairs(controller.tracks) do
+            if name == nextState then
+                pcall(function() if not track.IsPlaying then track:Play(0.08,1,1) end end)
+            else
+                pcall(function() if track.IsPlaying then track:Stop(0.08) end end)
+            end
+        end
+    end
+
+    controller.connection = RunService.Heartbeat:Connect(function()
+        if not animState.active or not character.Parent then
+            stopDirectController(character); return
+        end
+        local now = os.clock()
+        if now < controller.nextUpdateAt then return end
+        controller.nextUpdateAt = now + 0.03
+
+        local moveMag = humanoid.MoveDirection.Magnitude
+        local humState = humanoid:GetState()
+
+        if humState == Enum.HumanoidStateType.Freefall then
+            if tracks.fall then playState("fall") elseif tracks.jump then playState("jump") end; return
+        end
+        if humState == Enum.HumanoidStateType.Jumping   and tracks.jump  then playState("jump");  return end
+        if humState == Enum.HumanoidStateType.Climbing  and tracks.climb then playState("climb"); return end
+        if humState == Enum.HumanoidStateType.Swimming  and tracks.swim  then playState("swim");  return end
+        if moveMag > 0.08 then
+            if tracks.run then playState("run") elseif tracks.walk then playState("walk") end; return
+        end
+        if tracks.idle then playState("idle") end
+    end)
+
+    return true
+end
+
+function applyFolderDataToFolder(character, folder, folderData, shouldRemember)
+    if not folder then return 0 end
+    local changed = 0
+    local idx = 0
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Animation") then
+            idx = idx + 1
+            local resolvedId = resolveIdFromFolderData(folderData, child.Name, idx)
+            if resolvedId then
+                if shouldRemember then rememberOriginal(character, child) end
+                child.AnimationId = resolvedId
+                changed = changed + 1
+            end
+        end
+    end
+    return changed
+end
+
+function getFirstAnimationInFolder(folder)
+    if not folder then return nil end
+    for _, child in ipairs(folder:GetChildren()) do
+        if child:IsA("Animation") then return child end
+    end
+    return nil
+end
+
+function applySlotFromSet(character, animate, animationSet, folderName, fallbackId, shouldRemember)
+    local folder = animate:FindFirstChild(folderName)
+    local setData = animationSet and animationSet[folderName]
+    if applyFolderDataToFolder(character, folder, setData, shouldRemember) > 0 then return true end
+    local firstAnim = getFirstAnimationInFolder(folder)
+    if not firstAnim or not animState.settings.useFallbackWhenMissing then return false end
+    local fallback = normalizeAnimationId(fallbackId)
+    if not fallback then return false end
+    if shouldRemember then rememberOriginal(character, firstAnim) end
+    firstAnim.AnimationId = fallback
+    return true
+end
+
+function applyIdleFromSet(character, animate, idleData, shouldRemember)
+    local idleFolder = animate:FindFirstChild("idle")
+    if not idleFolder then return false end
+    local applied = 0
+    local idx = 0
+    for _, child in ipairs(idleFolder:GetChildren()) do
+        if child:IsA("Animation") then
+            idx = idx + 1
+            local fb = nil
+            if animState.settings.useFallbackWhenMissing then
+                fb = (child.Name == "Animation2") and R15_FALLBACK_ANIMATIONS.idle2 or R15_FALLBACK_ANIMATIONS.idle1
+            end
+            local resolvedIdle = resolveIdFromFolderDataWithFallback(idleData, child.Name, idx, fb)
+            if resolvedIdle then
+                if shouldRemember then rememberOriginal(character, child) end
+                child.AnimationId = resolvedIdle
+                applied = applied + 1
+            end
+        end
+    end
+    return applied > 0
+end
+
+function hardResetAnimator(humanoid)
+    if not humanoid then return end
+    local tracks = humanoid:GetPlayingAnimationTracks()
+    for _, track in ipairs(tracks) do track:Stop(0) end
+end
+
+function flushAnimationState(character)
+    if not character then return end
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+    local tracks = humanoid:GetPlayingAnimationTracks()
+    for _, track in ipairs(tracks) do track:Stop(0) end
+end
+
+function refreshAnimate(character)
+    local animate = character and character:FindFirstChild("Animate")
+    if animate and animate:IsA("LocalScript") then
+        animate.Disabled = true
+        task.wait()
+        animate.Disabled = false
+    end
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        local tracks = humanoid:GetPlayingAnimationTracks()
+        for _, track in ipairs(tracks) do track:Stop(0) end
+        humanoid:ChangeState(Enum.HumanoidStateType.Running)
+    end
+end
+
+function forceAnimationKick(character)
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+    humanoid:Move(Vector3.new(0, 0, 0), true)
+    humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+    task.wait()
+    humanoid:ChangeState(Enum.HumanoidStateType.Running)
+    task.defer(function()
+        if not character.Parent then return end
+        local playingTracks = humanoid:GetPlayingAnimationTracks()
+        if #playingTracks > 0 then return end
+        humanoid:ChangeState(Enum.HumanoidStateType.RunningNoPhysics)
+        task.wait()
+        humanoid:ChangeState(Enum.HumanoidStateType.Running)
+    end)
+end
+
+function scrubTracksForDuration(character, seconds)
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return end
+    local tracksStart = humanoid:GetPlayingAnimationTracks()
+    for _, track in ipairs(tracksStart) do track:Stop(0) end
+    task.wait(seconds or 0.2)
+    local tracksEnd = humanoid:GetPlayingAnimationTracks()
+    for _, track in ipairs(tracksEnd) do track:Stop(0) end
+end
+
+function applyAnimationSetToCharacter(character, animationSet)
+    if not character or not animationSet then return false end
+    local animate = character:FindFirstChild("Animate")
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return false end
+
+    hardResetAnimator(humanoid)
+
+    local applied = 0
+    if animate then
+        for _, spec in ipairs(SLOT_SPECS) do
+            if applySlotFromSet(character, animate, animationSet, spec.folder, spec.fallback, true) then
+                applied = applied + 1
+            end
+        end
+        if applyIdleFromSet(character, animate, animationSet.idle, true) then
+            applied = applied + 1
+        end
+    end
+
+    if applied > 0 then
+        stopDirectController(character)
+        refreshAnimate(character)
+    else
+        local descApplied = applyAnimationSetViaDescription(humanoid, animationSet)
+        if descApplied then
+            stopDirectController(character)
+        else
+            if not startDirectController(character, animationSet) then return false end
+        end
+    end
+
+    forceAnimationKick(character)
+    replicateAnimationStateForOthers(character, animationSet)
+    task.defer(function()
+        if not animState.active then return end
+        if not (env and env.EmoteMimic and type(env.EmoteMimic.Reapply) == "function") then return end
+        pcall(function() env.EmoteMimic.Reapply() end)
+    end)
+    return true
+end
+
+function restoreOwnAnimationsHard(character)
+    if not character then return false end
+    local ownSet = getAnimationSetFromUserId(LOCAL_PLAYER.UserId)
+    if not ownSet then return false end
+    local animate = character:FindFirstChild("Animate")
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return false end
+
+    hardResetAnimator(humanoid)
+
+    local applied = 0
+    if animate then
+        for _, spec in ipairs(SLOT_SPECS) do
+            if applySlotFromSet(character, animate, ownSet, spec.folder, spec.fallback, false) then
+                applied = applied + 1
+            end
+        end
+        if applyIdleFromSet(character, animate, ownSet.idle, false) then
+            applied = applied + 1
+        end
+    end
+
+    if applied > 0 then
+        stopDirectController(character)
+        refreshAnimate(character)
+    else
+        if applyAnimationSetViaDescription(humanoid, ownSet) then
+            stopDirectController(character)
+        else
+            if not animState.active then return false end
+            if not startDirectController(character, ownSet) then return false end
+        end
+    end
+
+    forceAnimationKick(character)
+    replicateAnimationStateForOthers(character, ownSet)
+    task.defer(function()
+        if not animState.active then return end
+        if not (env and env.EmoteMimic and type(env.EmoteMimic.Reapply) == "function") then return end
+        pcall(function() env.EmoteMimic.Reapply() end)
+    end)
+    return true
+end
+
+function mimicAnimationsFromUserId(userId, forceApply)
+    if not animState.active then return false end
+    forceApply = forceApply ~= false and forceApply or false
+
+    local numericUserId = tonumber(userId)
+    if not numericUserId then return false end
+
+
+    local character = LOCAL_PLAYER.Character
+    if not character then return false end
+
+    pruneStaleCharacterAnimationState(character)
+
+    if not forceApply and animState.lastSourceUserId == numericUserId then
+        return true
+    end
+
+    animState.applyToken = animState.applyToken + 1
+    local applyToken = animState.applyToken
+
+
+    local targetAvatarType = getUserAvatarType(numericUserId)
+    if targetAvatarType == "R6" then
+        animState.lastSourceUserId = nil
+        restoreOwnAnimationsHard(character)
+        flushAnimationState(character)
+        return false
+    end
+
+    local animationSet = getAnimationSetFromUserIdWithRetry(numericUserId, 3)
+    if not animationSet then
+        animState.lastSourceUserId = nil
+        return false
+    end
+
+    if applyToken ~= animState.applyToken then return false end
+
+    local switchedTarget = animState.lastSourceUserId and animState.lastSourceUserId ~= numericUserId
+    if switchedTarget then
+        restoreOwnAnimationsHard(character)
+        flushAnimationState(character)
+        scrubTracksForDuration(character, 0.18)
+        if applyToken ~= animState.applyToken then return false end
+    end
+
+    animState.lastSourceUserId = numericUserId
+    animState.pinnedTargetUserId = numericUserId
+
+    local ok = applyAnimationSetToCharacter(character, animationSet)
+    if not ok then return false end
+
+    task.defer(function()
+        task.wait(0.2)
+        if applyToken ~= animState.applyToken then return end
+        if not character.Parent then return end
+        local hum = character:FindFirstChildOfClass("Humanoid")
+        if not hum then return end
+        if #hum:GetPlayingAnimationTracks() == 0 then
+            restoreOwnAnimationsHard(character)
+            applyAnimationSetToCharacter(character, animationSet)
+        end
+    end)
+
+    return ok
+end
+
+function mimicAnimationsFromTarget(target)
+    if not animState.active then return false end
+    local userId = resolveTargetToUserId(target)
+    if not userId then return false end
+    animState.lastTargetInput = target
+    animState.pinnedTargetUserId = userId
+    if animState.settings.invalidateAnimationCacheOnTargetSwitch then
+        animState.animationSetCache[userId] = nil
+    end
+    return mimicAnimationsFromUserId(userId, true)
+end
+
+function disconnectAllConnections()
+    for _, conn in ipairs(animState.connections) do
+        if conn and conn.Connected then conn:Disconnect() end
+    end
+    animState.connections = {}
+end
+
+function clearRuntimeCaches()
+    animState.animationSetCache = {}
+end
+
+function restoreCharacterToSelf(character)
+    if not character then return false end
+    resetCharacterAnimations(character)
+    local restored = restoreOwnAnimationsHard(character)
+    flushAnimationState(character)
+    return restored
+end
+
+function animCleanup()
+    if not animState.active then return end
+    animState.active = false
+    animState.lastSourceUserId = nil
+    animState.pinnedTargetUserId = nil
+    animState.lastTargetInput = nil
+    animState.applyToken = animState.applyToken + 1
+    disconnectAllConnections()
+    local character = LOCAL_PLAYER.Character
+    stopAllDirectControllers()
+    restoreCharacterToSelf(character)
+    flushAnimationState(character)
+    animState.originalByCharacter = {}
+    clearRuntimeCaches()
+end
+animState.cleanup = animCleanup
+
+if env then
+    env.CloneAnimationsFromTarget = mimicAnimationsFromTarget
+    env.AnimationMimicCleanup = animCleanup
+end
+
+if env and env.__EmoteMimicState and type(env.__EmoteMimicState.cleanup) == "function" then
+    pcall(env.__EmoteMimicState.cleanup)
+end
+
+local function deepCopyTable(value, seen)
+    if type(value) ~= "table" then return value end
+    seen = seen or {}
+    if seen[value] then return seen[value] end
+    local out = {}
+    seen[value] = out
+    for k, v in pairs(value) do
+        out[deepCopyTable(k, seen)] = deepCopyTable(v, seen)
+    end
+    return out
+end
+
+local emoteState = {
+    active = CharCfg['Enabled'] == true,
+    targetInput = CONFIG.target,
+    currentUserId = nil,
+    applyToken = 0,
+    connections = {},
+    emoteCache = {},
+    cacheTtlSeconds = 20,
+    cleanup = nil,
+    settings = {
+        autoApplyOnRespawn = true,
+    },
+}
+
+if env then env.__EmoteMimicState = emoteState end
+
+local function disconnectEmoteConnections()
+    for _, conn in ipairs(emoteState.connections) do
+        if conn and conn.Connected then conn:Disconnect() end
+    end
+    emoteState.connections = {}
+end
+
+local function clearEmoteCaches()
+    emoteState.emoteCache = {}
+end
+
+local function getEmoteDataFromDescription(desc)
+    if not desc then return nil end
+    local emotes = nil
+    local equipped = nil
+
+    if type(desc.GetEmotes) == "function" then
+        local ok, value = pcall(function() return desc:GetEmotes() end)
+        if ok and type(value) == "table" then emotes = deepCopyTable(value) end
+    end
+    if type(desc.GetEquippedEmotes) == "function" then
+        local ok, value = pcall(function() return desc:GetEquippedEmotes() end)
+        if ok and type(value) == "table" then equipped = deepCopyTable(value) end
+    end
+
+    if emotes == nil then
+        local ok, value = pcall(function() return desc.Emotes end)
+        if ok and type(value) == "table" then emotes = deepCopyTable(value) end
+    end
+    if equipped == nil then
+        local ok, value = pcall(function() return desc.EquippedEmotes end)
+        if ok and type(value) == "table" then equipped = deepCopyTable(value) end
+    end
+
+    if type(emotes) ~= "table" then emotes = {} end
+    if type(equipped) ~= "table" then equipped = {} end
+
+    return { emotes = emotes, equipped = equipped }
+end
+
+local function hasAnyTableEntries(value)
+    return type(value) == "table" and next(value) ~= nil
+end
+
+local function hasUsableEmotePayload(emoteData)
+    if type(emoteData) ~= "table" then return false end
+    return hasAnyTableEntries(emoteData.emotes) or hasAnyTableEntries(emoteData.equipped)
+end
+
+local function getEmoteDataFromLivePlayer(userId)
+    local okPlayer, player = pcall(function() return Players:GetPlayerByUserId(userId) end)
+    if not okPlayer or not player then return nil end
+    local character = player.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return nil end
+    local okDesc, desc = pcall(function() return humanoid:GetAppliedDescription() end)
+    if not okDesc or not desc then return nil end
+    local data = getEmoteDataFromDescription(desc)
+    pcall(function() desc:Destroy() end)
+    return data
+end
+
+local function getEmoteDataFromUserId(userId)
+    local entry = cacheGetEntry(emoteState.emoteCache, userId, emoteState.cacheTtlSeconds)
+    if entry and entry.data then
+        return {
+            emotes = deepCopyTable(entry.data.emotes),
+            equipped = deepCopyTable(entry.data.equipped),
+        }
+    end
+
+    local data = nil
+    local desc = getTargetDescriptionCached(userId)
+    if desc then
+        data = getEmoteDataFromDescription(desc)
+        pcall(function() desc:Destroy() end)
+    end
+    if not hasUsableEmotePayload(data) then
+        data = getEmoteDataFromLivePlayer(userId)
+    end
+    if not data or not hasUsableEmotePayload(data) then return nil end
+
+    cacheSetEntry(emoteState.emoteCache, userId, { data = data, timestamp = os.clock() }, CACHE_MAX_ENTRIES.emoteData)
+    return data
+end
+
+local function setEmoteDataOnDescription(description, emoteData)
+    if not description or not emoteData then return false end
+    local applied = false
+    if hasAnyTableEntries(emoteData.emotes) then
+        local okSetEmotes = pcall(function()
+            description:SetEmotes(deepCopyTable(emoteData.emotes))
+        end)
+        applied = applied or okSetEmotes
+    end
+    if hasAnyTableEntries(emoteData.equipped) then
+        local okSetEquipped = pcall(function()
+            description:SetEquippedEmotes(deepCopyTable(emoteData.equipped))
+        end)
+        applied = applied or okSetEquipped
+    end
+    return applied
+end
+
+local function applyScaleValuesToDescription(desc, scales)
+    if not desc or not scales then return end
+    desc.HeightScale = scales.height
+    desc.WidthScale = scales.width
+    desc.DepthScale = scales.depth
+    desc.HeadScale = scales.head
+    desc.BodyTypeScale = scales.bodyType
+    desc.ProportionScale = scales.proportion
+end
+
+local function restoreCharacterColorsSafely(character, colorSnapshot)
+    if not colorSnapshot then return end
+    restoreCharacterColors(character, colorSnapshot)
+    task.defer(function()
+        task.wait(0.06)
+        if character and character.Parent then
+            restoreCharacterColors(character, colorSnapshot)
+        end
+    end)
+    task.defer(function()
+        task.wait(0.2)
+        if character and character.Parent then
+            restoreCharacterColors(character, colorSnapshot)
+        end
+        destroyBodyColorSnapshot(colorSnapshot)
+    end)
+end
+
+local function applyEmotesToHumanoid(humanoid, emoteData)
+    if not humanoid or not emoteData then return false end
+    if not hasUsableEmotePayload(emoteData) then return false end
+
+    local character = humanoid.Parent
+    local colorSnapshot = snapshotCharacterColors(character)
+    local scaleSnapshot = getCurrentScaleValues(humanoid)
+    local liveDescription = humanoid:FindFirstChildOfClass("HumanoidDescription")
+        or humanoid:FindFirstChild("HumanoidDescription")
+
+    if liveDescription and setEmoteDataOnDescription(liveDescription, emoteData) then
+        destroyBodyColorSnapshot(colorSnapshot)
+        task.defer(function()
+            if not emoteState.active or not liveDescription.Parent then return end
+            setEmoteDataOnDescription(liveDescription, emoteData)
+        end)
+        return true
+    end
+
+    local okDesc, currentDesc = pcall(function() return humanoid:GetAppliedDescription() end)
+    if not okDesc or not currentDesc then
+        destroyBodyColorSnapshot(colorSnapshot)
+        return false
+    end
+
+    if not setEmoteDataOnDescription(currentDesc, emoteData) then
+        destroyBodyColorSnapshot(colorSnapshot)
+        pcall(function() currentDesc:Destroy() end)
+        return false
+    end
+
+    applyScaleValuesToDescription(currentDesc, scaleSnapshot)
+
+    if humanoid.ApplyDescriptionClientServer then
+        local okCS = pcall(function() humanoid:ApplyDescriptionClientServer(currentDesc) end)
+        if okCS then
+            restoreCharacterColorsSafely(character, colorSnapshot)
+            pcall(function() currentDesc:Destroy() end)
+            return true
+        end
+    end
+
+    local okApply = pcall(function() humanoid:ApplyDescription(currentDesc) end)
+    restoreCharacterColorsSafely(character, colorSnapshot)
+    pcall(function() currentDesc:Destroy() end)
+    return okApply
+end
+
+local function mimicEmotesFromUserId(userId)
+    if not emoteState.active then return false end
+    local numericUserId = tonumber(userId)
+    if not numericUserId then return false end
+
+    local character = LOCAL_PLAYER.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+    if not humanoid then return false end
+
+    emoteState.applyToken = emoteState.applyToken + 1
+    local applyToken = emoteState.applyToken
+
+    local emoteData = getEmoteDataFromUserId(numericUserId)
+    if not emoteData then return false end
+    if applyToken ~= emoteState.applyToken or not emoteState.active then return false end
+
+    local ok = false
+    for attempt = 1, 3 do
+        ok = applyEmotesToHumanoid(humanoid, emoteData)
+        if ok then break end
+        if attempt < 3 then task.wait(0.12) end
+    end
+    if ok then
+        emoteState.currentUserId = numericUserId
+    end
+    return ok
+end
+
+local function mimicEmotesFromTarget(target)
+    if not emoteState.active then return false end
+    local userId = resolveTargetToUserId(target)
+    if not userId then return false end
+    emoteState.targetInput = target
+    return mimicEmotesFromUserId(userId)
+end
+
+local function reapplyEmotes()
+    if emoteState.currentUserId then
+        return mimicEmotesFromUserId(emoteState.currentUserId)
+    end
+    return mimicEmotesFromTarget(emoteState.targetInput or CONFIG.target)
+end
+
+local function useDefaultEmoteTarget()
+    emoteState.currentUserId = nil
+    return mimicEmotesFromTarget(CONFIG.target)
+end
+
+local function emoteCleanup()
+    if not emoteState.active then return end
+    emoteState.active = false
+    emoteState.applyToken = emoteState.applyToken + 1
+    disconnectEmoteConnections()
+    clearEmoteCaches()
+    if env and env.__EmoteMimicState == emoteState then
+        env.__EmoteMimicState = nil
+    end
+end
+emoteState.cleanup = emoteCleanup
+
+if emoteState.settings.autoApplyOnRespawn then
+    local conn = LOCAL_PLAYER.CharacterAdded:Connect(function(char)
+        if not emoteState.active then return end
+        emoteState.applyToken = emoteState.applyToken + 1
+        local respawnToken = emoteState.applyToken
+        local hum = char:WaitForChild("Humanoid", 10)
+        if not hum or respawnToken ~= emoteState.applyToken or not emoteState.active then return end
+        task.spawn(function()
+            local delays = { 0.2, 0.45, 0.8 }
+            for _, delayTime in ipairs(delays) do
+                if not emoteState.active or respawnToken ~= emoteState.applyToken or not char.Parent then return end
+                task.wait(delayTime)
+                if not emoteState.active or respawnToken ~= emoteState.applyToken or not char.Parent then return end
+                if reapplyEmotes() then break end
+            end
+            task.wait(0.9)
+            if not emoteState.active or respawnToken ~= emoteState.applyToken or not char.Parent then return end
+            reapplyEmotes()
+        end)
+    end)
+    table.insert(emoteState.connections, conn)
+end
+
+if env then
+    env.EmoteMimic = {
+        SetTarget = mimicEmotesFromTarget,
+        SetTargetUserId = mimicEmotesFromUserId,
+        Reapply = reapplyEmotes,
+        UseDefaultTarget = useDefaultEmoteTarget,
+        Cleanup = emoteCleanup,
+    }
+    env.CloneEmotesFromTarget = mimicEmotesFromTarget
+    env.CloneEmotesFromUserId = mimicEmotesFromUserId
+    env.EmoteMimicCleanup = emoteCleanup
+end
+
+task.defer(function()
+    if not emoteState.active then return end
+    mimicEmotesFromTarget(CONFIG.target)
+end)
+
+local function switchTargetSafe(target)
+    if target == nil then return false end
+    local outfitTriggered = false
+    local outfitApi = env and env.OutfitCopy
+    if outfitApi and type(outfitApi.SetTarget) == "function" then
+        local ok = pcall(function() outfitApi.SetTarget(target) end)
+        outfitTriggered = ok
+    elseif env and type(env.CopySetUserId) == "function" then
+        local ok = pcall(function() env.CopySetUserId(target) end)
+        outfitTriggered = ok
+    end
+    task.defer(function()
+        if animState.active then
+            mimicAnimationsFromTarget(target)
+        end
+        if emoteState.active then
+            mimicEmotesFromTarget(target)
+        end
+    end)
+    return outfitTriggered
+end
+
+local function fullComboCleanup()
+    pcall(teardown)
+    pcall(animCleanup)
+    pcall(emoteCleanup)
+end
+
+if env then
+    env.SwitchTargetSafe = switchTargetSafe
+    env.SetTargetSafe = switchTargetSafe
+    env.FullComboCleanup = fullComboCleanup
+    env.CloneFullCleanup = fullComboCleanup
+end
+
+task.defer(function()
+    if not animState.active then return end
+    if animState.pinnedTargetUserId then
+        mimicAnimationsFromUserId(animState.pinnedTargetUserId)
+    elseif animState.lastSourceUserId then
+        mimicAnimationsFromUserId(animState.lastSourceUserId)
+    elseif animState.lastTargetInput ~= nil then
+        mimicAnimationsFromTarget(animState.lastTargetInput)
+    else
+        mimicAnimationsFromTarget(CONFIG.target)
+    end
+end)
+
+if animState.settings.autoApplyOnRespawn then
+    local conn = LOCAL_PLAYER.CharacterAdded:Connect(function(newCharacter)
+        if not animState.active then return end
+        animState.applyToken = animState.applyToken + 1
+        local respawnToken = animState.applyToken
+        pruneStaleCharacterAnimationState(newCharacter)
+        local hum = newCharacter:WaitForChild("Humanoid", 10)
+        if not hum or respawnToken ~= animState.applyToken or not animState.active then return end
+        task.wait(0.15)
+        if respawnToken ~= animState.applyToken or not animState.active or not newCharacter.Parent then return end
+        task.spawn(function()
+            local backoff = 0.25
+            for _ = 1, 4 do
+                if not animState.active or respawnToken ~= animState.applyToken or not newCharacter.Parent then return end
+                if animState.pinnedTargetUserId and mimicAnimationsFromUserId(animState.pinnedTargetUserId, true) then return end
+                if animState.lastSourceUserId and mimicAnimationsFromUserId(animState.lastSourceUserId, true) then return end
+                if animState.lastTargetInput ~= nil and mimicAnimationsFromTarget(animState.lastTargetInput) then return end
+                task.wait(backoff)
+                if not animState.active or respawnToken ~= animState.applyToken then return end
+                backoff = math.min(backoff * 2, 2)
+            end
+        end)
+    end)
+    table.insert(animState.connections, conn)
+end
+
+
+end;
