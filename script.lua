@@ -233,7 +233,7 @@ shared.Cider = {
 	},
 
 	['Triggerbot'] = {
-		['Enabled'] = false,
+		['Enabled'] = true,
 		['Max Range'] = math.huge,
 		['Limit To Weapon Range'] = true,
 		['Delay'] = 0,
