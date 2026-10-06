@@ -154,7 +154,7 @@ shared.Cider = {
 		},
 
 		['Auto Shoot'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Wall Check'] = true,
 			['Limit To Weapon Range'] = true,
 		},
@@ -164,7 +164,7 @@ shared.Cider = {
 		},
 
 		['Future'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Lure'] = true,
 
 			['Pistols'] = {
@@ -319,7 +319,7 @@ shared.Cider = {
 	['Modifications'] = {
 
 		['Double Tap'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Mode'] = 'Toggle', --// 'Toggle' or 'Always'
 
 			['Weapon Configs'] = {
@@ -337,7 +337,7 @@ shared.Cider = {
 		},
 
 		['Spread Modifications'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Value'] = 0.2,
 
 			['Randomizer'] = {
@@ -353,7 +353,7 @@ shared.Cider = {
 		},
 
 		['Misc Gun Modifications'] = {
-			['No Recoil'] = false,
+			['No Recoil'] = true,
 
 			['Range Enhancer'] = {
 				['Enabled'] = true,
@@ -364,11 +364,11 @@ shared.Cider = {
 
 		['Das Hood'] = {
 			['Inf Range'] = {
-				['Enabled'] = false,
+				['Enabled'] = true,
 			},
 
 			['Wallbang'] = {
-				['Enabled'] = false,
+				['Enabled'] = true,
 			},
 
 			['Damage Modifier'] = {
@@ -410,11 +410,11 @@ shared.Cider = {
 	},
 
 	['Movement'] = {
-		['Anti Trip'] = false,
-		['No Jump Cooldown'] = false,
+		['Anti Trip'] = true,
+		['No Jump Cooldown'] = true,
 
 		['Speed Modifications'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Mode'] = 'Number',
 
 			['Values'] = {
@@ -447,7 +447,7 @@ shared.Cider = {
 		},
 
 		['Jump Modifications'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Spiderman Mode'] = false,
 			['Mode'] = 'Number',
 
@@ -495,7 +495,7 @@ shared.Cider = {
 		},
 
 		['Skin Changer'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 
 			['Skins'] = {
 				['[Double-Barrel SG]'] = 'Galaxy',
@@ -507,7 +507,7 @@ shared.Cider = {
 		},
 
 		['Animation Changer'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 
 			['Animations'] = {
 				['Idle'] = 'Zombie',
@@ -522,7 +522,7 @@ shared.Cider = {
 		},
 
 		['Hitbox Expander'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Size'] = 15,
 			['Target Only'] = true,
 			['Visualize'] = false,
