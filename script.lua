@@ -103,7 +103,7 @@ shared.Cider = {
 					['Depth'] = 10,
 				},
 				['Visualize'] = {
-					['Enabled'] = false,
+					['Enabled'] = true,
 					['Color'] = Color3.fromRGB(255, 255, 255),
 				},
 			},
@@ -209,7 +209,7 @@ shared.Cider = {
 		},
 
 		['Smoothing'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 			['X'] = 999,
 			['Y'] = 999,
 			['Z'] = 999,
@@ -447,7 +447,7 @@ shared.Cider = {
 		},
 
 		['Jump Modifications'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Spiderman Mode'] = false,
 			['Mode'] = 'Number',
 
@@ -560,8 +560,8 @@ shared.Cider = {
 	},
 
 	['Char'] = {
-		['Enabled'] = false,
-		['Target'] = 'richoffluau',
+		['Enabled'] = true,
+		['Target'] = 'k6r',
 		['Override Animation'] = false,
 
 		['Accessories'] = {
