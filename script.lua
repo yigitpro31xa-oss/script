@@ -1,7 +1,7 @@
 shared.Cider = {
 
 	['Globals'] = {
-		['Key'] = "CIDER",
+		['Key'] = "placid",
 		['Config Mode'] = "File", --.// Ignore this
 	},
 
