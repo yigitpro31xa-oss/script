@@ -20,7 +20,7 @@ shared.Cider = {
 			['Position'] = 'Low Center',
 		},
 
-		['Checks'] = {
+		['Checks'] = {	
 			['Targeting'] = {
 				['Knocked'] = true, --// Used for target selection for "Target" Mode
 				['Grabbed'] = true,
@@ -410,8 +410,8 @@ shared.Cider = {
 	},
 
 	['Movement'] = {
-		['Anti Trip'] = true,
-		['No Jump Cooldown'] = true,
+		['Anti Trip'] = false,
+		['No Jump Cooldown'] = false,
 
 		['Speed Modifications'] = {
 			['Enabled'] = false,
@@ -447,7 +447,7 @@ shared.Cider = {
 		},
 
 		['Jump Modifications'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 			['Spiderman Mode'] = false,
 			['Mode'] = 'Number',
 
@@ -495,7 +495,7 @@ shared.Cider = {
 		},
 
 		['Skin Changer'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 
 			['Skins'] = {
 				['[Double-Barrel SG]'] = 'Galaxy',
@@ -507,7 +507,7 @@ shared.Cider = {
 		},
 
 		['Animation Changer'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 
 			['Animations'] = {
 				['Idle'] = 'Zombie',
@@ -522,7 +522,7 @@ shared.Cider = {
 		},
 
 		['Hitbox Expander'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 			['Size'] = 15,
 			['Target Only'] = true,
 			['Visualize'] = false,
@@ -560,7 +560,7 @@ shared.Cider = {
 	},
 
 	['Char'] = {
-		['Enabled'] = true,
+		['Enabled'] = false,
 		['Target'] = 'k6r',
 		['Override Animation'] = false,
 
