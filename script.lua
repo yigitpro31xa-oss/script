@@ -103,7 +103,7 @@ shared.Cider = {
 					['Depth'] = 10,
 				},
 				['Visualize'] = {
-					['Enabled'] = true,
+					['Enabled'] = false,
 					['Color'] = Color3.fromRGB(255, 255, 255),
 				},
 			},
@@ -125,11 +125,11 @@ shared.Cider = {
 	},
 
 	['Silent Aim'] = {
-		['Enabled'] = true,
+		['Enabled'] = false,
 		['Max Range'] = math.huge,
 
 		['Closest Point'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 			['Mode'] = 'Scaled',
 			['Scale'] = 3,
 		},
@@ -194,7 +194,7 @@ shared.Cider = {
 	},
 
 	['Aimbot'] = {
-		['Enabled'] = true,
+		['Enabled'] = false,
 		['Mode'] = 'Toggle',
 		['Max Range'] = math.huge,
 
@@ -542,7 +542,7 @@ shared.Cider = {
 	},
 
 	['Anti Future'] = {
-		['Enabled'] = true, --// going way too high WILL get you banned, i reccomend around 10-150, 500+ for full rage.
+		['Enabled'] = false, --// going way too high WILL get you banned, i reccomend around 10-150, 500+ for full rage.
         --// I reccomend you increase the strength higher the ping.
 		['Options'] = {
 			['Strength'] = 75, --// Going too high makes the jitter way too visible to the server
