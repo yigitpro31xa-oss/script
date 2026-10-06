@@ -103,7 +103,7 @@ shared.Cider = {
 					['Depth'] = 10,
 				},
 				['Visualize'] = {
-					['Enabled'] = false,
+					['Enabled'] = true,
 					['Color'] = Color3.fromRGB(255, 255, 255),
 				},
 			},
@@ -125,7 +125,7 @@ shared.Cider = {
 	},
 
 	['Silent Aim'] = {
-		['Enabled'] = false,
+		['Enabled'] = true,
 		['Max Range'] = math.huge,
 
 		['Closest Point'] = {
@@ -135,7 +135,7 @@ shared.Cider = {
 		},
 
 		['Target Tracer'] = {
-			['Enabled'] = false,
+			['Enabled'] = true,
 			['Color'] = Color3.fromRGB(255, 85, 85),
 			['Thickness'] = 0.5,
 		},
@@ -154,7 +154,7 @@ shared.Cider = {
 		},
 
 		['Auto Shoot'] = {
-			['Enabled'] = true,
+			['Enabled'] = false,
 			['Wall Check'] = true,
 			['Limit To Weapon Range'] = true,
 		},
@@ -194,7 +194,7 @@ shared.Cider = {
 	},
 
 	['Aimbot'] = {
-		['Enabled'] = false,
+		['Enabled'] = true,
 		['Mode'] = 'Toggle',
 		['Max Range'] = math.huge,
 
